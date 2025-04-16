@@ -1,0 +1,338 @@
+[
+  {
+    "vector_id": "d2395c57-e35e-4bc3-8eb4-a77b26b3af5d",
+    "tables_id": "nt-6900",
+    "question": "What is the ID of the person who started their role in Illinois under Barack Obama?",
+    "sql": "\nSELECT id \nFROM w \nWHERE c2 = 'illinois' AND c5 = 'barack obama';\n",
+    "result": [
+      [
+        4
+      ],
+      [
+        6
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "fa036c31-9a84-4b91-b452-b56e36702701",
+    "tables_id": "nt-6900",
+    "question": "ID of person who started in Illinois under Obama?",
+    "sql": "SELECT id FROM w WHERE c2 = 'illinois' AND c5 = 'barack obama';",
+    "result": [
+      [
+        4
+      ],
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "4e5c7a57-161a-47e2-92b0-144325439a43",
+    "tables_id": "nt-6900",
+    "question": "Person's ID that began role with Obama in Illinois?",
+    "sql": "SELECT id FROM w WHERE c2 = 'illinois' AND c5 = 'barack obama';",
+    "result": [
+      [
+        4
+      ],
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3a608afd-5827-4e3a-8770-714d51f299af",
+    "tables_id": "nt-6900",
+    "question": "Individual ID that kicked off job under Obama in Illinois?",
+    "sql": "SELECT id FROM w WHERE c2 = 'illinois' AND c5 = 'barack obama';",
+    "result": [
+      [
+        4
+      ],
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "047774d4-b9cd-4590-a9c8-ceb904c781e6",
+    "tables_id": "nt-6900",
+    "question": "ID of individual who initiated employment in Illinois during Obama's presidency?",
+    "sql": "SELECT id FROM w WHERE c2 = 'illinois' AND c5 = 'barack obama';",
+    "result": [
+      [
+        4
+      ],
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2a605c46-7778-41c5-a3c6-3d88240cd6d8",
+    "tables_id": "nt-6900",
+    "question": "Which employee's unique identifier commenced their position in Illinois when Obama led the state?",
+    "sql": "SELECT id FROM w WHERE c2 = 'illinois' AND c5 = 'barack obama';",
+    "result": [
+      [
+        4
+      ],
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6791ca80-fd7f-4606-b0a8-70be34753551",
+    "tables_id": "nt-6900",
+    "question": "Who started role under Obama in Illinois?",
+    "sql": "SELECT id FROM w WHERE c2 = 'illinois' AND c5 = 'barack obama';",
+    "result": [
+      [
+        4
+      ],
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "07de511a-b896-402b-8f73-d38034ba1ee6",
+    "tables_id": "nt-6900",
+    "question": "Under Obama's administration, who initiated their employment term in Illinois?",
+    "sql": "SELECT id FROM w WHERE c2 = 'illinois' AND c5 = 'barack obama';",
+    "result": [
+      [
+        4
+      ],
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "610ba15b-440d-4bbf-b8be-b5d6e6d37913",
+    "tables_id": "nt-6900",
+    "question": "What is the ID of the record where c5 is 'george w. bush'?",
+    "sql": "\nSELECT id \nFROM w \nWHERE c5 = 'george w. bush';\n",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "7f628993-e760-42a3-a7fe-db98623ca7f4",
+    "tables_id": "nt-6900",
+    "question": "Find ID for record with c5 as george w. bush",
+    "sql": "SELECT id FROM w WHERE c5 = 'george w. bush';",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "da5206d5-6fe0-43d8-b96b-9e792435532f",
+    "tables_id": "nt-6900",
+    "question": "Find ID for record where c5 value matches 'george w. bush'",
+    "sql": "SELECT id FROM w WHERE c5 = 'george w. bush';",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "87e24c16-5b70-4e7f-88ba-2ba3116d4af9",
+    "tables_id": "nt-6900",
+    "question": "What is the entry ID where c5 equals 'george w. bush'",
+    "sql": "SELECT id FROM w WHERE c5 = 'george w. bush';",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5318f4b1-1119-4a0a-8a4a-29d0ae9fb069",
+    "tables_id": "nt-6900",
+    "question": "What is the ID of entry where c5 equals 'george w. bush'",
+    "sql": "SELECT id FROM w WHERE c5 = 'george w. bush';",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5228b4a9-2ac6-46c4-917d-d927f1fa1fce",
+    "tables_id": "nt-6900",
+    "question": "Which record's ID has george w. bush in column c5?",
+    "sql": "SELECT id FROM w WHERE c5 = 'george w. bush';",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1bc6ea32-a75d-44e9-baf3-fb0f09962a89",
+    "tables_id": "nt-6900",
+    "question": "What ID has c5 value 'george w. bush'?",
+    "sql": "SELECT id FROM w WHERE c5 = 'george w. bush';",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f8bd9b48-6d99-4955-998a-cd22fc7886b4",
+    "tables_id": "nt-6900",
+    "question": "Find record ID that includes george w. bush in c5.",
+    "sql": "SELECT id FROM w WHERE c5 = 'george w. bush';",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "47e05680-d71f-47e4-9787-afc06f44c040",
+    "tables_id": "nt-6900",
+    "question": "How many individuals started working for Barack Obama before 2010?",
+    "sql": "\nSELECT COUNT(*) as count FROM w WHERE c5 = 'barack obama' AND c3_year < 2010;\n",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "c285eb32-5a78-4bbc-985d-27849e95c071",
+    "tables_id": "nt-6900",
+    "question": "How many individuals started working with Barack Obama before 2010?",
+    "sql": "SELECT COUNT(*) as count FROM w WHERE c5 = 'barack obama' AND c3_year < 2010;",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "fa9e05db-9666-4a90-940d-eaecbb1b676c",
+    "tables_id": "nt-6900",
+    "question": "Before 2010, how many people worked with Obama?",
+    "sql": "SELECT COUNT(*) as count FROM w WHERE c5 = 'barack obama' AND c3_year < 2010;",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "67e7fc21-07e3-4a2d-8841-c8177de06adf",
+    "tables_id": "nt-6900",
+    "question": "Before 2010, how many E began to E Barack Obama?",
+    "sql": "SELECT COUNT(*) as count FROM w WHERE c5 = 'barack obama' AND c3_year < 2010;",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f7e6119e-b3c7-447f-8702-56f875bd52b6",
+    "tables_id": "nt-6900",
+    "question": "Before 2010, how many people joined Barack Obama's team?",
+    "sql": "SELECT COUNT(*) as count FROM w WHERE c5 = 'barack obama' AND c3_year < 2010;",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "8a595a9c-b54b-4cf7-ae9a-4ced089f9490",
+    "tables_id": "nt-6900",
+    "question": "In 2010 or earlier, what was the number of people who had begun working for Barack Obama?",
+    "sql": "SELECT COUNT(*) as count FROM w WHERE c5 = 'barack obama' AND c3_year < 2010;",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "7548fa69-dfa6-446a-962b-b9db68d3f30a",
+    "tables_id": "nt-6900",
+    "question": "How many started working with Obama before 2010?",
+    "sql": "SELECT COUNT(*) as count FROM w WHERE c5 = 'barack obama' AND c3_year < 2010;",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "081a1a89-04da-4914-a775-53674daee418",
+    "tables_id": "nt-6900",
+    "question": "What was the count of individuals who were added to Barack Obama's staff before 2010?",
+    "sql": "SELECT COUNT(*) as count FROM w WHERE c5 = 'barack obama' AND c3_year < 2010;",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": false
+  }
+]
