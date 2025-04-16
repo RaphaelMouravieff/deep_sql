@@ -1,6 +1,6 @@
 
 import requests
-import BeautifulSoup
+from bs4 import BeautifulSoup
 from smolagents import tool
 
 @tool

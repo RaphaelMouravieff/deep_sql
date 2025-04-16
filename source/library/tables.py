@@ -1,13 +1,11 @@
 import os
 import random
-import pandas as pd
 import sqlite3
 import json
-from typing import Dict, List, Tuple, Any, Union, Optional
+from typing import Dict, Any
 from datasets import load_dataset
 
-import sqlite3
-# Setup database connection
+
 def connect_to_database(db_path: str) -> sqlite3.Connection:
     """
     Connect to the SQLite database and return connection object.

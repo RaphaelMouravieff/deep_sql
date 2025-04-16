@@ -1,22 +1,18 @@
-from typing import Dict, List, Tuple, Any, Union, Optional
-import json
-import os
+
 from tqdm import tqdm
 
-from langchain_community.vectorstores import FAISS
 
-
-from datasets import load_dataset
 
 from source.bin.main_step import run_pipeline_step
-from source.prompts.prompt import get_extra_prompt_divers, get_prompt, get_extra_prompt_sql
+from source.prompts.prompt import get_prompt
 from source.library.tables import get_table_dirty, get_table
 from source.library.storage import  init_library, save_library
 
 from source.agents.build_agents import create_agents
-from source.tools.tools import  ExecuteSQLTool
 
-from source.tools.retriever import RetrieverTool
+from source.tools.sql_executor import SQLExecutorTool
+
+from source.tools.semantic_retriver import SemanticRetrieverTool
 
 
 from source.models.model_setup import load_model
@@ -36,15 +32,16 @@ def generate_dataset(db_path: str, table_id:str,num_entries: int, model, library
     library,vector_store = init_library(library_path,vector_store_path)
     print(f"Starting with library containing {len(library)} entries")
     
-    retriever_tool = RetrieverTool(vector_store)
+    retriever_tool = SemanticRetrieverTool(vector_store)
 
 
     conn,tables_info,table_samples = get_table(db_path)
     question_prompt,sql_prompt=get_prompt(tables_info,table_samples,library)
-    execute_sql= ExecuteSQLTool(conn)  
+
+    execute_sql= SQLExecutorTool(conn)  
 
     # Create agents
-    question_generator, sql_translator, question_diversity = create_agents(model,retriever_tool,execute_sql)
+    question_generator, sql_translator, question_diversity = create_agents(model, retriever_tool,execute_sql)
     
     # Main generation loop
     progress_bar = tqdm(range(num_entries), desc="Generating dataset entries")

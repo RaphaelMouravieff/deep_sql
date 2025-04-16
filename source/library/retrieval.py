@@ -18,7 +18,7 @@ def get_emebdding_model(model_name="Alibaba-NLP/gte-large-en-v1.5"):
 def embeddings_vector_store(model_name="Alibaba-NLP/gte-large-en-v1.5"):
     embeddings= get_emebdding_model(model_name)
    
-    index = faiss.IndexFlatIP(len(embeddings.embed_query("hello world")))
+    index = IndexFlatIP(len(embeddings.embed_query("hello world")))
 
     vector_store = FAISS(
         embedding_function=embeddings,
