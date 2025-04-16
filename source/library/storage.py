@@ -9,6 +9,32 @@ import faiss
 from source.library.utils import load_sentence
 import numpy as np
 
+from typing import Dict, List, Tuple, Any, Union, Optional
+from langchain_community.vectorstores import FAISS
+
+from source.library.retrieval import get_emebdding_model
+
+
+# Initialize the dataset library
+def init_library(library_path: str = "sql_dataset_library.json",vector_store_path='vector_store',model_name="Alibaba-NLP/gte-large-en-v1.5") -> List[Dict[str, Any]]:
+    """Initialize or load the existing library"""
+    if os.path.exists(library_path):
+        with open(library_path, 'r') as f:
+            library= json.load(f)
+        vector_store = FAISS.load_local(vector_store_path, embeddings=get_emebdding_model(model_name) , allow_dangerous_deserialization=True)
+        return library,vector_store
+   
+    return [],embeddings_vector_store(model_name)
+
+# Save the library to disk
+def save_library(library: List[Dict[str, Any]],vector_store,library_path: str = "sql_dataset_library.json", vector_store_path='vector_store',):
+    """Save the current library to disk"""
+    with open(library_path, 'w') as f:
+        json.dump(library, f, indent=2)
+    vector_store.save_local(vector_store_path)
+
+
+
 
 class SQLLibrary:
     def __init__(self, data_args, model_args):

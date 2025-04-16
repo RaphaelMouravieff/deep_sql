@@ -334,5 +334,2716 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "5146d8c6-5fd4-4f35-9898-547c4e61337b",
+    "tables_id": "nt-6582",
+    "question": "What are the names (c2) and their corresponding c4_number values for individuals where c4_number is greater than 59?",
+    "sql": "\nSELECT c2, c4_number \nFROM w \nWHERE c4_number > 59;\n",
+    "result": [
+      [
+        "tague thorson",
+        59.13
+      ],
+      [
+        "jan urfer",
+        59.1
+      ],
+      [
+        "francesco ghedina",
+        59.39
+      ],
+      [
+        "cameron barnes",
+        59.51
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "21cad62a-5b0e-4e03-b05d-07b79e7c38c2",
+    "tables_id": "nt-6582",
+    "question": "Names and c4_number values where c4_number > 59",
+    "sql": "SELECT c2, c4_number FROM w WHERE c4_number > 59",
+    "result": [
+      [
+        "tague thorson",
+        59.13
+      ],
+      [
+        "jan urfer",
+        59.1
+      ],
+      [
+        "francesco ghedina",
+        59.39
+      ],
+      [
+        "cameron barnes",
+        59.51
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "699c01a1-720a-4649-ba86-1a4b4298c2d4",
+    "tables_id": "nt-6582",
+    "question": "Names and c4_number where greater than 59",
+    "sql": "SELECT c2, c4_number FROM w WHERE c4_number > 59",
+    "result": [
+      [
+        "tague thorson",
+        59.13
+      ],
+      [
+        "jan urfer",
+        59.1
+      ],
+      [
+        "francesco ghedina",
+        59.39
+      ],
+      [
+        "cameron barnes",
+        59.51
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2b7d49a8-7fd7-4546-bb4b-c7bc9bae4488",
+    "tables_id": "nt-6582",
+    "question": "Individuals' names along with their c4_number that exceed 59",
+    "sql": "SELECT c2, c4_number FROM w WHERE c4_number > 59",
+    "result": [
+      [
+        "tague thorson",
+        59.13
+      ],
+      [
+        "jan urfer",
+        59.1
+      ],
+      [
+        "francesco ghedina",
+        59.39
+      ],
+      [
+        "cameron barnes",
+        59.51
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b27fb547-0574-4ccb-96eb-b7d4d3e3873f",
+    "tables_id": "nt-6582",
+    "question": "List names and c4_number values of individuals with c4_number over 59",
+    "sql": "SELECT c2, c4_number FROM w WHERE c4_number > 59",
+    "result": [
+      [
+        "tague thorson",
+        59.13
+      ],
+      [
+        "jan urfer",
+        59.1
+      ],
+      [
+        "francesco ghedina",
+        59.39
+      ],
+      [
+        "cameron barnes",
+        59.51
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3c03a3fa-12a9-4caa-9361-d387659e1423",
+    "tables_id": "nt-6582",
+    "question": "Names and c4_number values over 59",
+    "sql": "SELECT c2, c4_number FROM w WHERE c4_number > 59",
+    "result": [
+      [
+        "tague thorson",
+        59.13
+      ],
+      [
+        "jan urfer",
+        59.1
+      ],
+      [
+        "francesco ghedina",
+        59.39
+      ],
+      [
+        "cameron barnes",
+        59.51
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5751ae50-4d8c-410c-ad9d-c2f2fe3d5540",
+    "tables_id": "nt-6582",
+    "question": "Which individuals have a c4_number greater than 59 and what are their names?",
+    "sql": "SELECT c2, c4_number FROM w WHERE c4_number > 59",
+    "result": [
+      [
+        "tague thorson",
+        59.13
+      ],
+      [
+        "jan urfer",
+        59.1
+      ],
+      [
+        "francesco ghedina",
+        59.39
+      ],
+      [
+        "cameron barnes",
+        59.51
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "23b3a64f-c3ea-4f8d-91be-d0ab4ade8fff",
+    "tables_id": "nt-6582",
+    "question": "How many records are there in the table w where agg is 0 and c5_sec is less than 49.7?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE agg = 0 AND c5_sec < 49.7;\n",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "a450cab9-6042-470d-9fa7-b860333faf8a",
+    "tables_id": "nt-6582",
+    "question": "How many records are there in table w where agg equals 0 and c5_sec is less than 49.7?",
+    "sql": "SELECT COUNT(*) FROM w WHERE agg = 0 AND c5_sec < 49.7;",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9f1be345-826f-4fb3-b205-7927f9cfa1a7",
+    "tables_id": "nt-6582",
+    "question": "Count records in w where agg is 0 and c5_sec less than 49.7",
+    "sql": "SELECT COUNT(*) FROM w WHERE agg = 0 AND c5_sec < 49.7;",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "be9931d3-0132-48c1-b647-5b21bf367073",
+    "tables_id": "nt-6582",
+    "question": "How many entries in table w have agg at 0 and c5_sec below 49.7?",
+    "sql": "SELECT COUNT(*) FROM w WHERE agg = 0 AND c5_sec < 49.7;",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "44717545-b281-4b2e-ad58-1f1fe717542b",
+    "tables_id": "nt-6582",
+    "question": "How many instances in w meet agg at 0 and c5_sec under 49.7?",
+    "sql": "SELECT COUNT(*) FROM w WHERE agg = 0 AND c5_sec < 49.7;",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bfe8e853-cae2-4d8a-9c03-0f9010adbb27",
+    "tables_id": "nt-6582",
+    "question": "What is the count of records in table w that have agg as 0 and c5_sec less than 49.7?",
+    "sql": "SELECT COUNT(*) FROM w WHERE agg = 0 AND c5_sec < 49.7;",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "cf47b3ee-341f-4f22-8de9-e6f117680350",
+    "tables_id": "nt-6582",
+    "question": "Count records in w with agg as 0 and c5_sec less than 49.7",
+    "sql": "SELECT COUNT(*) FROM w WHERE agg = 0 AND c5_sec < 49.7;",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0127bc59-57c2-41d5-acb7-ae7755b8478d",
+    "tables_id": "nt-6582",
+    "question": "How many entries in w have an agg value at zero and c5_sec below 49.7?",
+    "sql": "SELECT COUNT(*) FROM w WHERE agg = 0 AND c5_sec < 49.7;",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1939272b-4fe7-46f8-bea8-235ad123b5f4",
+    "tables_id": "nt-6582",
+    "question": "How many unique athletes are there when grouped by their c4_number?",
+    "sql": "\nSELECT COUNT(DISTINCT w.c2) \nFROM w \nGROUP BY w.c4_number;\n",
+    "result": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "208d9add-9cda-46a9-9fba-e93da79d074a",
+    "tables_id": "nt-6582",
+    "question": "How many unique athletes per group defined by c4_number?",
+    "sql": "SELECT COUNT(DISTINCT w.c2) FROM w GROUP BY w.c4_number;",
+    "result": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d8730d2f-91ca-43b7-b64b-13b6b22c3672",
+    "tables_id": "nt-6669",
+    "question": "What are the addresses of all locations mentioned in table w where agg equals 0?",
+    "sql": "\nSELECT DISTINCT w.c3 AS location\nFROM w\nJOIN t_c3_address ON w.id = t_c3_address.m_id\nWHERE w.agg = 0;\n",
+    "result": [
+      [
+        "the hague, netherlands"
+      ],
+      [
+        "budapest, hungary"
+      ],
+      [
+        "lisbon, portugal"
+      ],
+      [
+        "tokyo, japan"
+      ],
+      [
+        "genoa, italy"
+      ],
+      [
+        "stuttgart, germany"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "5cd79ce9-faf1-4ea4-a487-0957b42980df",
+    "tables_id": "nt-6669",
+    "question": "What are addresses of locations mentioned in table w with agg equals 0?",
+    "sql": "SELECT DISTINCT w.c3 AS location FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.agg = 0;",
+    "result": [
+      [
+        "the hague, netherlands"
+      ],
+      [
+        "budapest, hungary"
+      ],
+      [
+        "lisbon, portugal"
+      ],
+      [
+        "tokyo, japan"
+      ],
+      [
+        "genoa, italy"
+      ],
+      [
+        "stuttgart, germany"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "30b375ff-2f8d-4d35-9a3b-7fbfe3d3996c",
+    "tables_id": "nt-6669",
+    "question": "Addresses of locations where agg is 0.",
+    "sql": "SELECT DISTINCT w.c3 AS location FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.agg = 0;",
+    "result": [
+      [
+        "the hague, netherlands"
+      ],
+      [
+        "budapest, hungary"
+      ],
+      [
+        "lisbon, portugal"
+      ],
+      [
+        "tokyo, japan"
+      ],
+      [
+        "genoa, italy"
+      ],
+      [
+        "stuttgart, germany"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "43f3fc6f-3404-41f8-be0f-a380a4f92c9a",
+    "tables_id": "nt-6669",
+    "question": "List address details of locations having agg as 0",
+    "sql": "SELECT DISTINCT w.c3 AS location FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.agg = 0;",
+    "result": [
+      [
+        "the hague, netherlands"
+      ],
+      [
+        "budapest, hungary"
+      ],
+      [
+        "lisbon, portugal"
+      ],
+      [
+        "tokyo, japan"
+      ],
+      [
+        "genoa, italy"
+      ],
+      [
+        "stuttgart, germany"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "8d595753-b873-4232-93f9-86b42e7a9d75",
+    "tables_id": "nt-6669",
+    "question": "Find the addresses for table w locations with value 0 in column agg.",
+    "sql": "SELECT DISTINCT w.c3 AS location FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.agg = 0;",
+    "result": [
+      [
+        "the hague, netherlands"
+      ],
+      [
+        "budapest, hungary"
+      ],
+      [
+        "lisbon, portugal"
+      ],
+      [
+        "tokyo, japan"
+      ],
+      [
+        "genoa, italy"
+      ],
+      [
+        "stuttgart, germany"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6c77ec49-764d-4a0d-8c10-bdd43a69a7ae",
+    "tables_id": "nt-6669",
+    "question": "Addresses of all places listed in table w where the agg value is zero?",
+    "sql": "SELECT DISTINCT w.c3 AS location FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.agg = 0;",
+    "result": [
+      [
+        "the hague, netherlands"
+      ],
+      [
+        "budapest, hungary"
+      ],
+      [
+        "lisbon, portugal"
+      ],
+      [
+        "tokyo, japan"
+      ],
+      [
+        "genoa, italy"
+      ],
+      [
+        "stuttgart, germany"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "656195cd-56f3-4f49-984f-413473e9b632",
+    "tables_id": "nt-6669",
+    "question": "Location addresses in w with agg equal to zero",
+    "sql": "SELECT DISTINCT w.c3 AS location FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.agg = 0;",
+    "result": [
+      [
+        "the hague, netherlands"
+      ],
+      [
+        "budapest, hungary"
+      ],
+      [
+        "lisbon, portugal"
+      ],
+      [
+        "tokyo, japan"
+      ],
+      [
+        "genoa, italy"
+      ],
+      [
+        "stuttgart, germany"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1c987bbb-c63b-4993-bfda-7682d7d9dd96",
+    "tables_id": "nt-6669",
+    "question": "Provide location address for each place mentioned in w that has a value of 0 in column agg.",
+    "sql": "SELECT DISTINCT w.c3 AS location FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.agg = 0;",
+    "result": [
+      [
+        "the hague, netherlands"
+      ],
+      [
+        "budapest, hungary"
+      ],
+      [
+        "lisbon, portugal"
+      ],
+      [
+        "tokyo, japan"
+      ],
+      [
+        "genoa, italy"
+      ],
+      [
+        "stuttgart, germany"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3af46265-d089-43a5-b2a4-c7a0b64e2fe3",
+    "tables_id": "nt-2358",
+    "question": "List all entries from table w where c4 equals 'telefe' along with their respective values for columns c2 (show name), c3 (character), and c5 (awards).",
+    "sql": "\nSELECT c2, c3, c5 FROM w \nWHERE c4 = 'telefe';\n",
+    "result": [
+      [
+        "muneca brava",
+        "milagros 'mili' esposito-di carlo de miranda (cholito/carlitos)",
+        "nominated - martin fierro - best actress\nwon - viva 2000 israel - best actress\nwon - gold otto (czech republic) - best actress\nwon - otto (poland) - best actress\nwon - story awards (hungary) - best foreign star\nwon - e! entertainment television - celebrity of the year"
+      ],
+      [
+        "kachorra",
+        "antonia guerrero (kachorra), alias rosario achaval",
+        "nominated - martin fierro - best tv comedy actress"
+      ],
+      [
+        "el deseo",
+        "carmen",
+        null
+      ],
+      [
+        "cuando me sonreis",
+        "leonora bellami",
+        "guest appearance"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "78ce8784-f2dd-48c8-93eb-8e1b09544ce4",
+    "tables_id": "nt-2358",
+    "question": "List entries from table w where c4 equals 'telefe' and return values for columns c2 (show name), c3 (character), and c5 (awards).",
+    "sql": "SELECT c2, c3, c5 FROM w WHERE c4 = 'telefe'",
+    "result": [
+      [
+        "muneca brava",
+        "milagros 'mili' esposito-di carlo de miranda (cholito/carlitos)",
+        "nominated - martin fierro - best actress\nwon - viva 2000 israel - best actress\nwon - gold otto (czech republic) - best actress\nwon - otto (poland) - best actress\nwon - story awards (hungary) - best foreign star\nwon - e! entertainment television - celebrity of the year"
+      ],
+      [
+        "kachorra",
+        "antonia guerrero (kachorra), alias rosario achaval",
+        "nominated - martin fierro - best tv comedy actress"
+      ],
+      [
+        "el deseo",
+        "carmen",
+        null
+      ],
+      [
+        "cuando me sonreis",
+        "leonora bellami",
+        "guest appearance"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b079b3ab-1da3-4bbf-a0b0-752bcddf4407",
+    "tables_id": "nt-2358",
+    "question": "List entries in table w where c4 equals 'telefe'. Return values for columns c2 (show name), c3 (character), and c5 (awards).",
+    "sql": "SELECT c2, c3, c5 FROM w WHERE c4 = 'telefe'",
+    "result": [
+      [
+        "muneca brava",
+        "milagros 'mili' esposito-di carlo de miranda (cholito/carlitos)",
+        "nominated - martin fierro - best actress\nwon - viva 2000 israel - best actress\nwon - gold otto (czech republic) - best actress\nwon - otto (poland) - best actress\nwon - story awards (hungary) - best foreign star\nwon - e! entertainment television - celebrity of the year"
+      ],
+      [
+        "kachorra",
+        "antonia guerrero (kachorra), alias rosario achaval",
+        "nominated - martin fierro - best tv comedy actress"
+      ],
+      [
+        "el deseo",
+        "carmen",
+        null
+      ],
+      [
+        "cuando me sonreis",
+        "leonora bellami",
+        "guest appearance"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3ce98723-9559-4719-b8bb-a765e656c29d",
+    "tables_id": "nt-2358",
+    "question": "Retrieve records from table w where c4 is 'telefe'. Show show name (c2), character (c3) and awards (c5).",
+    "sql": "SELECT c2, c3, c5 FROM w WHERE c4 = 'telefe'",
+    "result": [
+      [
+        "muneca brava",
+        "milagros 'mili' esposito-di carlo de miranda (cholito/carlitos)",
+        "nominated - martin fierro - best actress\nwon - viva 2000 israel - best actress\nwon - gold otto (czech republic) - best actress\nwon - otto (poland) - best actress\nwon - story awards (hungary) - best foreign star\nwon - e! entertainment television - celebrity of the year"
+      ],
+      [
+        "kachorra",
+        "antonia guerrero (kachorra), alias rosario achaval",
+        "nominated - martin fierro - best tv comedy actress"
+      ],
+      [
+        "el deseo",
+        "carmen",
+        null
+      ],
+      [
+        "cuando me sonreis",
+        "leonora bellami",
+        "guest appearance"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f47dbcea-0ed8-49f2-b283-d13545879383",
+    "tables_id": "nt-2358",
+    "question": "Fetch data from table w for entries where c4 is 'telefe'. Display details of show name (c2), character (c3) and awards (c5).",
+    "sql": "SELECT c2, c3, c5 FROM w WHERE c4 = 'telefe'",
+    "result": [
+      [
+        "muneca brava",
+        "milagros 'mili' esposito-di carlo de miranda (cholito/carlitos)",
+        "nominated - martin fierro - best actress\nwon - viva 2000 israel - best actress\nwon - gold otto (czech republic) - best actress\nwon - otto (poland) - best actress\nwon - story awards (hungary) - best foreign star\nwon - e! entertainment television - celebrity of the year"
+      ],
+      [
+        "kachorra",
+        "antonia guerrero (kachorra), alias rosario achaval",
+        "nominated - martin fierro - best tv comedy actress"
+      ],
+      [
+        "el deseo",
+        "carmen",
+        null
+      ],
+      [
+        "cuando me sonreis",
+        "leonora bellami",
+        "guest appearance"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "07d6c327-aa27-4d0e-8803-289f1162585c",
+    "tables_id": "nt-2358",
+    "question": "Provide details on entries within table w having c4 value as 'telefe'. Include show name (c2), character (c3) and awards (c5).",
+    "sql": "SELECT c2, c3, c5 FROM w WHERE c4 = 'telefe'",
+    "result": [
+      [
+        "muneca brava",
+        "milagros 'mili' esposito-di carlo de miranda (cholito/carlitos)",
+        "nominated - martin fierro - best actress\nwon - viva 2000 israel - best actress\nwon - gold otto (czech republic) - best actress\nwon - otto (poland) - best actress\nwon - story awards (hungary) - best foreign star\nwon - e! entertainment television - celebrity of the year"
+      ],
+      [
+        "kachorra",
+        "antonia guerrero (kachorra), alias rosario achaval",
+        "nominated - martin fierro - best tv comedy actress"
+      ],
+      [
+        "el deseo",
+        "carmen",
+        null
+      ],
+      [
+        "cuando me sonreis",
+        "leonora bellami",
+        "guest appearance"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d37366a9-c2c0-4173-84ec-eaecd5c36d01",
+    "tables_id": "nt-2358",
+    "question": "Show entries in table w where c4 equals 'telefe'. Return show name (c2), character (c3) and awards (c5).",
+    "sql": "SELECT c2, c3, c5 FROM w WHERE c4 = 'telefe'",
+    "result": [
+      [
+        "muneca brava",
+        "milagros 'mili' esposito-di carlo de miranda (cholito/carlitos)",
+        "nominated - martin fierro - best actress\nwon - viva 2000 israel - best actress\nwon - gold otto (czech republic) - best actress\nwon - otto (poland) - best actress\nwon - story awards (hungary) - best foreign star\nwon - e! entertainment television - celebrity of the year"
+      ],
+      [
+        "kachorra",
+        "antonia guerrero (kachorra), alias rosario achaval",
+        "nominated - martin fierro - best tv comedy actress"
+      ],
+      [
+        "el deseo",
+        "carmen",
+        null
+      ],
+      [
+        "cuando me sonreis",
+        "leonora bellami",
+        "guest appearance"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d962479f-24aa-43cf-a03f-e91ebc47d0a4",
+    "tables_id": "nt-2358",
+    "question": "Identify entries within table w with c4 being 'telefe'. Provide show name (c2), character (c3) and awards (c5).",
+    "sql": "SELECT c2, c3, c5 FROM w WHERE c4 = 'telefe'",
+    "result": [
+      [
+        "muneca brava",
+        "milagros 'mili' esposito-di carlo de miranda (cholito/carlitos)",
+        "nominated - martin fierro - best actress\nwon - viva 2000 israel - best actress\nwon - gold otto (czech republic) - best actress\nwon - otto (poland) - best actress\nwon - story awards (hungary) - best foreign star\nwon - e! entertainment television - celebrity of the year"
+      ],
+      [
+        "kachorra",
+        "antonia guerrero (kachorra), alias rosario achaval",
+        "nominated - martin fierro - best tv comedy actress"
+      ],
+      [
+        "el deseo",
+        "carmen",
+        null
+      ],
+      [
+        "cuando me sonreis",
+        "leonora bellami",
+        "guest appearance"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "020c5722-066b-49a4-b6c1-1159f7f72a1e",
+    "tables_id": "nt-8978",
+    "question": "List all entries in table w where c1_number is greater than 2007 and less than 2013, sorted by c4_number in ascending order.",
+    "sql": "\nSELECT *\nFROM w\nWHERE c1_number > 2007 AND c1_number < 2013\nORDER BY c4_number ASC;\n",
+    "result": [
+      [
+        5,
+        0,
+        "2008",
+        2008,
+        "sea",
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        10,
+        0,
+        "2012",
+        2012,
+        "jax",
+        "5",
+        5.0,
+        "11",
+        11.0,
+        "7",
+        7.0,
+        "4",
+        4.0,
+        "1.5",
+        1.5,
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        6,
+        0,
+        "2009",
+        2009,
+        "phi",
+        "12",
+        12.0,
+        "16",
+        16.0,
+        "11",
+        11.0,
+        "5",
+        5.0,
+        "2.5",
+        2.5,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        9,
+        0,
+        "2012",
+        2012,
+        "phi",
+        "11",
+        11.0,
+        "26",
+        26.0,
+        "21",
+        21.0,
+        "5",
+        5.0,
+        "5.5",
+        5.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        4,
+        0,
+        "2008",
+        2008,
+        "kc",
+        "7",
+        7.0,
+        "31",
+        31.0,
+        "25",
+        25.0,
+        "6",
+        6.0,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        8,
+        0,
+        "2011",
+        2011,
+        "phi",
+        "16",
+        16.0,
+        "40",
+        40.0,
+        "35",
+        35.0,
+        "5",
+        5.0,
+        "18",
+        18.0,
+        "3",
+        3.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        7,
+        0,
+        "2010",
+        2010,
+        "ten",
+        "16",
+        16.0,
+        "58",
+        58.0,
+        "44",
+        44.0,
+        "14",
+        14.0,
+        "12.5",
+        12.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "acc6d35b-8c20-464a-8556-10295fdea170",
+    "tables_id": "nt-8978",
+    "question": "List entries in table w with c1_number between 2008 and 2012 sorted by c4_number.",
+    "sql": "SELECT * FROM w WHERE c1_number > 2007 AND c1_number < 2013 ORDER BY c4_number ASC;",
+    "result": [
+      [
+        5,
+        0,
+        "2008",
+        2008,
+        "sea",
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        10,
+        0,
+        "2012",
+        2012,
+        "jax",
+        "5",
+        5.0,
+        "11",
+        11.0,
+        "7",
+        7.0,
+        "4",
+        4.0,
+        "1.5",
+        1.5,
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        6,
+        0,
+        "2009",
+        2009,
+        "phi",
+        "12",
+        12.0,
+        "16",
+        16.0,
+        "11",
+        11.0,
+        "5",
+        5.0,
+        "2.5",
+        2.5,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        9,
+        0,
+        "2012",
+        2012,
+        "phi",
+        "11",
+        11.0,
+        "26",
+        26.0,
+        "21",
+        21.0,
+        "5",
+        5.0,
+        "5.5",
+        5.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        4,
+        0,
+        "2008",
+        2008,
+        "kc",
+        "7",
+        7.0,
+        "31",
+        31.0,
+        "25",
+        25.0,
+        "6",
+        6.0,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        8,
+        0,
+        "2011",
+        2011,
+        "phi",
+        "16",
+        16.0,
+        "40",
+        40.0,
+        "35",
+        35.0,
+        "5",
+        5.0,
+        "18",
+        18.0,
+        "3",
+        3.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        7,
+        0,
+        "2010",
+        2010,
+        "ten",
+        "16",
+        16.0,
+        "58",
+        58.0,
+        "44",
+        44.0,
+        "14",
+        14.0,
+        "12.5",
+        12.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e623bb49-2cdc-4fdd-a454-d9ae16c9c0e4",
+    "tables_id": "nt-8978",
+    "question": "Show records from table w for c1_number in range 2008-2012 sorted by c4_column.",
+    "sql": "SELECT * FROM w WHERE c1_number > 2007 AND c1_number < 2013 ORDER BY c4_number ASC;",
+    "result": [
+      [
+        5,
+        0,
+        "2008",
+        2008,
+        "sea",
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        10,
+        0,
+        "2012",
+        2012,
+        "jax",
+        "5",
+        5.0,
+        "11",
+        11.0,
+        "7",
+        7.0,
+        "4",
+        4.0,
+        "1.5",
+        1.5,
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        6,
+        0,
+        "2009",
+        2009,
+        "phi",
+        "12",
+        12.0,
+        "16",
+        16.0,
+        "11",
+        11.0,
+        "5",
+        5.0,
+        "2.5",
+        2.5,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        9,
+        0,
+        "2012",
+        2012,
+        "phi",
+        "11",
+        11.0,
+        "26",
+        26.0,
+        "21",
+        21.0,
+        "5",
+        5.0,
+        "5.5",
+        5.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        4,
+        0,
+        "2008",
+        2008,
+        "kc",
+        "7",
+        7.0,
+        "31",
+        31.0,
+        "25",
+        25.0,
+        "6",
+        6.0,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        8,
+        0,
+        "2011",
+        2011,
+        "phi",
+        "16",
+        16.0,
+        "40",
+        40.0,
+        "35",
+        35.0,
+        "5",
+        5.0,
+        "18",
+        18.0,
+        "3",
+        3.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        7,
+        0,
+        "2010",
+        2010,
+        "ten",
+        "16",
+        16.0,
+        "58",
+        58.0,
+        "44",
+        44.0,
+        "14",
+        14.0,
+        "12.5",
+        12.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1ea1025f-bbaa-4a39-9072-02e3d2683523",
+    "tables_id": "nt-8978",
+    "question": "List records from table w with c1_number between 2008 and 2012 ordered by c4_number",
+    "sql": "SELECT * FROM w WHERE c1_number > 2007 AND c1_number < 2013 ORDER BY c4_number ASC;",
+    "result": [
+      [
+        5,
+        0,
+        "2008",
+        2008,
+        "sea",
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        10,
+        0,
+        "2012",
+        2012,
+        "jax",
+        "5",
+        5.0,
+        "11",
+        11.0,
+        "7",
+        7.0,
+        "4",
+        4.0,
+        "1.5",
+        1.5,
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        6,
+        0,
+        "2009",
+        2009,
+        "phi",
+        "12",
+        12.0,
+        "16",
+        16.0,
+        "11",
+        11.0,
+        "5",
+        5.0,
+        "2.5",
+        2.5,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        9,
+        0,
+        "2012",
+        2012,
+        "phi",
+        "11",
+        11.0,
+        "26",
+        26.0,
+        "21",
+        21.0,
+        "5",
+        5.0,
+        "5.5",
+        5.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        4,
+        0,
+        "2008",
+        2008,
+        "kc",
+        "7",
+        7.0,
+        "31",
+        31.0,
+        "25",
+        25.0,
+        "6",
+        6.0,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        8,
+        0,
+        "2011",
+        2011,
+        "phi",
+        "16",
+        16.0,
+        "40",
+        40.0,
+        "35",
+        35.0,
+        "5",
+        5.0,
+        "18",
+        18.0,
+        "3",
+        3.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        7,
+        0,
+        "2010",
+        2010,
+        "ten",
+        "16",
+        16.0,
+        "58",
+        58.0,
+        "44",
+        44.0,
+        "14",
+        14.0,
+        "12.5",
+        12.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d4ce3333-af55-4bf0-9f9a-8be194cd3fd2",
+    "tables_id": "nt-8978",
+    "question": "Show records in table w where c1_number ranges from 2008 to 2012, ordered ascendingly according to c4_column.",
+    "sql": "SELECT * FROM w WHERE c1_number > 2007 AND c1_number < 2013 ORDER BY c4_number ASC;",
+    "result": [
+      [
+        5,
+        0,
+        "2008",
+        2008,
+        "sea",
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        10,
+        0,
+        "2012",
+        2012,
+        "jax",
+        "5",
+        5.0,
+        "11",
+        11.0,
+        "7",
+        7.0,
+        "4",
+        4.0,
+        "1.5",
+        1.5,
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        6,
+        0,
+        "2009",
+        2009,
+        "phi",
+        "12",
+        12.0,
+        "16",
+        16.0,
+        "11",
+        11.0,
+        "5",
+        5.0,
+        "2.5",
+        2.5,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        9,
+        0,
+        "2012",
+        2012,
+        "phi",
+        "11",
+        11.0,
+        "26",
+        26.0,
+        "21",
+        21.0,
+        "5",
+        5.0,
+        "5.5",
+        5.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        4,
+        0,
+        "2008",
+        2008,
+        "kc",
+        "7",
+        7.0,
+        "31",
+        31.0,
+        "25",
+        25.0,
+        "6",
+        6.0,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        8,
+        0,
+        "2011",
+        2011,
+        "phi",
+        "16",
+        16.0,
+        "40",
+        40.0,
+        "35",
+        35.0,
+        "5",
+        5.0,
+        "18",
+        18.0,
+        "3",
+        3.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        7,
+        0,
+        "2010",
+        2010,
+        "ten",
+        "16",
+        16.0,
+        "58",
+        58.0,
+        "44",
+        44.0,
+        "14",
+        14.0,
+        "12.5",
+        12.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "63724c3d-1a36-42e7-817f-a92a1de3d573",
+    "tables_id": "nt-8978",
+    "question": "Display records in table w where c1_number is within the range of 2008 to 2012, arranged in ascending order according to c4_number",
+    "sql": "SELECT * FROM w WHERE c1_number > 2007 AND c1_number < 2013 ORDER BY c4_number ASC;",
+    "result": [
+      [
+        5,
+        0,
+        "2008",
+        2008,
+        "sea",
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        10,
+        0,
+        "2012",
+        2012,
+        "jax",
+        "5",
+        5.0,
+        "11",
+        11.0,
+        "7",
+        7.0,
+        "4",
+        4.0,
+        "1.5",
+        1.5,
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        6,
+        0,
+        "2009",
+        2009,
+        "phi",
+        "12",
+        12.0,
+        "16",
+        16.0,
+        "11",
+        11.0,
+        "5",
+        5.0,
+        "2.5",
+        2.5,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        9,
+        0,
+        "2012",
+        2012,
+        "phi",
+        "11",
+        11.0,
+        "26",
+        26.0,
+        "21",
+        21.0,
+        "5",
+        5.0,
+        "5.5",
+        5.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        4,
+        0,
+        "2008",
+        2008,
+        "kc",
+        "7",
+        7.0,
+        "31",
+        31.0,
+        "25",
+        25.0,
+        "6",
+        6.0,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        8,
+        0,
+        "2011",
+        2011,
+        "phi",
+        "16",
+        16.0,
+        "40",
+        40.0,
+        "35",
+        35.0,
+        "5",
+        5.0,
+        "18",
+        18.0,
+        "3",
+        3.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        7,
+        0,
+        "2010",
+        2010,
+        "ten",
+        "16",
+        16.0,
+        "58",
+        58.0,
+        "44",
+        44.0,
+        "14",
+        14.0,
+        "12.5",
+        12.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "86880bdd-251f-422a-8dbf-41369133e474",
+    "tables_id": "nt-8978",
+    "question": "Produce the results from table w with c1_number values ranging from 2008 to 2012 sorted in ascending order of c4_number.",
+    "sql": "SELECT * FROM w WHERE c1_number > 2007 AND c1_number < 2013 ORDER BY c4_number ASC;",
+    "result": [
+      [
+        5,
+        0,
+        "2008",
+        2008,
+        "sea",
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        10,
+        0,
+        "2012",
+        2012,
+        "jax",
+        "5",
+        5.0,
+        "11",
+        11.0,
+        "7",
+        7.0,
+        "4",
+        4.0,
+        "1.5",
+        1.5,
+        "2",
+        2.0,
+        "1",
+        1.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        6,
+        0,
+        "2009",
+        2009,
+        "phi",
+        "12",
+        12.0,
+        "16",
+        16.0,
+        "11",
+        11.0,
+        "5",
+        5.0,
+        "2.5",
+        2.5,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        9,
+        0,
+        "2012",
+        2012,
+        "phi",
+        "11",
+        11.0,
+        "26",
+        26.0,
+        "21",
+        21.0,
+        "5",
+        5.0,
+        "5.5",
+        5.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        4,
+        0,
+        "2008",
+        2008,
+        "kc",
+        "7",
+        7.0,
+        "31",
+        31.0,
+        "25",
+        25.0,
+        "6",
+        6.0,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ],
+      [
+        8,
+        0,
+        "2011",
+        2011,
+        "phi",
+        "16",
+        16.0,
+        "40",
+        40.0,
+        "35",
+        35.0,
+        "5",
+        5.0,
+        "18",
+        18.0,
+        "3",
+        3.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "1",
+        1.0
+      ],
+      [
+        7,
+        0,
+        "2010",
+        2010,
+        "ten",
+        "16",
+        16.0,
+        "58",
+        58.0,
+        "44",
+        44.0,
+        "14",
+        14.0,
+        "12.5",
+        12.5,
+        "2",
+        2.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0,
+        "0",
+        0.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ada76c39-b847-4fa5-acff-ba902c8adb5f",
+    "tables_id": "nt-6815",
+    "question": "What is the c2_list_first associated with m_id where t_c2_list.c2_list equals to 'salen' and what is the corresponding c4 from table w?",
+    "sql": "\nSELECT t1.c2_list_first, t2.c4 \nFROM t_c2_list_first AS t1 \nJOIN w AS t2 ON t1.m_id = t2.id \nWHERE t2.c2 = 'salen';\n",
+    "result": [
+      [
+        "salen",
+        "norway anne margrethe hausken"
+      ],
+      [
+        "salen",
+        null
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "9fb4604e-3190-465a-8baf-616c3f1e2df1",
+    "tables_id": "nt-6815",
+    "question": "What is c2_list_first associated with m_id where t_c2_list.c2_list equals salen?",
+    "sql": "SELECT t1.c2_list_first, t2.c4 FROM t_c2_list_first AS t1 JOIN w AS t2 ON t1.m_id = t2.id WHERE t2.c2 = 'salen';",
+    "result": [
+      [
+        "salen",
+        "norway anne margrethe hausken"
+      ],
+      [
+        "salen",
+        null
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bad10318-5177-4ae9-be7b-2515db5f6848",
+    "tables_id": "nt-6815",
+    "question": "What is c4 and c2_list_first when t_c2_list.c2_list equals 'salen'?",
+    "sql": "SELECT t1.c2_list_first, t2.c4 FROM t_c2_list_first AS t1 JOIN w AS t2 ON t1.m_id = t2.id WHERE t2.c2 = 'salen';",
+    "result": [
+      [
+        "salen",
+        "norway anne margrethe hausken"
+      ],
+      [
+        "salen",
+        null
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ec8be4e2-07ad-4a04-86be-f21685e70e10",
+    "tables_id": "nt-6815",
+    "question": "What is c2_list_first corresponding to m_id where t_c2_list.c2_list matches 'salen'?",
+    "sql": "SELECT t1.c2_list_first, t2.c4 FROM t_c2_list_first AS t1 JOIN w AS t2 ON t1.m_id = t2.id WHERE t2.c2 = 'salen';",
+    "result": [
+      [
+        "salen",
+        "norway anne margrethe hausken"
+      ],
+      [
+        "salen",
+        null
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a9a3e180-8571-4bde-a72b-e0d5db930045",
+    "tables_id": "nt-6815",
+    "question": "What does c4 and c2_list_first correspond to where in w table c2 is 'salen'?",
+    "sql": "SELECT t1.c2_list_first, t2.c4 FROM t_c2_list_first AS t1 JOIN w AS t2 ON t1.m_id = t2.id WHERE t2.c2 = 'salen';",
+    "result": [
+      [
+        "salen",
+        "norway anne margrethe hausken"
+      ],
+      [
+        "salen",
+        null
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3208c5d9-1afb-4e05-b490-9fdbfa7b4696",
+    "tables_id": "nt-6815",
+    "question": "From the w table, what is c4 and corresponding c2_list_first when column c2 equals 'salen'?",
+    "sql": "SELECT t1.c2_list_first, t2.c4 FROM t_c2_list_first AS t1 JOIN w AS t2 ON t1.m_id = t2.id WHERE t2.c2 = 'salen';",
+    "result": [
+      [
+        "salen",
+        "norway anne margrethe hausken"
+      ],
+      [
+        "salen",
+        null
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "8868781a-1cf1-4285-94ce-f3e3761fc595",
+    "tables_id": "nt-6815",
+    "question": "c4 and c2_list_first when w table's c2 equals 'salen'?",
+    "sql": "SELECT t1.c2_list_first, t2.c4 FROM t_c2_list_first AS t1 JOIN w AS t2 ON t1.m_id = t2.id WHERE t2.c2 = 'salen';",
+    "result": [
+      [
+        "salen",
+        "norway anne margrethe hausken"
+      ],
+      [
+        "salen",
+        null
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e0e6f103-377f-46b0-9455-6a711da51fb7",
+    "tables_id": "nt-6815",
+    "question": "From w table, when c2 is salen, find c4 and corresponding c2_list_first",
+    "sql": "SELECT t1.c2_list_first, t2.c4 FROM t_c2_list_first AS t1 JOIN w AS t2 ON t1.m_id = t2.id WHERE t2.c2 = 'salen';",
+    "result": [
+      [
+        "salen",
+        "norway anne margrethe hausken"
+      ],
+      [
+        "salen",
+        null
+      ]
+    ],
+    "orginal": false
   }
 ]
