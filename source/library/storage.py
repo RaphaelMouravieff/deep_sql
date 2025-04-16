@@ -4,16 +4,43 @@
 import os
 import json
 import random
-from typing import List
-import faiss
-from source.library.utils import load_sentence
+from typing import Dict, List, Any
 import numpy as np
+import torch
 
-from typing import Dict, List, Tuple, Any, Union, Optional
+from sentence_transformers import SentenceTransformer
+
+from faiss import IndexFlatIP
 from langchain_community.vectorstores import FAISS
 
-from source.library.retrieval import get_emebdding_model
+from source.library.retrieval import get_emebdding_model, embeddings_vector_store
 
+
+def load_sentence(name: str, hf_tokens:str ,device=None):
+    # Detect device
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu") if device is None else device
+
+    # Convert model name into a valid directory name
+    model_dir = "models/" + name.replace("/", "_")
+    
+    # Ensure models directory exists
+    os.makedirs("models", exist_ok=True)
+
+    # Check if model is already saved
+    if os.path.exists(model_dir):
+        print(f"Loading model from disk: {model_dir}")
+        try:
+            model = SentenceTransformer(model_dir, device=device, trust_remote_code=True)
+            return model
+        except Exception as e:
+            print(f"Error loading model from {model_dir}, redownloading...\n{e}")
+
+    # Download and save the model
+    print(f"Downloading model: {name}")
+    model = SentenceTransformer(name, device=device, trust_remote_code=True)
+    model.save(model_dir)
+    
+    return model
 
 # Initialize the dataset library
 def init_library(library_path: str = "sql_dataset_library.json",vector_store_path='vector_store',model_name="Alibaba-NLP/gte-large-en-v1.5") -> List[Dict[str, Any]]:
@@ -24,7 +51,7 @@ def init_library(library_path: str = "sql_dataset_library.json",vector_store_pat
         vector_store = FAISS.load_local(vector_store_path, embeddings=get_emebdding_model(model_name) , allow_dangerous_deserialization=True)
         return library,vector_store
    
-    return [],embeddings_vector_store(model_name)
+    return [], embeddings_vector_store(model_name)
 
 # Save the library to disk
 def save_library(library: List[Dict[str, Any]],vector_store,library_path: str = "sql_dataset_library.json", vector_store_path='vector_store',):
@@ -52,7 +79,7 @@ class SQLLibrary:
 
         self.model = load_sentence(model_args.sentence_model_name_or_path, model_args.hf_tokens)
         dim = self.model.get_sentence_embedding_dimension()#1024  #  the vector dimension 
-        self.vect_index = faiss.IndexFlatIP(dim)# ini
+        self.vect_index = IndexFlatIP(dim)# ini
         if len(self.storage)>0:
             self.vect_index.add(np.array([self.storage[str(i)]['embedding'] for i in range(len(self.storage))]
                                          )

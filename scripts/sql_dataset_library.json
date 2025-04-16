@@ -3045,5 +3045,2672 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "b5df0a05-aefb-4bab-9b68-a71ff1cb0dc0",
+    "tables_id": "nt-9743",
+    "question": "Which stations (w.id) have 'grand junction' as their c3 address and what are the corresponding c5 lists?",
+    "sql": "\nSELECT w.id, t_c5_list.c5_list \nFROM w\nJOIN t_c3_address ON w.id = t_c3_address.m_id\nJOIN t_c5_list ON t_c3_address.m_id = t_c5_list.m_id\nWHERE c3_address='grand junction';\n",
+    "result": [
+      [
+        1,
+        "aaa"
+      ],
+      [
+        2,
+        "contemporary hit radio"
+      ],
+      [
+        2,
+        "top 40 (chr)"
+      ],
+      [
+        3,
+        "country"
+      ],
+      [
+        4,
+        "christian contemporary"
+      ],
+      [
+        5,
+        "adult hits"
+      ],
+      [
+        6,
+        "news talk information"
+      ],
+      [
+        7,
+        "christian contemporary"
+      ],
+      [
+        8,
+        "religious"
+      ],
+      [
+        9,
+        "oldies"
+      ],
+      [
+        10,
+        "variety"
+      ],
+      [
+        11,
+        "regional mexican"
+      ],
+      [
+        11,
+        "talk"
+      ],
+      [
+        12,
+        "news"
+      ],
+      [
+        12,
+        "talk"
+      ],
+      [
+        13,
+        "hot adult contemporary"
+      ],
+      [
+        14,
+        "news"
+      ],
+      [
+        14,
+        "public"
+      ],
+      [
+        14,
+        "talk"
+      ],
+      [
+        15,
+        "sports"
+      ],
+      [
+        15,
+        "talk"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "e0ad920b-8f7f-48a4-b016-47ec24c92beb",
+    "tables_id": "nt-9743",
+    "question": "Which stations have 'grand junction' as their c3 address and what are the corresponding c5 lists?",
+    "sql": "SQL Query",
+    "result": [
+      [
+        1,
+        "aaa"
+      ],
+      [
+        2,
+        "contemporary hit radio"
+      ],
+      [
+        2,
+        "top 40 (chr)"
+      ],
+      [
+        3,
+        "country"
+      ],
+      [
+        4,
+        "christian contemporary"
+      ],
+      [
+        5,
+        "adult hits"
+      ],
+      [
+        6,
+        "news talk information"
+      ],
+      [
+        7,
+        "christian contemporary"
+      ],
+      [
+        8,
+        "religious"
+      ],
+      [
+        9,
+        "oldies"
+      ],
+      [
+        10,
+        "variety"
+      ],
+      [
+        11,
+        "regional mexican"
+      ],
+      [
+        11,
+        "talk"
+      ],
+      [
+        12,
+        "news"
+      ],
+      [
+        12,
+        "talk"
+      ],
+      [
+        13,
+        "hot adult contemporary"
+      ],
+      [
+        14,
+        "news"
+      ],
+      [
+        14,
+        "public"
+      ],
+      [
+        14,
+        "talk"
+      ],
+      [
+        15,
+        "sports"
+      ],
+      [
+        15,
+        "talk"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "185ae683-8a2e-4e52-9f26-552ee81afb94",
+    "tables_id": "nt-9743",
+    "question": "What stations have 'grand junction' as their main address and what are the related c5 lists?",
+    "sql": "SQL Query",
+    "result": [
+      [
+        1,
+        "aaa"
+      ],
+      [
+        2,
+        "contemporary hit radio"
+      ],
+      [
+        2,
+        "top 40 (chr)"
+      ],
+      [
+        3,
+        "country"
+      ],
+      [
+        4,
+        "christian contemporary"
+      ],
+      [
+        5,
+        "adult hits"
+      ],
+      [
+        6,
+        "news talk information"
+      ],
+      [
+        7,
+        "christian contemporary"
+      ],
+      [
+        8,
+        "religious"
+      ],
+      [
+        9,
+        "oldies"
+      ],
+      [
+        10,
+        "variety"
+      ],
+      [
+        11,
+        "regional mexican"
+      ],
+      [
+        11,
+        "talk"
+      ],
+      [
+        12,
+        "news"
+      ],
+      [
+        12,
+        "talk"
+      ],
+      [
+        13,
+        "hot adult contemporary"
+      ],
+      [
+        14,
+        "news"
+      ],
+      [
+        14,
+        "public"
+      ],
+      [
+        14,
+        "talk"
+      ],
+      [
+        15,
+        "sports"
+      ],
+      [
+        15,
+        "talk"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b19a6fcf-968b-4cdd-9554-a285868a105a",
+    "tables_id": "nt-9743",
+    "question": "Which stations have 'grand junction' as their site and what are the corresponding c5 lists?",
+    "sql": "SQL Query",
+    "result": [
+      [
+        1,
+        "aaa"
+      ],
+      [
+        2,
+        "contemporary hit radio"
+      ],
+      [
+        2,
+        "top 40 (chr)"
+      ],
+      [
+        3,
+        "country"
+      ],
+      [
+        4,
+        "christian contemporary"
+      ],
+      [
+        5,
+        "adult hits"
+      ],
+      [
+        6,
+        "news talk information"
+      ],
+      [
+        7,
+        "christian contemporary"
+      ],
+      [
+        8,
+        "religious"
+      ],
+      [
+        9,
+        "oldies"
+      ],
+      [
+        10,
+        "variety"
+      ],
+      [
+        11,
+        "regional mexican"
+      ],
+      [
+        11,
+        "talk"
+      ],
+      [
+        12,
+        "news"
+      ],
+      [
+        12,
+        "talk"
+      ],
+      [
+        13,
+        "hot adult contemporary"
+      ],
+      [
+        14,
+        "news"
+      ],
+      [
+        14,
+        "public"
+      ],
+      [
+        14,
+        "talk"
+      ],
+      [
+        15,
+        "sports"
+      ],
+      [
+        15,
+        "talk"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3dec9126-a85f-4631-afe5-af72e7c77e40",
+    "tables_id": "nt-9743",
+    "question": "Which stations feature 'grand junction' as their main location and what are the associated c5 lists?",
+    "sql": "SQL Query",
+    "result": [
+      [
+        1,
+        "aaa"
+      ],
+      [
+        2,
+        "contemporary hit radio"
+      ],
+      [
+        2,
+        "top 40 (chr)"
+      ],
+      [
+        3,
+        "country"
+      ],
+      [
+        4,
+        "christian contemporary"
+      ],
+      [
+        5,
+        "adult hits"
+      ],
+      [
+        6,
+        "news talk information"
+      ],
+      [
+        7,
+        "christian contemporary"
+      ],
+      [
+        8,
+        "religious"
+      ],
+      [
+        9,
+        "oldies"
+      ],
+      [
+        10,
+        "variety"
+      ],
+      [
+        11,
+        "regional mexican"
+      ],
+      [
+        11,
+        "talk"
+      ],
+      [
+        12,
+        "news"
+      ],
+      [
+        12,
+        "talk"
+      ],
+      [
+        13,
+        "hot adult contemporary"
+      ],
+      [
+        14,
+        "news"
+      ],
+      [
+        14,
+        "public"
+      ],
+      [
+        14,
+        "talk"
+      ],
+      [
+        15,
+        "sports"
+      ],
+      [
+        15,
+        "talk"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "681b2ec0-fadb-4d4a-aeac-2c980267e171",
+    "tables_id": "nt-9743",
+    "question": "Could you list all stations that have 'grand junction' in their C3 address along with the corresponding c5 lists?",
+    "sql": "SQL Query",
+    "result": [
+      [
+        1,
+        "aaa"
+      ],
+      [
+        2,
+        "contemporary hit radio"
+      ],
+      [
+        2,
+        "top 40 (chr)"
+      ],
+      [
+        3,
+        "country"
+      ],
+      [
+        4,
+        "christian contemporary"
+      ],
+      [
+        5,
+        "adult hits"
+      ],
+      [
+        6,
+        "news talk information"
+      ],
+      [
+        7,
+        "christian contemporary"
+      ],
+      [
+        8,
+        "religious"
+      ],
+      [
+        9,
+        "oldies"
+      ],
+      [
+        10,
+        "variety"
+      ],
+      [
+        11,
+        "regional mexican"
+      ],
+      [
+        11,
+        "talk"
+      ],
+      [
+        12,
+        "news"
+      ],
+      [
+        12,
+        "talk"
+      ],
+      [
+        13,
+        "hot adult contemporary"
+      ],
+      [
+        14,
+        "news"
+      ],
+      [
+        14,
+        "public"
+      ],
+      [
+        14,
+        "talk"
+      ],
+      [
+        15,
+        "sports"
+      ],
+      [
+        15,
+        "talk"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "575170ad-b7c3-4d81-ba80-7c345db791b7",
+    "tables_id": "nt-9743",
+    "question": "List stations where 'grand junction' is the C3 address and their c5 lists.",
+    "sql": "SQL Query",
+    "result": [
+      [
+        1,
+        "aaa"
+      ],
+      [
+        2,
+        "contemporary hit radio"
+      ],
+      [
+        2,
+        "top 40 (chr)"
+      ],
+      [
+        3,
+        "country"
+      ],
+      [
+        4,
+        "christian contemporary"
+      ],
+      [
+        5,
+        "adult hits"
+      ],
+      [
+        6,
+        "news talk information"
+      ],
+      [
+        7,
+        "christian contemporary"
+      ],
+      [
+        8,
+        "religious"
+      ],
+      [
+        9,
+        "oldies"
+      ],
+      [
+        10,
+        "variety"
+      ],
+      [
+        11,
+        "regional mexican"
+      ],
+      [
+        11,
+        "talk"
+      ],
+      [
+        12,
+        "news"
+      ],
+      [
+        12,
+        "talk"
+      ],
+      [
+        13,
+        "hot adult contemporary"
+      ],
+      [
+        14,
+        "news"
+      ],
+      [
+        14,
+        "public"
+      ],
+      [
+        14,
+        "talk"
+      ],
+      [
+        15,
+        "sports"
+      ],
+      [
+        15,
+        "talk"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "36d58bd4-5e94-464e-9e1f-5a441a815676",
+    "tables_id": "nt-9743",
+    "question": "What is the c3 address of the entries in table w where c4 is 'townsquare media group'?",
+    "sql": "\nSELECT t2.c3_address \nFROM w AS t1\nJOIN t_c3_address AS t2 ON t1.id = t2.m_id\nWHERE t1.c4 = 'townsquare media group'\n",
+    "result": [
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "fruita"
+      ],
+      [
+        "delta"
+      ],
+      [
+        "colorado"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "828c7934-fa41-4723-8911-078026d4b642",
+    "tables_id": "nt-9743",
+    "question": "What are the entries in table w with c4 as 'townsquare media group' and what is their c3 address?",
+    "sql": "SELECT t2.c3_address FROM w AS t1 JOIN t_c3_address AS t2 ON t1.id = t2.m_id WHERE t1.c4 = 'townsquare media group';",
+    "result": [
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "fruita"
+      ],
+      [
+        "delta"
+      ],
+      [
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "52ec3a8c-0936-44a8-92c3-0d5a9321add0",
+    "tables_id": "nt-9743",
+    "question": "What are the records in table w with c4 as 'townsquare media group' and what is their address?",
+    "sql": "SELECT t2.c3_address FROM w AS t1 JOIN t_c3_address AS t2 ON t1.id = t2.m_id WHERE t1.c4 = 'townsquare media group';",
+    "result": [
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "fruita"
+      ],
+      [
+        "delta"
+      ],
+      [
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a1ce6a34-d45e-433a-9ec2-727dbad17120",
+    "tables_id": "nt-9743",
+    "question": "Find all instances related to 'townsquare media group' in table w and return their c3 addresses.",
+    "sql": "SELECT t2.c3_address FROM w AS t1 JOIN t_c3_address AS t2 ON t1.id = t2.m_id WHERE t1.c4 = 'townsquare media group';",
+    "result": [
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "fruita"
+      ],
+      [
+        "delta"
+      ],
+      [
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "167eec80-9b6e-4329-ae26-821acd72b4ed",
+    "tables_id": "nt-9743",
+    "question": "List the c3 addresses for entries with 'townsquare media group' as c4.",
+    "sql": "SELECT t2.c3_address FROM w AS t1 JOIN t_c3_address AS t2 ON t1.id = t2.m_id WHERE t1.c4 = 'townsquare media group';",
+    "result": [
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "fruita"
+      ],
+      [
+        "delta"
+      ],
+      [
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0d7faddf-d3a2-49ea-b429-ffb6775a9d69",
+    "tables_id": "nt-9743",
+    "question": "Provide the c3 addresses in table w where 'townsquare media group' is listed under column c4.",
+    "sql": "SELECT t2.c3_address FROM w AS t1 JOIN t_c3_address AS t2 ON t1.id = t2.m_id WHERE t1.c4 = 'townsquare media group';",
+    "result": [
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "fruita"
+      ],
+      [
+        "delta"
+      ],
+      [
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9ebea59b-6179-4cdc-8787-7ddcc02ee2a6",
+    "tables_id": "nt-9743",
+    "question": "Return the c3 addresses for all records with 'townsquare media group' as their entity.",
+    "sql": "SELECT t2.c3_address FROM w AS t1 JOIN t_c3_address AS t2 ON t1.id = t2.m_id WHERE t1.c4 = 'townsquare media group';",
+    "result": [
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "grand junction"
+      ],
+      [
+        "fruita"
+      ],
+      [
+        "delta"
+      ],
+      [
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "29c0a8b4-e8ef-4151-b1cb-515e478a3c45",
+    "tables_id": "nt-9743",
+    "question": "What are the station IDs (from table w) along with their corresponding c3_address (from t_c3_address) where the value of c5_length is greater than 1?",
+    "sql": "\nSELECT w.id AS station_id, t_c3_address.c3_address \nFROM w \nJOIN t_c3_address ON w.id = t_c3_address.m_id \nWHERE w.c5_length > 1;\n",
+    "result": [
+      [
+        2,
+        "grand junction"
+      ],
+      [
+        11,
+        "grand junction"
+      ],
+      [
+        12,
+        "grand junction"
+      ],
+      [
+        14,
+        "grand junction"
+      ],
+      [
+        15,
+        "grand junction"
+      ],
+      [
+        25,
+        "montrose"
+      ],
+      [
+        25,
+        "colorado"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "ce6e1374-95e5-443d-baa2-76e037f6f5dc",
+    "tables_id": "nt-9743",
+    "question": "What station IDs and c3_address where c5_length is greater than 1?",
+    "sql": "SELECT w.id AS station_id, t_c3_address.c3_address FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c5_length > 1;",
+    "result": [
+      [
+        2,
+        "grand junction"
+      ],
+      [
+        11,
+        "grand junction"
+      ],
+      [
+        12,
+        "grand junction"
+      ],
+      [
+        14,
+        "grand junction"
+      ],
+      [
+        15,
+        "grand junction"
+      ],
+      [
+        25,
+        "montrose"
+      ],
+      [
+        25,
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "737d685c-b9fb-4348-9992-b5e4bdb1e54a",
+    "tables_id": "nt-9743",
+    "question": "Find stations with c5_length more than 1 and their corresponding addresses.",
+    "sql": "SELECT w.id AS station_id, t_c3_address.c3_address FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c5_length > 1;",
+    "result": [
+      [
+        2,
+        "grand junction"
+      ],
+      [
+        11,
+        "grand junction"
+      ],
+      [
+        12,
+        "grand junction"
+      ],
+      [
+        14,
+        "grand junction"
+      ],
+      [
+        15,
+        "grand junction"
+      ],
+      [
+        25,
+        "montrose"
+      ],
+      [
+        25,
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "143cabfa-5ccd-49f1-a4d8-faafde49085f",
+    "tables_id": "nt-9743",
+    "question": "What stations IDs with c5_length above 1 and their related addresses?",
+    "sql": "SELECT w.id AS station_id, t_c3_address.c3_address FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c5_length > 1;",
+    "result": [
+      [
+        2,
+        "grand junction"
+      ],
+      [
+        11,
+        "grand junction"
+      ],
+      [
+        12,
+        "grand junction"
+      ],
+      [
+        14,
+        "grand junction"
+      ],
+      [
+        15,
+        "grand junction"
+      ],
+      [
+        25,
+        "montrose"
+      ],
+      [
+        25,
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5d2bea3b-04f9-4dad-899e-81ac005648ce",
+    "tables_id": "nt-9743",
+    "question": "Where are IDs with c5_length greater than 1 and their corresponding addresses?",
+    "sql": "SELECT w.id AS station_id, t_c3_address.c3_address FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c5_length > 1;",
+    "result": [
+      [
+        2,
+        "grand junction"
+      ],
+      [
+        11,
+        "grand junction"
+      ],
+      [
+        12,
+        "grand junction"
+      ],
+      [
+        14,
+        "grand junction"
+      ],
+      [
+        15,
+        "grand junction"
+      ],
+      [
+        25,
+        "montrose"
+      ],
+      [
+        25,
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d0aeea7f-d365-4f98-b582-c68955fb4110",
+    "tables_id": "nt-9743",
+    "question": "Identify the station ids which have a c5_length longer than 1 and their respective addresses.",
+    "sql": "SELECT w.id AS station_id, t_c3_address.c3_address FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c5_length > 1;",
+    "result": [
+      [
+        2,
+        "grand junction"
+      ],
+      [
+        11,
+        "grand junction"
+      ],
+      [
+        12,
+        "grand junction"
+      ],
+      [
+        14,
+        "grand junction"
+      ],
+      [
+        15,
+        "grand junction"
+      ],
+      [
+        25,
+        "montrose"
+      ],
+      [
+        25,
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "799f95e3-fa1f-48d5-a194-12897c72d617",
+    "tables_id": "nt-9743",
+    "question": "Which station IDs with c5_length > 1 have what addresses?",
+    "sql": "SELECT w.id AS station_id, t_c3_address.c3_address FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c5_length > 1;",
+    "result": [
+      [
+        2,
+        "grand junction"
+      ],
+      [
+        11,
+        "grand junction"
+      ],
+      [
+        12,
+        "grand junction"
+      ],
+      [
+        14,
+        "grand junction"
+      ],
+      [
+        15,
+        "grand junction"
+      ],
+      [
+        25,
+        "montrose"
+      ],
+      [
+        25,
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "62ba2295-3c89-4f2f-8011-1d42f4b36835",
+    "tables_id": "nt-9743",
+    "question": "List out stations that have a c5_length more than 1 and their addresses.",
+    "sql": "SELECT w.id AS station_id, t_c3_address.c3_address FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c5_length > 1;",
+    "result": [
+      [
+        2,
+        "grand junction"
+      ],
+      [
+        11,
+        "grand junction"
+      ],
+      [
+        12,
+        "grand junction"
+      ],
+      [
+        14,
+        "grand junction"
+      ],
+      [
+        15,
+        "grand junction"
+      ],
+      [
+        25,
+        "montrose"
+      ],
+      [
+        25,
+        "colorado"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "29ee5cdf-95b7-483b-b65c-4d3ae9d3c1c4",
+    "tables_id": "nt-1352",
+    "question": "Find the player's full name (c2), age (c3_number) where their country of origin (c6) starts with either 'A' or 'U'.",
+    "sql": "\nSELECT c2, c3_number \nFROM w \nWHERE c6 LIKE 'A%' OR c6 LIKE 'U%';\n",
+    "result": [
+      [
+        "roberto carlos da silva rocha",
+        125.0
+      ],
+      [
+        "ronaldo luis nazario de lima",
+        98.0
+      ],
+      [
+        "cristiano marques gomes",
+        17.0
+      ],
+      [
+        "rafael augusto sobis do nascimento",
+        8.0
+      ],
+      [
+        "lucas pezzini leiva",
+        21.0
+      ],
+      [
+        "ramires santos do nascimento",
+        34.0
+      ],
+      [
+        "neymar da silva santos junior",
+        44.0
+      ],
+      [
+        "david luiz moreira marinho",
+        27.0
+      ],
+      [
+        "paulo henrique chagas de lima",
+        8.0
+      ],
+      [
+        "victor leandro bagy",
+        5.0
+      ],
+      [
+        "andre felipe ribeiro de souza",
+        4.0
+      ],
+      [
+        "jucilei da silva",
+        2.0
+      ],
+      [
+        "ederson honorato campos",
+        1.0
+      ],
+      [
+        "douglas dos santos",
+        1.0
+      ],
+      [
+        "oscar dos santos emboaba junior",
+        22.0
+      ],
+      [
+        "jose paulo bezerra maciel junior",
+        17.0
+      ],
+      [
+        "anderson vital da silva",
+        8.0
+      ],
+      [
+        "jefferson de oliveira galvao",
+        7.0
+      ],
+      [
+        "danilo luiz da silva",
+        6.0
+      ],
+      [
+        "carlos henrique casimiro",
+        5.0
+      ],
+      [
+        "carlos renato de abreu",
+        1.0
+      ],
+      [
+        "romulo borges monteiro",
+        8.0
+      ],
+      [
+        "bruno cortes barbosa",
+        1.0
+      ],
+      [
+        "humberlito borges teixeira",
+        1.0
+      ],
+      [
+        "rafael cabral barbosa",
+        3.0
+      ],
+      [
+        "lucas rios marques",
+        2.0
+      ],
+      [
+        "bernard anicio caldeira duarte",
+        5.0
+      ],
+      [
+        "jean raphael vanderlei moreira",
+        5.0
+      ],
+      [
+        "fabio santos romeu",
+        3.0
+      ],
+      [
+        "diego cavalieri",
+        2.0
+      ],
+      [
+        "carlos andrade souza",
+        1.0
+      ],
+      [
+        "severino dos ramos durval da silva",
+        1.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "72852bb0-7f67-4df3-8dd5-3f550db07537",
+    "tables_id": "nt-1352",
+    "question": "Find the players' names and ages if their countries start with A or U.",
+    "sql": "SELECT c2, c3_number FROM w WHERE c6 LIKE 'A%' OR c6 LIKE 'U%'",
+    "result": [
+      [
+        "roberto carlos da silva rocha",
+        125.0
+      ],
+      [
+        "ronaldo luis nazario de lima",
+        98.0
+      ],
+      [
+        "cristiano marques gomes",
+        17.0
+      ],
+      [
+        "rafael augusto sobis do nascimento",
+        8.0
+      ],
+      [
+        "lucas pezzini leiva",
+        21.0
+      ],
+      [
+        "ramires santos do nascimento",
+        34.0
+      ],
+      [
+        "neymar da silva santos junior",
+        44.0
+      ],
+      [
+        "david luiz moreira marinho",
+        27.0
+      ],
+      [
+        "paulo henrique chagas de lima",
+        8.0
+      ],
+      [
+        "victor leandro bagy",
+        5.0
+      ],
+      [
+        "andre felipe ribeiro de souza",
+        4.0
+      ],
+      [
+        "jucilei da silva",
+        2.0
+      ],
+      [
+        "ederson honorato campos",
+        1.0
+      ],
+      [
+        "douglas dos santos",
+        1.0
+      ],
+      [
+        "oscar dos santos emboaba junior",
+        22.0
+      ],
+      [
+        "jose paulo bezerra maciel junior",
+        17.0
+      ],
+      [
+        "anderson vital da silva",
+        8.0
+      ],
+      [
+        "jefferson de oliveira galvao",
+        7.0
+      ],
+      [
+        "danilo luiz da silva",
+        6.0
+      ],
+      [
+        "carlos henrique casimiro",
+        5.0
+      ],
+      [
+        "carlos renato de abreu",
+        1.0
+      ],
+      [
+        "romulo borges monteiro",
+        8.0
+      ],
+      [
+        "bruno cortes barbosa",
+        1.0
+      ],
+      [
+        "humberlito borges teixeira",
+        1.0
+      ],
+      [
+        "rafael cabral barbosa",
+        3.0
+      ],
+      [
+        "lucas rios marques",
+        2.0
+      ],
+      [
+        "bernard anicio caldeira duarte",
+        5.0
+      ],
+      [
+        "jean raphael vanderlei moreira",
+        5.0
+      ],
+      [
+        "fabio santos romeu",
+        3.0
+      ],
+      [
+        "diego cavalieri",
+        2.0
+      ],
+      [
+        "carlos andrade souza",
+        1.0
+      ],
+      [
+        "severino dos ramos durval da silva",
+        1.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "431d695f-8975-4dd0-8d56-04fea781244d",
+    "tables_id": "nt-1352",
+    "question": "Find the players' names (c2), ages (c3_number) where their home countries (c6) start with either 'A' or 'U'.",
+    "sql": "SELECT c2, c3_number FROM w WHERE c6 LIKE 'A%' OR c6 LIKE 'U%'",
+    "result": [
+      [
+        "roberto carlos da silva rocha",
+        125.0
+      ],
+      [
+        "ronaldo luis nazario de lima",
+        98.0
+      ],
+      [
+        "cristiano marques gomes",
+        17.0
+      ],
+      [
+        "rafael augusto sobis do nascimento",
+        8.0
+      ],
+      [
+        "lucas pezzini leiva",
+        21.0
+      ],
+      [
+        "ramires santos do nascimento",
+        34.0
+      ],
+      [
+        "neymar da silva santos junior",
+        44.0
+      ],
+      [
+        "david luiz moreira marinho",
+        27.0
+      ],
+      [
+        "paulo henrique chagas de lima",
+        8.0
+      ],
+      [
+        "victor leandro bagy",
+        5.0
+      ],
+      [
+        "andre felipe ribeiro de souza",
+        4.0
+      ],
+      [
+        "jucilei da silva",
+        2.0
+      ],
+      [
+        "ederson honorato campos",
+        1.0
+      ],
+      [
+        "douglas dos santos",
+        1.0
+      ],
+      [
+        "oscar dos santos emboaba junior",
+        22.0
+      ],
+      [
+        "jose paulo bezerra maciel junior",
+        17.0
+      ],
+      [
+        "anderson vital da silva",
+        8.0
+      ],
+      [
+        "jefferson de oliveira galvao",
+        7.0
+      ],
+      [
+        "danilo luiz da silva",
+        6.0
+      ],
+      [
+        "carlos henrique casimiro",
+        5.0
+      ],
+      [
+        "carlos renato de abreu",
+        1.0
+      ],
+      [
+        "romulo borges monteiro",
+        8.0
+      ],
+      [
+        "bruno cortes barbosa",
+        1.0
+      ],
+      [
+        "humberlito borges teixeira",
+        1.0
+      ],
+      [
+        "rafael cabral barbosa",
+        3.0
+      ],
+      [
+        "lucas rios marques",
+        2.0
+      ],
+      [
+        "bernard anicio caldeira duarte",
+        5.0
+      ],
+      [
+        "jean raphael vanderlei moreira",
+        5.0
+      ],
+      [
+        "fabio santos romeu",
+        3.0
+      ],
+      [
+        "diego cavalieri",
+        2.0
+      ],
+      [
+        "carlos andrade souza",
+        1.0
+      ],
+      [
+        "severino dos ramos durval da silva",
+        1.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5040edec-d770-4a19-8b4b-66ed30c740d4",
+    "tables_id": "nt-1352",
+    "question": "Retrieve the player identifiers (c2) and ages (c3_number) where their places of origin (c6) begin with either 'A' or 'U'.",
+    "sql": "SELECT c2, c3_number FROM w WHERE c6 LIKE 'A%' OR c6 LIKE 'U%'",
+    "result": [
+      [
+        "roberto carlos da silva rocha",
+        125.0
+      ],
+      [
+        "ronaldo luis nazario de lima",
+        98.0
+      ],
+      [
+        "cristiano marques gomes",
+        17.0
+      ],
+      [
+        "rafael augusto sobis do nascimento",
+        8.0
+      ],
+      [
+        "lucas pezzini leiva",
+        21.0
+      ],
+      [
+        "ramires santos do nascimento",
+        34.0
+      ],
+      [
+        "neymar da silva santos junior",
+        44.0
+      ],
+      [
+        "david luiz moreira marinho",
+        27.0
+      ],
+      [
+        "paulo henrique chagas de lima",
+        8.0
+      ],
+      [
+        "victor leandro bagy",
+        5.0
+      ],
+      [
+        "andre felipe ribeiro de souza",
+        4.0
+      ],
+      [
+        "jucilei da silva",
+        2.0
+      ],
+      [
+        "ederson honorato campos",
+        1.0
+      ],
+      [
+        "douglas dos santos",
+        1.0
+      ],
+      [
+        "oscar dos santos emboaba junior",
+        22.0
+      ],
+      [
+        "jose paulo bezerra maciel junior",
+        17.0
+      ],
+      [
+        "anderson vital da silva",
+        8.0
+      ],
+      [
+        "jefferson de oliveira galvao",
+        7.0
+      ],
+      [
+        "danilo luiz da silva",
+        6.0
+      ],
+      [
+        "carlos henrique casimiro",
+        5.0
+      ],
+      [
+        "carlos renato de abreu",
+        1.0
+      ],
+      [
+        "romulo borges monteiro",
+        8.0
+      ],
+      [
+        "bruno cortes barbosa",
+        1.0
+      ],
+      [
+        "humberlito borges teixeira",
+        1.0
+      ],
+      [
+        "rafael cabral barbosa",
+        3.0
+      ],
+      [
+        "lucas rios marques",
+        2.0
+      ],
+      [
+        "bernard anicio caldeira duarte",
+        5.0
+      ],
+      [
+        "jean raphael vanderlei moreira",
+        5.0
+      ],
+      [
+        "fabio santos romeu",
+        3.0
+      ],
+      [
+        "diego cavalieri",
+        2.0
+      ],
+      [
+        "carlos andrade souza",
+        1.0
+      ],
+      [
+        "severino dos ramos durval da silva",
+        1.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a3e31f09-dffb-4b01-bf73-ae4c1d022388",
+    "tables_id": "nt-1352",
+    "question": "What are the player names (c2) and their ages (c3_number) in cases where the players' countries of origin (c6) start with 'A' or 'U'?",
+    "sql": "SELECT c2, c3_number FROM w WHERE c6 LIKE 'A%' OR c6 LIKE 'U%'",
+    "result": [
+      [
+        "roberto carlos da silva rocha",
+        125.0
+      ],
+      [
+        "ronaldo luis nazario de lima",
+        98.0
+      ],
+      [
+        "cristiano marques gomes",
+        17.0
+      ],
+      [
+        "rafael augusto sobis do nascimento",
+        8.0
+      ],
+      [
+        "lucas pezzini leiva",
+        21.0
+      ],
+      [
+        "ramires santos do nascimento",
+        34.0
+      ],
+      [
+        "neymar da silva santos junior",
+        44.0
+      ],
+      [
+        "david luiz moreira marinho",
+        27.0
+      ],
+      [
+        "paulo henrique chagas de lima",
+        8.0
+      ],
+      [
+        "victor leandro bagy",
+        5.0
+      ],
+      [
+        "andre felipe ribeiro de souza",
+        4.0
+      ],
+      [
+        "jucilei da silva",
+        2.0
+      ],
+      [
+        "ederson honorato campos",
+        1.0
+      ],
+      [
+        "douglas dos santos",
+        1.0
+      ],
+      [
+        "oscar dos santos emboaba junior",
+        22.0
+      ],
+      [
+        "jose paulo bezerra maciel junior",
+        17.0
+      ],
+      [
+        "anderson vital da silva",
+        8.0
+      ],
+      [
+        "jefferson de oliveira galvao",
+        7.0
+      ],
+      [
+        "danilo luiz da silva",
+        6.0
+      ],
+      [
+        "carlos henrique casimiro",
+        5.0
+      ],
+      [
+        "carlos renato de abreu",
+        1.0
+      ],
+      [
+        "romulo borges monteiro",
+        8.0
+      ],
+      [
+        "bruno cortes barbosa",
+        1.0
+      ],
+      [
+        "humberlito borges teixeira",
+        1.0
+      ],
+      [
+        "rafael cabral barbosa",
+        3.0
+      ],
+      [
+        "lucas rios marques",
+        2.0
+      ],
+      [
+        "bernard anicio caldeira duarte",
+        5.0
+      ],
+      [
+        "jean raphael vanderlei moreira",
+        5.0
+      ],
+      [
+        "fabio santos romeu",
+        3.0
+      ],
+      [
+        "diego cavalieri",
+        2.0
+      ],
+      [
+        "carlos andrade souza",
+        1.0
+      ],
+      [
+        "severino dos ramos durval da silva",
+        1.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "780d8174-f763-4d96-96ac-12c69bf71c72",
+    "tables_id": "nt-1352",
+    "question": "Get the player names (c2) and ages (c3_number) if their countries of origin (c6) start with 'A' or 'U'",
+    "sql": "SELECT c2, c3_number FROM w WHERE c6 LIKE 'A%' OR c6 LIKE 'U%'",
+    "result": [
+      [
+        "roberto carlos da silva rocha",
+        125.0
+      ],
+      [
+        "ronaldo luis nazario de lima",
+        98.0
+      ],
+      [
+        "cristiano marques gomes",
+        17.0
+      ],
+      [
+        "rafael augusto sobis do nascimento",
+        8.0
+      ],
+      [
+        "lucas pezzini leiva",
+        21.0
+      ],
+      [
+        "ramires santos do nascimento",
+        34.0
+      ],
+      [
+        "neymar da silva santos junior",
+        44.0
+      ],
+      [
+        "david luiz moreira marinho",
+        27.0
+      ],
+      [
+        "paulo henrique chagas de lima",
+        8.0
+      ],
+      [
+        "victor leandro bagy",
+        5.0
+      ],
+      [
+        "andre felipe ribeiro de souza",
+        4.0
+      ],
+      [
+        "jucilei da silva",
+        2.0
+      ],
+      [
+        "ederson honorato campos",
+        1.0
+      ],
+      [
+        "douglas dos santos",
+        1.0
+      ],
+      [
+        "oscar dos santos emboaba junior",
+        22.0
+      ],
+      [
+        "jose paulo bezerra maciel junior",
+        17.0
+      ],
+      [
+        "anderson vital da silva",
+        8.0
+      ],
+      [
+        "jefferson de oliveira galvao",
+        7.0
+      ],
+      [
+        "danilo luiz da silva",
+        6.0
+      ],
+      [
+        "carlos henrique casimiro",
+        5.0
+      ],
+      [
+        "carlos renato de abreu",
+        1.0
+      ],
+      [
+        "romulo borges monteiro",
+        8.0
+      ],
+      [
+        "bruno cortes barbosa",
+        1.0
+      ],
+      [
+        "humberlito borges teixeira",
+        1.0
+      ],
+      [
+        "rafael cabral barbosa",
+        3.0
+      ],
+      [
+        "lucas rios marques",
+        2.0
+      ],
+      [
+        "bernard anicio caldeira duarte",
+        5.0
+      ],
+      [
+        "jean raphael vanderlei moreira",
+        5.0
+      ],
+      [
+        "fabio santos romeu",
+        3.0
+      ],
+      [
+        "diego cavalieri",
+        2.0
+      ],
+      [
+        "carlos andrade souza",
+        1.0
+      ],
+      [
+        "severino dos ramos durval da silva",
+        1.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "7a39e9cb-bda5-463f-881b-c0d4d3917f6a",
+    "tables_id": "nt-1352",
+    "question": "List the player names (c2) and their ages (c3_number) for those players whose origin countries (c6) start with 'A' or 'U'.",
+    "sql": "SELECT c2, c3_number FROM w WHERE c6 LIKE 'A%' OR c6 LIKE 'U%'",
+    "result": [
+      [
+        "roberto carlos da silva rocha",
+        125.0
+      ],
+      [
+        "ronaldo luis nazario de lima",
+        98.0
+      ],
+      [
+        "cristiano marques gomes",
+        17.0
+      ],
+      [
+        "rafael augusto sobis do nascimento",
+        8.0
+      ],
+      [
+        "lucas pezzini leiva",
+        21.0
+      ],
+      [
+        "ramires santos do nascimento",
+        34.0
+      ],
+      [
+        "neymar da silva santos junior",
+        44.0
+      ],
+      [
+        "david luiz moreira marinho",
+        27.0
+      ],
+      [
+        "paulo henrique chagas de lima",
+        8.0
+      ],
+      [
+        "victor leandro bagy",
+        5.0
+      ],
+      [
+        "andre felipe ribeiro de souza",
+        4.0
+      ],
+      [
+        "jucilei da silva",
+        2.0
+      ],
+      [
+        "ederson honorato campos",
+        1.0
+      ],
+      [
+        "douglas dos santos",
+        1.0
+      ],
+      [
+        "oscar dos santos emboaba junior",
+        22.0
+      ],
+      [
+        "jose paulo bezerra maciel junior",
+        17.0
+      ],
+      [
+        "anderson vital da silva",
+        8.0
+      ],
+      [
+        "jefferson de oliveira galvao",
+        7.0
+      ],
+      [
+        "danilo luiz da silva",
+        6.0
+      ],
+      [
+        "carlos henrique casimiro",
+        5.0
+      ],
+      [
+        "carlos renato de abreu",
+        1.0
+      ],
+      [
+        "romulo borges monteiro",
+        8.0
+      ],
+      [
+        "bruno cortes barbosa",
+        1.0
+      ],
+      [
+        "humberlito borges teixeira",
+        1.0
+      ],
+      [
+        "rafael cabral barbosa",
+        3.0
+      ],
+      [
+        "lucas rios marques",
+        2.0
+      ],
+      [
+        "bernard anicio caldeira duarte",
+        5.0
+      ],
+      [
+        "jean raphael vanderlei moreira",
+        5.0
+      ],
+      [
+        "fabio santos romeu",
+        3.0
+      ],
+      [
+        "diego cavalieri",
+        2.0
+      ],
+      [
+        "carlos andrade souza",
+        1.0
+      ],
+      [
+        "severino dos ramos durval da silva",
+        1.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "fb50bf07-6b07-4513-8c4b-75c94f2cf89e",
+    "tables_id": "nt-1352",
+    "question": "What is the full name of the player who was born on June 6, 2009?",
+    "sql": "\nSELECT c2 FROM w \nWHERE c5_parsed = '2009-06-06';\n",
+    "result": [
+      [
+        "ramires santos do nascimento"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "1059cfd3-a8b7-4bfc-a35c-ab08d7603b94",
+    "tables_id": "nt-1352",
+    "question": "What is the full name of a player born on this specific date?",
+    "sql": "SELECT c2 FROM w WHERE c5_parsed = '2009-06-06';",
+    "result": [
+      [
+        "ramires santos do nascimento"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "93e93d0d-2e28-41d3-a142-05d34cfe190f",
+    "tables_id": "nt-1352",
+    "question": "What is the full name of a player from 2009?",
+    "sql": "SELECT c2 FROM w WHERE c5_parsed = '2009-06-06';",
+    "result": [
+      [
+        "ramires santos do nascimento"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d4a743ae-baea-473a-a97d-3e05e3cbf580",
+    "tables_id": "nt-1352",
+    "question": "What is the name of a player who was born on this specific date?",
+    "sql": "SELECT c2 FROM w WHERE c5_parsed = '2009-06-06';",
+    "result": [
+      [
+        "ramires santos do nascimento"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "01107467-b145-4b0a-b5c1-1241f0ca86ba",
+    "tables_id": "nt-1352",
+    "question": "What is the full name of a player that came into existence on this specific date?",
+    "sql": "SELECT c2 FROM w WHERE c5_parsed = '2009-06-06';",
+    "result": [
+      [
+        "ramires santos do nascimento"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3fada874-d20c-4a53-bb23-3d9c2cfe7dd4",
+    "tables_id": "nt-1352",
+    "question": "Find the full name of a player on their birth date?",
+    "sql": "SELECT c2 FROM w WHERE c5_parsed = '2009-06-06';",
+    "result": [
+      [
+        "ramires santos do nascimento"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d0522d13-7040-4501-b8fd-7294f117fdaa",
+    "tables_id": "nt-1352",
+    "question": "Who is the full named player born in 2009?",
+    "sql": "SELECT c2 FROM w WHERE c5_parsed = '2009-06-06';",
+    "result": [
+      [
+        "ramires santos do nascimento"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "8ffbbdd1-9c55-459c-ab3b-bf9fe9a35193",
+    "tables_id": "nt-1352",
+    "question": "Which specific day did this player come into existence?",
+    "sql": "SELECT c2 FROM w WHERE c5_parsed = '2009-06-06';",
+    "result": [
+      [
+        "ramires santos do nascimento"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9386cfb9-0ee6-4397-8012-1be1196cced9",
+    "tables_id": "nt-8284",
+    "question": "What is the total c3_number for each country listed under c2?",
+    "sql": "\nSELECT c2, SUM(c3_number) AS total_c3_number\nFROM w\nGROUP BY c2;\n",
+    "result": [
+      [
+        "australia",
+        8.0
+      ],
+      [
+        "bulgaria",
+        6.0
+      ],
+      [
+        "east germany (gdr)",
+        20.0
+      ],
+      [
+        "hungary",
+        6.0
+      ],
+      [
+        "italy",
+        5.0
+      ],
+      [
+        "japan",
+        13.0
+      ],
+      [
+        "poland",
+        7.0
+      ],
+      [
+        "soviet union",
+        50.0
+      ],
+      [
+        "united states",
+        33.0
+      ],
+      [
+        "west germany (frg)",
+        13.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "3fb82f00-0f6c-4863-b499-a28e0bd298f7",
+    "tables_id": "nt-8284",
+    "question": "total c3_number per country",
+    "sql": "SELECT c2, SUM(c3_number) AS total_c3_number FROM w GROUP BY c2;",
+    "result": [
+      [
+        "australia",
+        8.0
+      ],
+      [
+        "bulgaria",
+        6.0
+      ],
+      [
+        "east germany (gdr)",
+        20.0
+      ],
+      [
+        "hungary",
+        6.0
+      ],
+      [
+        "italy",
+        5.0
+      ],
+      [
+        "japan",
+        13.0
+      ],
+      [
+        "poland",
+        7.0
+      ],
+      [
+        "soviet union",
+        50.0
+      ],
+      [
+        "united states",
+        33.0
+      ],
+      [
+        "west germany (frg)",
+        13.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "52abad8f-3897-4e58-99f6-b3988c3fea9a",
+    "tables_id": "nt-8284",
+    "question": "total c3_number for each country",
+    "sql": "SELECT c2, SUM(c3_number) AS total_c3_number FROM w GROUP BY c2;",
+    "result": [
+      [
+        "australia",
+        8.0
+      ],
+      [
+        "bulgaria",
+        6.0
+      ],
+      [
+        "east germany (gdr)",
+        20.0
+      ],
+      [
+        "hungary",
+        6.0
+      ],
+      [
+        "italy",
+        5.0
+      ],
+      [
+        "japan",
+        13.0
+      ],
+      [
+        "poland",
+        7.0
+      ],
+      [
+        "soviet union",
+        50.0
+      ],
+      [
+        "united states",
+        33.0
+      ],
+      [
+        "west germany (frg)",
+        13.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3815d6f6-5f20-40a0-8414-5b403ec382b8",
+    "tables_id": "nt-8284",
+    "question": "entire c3_number for each country listed under c2",
+    "sql": "SELECT c2, SUM(c3_number) AS total_c3_number FROM w GROUP BY c2;",
+    "result": [
+      [
+        "australia",
+        8.0
+      ],
+      [
+        "bulgaria",
+        6.0
+      ],
+      [
+        "east germany (gdr)",
+        20.0
+      ],
+      [
+        "hungary",
+        6.0
+      ],
+      [
+        "italy",
+        5.0
+      ],
+      [
+        "japan",
+        13.0
+      ],
+      [
+        "poland",
+        7.0
+      ],
+      [
+        "soviet union",
+        50.0
+      ],
+      [
+        "united states",
+        33.0
+      ],
+      [
+        "west germany (frg)",
+        13.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "4cd6e629-b047-4fa3-96bd-4e7da52a85ce",
+    "tables_id": "nt-8284",
+    "question": "c3_number sum for each country listed under c2",
+    "sql": "SELECT c2, SUM(c3_number) AS total_c3_number FROM w GROUP BY c2;",
+    "result": [
+      [
+        "australia",
+        8.0
+      ],
+      [
+        "bulgaria",
+        6.0
+      ],
+      [
+        "east germany (gdr)",
+        20.0
+      ],
+      [
+        "hungary",
+        6.0
+      ],
+      [
+        "italy",
+        5.0
+      ],
+      [
+        "japan",
+        13.0
+      ],
+      [
+        "poland",
+        7.0
+      ],
+      [
+        "soviet union",
+        50.0
+      ],
+      [
+        "united states",
+        33.0
+      ],
+      [
+        "west germany (frg)",
+        13.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9ab9226d-5738-4558-ae8d-8fa669e192da",
+    "tables_id": "nt-8284",
+    "question": "country-wise total of c3_number in each country under category c2",
+    "sql": "SELECT c2, SUM(c3_number) AS total_c3_number FROM w GROUP BY c2;",
+    "result": [
+      [
+        "australia",
+        8.0
+      ],
+      [
+        "bulgaria",
+        6.0
+      ],
+      [
+        "east germany (gdr)",
+        20.0
+      ],
+      [
+        "hungary",
+        6.0
+      ],
+      [
+        "italy",
+        5.0
+      ],
+      [
+        "japan",
+        13.0
+      ],
+      [
+        "poland",
+        7.0
+      ],
+      [
+        "soviet union",
+        50.0
+      ],
+      [
+        "united states",
+        33.0
+      ],
+      [
+        "west germany (frg)",
+        13.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bf2f2330-b5d7-410f-96c6-de656616d461",
+    "tables_id": "nt-8284",
+    "question": "total c3_number for country under category",
+    "sql": "SELECT c2, SUM(c3_number) AS total_c3_number FROM w GROUP BY c2;",
+    "result": [
+      [
+        "australia",
+        8.0
+      ],
+      [
+        "bulgaria",
+        6.0
+      ],
+      [
+        "east germany (gdr)",
+        20.0
+      ],
+      [
+        "hungary",
+        6.0
+      ],
+      [
+        "italy",
+        5.0
+      ],
+      [
+        "japan",
+        13.0
+      ],
+      [
+        "poland",
+        7.0
+      ],
+      [
+        "soviet union",
+        50.0
+      ],
+      [
+        "united states",
+        33.0
+      ],
+      [
+        "west germany (frg)",
+        13.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6f8c89e5-51ee-4c4d-914c-81f11d4aa7e7",
+    "tables_id": "nt-8284",
+    "question": "country-wise c3_number sum under category",
+    "sql": "SELECT c2, SUM(c3_number) AS total_c3_number FROM w GROUP BY c2;",
+    "result": [
+      [
+        "australia",
+        8.0
+      ],
+      [
+        "bulgaria",
+        6.0
+      ],
+      [
+        "east germany (gdr)",
+        20.0
+      ],
+      [
+        "hungary",
+        6.0
+      ],
+      [
+        "italy",
+        5.0
+      ],
+      [
+        "japan",
+        13.0
+      ],
+      [
+        "poland",
+        7.0
+      ],
+      [
+        "soviet union",
+        50.0
+      ],
+      [
+        "united states",
+        33.0
+      ],
+      [
+        "west germany (frg)",
+        13.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e9d6b17f-cc1e-48de-97f2-3f17f7f5ef7f",
+    "tables_id": "nt-8284",
+    "question": "What is the value of c3_number where c2 equals 'italy'? ",
+    "sql": "SELECT c3_number FROM w WHERE c2 = 'italy'",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "ff85797e-bdfe-4edb-8933-3ae3de85e7b2",
+    "tables_id": "nt-8284",
+    "question": "What's c3_number where c2 equals 'italy'?",
+    "sql": "SELECT c3_number FROM w WHERE c2 = 'italy'",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "089dadfb-d563-49b0-a1be-17337e8e49d8",
+    "tables_id": "nt-8284",
+    "question": "What's the value of c3_number for country italy?",
+    "sql": "SELECT c3_number FROM w WHERE c2 = 'italy'",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "019b3102-9d86-43c6-b7b6-b1f4e56567da",
+    "tables_id": "nt-8284",
+    "question": "What number do we get from column c3 where country is 'italy'?",
+    "sql": "SELECT c3_number FROM w WHERE c2 = 'italy'",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e0e081cc-2d96-4070-89f5-06de31d8987e",
+    "tables_id": "nt-8284",
+    "question": "What figure corresponds to c3_number for the country Italy?",
+    "sql": "SELECT c3_number FROM w WHERE c2 = 'italy'",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "7a65f96c-4ef4-49ed-8adf-8069f9e3348d",
+    "tables_id": "nt-8284",
+    "question": "What is the numerical value associated with italy in column c3?",
+    "sql": "SELECT c3_number FROM w WHERE c2 = 'italy'",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "cdb48296-7cd4-4586-8c0c-b6e35a6c9ea1",
+    "tables_id": "nt-8284",
+    "question": "In what way does the data for Italy manifest as a number within column c3?",
+    "sql": "SELECT c3_number FROM w WHERE c2 = 'italy'",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
   }
 ]
