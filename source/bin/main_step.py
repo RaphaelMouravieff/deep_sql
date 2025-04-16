@@ -1,9 +1,10 @@
-from typing import Dict, List, Tuple, Any, Union, Optional
+from typing import Dict, Any, Optional
 
 from source.prompts.prompt import get_extra_prompt_divers, get_extra_prompt_sql
 
 from uuid import uuid4
 from langchain_core.documents import Document
+
 
 def run_pipeline_step(question_prompt:str,sql_prompt:str,tables_info:str, table_id:str,
                             question_generator, sql_translator, question_diversity,
