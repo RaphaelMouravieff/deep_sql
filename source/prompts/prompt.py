@@ -1,20 +1,19 @@
 
+import yaml
+from jinja2 import Template
 
 class PromptManager:
 
-    def __init__(self, table_manager, library):
+    def __init__(self, data_args, table_manager, library):
 
         self.table_manager = table_manager
         tables_info, table_samples = table_manager.get_table()
-
-        self.table_info_str = ', '.join(tables_info['tables'])
-
         self.library = library
-
+        self.table_info_str = ', '.join(tables_info['tables'])
         self.table_schema_str = self.table_schema(tables_info)
         self.sample_data_str = self.sample_data(table_samples)
-
-        self.base_prompt_str = self.base_prompt()
+        self.get_examples_str = self.get_examples()
+        self.prompt_templates = self.load_prompt_templates(data_args.base_prompt_path)
 
 
     def table_schema(self, tables_info):
@@ -37,156 +36,69 @@ class PromptManager:
         return prompt
 
 
+    def get_examples(self):
+        prompt = ""
+        for i in range(min(3, len(self.library))):
+            idx = len(self.library) - i - 1
+            prompt += f"\n- {self.library[idx]['question']}"
+
+        return prompt
+
+    def load_prompt_templates(self, prompt_path):
+        with open(prompt_path, "r") as file:
+            return yaml.safe_load(file)
+        
 
     def base_prompt(self):
-        """
-        1. Generates a question_prompt string for an LLM to produce an SQL-relevant
-        natural language question.
-        2. Returns a second string, sql_prompt, for the next step (SQL translation),
-        with all necessary context pre-populated.
-        """
 
-        prompt = f"""
-    You are an SQL **question generator** in natural language for a database with the following structure.
+        template_str = self.prompt_templates["base_prompt"]["template"]
+        template = Template(template_str)
 
-    DATABASE TABLES:
-    {self.table_info_str}
-
-    SCHEMA FOR EACH TABLE:
-    """
-
-        prompt+= self.table_schema_str
-        prompt += self.sample_data_str
-        return prompt
+        return template.render(
+            table_info=self.table_info_str,
+            table_schema=self.table_schema_str,
+            sample_data=self.sample_data_str
+        ).strip()
     
+
     def get_question_prompt(self):
+ 
+        template_str = self.prompt_templates["get_question_prompt"]["template"]
+        template = Template(template_str)
 
-        question_prompt = self.base_prompt_str
-        # -- Optional: Add library context to the question_prompt --
-        if self.library:
-            question_prompt += f"\nNOTE: The library already contains {len(self.library)} questions."
-            question_prompt += "\nRecent questions in the library (up to 3 most recent):"
-            for i in range(min(3, len(self.library))):
-                idx = len(self.library) - i - 1
-                question_prompt += f"\n- {self.library[idx]['question']}"
-            
-            if len(self.library) > 0:
-                question_prompt += "\n\nYour NEW question should be similar in complexity but *not* a duplicate. " \
-                                    "Try to query different tables or relationships to avoid exact overlap."
+        base_prompt = self.base_prompt()
 
-        # -- Final instructions for the LLM to produce the question in natural language --
-        question_prompt += """
-                        Using the database schema and sample data above(You Do NOT have an access the sample data provided in the task description), generate a clear and specific
-                        **natural language question**.
-
-                        IMPORTANT CRITERIA:
-                        1. The question should be specific enough to be translated into SQL.
-                        2. The question must have an answer in the database based on the provided sample above 
-                        3. Don't code the table.
-                        3. Write it in plain, clear natural language without referencing code.
-                        4. You must use the "retriever_tool" tool it validates the generated question for you. 
-                        5. Finally retrun the natural language question. "final_answer(retriever_tool(question))"
-
-                        Return **only the question** (no explanations or extra formatting).
-                        """
-
-        return question_prompt
+        return template.render(
+            base_prompt=base_prompt,
+            library=self.library,
+            library_size=len(self.library),
+            example_questions=self.get_examples_str
+        ).strip()
     
+
 
 
     def get_traductor_prompt(self, question):
-        """
-        2. Takes the partial 'sql_prompt' plus the new 'question' generated
-        in natural language, and instructs the LLM to produce the SQL query.
-        """
-        sql_prompt = self.base_prompt_str
-        sql_prompt += f"""
-                    Natural Language Question: {question}
 
-                    INSTRUCTION:
-                    Write a one SINGLE valid SQL query that correctly answers Natural Language Question using the
-                    database structure provided above. JOIN tables if needed.
-                    And you must use the "execute_sql" tool to check if the sql is valid.
-                    Finally Return the valid SQL. "final_answer(execute_sql(sql_query))"
+        template_str = self.prompt_templates["get_traductor_prompt"]["template"]
+        template = Template(template_str)
 
-                    RETURN ONLY the SQL query without explanations, commentary, or markdown formatting.
-                    """
-        return sql_prompt
+        base_prompt = self.base_prompt()
 
+        return template.render(
+            base_prompt=base_prompt,
+            question=question
+        ).strip()
 
 
     def get_extra_prompt_divers(self, question, sql_question):
-        """
-        3. Takes the original question, the final SQL query, and table schema info
-        to generate 3 paraphrased variations that preserve meaning and use the
-        same columns/tables.
-        """
 
-        diversity_prompt = f"""
-        You are a **question paraphrasing expert**.
+        template_str = self.prompt_templates["get_extra_prompt_divers"]["template"]
+        template = Template(template_str)
 
-        Original question: {question}
-        its Corresponding SQL query: {sql_question}
-
-        DATABASE TABLES Columns:
-        {self.table_schema_str}
-
-
-            Your task is to create 7 different variants of the original question using the following techniques:
-
-        1. BASIC SIMPLIFICATION
-        • Remove non-essential elements while preserving the main meaning.
-        • Example: "Which club has the most female students as their members?" → "Which club has the most female students?"
-
-        2. SIMPLIFICATION BY HIDING DETAILS
-        • Preserve the central objective but remove additional explanations.
-        • Example: "What is the title and credits of the course that is taught in the largest classroom?" → "What course is taught in the biggest classroom and what are its credits?"
-
-        3. USING SYNONYMS
-        • Replace certain terms with their synonyms while maintaining meaning.
-        • Example: "What is the average duration in milliseconds of tracks that belong to Latin or Pop genre?" → "What is the mean length in milliseconds of Latin or Pop songs?"
-
-        4. SEMANTIC SUBSTITUTIONS
-        • Replace expressions with semantically equivalent alternatives.
-        • Example: "What are the locations that have gas stations owned by a company with a market value greater than 100?" → "Where are the gas stations owned by a company worth more than 100?"
-
-        5. COMPLETE REFORMULATION
-        • Express the same request in a totally different way.
-        • Example: "What is the number of routes operated by American Airlines whose destinations are in Italy?" → "How many routes does American Airlines have that fly to Italy?"
-
-        6. SIMPLIFICATION WITH MORE DIRECT LANGUAGE
-        • Use more direct and concise language.
-        • Example: "What are the names of body builders whose total score is higher than 300?" → "Who are the body builders with a score over 300?"
-
-        7. PARAPHRASE WITH CHANGE OF PERSPECTIVE
-        • Reformulate by changing the style or perspective of the question.
-        • Example: "Return the categories of music festivals that have the result 'Awarded'" → "List the categories of music festivals that have been recognized with awards"
-
-        For each original SQL question provided, please generate all 7 variants following these techniques without changing the sql request.
-        Make sure to keep the SQL query unchanged.
-
-        tools:
-        - Use 'get_synonym' tool to look online for synonyms if need.
-        - You must use the "retriever_tool" tool for each variation question to validate the generated question for you.
-
-        return a json array with the following format (no additional text):
-        [
-            {{
-                "question": "Variant 1",
-                "sql": "SQL Query"
-            }},
-            {{
-                "question": "Variant 2",
-                "sql": "SQL Query"
-            }},
-            ...
-            {{
-                "question": "Variant 7",
-                "sql": "SQL Query"
-            }}
-        ]
-        """
-        return diversity_prompt
-
-
-
+        return template.render(
+            question=question,
+            sql_question=sql_question,
+            table_schema=self.table_schema_str
+        ).strip()
+    

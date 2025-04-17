@@ -23,6 +23,7 @@ python ../run.py \
   --num_iterations 102 \
   --library_path ../data/library1.json \
   --embedding_model_name "Alibaba-NLP/gte-large-en-v1.5" \
-  --table_limit 10
+  --table_limit 10 \
+  --base_prompt_path ../data/prompts/base_prompt.yaml
 
 

@@ -1154,5 +1154,1909 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "509a9385-4f3b-418a-b90f-c6e98073eedf",
+    "tables_id": "nt-9497",
+    "question": "How many records have a value of 9 for column c3_number?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c3_number = 9;\n",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "a53733c9-421b-45b0-939f-23e1b8f785ca",
+    "tables_id": "nt-9497",
+    "question": "How many records have 9 for c3_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number = 9;",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "17d01a34-3d51-4960-b0d9-584c517941ab",
+    "tables_id": "nt-9497",
+    "question": "Count how many have 9 for c3_number.",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number = 9;",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "69c7aeb8-9209-423c-9e56-f9e256572657",
+    "tables_id": "nt-9497",
+    "question": "How much quantity have a value of 9 for c3_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number = 9;",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "835eded0-d579-444e-a11b-45fd6dd4fce6",
+    "tables_id": "nt-9497",
+    "question": "How many records have a value of nine for column c3_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number = 9;",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "456d054e-365d-46a9-82b1-7f6a28548927",
+    "tables_id": "nt-9497",
+    "question": "How often is there a 9 value in the c3_number column?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number = 9;",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5ab87af8-5a42-4514-b022-bdbc1473ccbe",
+    "tables_id": "nt-9497",
+    "question": "How many times is c3_number equal to 9?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number = 9;",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0037f262-cafa-4e46-8909-d99e89673099",
+    "tables_id": "nt-9497",
+    "question": "What's the count when checking for nine in column c3 number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number = 9;",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "585f0af2-31d2-47c3-a1f4-1cfa554a27e3",
+    "tables_id": "nt-1917",
+    "question": "How many rows have a value for c4_number greater than 1000?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c4_number > 1000;\n",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "1b016bd9-5ace-473d-9171-327ec165cd5b",
+    "tables_id": "nt-1917",
+    "question": "How many rows have a value for c4_number over 1000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4_number > 1000;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ad4e6ec3-d3c5-41e4-9805-327ab8268abd",
+    "tables_id": "nt-1917",
+    "question": "How many rows have c4_number over 1000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4_number > 1000;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "930c3e05-59b9-4e66-9e8e-250276ade300",
+    "tables_id": "nt-1917",
+    "question": "How many rows have Unexpected error: 'NoneType' object has no attribute 'find_all'. for c4_number over 1000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4_number > 1000;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b496abd3-4d27-44b0-9fd4-1682b1de06a4",
+    "tables_id": "nt-1917",
+    "question": "How many rows have an entry for c4_number over 1000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4_number > 1000;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a6558629-044d-42d4-ab11-b99e6b5bb75d",
+    "tables_id": "nt-1917",
+    "question": "What is the count of records where c4_number is above 1000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4_number > 1000;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "96170a45-8d65-46a4-a6f7-3609016eb938",
+    "tables_id": "nt-1917",
+    "question": "Count rows with c4_number over 1000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4_number > 1000;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6f2b6aa5-cc53-4b28-bc34-20b135cd4b09",
+    "tables_id": "nt-1917",
+    "question": "How many entries have c4_number over 1000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4_number > 1000;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a9c2c954-ca9e-4f23-8aea-7fd4e83a5b32",
+    "tables_id": "nt-1917",
+    "question": "How many records exist where c4_number exceeds 1000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4_number > 1000;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5e8e9f41-b49f-40c9-9893-f38cba9af8e0",
+    "tables_id": "nt-1917",
+    "question": "How many entries have a number larger than 100,000 in column c2_number?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c2_number > 100000;\n",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "983a06e7-2f26-4b39-a5a7-139d96c0bb89",
+    "tables_id": "nt-1917",
+    "question": "How many entries have a number larger than 100,000 in column c2_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_number > 100000;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "4437e37a-6d32-4816-8a36-5d8f1a793f78",
+    "tables_id": "nt-1917",
+    "question": "How many entries in w have a number larger than 100000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_number > 100000;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3e02a163-e3c1-473b-aa9f-9df366b86488",
+    "tables_id": "nt-1917",
+    "question": "How many records have a number larger than 100,000 in column c2_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_number > 100000;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "730739fb-f600-4bca-a62c-84e9d6fb54a8",
+    "tables_id": "nt-1917",
+    "question": "How many rows have a number over 100000 in column c2_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_number > 100000;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1dfc2c04-e9a2-45ad-bcc0-47895cb92e0a",
+    "tables_id": "nt-1917",
+    "question": "How many instances have a value in column c2_number greater than 100000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_number > 100000;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a8a25e2e-330e-4d00-9145-0d8a7b9d243e",
+    "tables_id": "nt-1917",
+    "question": "How many have a number over 100000 in column c2_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_number > 100000;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "132dc5ff-2ad1-4a45-ad6f-86893122900a",
+    "tables_id": "nt-1917",
+    "question": "What is the count of instances where the value in column c2_number exceeds 100,000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_number > 100000;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9af2be35-6cdb-4852-8e3b-90522c08d66d",
+    "tables_id": "nt-1917",
+    "question": "What is the count of rows where c7_number is greater than 50?",
+    "sql": "\nSELECT COUNT(*) AS count \nFROM w \nWHERE c7_number > 50;\n",
+    "result": [
+      [
+        6
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "ad61eac7-bc4d-44d9-9c8c-db145c0ac557",
+    "tables_id": "nt-1917",
+    "question": "Count rows with c7_number > 50",
+    "sql": "SELECT COUNT(*) AS count FROM w WHERE c7_number > 50",
+    "result": [
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "70c55fb4-8e2d-40f7-b659-5709cfcfa98b",
+    "tables_id": "nt-1917",
+    "question": "Count rows where c7_number is greater than 50",
+    "sql": "SELECT COUNT(*) AS count FROM w WHERE c7_number > 50",
+    "result": [
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b08b9465-9109-40fe-8caf-bef6cef69f71",
+    "tables_id": "nt-1917",
+    "question": "How many rows have c7_number over 50?",
+    "sql": "SELECT COUNT(*) AS count FROM w WHERE c7_number > 50",
+    "result": [
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a3c085d9-6f7d-4814-a551-281599e5c316",
+    "tables_id": "nt-1917",
+    "question": "How many rows have c7_number exceeding 50?",
+    "sql": "SELECT COUNT(*) AS count FROM w WHERE c7_number > 50",
+    "result": [
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b7a24d31-8de0-45bd-ab04-ca056172aca4",
+    "tables_id": "nt-1917",
+    "question": "How many entries exist where c7_number is more than 50?",
+    "sql": "SELECT COUNT(*) AS count FROM w WHERE c7_number > 50",
+    "result": [
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5b915990-ede2-475b-866a-d6e5ccebde7d",
+    "tables_id": "nt-1917",
+    "question": "How many rows have c7_number > 50?",
+    "sql": "SELECT COUNT(*) AS count FROM w WHERE c7_number > 50",
+    "result": [
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "7ecb54c1-baa9-4f98-8b52-756a5fc25ea1",
+    "tables_id": "nt-1917",
+    "question": "Give me the total number of records where c7_number surpasses 50.",
+    "sql": "SELECT COUNT(*) AS count FROM w WHERE c7_number > 50",
+    "result": [
+      [
+        6
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "8a427e97-d469-4b5f-9d75-d530ac48d18f",
+    "tables_id": "nt-1917",
+    "question": "What is the average value of c3_number?",
+    "sql": "SELECT AVG(c5_number) FROM w;",
+    "result": [
+      [
+        75.2421052631579
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "a781fc8d-f051-4a55-b0a5-39fadaac7de8",
+    "tables_id": "nt-1917",
+    "question": "Average of c3_number.",
+    "sql": "SELECT AVG(c5_number) FROM w;",
+    "result": [
+      [
+        75.2421052631579
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "573550a3-c7c4-48ea-82be-7b85c2aec2ec",
+    "tables_id": "nt-1917",
+    "question": "Average of c3.",
+    "sql": "SELECT AVG(c5_number) FROM w;",
+    "result": [
+      [
+        75.2421052631579
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "87e45f0d-e2bd-4958-9b11-7fc97a8509f9",
+    "tables_id": "nt-1917",
+    "question": "What is the average statistic of c3?",
+    "sql": "SELECT AVG(c5_number) FROM w;",
+    "result": [
+      [
+        75.2421052631579
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "443ca376-b953-4d86-acf0-288cb18e957c",
+    "tables_id": "nt-1917",
+    "question": "What is the mean of all c3_numbers?",
+    "sql": "SELECT AVG(c5_number) FROM w;",
+    "result": [
+      [
+        75.2421052631579
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "babaa5b7-6d56-4b55-8ff5-23fdcad0deea",
+    "tables_id": "nt-1917",
+    "question": "Mean c3_number.",
+    "sql": "SELECT AVG(c5_number) FROM w;",
+    "result": [
+      [
+        75.2421052631579
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5d5b7cd6-dc69-4bb1-9881-55e86600e32c",
+    "tables_id": "nt-1917",
+    "question": "What is the typical value of c3_number?",
+    "sql": "SELECT AVG(c5_number) FROM w;",
+    "result": [
+      [
+        75.2421052631579
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "4a0048f6-8b73-4640-b6e4-1110e1ab5314",
+    "tables_id": "nt-1917",
+    "question": "What is the median of all c3_numbers?",
+    "sql": "SELECT AVG(c5_number) FROM w;",
+    "result": [
+      [
+        75.2421052631579
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0fa94245-7fef-45ad-aadd-1c713f074dce",
+    "tables_id": "nt-1917",
+    "question": "Is there any entry in the c10_number column with the value of 0.0878?",
+    "sql": "SELECT * FROM w WHERE c10_number = 0.0878",
+    "result": [
+      [
+        3,
+        0,
+        "center",
+        "90735",
+        90735.0,
+        null,
+        "515",
+        515.0,
+        "36.8",
+        36.8,
+        "14.2",
+        14.2,
+        "13.99",
+        13.99,
+        "36.23",
+        36.23,
+        "0.0339",
+        0.0339,
+        "0.0878",
+        0.0878,
+        "35\u00b024\u203220\u2032\u2032n 92\u00b057\u203216\u2032\u2032w\ufeff / \ufeff35.40556\u00b0n 92.95444\u00b0w"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "1d2605c5-0f79-49c3-932d-ae6997665622",
+    "tables_id": "nt-1917",
+    "question": "Is 0.0878 in c10_number?",
+    "sql": "SELECT * FROM w WHERE c10_number = 0.0878",
+    "result": [
+      [
+        3,
+        0,
+        "center",
+        "90735",
+        90735.0,
+        null,
+        "515",
+        515.0,
+        "36.8",
+        36.8,
+        "14.2",
+        14.2,
+        "13.99",
+        13.99,
+        "36.23",
+        36.23,
+        "0.0339",
+        0.0339,
+        "0.0878",
+        0.0878,
+        "35\u00b024\u203220\u2032\u2032n 92\u00b057\u203216\u2032\u2032w\ufeff / \ufeff35.40556\u00b0n 92.95444\u00b0w"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c9ee5002-51af-4daf-983b-dc0a4f666d76",
+    "tables_id": "nt-1917",
+    "question": "Does c10_number include 0.0878?",
+    "sql": "SELECT * FROM w WHERE c10_number = 0.0878",
+    "result": [
+      [
+        3,
+        0,
+        "center",
+        "90735",
+        90735.0,
+        null,
+        "515",
+        515.0,
+        "36.8",
+        36.8,
+        "14.2",
+        14.2,
+        "13.99",
+        13.99,
+        "36.23",
+        36.23,
+        "0.0339",
+        0.0339,
+        "0.0878",
+        0.0878,
+        "35\u00b024\u203220\u2032\u2032n 92\u00b057\u203216\u2032\u2032w\ufeff / \ufeff35.40556\u00b0n 92.95444\u00b0w"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "232f76bc-8c86-4db4-b243-0857b536df7e",
+    "tables_id": "nt-1917",
+    "question": "Is there an occurrence in c10_number with the value of 0.0878?",
+    "sql": "SELECT * FROM w WHERE c10_number = 0.0878",
+    "result": [
+      [
+        3,
+        0,
+        "center",
+        "90735",
+        90735.0,
+        null,
+        "515",
+        515.0,
+        "36.8",
+        36.8,
+        "14.2",
+        14.2,
+        "13.99",
+        13.99,
+        "36.23",
+        36.23,
+        "0.0339",
+        0.0339,
+        "0.0878",
+        0.0878,
+        "35\u00b024\u203220\u2032\u2032n 92\u00b057\u203216\u2032\u2032w\ufeff / \ufeff35.40556\u00b0n 92.95444\u00b0w"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ac92b7ff-20d0-4679-b441-e595151fe5a1",
+    "tables_id": "nt-1917",
+    "question": "Is 0.0878 present within c10_number values?",
+    "sql": "SELECT * FROM w WHERE c10_number = 0.0878",
+    "result": [
+      [
+        3,
+        0,
+        "center",
+        "90735",
+        90735.0,
+        null,
+        "515",
+        515.0,
+        "36.8",
+        36.8,
+        "14.2",
+        14.2,
+        "13.99",
+        13.99,
+        "36.23",
+        36.23,
+        "0.0339",
+        0.0339,
+        "0.0878",
+        0.0878,
+        "35\u00b024\u203220\u2032\u2032n 92\u00b057\u203216\u2032\u2032w\ufeff / \ufeff35.40556\u00b0n 92.95444\u00b0w"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1f06d067-94fe-4199-831f-55c636baa8f4",
+    "tables_id": "nt-1917",
+    "question": "Are there any records with c10_number as 0.0878?",
+    "sql": "SELECT * FROM w WHERE c10_number = 0.0878",
+    "result": [
+      [
+        3,
+        0,
+        "center",
+        "90735",
+        90735.0,
+        null,
+        "515",
+        515.0,
+        "36.8",
+        36.8,
+        "14.2",
+        14.2,
+        "13.99",
+        13.99,
+        "36.23",
+        36.23,
+        "0.0339",
+        0.0339,
+        "0.0878",
+        0.0878,
+        "35\u00b024\u203220\u2032\u2032n 92\u00b057\u203216\u2032\u2032w\ufeff / \ufeff35.40556\u00b0n 92.95444\u00b0w"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1d4ec687-f669-4a19-abdc-2ced91bb3948",
+    "tables_id": "nt-1917",
+    "question": "Does c10_number have 0.0878?",
+    "sql": "SELECT * FROM w WHERE c10_number = 0.0878",
+    "result": [
+      [
+        3,
+        0,
+        "center",
+        "90735",
+        90735.0,
+        null,
+        "515",
+        515.0,
+        "36.8",
+        36.8,
+        "14.2",
+        14.2,
+        "13.99",
+        13.99,
+        "36.23",
+        36.23,
+        "0.0339",
+        0.0339,
+        "0.0878",
+        0.0878,
+        "35\u00b024\u203220\u2032\u2032n 92\u00b057\u203216\u2032\u2032w\ufeff / \ufeff35.40556\u00b0n 92.95444\u00b0w"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "17b63fdc-28be-4265-99b0-7e46a5fd5825",
+    "tables_id": "nt-1917",
+    "question": "Is 0.0878 a value within the c10_number column?",
+    "sql": "SELECT * FROM w WHERE c10_number = 0.0878",
+    "result": [
+      [
+        3,
+        0,
+        "center",
+        "90735",
+        90735.0,
+        null,
+        "515",
+        515.0,
+        "36.8",
+        36.8,
+        "14.2",
+        14.2,
+        "13.99",
+        13.99,
+        "36.23",
+        36.23,
+        "0.0339",
+        0.0339,
+        "0.0878",
+        0.0878,
+        "35\u00b024\u203220\u2032\u2032n 92\u00b057\u203216\u2032\u2032w\ufeff / \ufeff35.40556\u00b0n 92.95444\u00b0w"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "93476311-536f-45b7-ab46-c5b406a60ac1",
+    "tables_id": "nt-1917",
+    "question": "What is the average value of c4_number where agg equals 0?",
+    "sql": "\nSELECT AVG(c4_number) AS avg_c4_number \nFROM w \nWHERE agg = 0;\n",
+    "result": [
+      [
+        2866.7894736842104
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "a7d19132-06ed-4881-bb77-ec19d9adcd54",
+    "tables_id": "nt-1917",
+    "question": "What is c4_number average when agg is 0?",
+    "sql": "SELECT AVG(c4_number) AS avg_c4_number FROM w WHERE agg = 0;",
+    "result": [
+      [
+        2866.7894736842104
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2a169de7-161c-44a9-a7e7-d4b2515e2e7a",
+    "tables_id": "nt-1917",
+    "question": "Average of c4_number where agg equals zero?",
+    "sql": "SELECT AVG(c4_number) AS avg_c4_number FROM w WHERE agg = 0;",
+    "result": [
+      [
+        2866.7894736842104
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "89829ae6-3f95-4ed8-800e-26dfaadd6a6f",
+    "tables_id": "nt-1917",
+    "question": "What is the mean c4_number when agg equals 0?",
+    "sql": "SELECT AVG(c4_number) AS avg_c4_number FROM w WHERE agg = 0;",
+    "result": [
+      [
+        2866.7894736842104
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "4c16857d-ac88-4a7b-b43f-41d98e6f2415",
+    "tables_id": "nt-1917",
+    "question": "Find the typical value of c4_number when agg is not set.",
+    "sql": "SELECT AVG(c4_number) AS avg_c4_number FROM w WHERE agg = 0;",
+    "result": [
+      [
+        2866.7894736842104
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3b268868-b6b2-4132-9efc-0e559523411d",
+    "tables_id": "nt-1917",
+    "question": "Mean c4_number for agg zero?",
+    "sql": "SELECT AVG(c4_number) AS avg_c4_number FROM w WHERE agg = 0;",
+    "result": [
+      [
+        2866.7894736842104
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9bd36658-3cd9-4e13-b490-a531dc3be982",
+    "tables_id": "nt-1917",
+    "question": "Calculate average of c4_number entries where agg value is 0.",
+    "sql": "SELECT AVG(c4_number) AS avg_c4_number FROM w WHERE agg = 0;",
+    "result": [
+      [
+        2866.7894736842104
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bb7f20f2-2dc8-4f0c-9f4c-2e5b5868ea58",
+    "tables_id": "nt-6540",
+    "question": "List all distinct countries (c2) from table w where agg is 0.",
+    "sql": "\nSELECT DISTINCT c2 \nFROM w \nWHERE agg = 0;\n",
+    "result": [
+      [
+        "indonesia"
+      ],
+      [
+        "india"
+      ],
+      [
+        "thailand"
+      ],
+      [
+        "philippines"
+      ],
+      [
+        "sri lanka"
+      ],
+      [
+        "vietnam"
+      ],
+      [
+        "australia"
+      ],
+      [
+        "bangladesh"
+      ],
+      [
+        "china"
+      ],
+      [
+        "hong kong"
+      ],
+      [
+        "malaysia"
+      ],
+      [
+        "macau"
+      ],
+      [
+        "maldives"
+      ],
+      [
+        "cambodia"
+      ],
+      [
+        "singapore"
+      ],
+      [
+        "taiwan"
+      ],
+      [
+        "myanmar"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "ef26861c-2628-41d4-8ef3-0963dcc0be45",
+    "tables_id": "nt-6540",
+    "question": "List distinct c2 from w where agg equals 0.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE agg = 0;",
+    "result": [
+      [
+        "indonesia"
+      ],
+      [
+        "india"
+      ],
+      [
+        "thailand"
+      ],
+      [
+        "philippines"
+      ],
+      [
+        "sri lanka"
+      ],
+      [
+        "vietnam"
+      ],
+      [
+        "australia"
+      ],
+      [
+        "bangladesh"
+      ],
+      [
+        "china"
+      ],
+      [
+        "hong kong"
+      ],
+      [
+        "malaysia"
+      ],
+      [
+        "macau"
+      ],
+      [
+        "maldives"
+      ],
+      [
+        "cambodia"
+      ],
+      [
+        "singapore"
+      ],
+      [
+        "taiwan"
+      ],
+      [
+        "myanmar"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ddf49cbc-5e63-4f00-88d9-54c76ed2b3c5",
+    "tables_id": "nt-6540",
+    "question": "List distinct c2 where agg equals 0.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE agg = 0;",
+    "result": [
+      [
+        "indonesia"
+      ],
+      [
+        "india"
+      ],
+      [
+        "thailand"
+      ],
+      [
+        "philippines"
+      ],
+      [
+        "sri lanka"
+      ],
+      [
+        "vietnam"
+      ],
+      [
+        "australia"
+      ],
+      [
+        "bangladesh"
+      ],
+      [
+        "china"
+      ],
+      [
+        "hong kong"
+      ],
+      [
+        "malaysia"
+      ],
+      [
+        "macau"
+      ],
+      [
+        "maldives"
+      ],
+      [
+        "cambodia"
+      ],
+      [
+        "singapore"
+      ],
+      [
+        "taiwan"
+      ],
+      [
+        "myanmar"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f198bb23-ee81-454e-864a-3271706a2d44",
+    "tables_id": "nt-6540",
+    "question": "List all distinct regions from table w where agg is 0.",
+    "sql": "SELECT DISTINCT regions FROM w WHERE agg = 0;",
+    "result": [
+      [
+        "indonesia"
+      ],
+      [
+        "india"
+      ],
+      [
+        "thailand"
+      ],
+      [
+        "philippines"
+      ],
+      [
+        "sri lanka"
+      ],
+      [
+        "vietnam"
+      ],
+      [
+        "australia"
+      ],
+      [
+        "bangladesh"
+      ],
+      [
+        "china"
+      ],
+      [
+        "hong kong"
+      ],
+      [
+        "malaysia"
+      ],
+      [
+        "macau"
+      ],
+      [
+        "maldives"
+      ],
+      [
+        "cambodia"
+      ],
+      [
+        "singapore"
+      ],
+      [
+        "taiwan"
+      ],
+      [
+        "myanmar"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c92eeb62-b2fb-493d-afe9-5e1837cd0a06",
+    "tables_id": "nt-6540",
+    "question": "List distinct c2 where agg is 0 and c2 are different.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE agg = 0 AND c2 are different.",
+    "result": [
+      [
+        "indonesia"
+      ],
+      [
+        "india"
+      ],
+      [
+        "thailand"
+      ],
+      [
+        "philippines"
+      ],
+      [
+        "sri lanka"
+      ],
+      [
+        "vietnam"
+      ],
+      [
+        "australia"
+      ],
+      [
+        "bangladesh"
+      ],
+      [
+        "china"
+      ],
+      [
+        "hong kong"
+      ],
+      [
+        "malaysia"
+      ],
+      [
+        "macau"
+      ],
+      [
+        "maldives"
+      ],
+      [
+        "cambodia"
+      ],
+      [
+        "singapore"
+      ],
+      [
+        "taiwan"
+      ],
+      [
+        "myanmar"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b6aa9239-e015-47b6-8202-0fc1f34d20af",
+    "tables_id": "nt-6540",
+    "question": "What unique values of c2 exist in table w when agg is 0?",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE agg = 0;",
+    "result": [
+      [
+        "indonesia"
+      ],
+      [
+        "india"
+      ],
+      [
+        "thailand"
+      ],
+      [
+        "philippines"
+      ],
+      [
+        "sri lanka"
+      ],
+      [
+        "vietnam"
+      ],
+      [
+        "australia"
+      ],
+      [
+        "bangladesh"
+      ],
+      [
+        "china"
+      ],
+      [
+        "hong kong"
+      ],
+      [
+        "malaysia"
+      ],
+      [
+        "macau"
+      ],
+      [
+        "maldives"
+      ],
+      [
+        "cambodia"
+      ],
+      [
+        "singapore"
+      ],
+      [
+        "taiwan"
+      ],
+      [
+        "myanmar"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "79a58a34-5733-421b-8283-4f30f51fa445",
+    "tables_id": "nt-6540",
+    "question": "Show all distinct c2 values where agg equals 0.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE agg = 0;",
+    "result": [
+      [
+        "indonesia"
+      ],
+      [
+        "india"
+      ],
+      [
+        "thailand"
+      ],
+      [
+        "philippines"
+      ],
+      [
+        "sri lanka"
+      ],
+      [
+        "vietnam"
+      ],
+      [
+        "australia"
+      ],
+      [
+        "bangladesh"
+      ],
+      [
+        "china"
+      ],
+      [
+        "hong kong"
+      ],
+      [
+        "malaysia"
+      ],
+      [
+        "macau"
+      ],
+      [
+        "maldives"
+      ],
+      [
+        "cambodia"
+      ],
+      [
+        "singapore"
+      ],
+      [
+        "taiwan"
+      ],
+      [
+        "myanmar"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "83f879ca-7a92-40a2-83fe-9f48b03686f4",
+    "tables_id": "nt-6540",
+    "question": "Identify unique countries (c2) in table w where agg is 0.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE agg = 0;",
+    "result": [
+      [
+        "indonesia"
+      ],
+      [
+        "india"
+      ],
+      [
+        "thailand"
+      ],
+      [
+        "philippines"
+      ],
+      [
+        "sri lanka"
+      ],
+      [
+        "vietnam"
+      ],
+      [
+        "australia"
+      ],
+      [
+        "bangladesh"
+      ],
+      [
+        "china"
+      ],
+      [
+        "hong kong"
+      ],
+      [
+        "malaysia"
+      ],
+      [
+        "macau"
+      ],
+      [
+        "maldives"
+      ],
+      [
+        "cambodia"
+      ],
+      [
+        "singapore"
+      ],
+      [
+        "taiwan"
+      ],
+      [
+        "myanmar"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b063294a-c883-4687-a8a3-05611f9913c3",
+    "tables_id": "nt-570",
+    "question": "Retrieve all distinct catalog numbers (c4) in table w where agg is set to 0.",
+    "sql": "\nSELECT DISTINCT c4 FROM w WHERE agg=0;\n",
+    "result": [
+      [
+        "mhr 001"
+      ],
+      [
+        "mhr 002"
+      ],
+      [
+        "mhr 003"
+      ],
+      [
+        "mhr 004"
+      ],
+      [
+        "mhr 005"
+      ],
+      [
+        "mhr 006"
+      ],
+      [
+        "mhr 008"
+      ],
+      [
+        "mhr 009"
+      ],
+      [
+        "mhr 011"
+      ],
+      [
+        "mhr 014"
+      ],
+      [
+        "mhr 015"
+      ],
+      [
+        "mhr 017"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "874bd359-cfe4-416a-9758-22b50c5190e4",
+    "tables_id": "nt-570",
+    "question": "Retrieve all distinct catalog numbers in table w where agg is set to 0.",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE agg=0;",
+    "result": [
+      [
+        "mhr 001"
+      ],
+      [
+        "mhr 002"
+      ],
+      [
+        "mhr 003"
+      ],
+      [
+        "mhr 004"
+      ],
+      [
+        "mhr 005"
+      ],
+      [
+        "mhr 006"
+      ],
+      [
+        "mhr 008"
+      ],
+      [
+        "mhr 009"
+      ],
+      [
+        "mhr 011"
+      ],
+      [
+        "mhr 014"
+      ],
+      [
+        "mhr 015"
+      ],
+      [
+        "mhr 017"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "29c94753-b218-4307-9bd6-220e04af2530",
+    "tables_id": "nt-570",
+    "question": "Find distinct catalog numbers where agg is zero.",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE agg=0;",
+    "result": [
+      [
+        "mhr 001"
+      ],
+      [
+        "mhr 002"
+      ],
+      [
+        "mhr 003"
+      ],
+      [
+        "mhr 004"
+      ],
+      [
+        "mhr 005"
+      ],
+      [
+        "mhr 006"
+      ],
+      [
+        "mhr 008"
+      ],
+      [
+        "mhr 009"
+      ],
+      [
+        "mhr 011"
+      ],
+      [
+        "mhr 014"
+      ],
+      [
+        "mhr 015"
+      ],
+      [
+        "mhr 017"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "de5d51cc-bd37-40ac-b4c2-2f34d8ebb6a9",
+    "tables_id": "nt-570",
+    "question": "Retrieve all unique catalog numbers where agg is zero.",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE agg=0;",
+    "result": [
+      [
+        "mhr 001"
+      ],
+      [
+        "mhr 002"
+      ],
+      [
+        "mhr 003"
+      ],
+      [
+        "mhr 004"
+      ],
+      [
+        "mhr 005"
+      ],
+      [
+        "mhr 006"
+      ],
+      [
+        "mhr 008"
+      ],
+      [
+        "mhr 009"
+      ],
+      [
+        "mhr 011"
+      ],
+      [
+        "mhr 014"
+      ],
+      [
+        "mhr 015"
+      ],
+      [
+        "mhr 017"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bf34cc98-0b13-4788-843c-50edc2cc8394",
+    "tables_id": "nt-570",
+    "question": "Show unique c4 where agg is 0.",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE agg=0;",
+    "result": [
+      [
+        "mhr 001"
+      ],
+      [
+        "mhr 002"
+      ],
+      [
+        "mhr 003"
+      ],
+      [
+        "mhr 004"
+      ],
+      [
+        "mhr 005"
+      ],
+      [
+        "mhr 006"
+      ],
+      [
+        "mhr 008"
+      ],
+      [
+        "mhr 009"
+      ],
+      [
+        "mhr 011"
+      ],
+      [
+        "mhr 014"
+      ],
+      [
+        "mhr 015"
+      ],
+      [
+        "mhr 017"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bedfb46d-54c2-459e-b5a0-b516d4ff745e",
+    "tables_id": "nt-570",
+    "question": "Semantic Question: Find all catalog numbers with an aggregate of 0",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE agg=0;",
+    "result": [
+      [
+        "mhr 001"
+      ],
+      [
+        "mhr 002"
+      ],
+      [
+        "mhr 003"
+      ],
+      [
+        "mhr 004"
+      ],
+      [
+        "mhr 005"
+      ],
+      [
+        "mhr 006"
+      ],
+      [
+        "mhr 008"
+      ],
+      [
+        "mhr 009"
+      ],
+      [
+        "mhr 011"
+      ],
+      [
+        "mhr 014"
+      ],
+      [
+        "mhr 015"
+      ],
+      [
+        "mhr 017"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bd273015-9709-4050-9421-df8d961d2e53",
+    "tables_id": "nt-570",
+    "question": "Provide a list of distinct catalog identifiers (c4) from the w table with aggregation equal to zero.",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE agg=0;",
+    "result": [
+      [
+        "mhr 001"
+      ],
+      [
+        "mhr 002"
+      ],
+      [
+        "mhr 003"
+      ],
+      [
+        "mhr 004"
+      ],
+      [
+        "mhr 005"
+      ],
+      [
+        "mhr 006"
+      ],
+      [
+        "mhr 008"
+      ],
+      [
+        "mhr 009"
+      ],
+      [
+        "mhr 011"
+      ],
+      [
+        "mhr 014"
+      ],
+      [
+        "mhr 015"
+      ],
+      [
+        "mhr 017"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "976b9335-942c-4b25-a95f-f5a1e257c328",
+    "tables_id": "nt-570",
+    "question": "List catalog numbers that are unique and have an aggregation value of zero.",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE agg=0;",
+    "result": [
+      [
+        "mhr 001"
+      ],
+      [
+        "mhr 002"
+      ],
+      [
+        "mhr 003"
+      ],
+      [
+        "mhr 004"
+      ],
+      [
+        "mhr 005"
+      ],
+      [
+        "mhr 006"
+      ],
+      [
+        "mhr 008"
+      ],
+      [
+        "mhr 009"
+      ],
+      [
+        "mhr 011"
+      ],
+      [
+        "mhr 014"
+      ],
+      [
+        "mhr 015"
+      ],
+      [
+        "mhr 017"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3570d684-2d9e-4d57-8268-ad658f08c9f4",
+    "tables_id": "nt-2283",
+    "question": "For which show-host combinations (c2-c3) does table t_c4_list have more than one entry?",
+    "sql": "\nSELECT w.c2 AS c2, w.c3 AS c3 \nFROM w \nJOIN t_c4_list ON w.id = t_c4_list.m_id \nGROUP BY w.c2, w.c3 \nHAVING COUNT(t_c4_list.m_id) > 1;\n",
+    "result": [
+      [
+        "saturday night live",
+        "host"
+      ],
+      [
+        "the newsroom",
+        "will mcavoy"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "b4752035-32e5-473e-9ce3-6be954e25327",
+    "tables_id": "nt-2283",
+    "question": "Show-host pairs with multiple entries in table t_c4_list.",
+    "sql": "\nSELECT w.c2 AS c2, w.c3 AS c3 \nFROM w \nJOIN t_c4_list ON w.id = t_c4_list.m_id \nGROUP BY w.c2, w.c3 \nHAVING COUNT(t_c4_list.m_id) > 1;\n",
+    "result": [
+      [
+        "saturday night live",
+        "host"
+      ],
+      [
+        "the newsroom",
+        "will mcavoy"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ca144db4-3eec-4304-aadd-2382352f9031",
+    "tables_id": "nt-2283",
+    "question": "Find show-host pairs with multiple entries.",
+    "sql": "\nSELECT w.c2 AS c2, w.c3 AS c3 \nFROM w \nJOIN t_c4_list ON w.id = t_c4_list.m_id \nGROUP BY w.c2, w.c3 \nHAVING COUNT(t_c4_list.m_id) > 1;\n",
+    "result": [
+      [
+        "saturday night live",
+        "host"
+      ],
+      [
+        "the newsroom",
+        "will mcavoy"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2804827b-e0c9-4609-a0c0-aaa8a5476e19",
+    "tables_id": "nt-2283",
+    "question": "Find show-host combinations with multiple entries.",
+    "sql": "\nSELECT w.c2 AS c2, w.c3 AS c3 \nFROM w \nJOIN t_c4_list ON w.id = t_c4_list.m_id \nGROUP BY w.c2, w.c3 \nHAVING COUNT(t_c4_list.m_id) > 1;\n",
+    "result": [
+      [
+        "saturday night live",
+        "host"
+      ],
+      [
+        "the newsroom",
+        "will mcavoy"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c81e6ad6-7bf9-4c4e-9fae-a62eb23680df",
+    "tables_id": "nt-2283",
+    "question": "Identify duplicate entries among host-show combinations.",
+    "sql": "\nSELECT w.c2 AS c2, w.c3 AS c3 \nFROM w \nJOIN t_c4_list ON w.id = t_c4_list.m_id \nGROUP BY w.c2, w.c3 \nHAVING COUNT(t_c4_list.m_id) > 1;\n",
+    "result": [
+      [
+        "saturday night live",
+        "host"
+      ],
+      [
+        "the newsroom",
+        "will mcavoy"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5d3fe5c2-ee23-488d-8322-6e99b1cf6810",
+    "tables_id": "nt-2283",
+    "question": "Which host-show pairs have more than one record listed?",
+    "sql": "\nSELECT w.c2 AS c2, w.c3 AS c3 \nFROM w \nJOIN t_c4_list ON w.id = t_c4_list.m_id \nGROUP BY w.c2, w.c3 \nHAVING COUNT(t_c4_list.m_id) > 1;\n",
+    "result": [
+      [
+        "saturday night live",
+        "host"
+      ],
+      [
+        "the newsroom",
+        "will mcavoy"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "54209a96-ddfc-4af3-8aa6-3da1bf306697",
+    "tables_id": "nt-2283",
+    "question": "List show-host pairs with multiple records.",
+    "sql": "\nSELECT w.c2 AS c2, w.c3 AS c3 \nFROM w \nJOIN t_c4_list ON w.id = t_c4_list.m_id \nGROUP BY w.c2, w.c3 \nHAVING COUNT(t_c4_list.m_id) > 1;\n",
+    "result": [
+      [
+        "saturday night live",
+        "host"
+      ],
+      [
+        "the newsroom",
+        "will mcavoy"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a845aaaf-2a15-4f3d-aaa4-d48b871ef142",
+    "tables_id": "nt-2283",
+    "question": "Which show-host combinations are listed in t_c4_list with duplicates?",
+    "sql": "\nSELECT w.c2 AS c2, w.c3 AS c3 \nFROM w \nJOIN t_c4_list ON w.id = t_c4_list.m_id \nGROUP BY w.c2, w.c3 \nHAVING COUNT(t_c4_list.m_id) > 1;\n",
+    "result": [
+      [
+        "saturday night live",
+        "host"
+      ],
+      [
+        "the newsroom",
+        "will mcavoy"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "21b7ad48-073b-4c2b-a07d-525759dfd61e",
+    "tables_id": "nt-6397",
+    "question": "How many records have c2_length equal to 1?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c2_length = 1;\n",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "2110d91a-368f-4797-95c8-1d303443f8c3",
+    "tables_id": "nt-6397",
+    "question": "Records where c2_length is 1?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_length = 1;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c48c09bd-450d-4ede-8a6a-7634d0348905",
+    "tables_id": "nt-6397",
+    "question": "Records with c2_length equal to 1?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_length = 1;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c21184bc-761e-45f9-8ebc-3c972d85c9ab",
+    "tables_id": "nt-6397",
+    "question": "Number of records where length of c2 equals 1?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_length = 1;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e3b69c92-8ce9-4c45-ab9e-8acaf4a40ead",
+    "tables_id": "nt-6397",
+    "question": "Records with c2_length 1?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_length = 1;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "8ddaf17d-281e-455b-a008-2840b2a7b818",
+    "tables_id": "nt-6397",
+    "question": "How many entries have c2_length as 1?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_length = 1;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9ac25fff-56f0-4139-aae0-eb47cf3b2d26",
+    "tables_id": "nt-6397",
+    "question": "Count the number of records having length_of_c2 equals to 1",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_length = 1;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "544e067b-0d06-43dd-ba96-bd2cf031a55a",
+    "tables_id": "nt-6397",
+    "question": "Number of instances having c2_length as 1",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_length = 1;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
   }
 ]

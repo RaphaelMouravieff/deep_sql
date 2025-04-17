@@ -71,6 +71,11 @@ class DataArguments:
         metadata={"help": "The maximum number of tables to sample from the database."},
     )
 
+    base_prompt_path: Optional[str] = field(
+        default="../data/prompts/base_prompt.yaml",
+        metadata={"help": "The path to the base prompt YAML file."},
+    )
+
 
 @dataclass
 class TrainingArguments:
