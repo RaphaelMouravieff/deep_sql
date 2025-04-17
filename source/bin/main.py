@@ -35,12 +35,10 @@ def generate_dataset(model, data_args, training_args, table_manager) -> None:
 
     prompt_manager = PromptManager(table_manager, library)
 
-    question_prompt, sql_prompt = prompt_manager.get_prompt()
-
     execute_sql= SQLExecutorTool(conn)  
 
     # Create agents
-    question_generator, sql_translator, question_diversity = create_agents(model, retriever_tool,execute_sql)
+    agents = create_agents(model, training_args, retriever_tool,execute_sql)
     
     # Main generation loop
     progress_bar = tqdm(range(training_args.num_iterations), desc="Generating dataset entries")
@@ -48,9 +46,10 @@ def generate_dataset(model, data_args, training_args, table_manager) -> None:
         progress_bar.set_description(f"Entry {len(library) + 1}")
         
         # Run one pipeline step
-        entries = run_pipeline_step(question_prompt, sql_prompt, tables_info, table_manager.current_table_id,
-                                    question_generator, sql_translator, question_diversity,
-                                    retriever_tool, execute_sql)
+        entries = run_pipeline_step(prompt_manager, 
+                                    agents,
+                                    retriever_tool, 
+                                    execute_sql)
         
         if entries:
             # Add to library

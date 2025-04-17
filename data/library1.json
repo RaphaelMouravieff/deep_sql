@@ -830,5 +830,197 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "d8256d81-669f-4be7-8653-557c4cadad90",
+    "tables_id": "nt-10142",
+    "question": "How many entries are there in table w where the value of column c2 is 'tiger woods'?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c2 = 'tiger woods';\n",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "54d275d6-55de-43ac-b4e1-16c98f55671d",
+    "tables_id": "nt-10142",
+    "question": "How many entries in table w where c2 is tiger woods?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'tiger woods';",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "be91813f-a4f6-45ff-93b5-502abbb6ccd8",
+    "tables_id": "nt-10142",
+    "question": "How many rows in table w with tiger woods in column c2?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'tiger woods';",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "dd66e2a9-42de-418c-b09c-c69ed9eecd44",
+    "tables_id": "nt-10142",
+    "question": "How many ['competition'] in table w with tiger woods in column c2?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'tiger woods';",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "94451de4-1d04-4aa3-8578-14b5127e0b55",
+    "tables_id": "nt-10142",
+    "question": "How many times does tiger woods appear in column c2?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'tiger woods';",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "700b2b0b-d481-4002-b47b-0b0110872af0",
+    "tables_id": "nt-10142",
+    "question": "What's the count of all rows in table w that have tiger woods listed under column c2?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'tiger woods';",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "7de1fd03-354d-40dd-a388-8f8bffb0d055",
+    "tables_id": "nt-10142",
+    "question": "Count of rows in table w where c2 is tiger woods?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'tiger woods';",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "026f021b-6078-44f4-96c1-486ddd0a5fd7",
+    "tables_id": "nt-10142",
+    "question": "How many records in table w match tiger woods on column c2?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'tiger woods';",
+    "result": [
+      [
+        1
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6c824e1a-4d02-4952-87cb-e7798da7a1c0",
+    "tables_id": "nt-6770",
+    "question": "How many records are there in table w where column c1 equals 'conservative'?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c1 = 'conservative';\n",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "03d0b440-e390-42ab-b297-eeb3944e49ca",
+    "tables_id": "nt-6770",
+    "question": "Count records in w with c1='conservative'.",
+    "sql": "SELECT COUNT(*) FROM w WHERE c1 = 'conservative';",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "29ed8743-e45f-4d90-8b96-a1352f5b0217",
+    "tables_id": "nt-6770",
+    "question": "How many rows match 'conservative' for column c1?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c1 = 'conservative';",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "29f52a31-936e-420c-a83b-4c0c5d21a4ea",
+    "tables_id": "nt-6770",
+    "question": "How many entries are in table w where ['file', 'list'] c1 equals 'conservative'?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c1 = 'conservative';",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3efa6271-870c-44c5-9864-25a24d7345cc",
+    "tables_id": "nt-6770",
+    "question": "Count rows with column value conservative.",
+    "sql": "SELECT COUNT(*) FROM w WHERE c1 = 'conservative';",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6fa761c9-2cce-4f77-be9d-6b8e1e866e24",
+    "tables_id": "nt-6770",
+    "question": "How many records have 'conservative' in the c1 field of table w?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c1 = 'conservative';",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ccd7308a-9f8d-4134-b1a3-cd45297e5bff",
+    "tables_id": "nt-6770",
+    "question": "Count conservative values for c1.",
+    "sql": "SELECT COUNT(*) FROM w WHERE c1 = 'conservative';",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6300cae4-521b-4abf-b9fb-f895968ab583",
+    "tables_id": "nt-6770",
+    "question": "Get the total of records with 'conservative' in column c1.",
+    "sql": "SELECT COUNT(*) FROM w WHERE c1 = 'conservative';",
+    "result": [
+      [
+        2
+      ]
+    ],
+    "orginal": false
   }
 ]

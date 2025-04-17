@@ -92,6 +92,11 @@ class TrainingArguments:
         metadata={"help": "The embedding model name."},
     )
 
+    max_agent_steps: Optional[int] = field(
+        default=11,
+        metadata={"help": "The maximum number of steps for the agent."},
+    )
+
 def __post_init__(self):
 
     if self.dataset_name is None and self.train_file is None and self.validation_file is None:

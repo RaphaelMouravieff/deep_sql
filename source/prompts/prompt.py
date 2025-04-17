@@ -14,6 +14,9 @@ class PromptManager:
         self.table_schema_str = self.table_schema(tables_info)
         self.sample_data_str = self.sample_data(table_samples)
 
+        self.base_prompt_str = self.base_prompt()
+
+
     def table_schema(self, tables_info):
 
         prompt = ""
@@ -34,7 +37,8 @@ class PromptManager:
         return prompt
 
 
-    def get_prompt(self):
+
+    def base_prompt(self):
         """
         1. Generates a question_prompt string for an LLM to produce an SQL-relevant
         natural language question.
@@ -42,8 +46,7 @@ class PromptManager:
         with all necessary context pre-populated.
         """
 
-        # --- Start building the prompt for question generation ---
-        question_prompt = f"""
+        prompt = f"""
     You are an SQL **question generator** in natural language for a database with the following structure.
 
     DATABASE TABLES:
@@ -52,24 +55,13 @@ class PromptManager:
     SCHEMA FOR EACH TABLE:
     """
 
-        sql_prompt = f"""
-    You are an SQL **expert** translating natural language question to SQL.
+        prompt+= self.table_schema_str
+        prompt += self.sample_data_str
+        return prompt
+    
+    def get_question_prompt(self):
 
-    DATABASE TABLES:
-    {self.table_info_str}
-
-    SCHEMA FOR EACH TABLE:
-    """
-        question_prompt+= self.table_schema_str
-        sql_prompt+= self.table_schema_str
-
-
-                
-        # -- Add sample data to both prompts --
-        question_prompt += self.sample_data_str
-        sql_prompt += self.sample_data_str
-
-
+        question_prompt = self.base_prompt_str
         # -- Optional: Add library context to the question_prompt --
         if self.library:
             question_prompt += f"\nNOTE: The library already contains {len(self.library)} questions."
@@ -98,102 +90,103 @@ class PromptManager:
                         Return **only the question** (no explanations or extra formatting).
                         """
 
-        return question_prompt, sql_prompt
-
-
-def get_extra_prompt_sql(sql_prompt, question):
-    """
-    2. Takes the partial 'sql_prompt' plus the new 'question' generated
-       in natural language, and instructs the LLM to produce the SQL query.
-    """
+        return question_prompt
     
-    sql_prompt += f"""
-                Natural Language Question: {question}
-
-                INSTRUCTION:
-                Write a one SINGLE valid SQL query that correctly answers Natural Language Question using the
-                database structure provided above. JOIN tables if needed.
-                And you must use the "execute_sql" tool to check if the sql is valid.
-                Finally Return the valid SQL. "final_answer(execute_sql(sql_query))"
-
-                RETURN ONLY the SQL query without explanations, commentary, or markdown formatting.
-                """
-    return sql_prompt
 
 
+    def get_traductor_prompt(self, question):
+        """
+        2. Takes the partial 'sql_prompt' plus the new 'question' generated
+        in natural language, and instructs the LLM to produce the SQL query.
+        """
+        sql_prompt = self.base_prompt_str
+        sql_prompt += f"""
+                    Natural Language Question: {question}
 
-def get_extra_prompt_divers(question, sql_question, tables_info):
-    """
-    3. Takes the original question, the final SQL query, and table schema info
-       to generate 3 paraphrased variations that preserve meaning and use the
-       same columns/tables.
-    """
+                    INSTRUCTION:
+                    Write a one SINGLE valid SQL query that correctly answers Natural Language Question using the
+                    database structure provided above. JOIN tables if needed.
+                    And you must use the "execute_sql" tool to check if the sql is valid.
+                    Finally Return the valid SQL. "final_answer(execute_sql(sql_query))"
 
-    diversity_prompt = f"""
-    You are a **question paraphrasing expert**.
-
-    Original question: {question}
-    its Corresponding SQL query: {sql_question}
-
-    DATABASE TABLES Columns:
-    {tables_info["schemas"].values()}
+                    RETURN ONLY the SQL query without explanations, commentary, or markdown formatting.
+                    """
+        return sql_prompt
 
 
-        Your task is to create 7 different variants of the original question using the following techniques:
 
-    1. BASIC SIMPLIFICATION
-    • Remove non-essential elements while preserving the main meaning.
-    • Example: "Which club has the most female students as their members?" → "Which club has the most female students?"
+    def get_extra_prompt_divers(self, question, sql_question):
+        """
+        3. Takes the original question, the final SQL query, and table schema info
+        to generate 3 paraphrased variations that preserve meaning and use the
+        same columns/tables.
+        """
 
-    2. SIMPLIFICATION BY HIDING DETAILS
-    • Preserve the central objective but remove additional explanations.
-    • Example: "What is the title and credits of the course that is taught in the largest classroom?" → "What course is taught in the biggest classroom and what are its credits?"
+        diversity_prompt = f"""
+        You are a **question paraphrasing expert**.
 
-    3. USING SYNONYMS
-    • Replace certain terms with their synonyms while maintaining meaning.
-    • Example: "What is the average duration in milliseconds of tracks that belong to Latin or Pop genre?" → "What is the mean length in milliseconds of Latin or Pop songs?"
+        Original question: {question}
+        its Corresponding SQL query: {sql_question}
 
-    4. SEMANTIC SUBSTITUTIONS
-    • Replace expressions with semantically equivalent alternatives.
-    • Example: "What are the locations that have gas stations owned by a company with a market value greater than 100?" → "Where are the gas stations owned by a company worth more than 100?"
+        DATABASE TABLES Columns:
+        {self.table_schema_str}
 
-    5. COMPLETE REFORMULATION
-    • Express the same request in a totally different way.
-    • Example: "What is the number of routes operated by American Airlines whose destinations are in Italy?" → "How many routes does American Airlines have that fly to Italy?"
 
-    6. SIMPLIFICATION WITH MORE DIRECT LANGUAGE
-    • Use more direct and concise language.
-    • Example: "What are the names of body builders whose total score is higher than 300?" → "Who are the body builders with a score over 300?"
+            Your task is to create 7 different variants of the original question using the following techniques:
 
-    7. PARAPHRASE WITH CHANGE OF PERSPECTIVE
-    • Reformulate by changing the style or perspective of the question.
-    • Example: "Return the categories of music festivals that have the result 'Awarded'" → "List the categories of music festivals that have been recognized with awards"
+        1. BASIC SIMPLIFICATION
+        • Remove non-essential elements while preserving the main meaning.
+        • Example: "Which club has the most female students as their members?" → "Which club has the most female students?"
 
-    For each original SQL question provided, please generate all 7 variants following these techniques without changing the sql request.
-    Make sure to keep the SQL query unchanged.
+        2. SIMPLIFICATION BY HIDING DETAILS
+        • Preserve the central objective but remove additional explanations.
+        • Example: "What is the title and credits of the course that is taught in the largest classroom?" → "What course is taught in the biggest classroom and what are its credits?"
 
-    tools:
-    - Use 'get_synonym' tool to look online for synonyms if need.
-    - You must use the "retriever_tool" tool for each variation question to validate the generated question for you.
+        3. USING SYNONYMS
+        • Replace certain terms with their synonyms while maintaining meaning.
+        • Example: "What is the average duration in milliseconds of tracks that belong to Latin or Pop genre?" → "What is the mean length in milliseconds of Latin or Pop songs?"
 
-    return a json array with the following format (no additional text):
-    [
-        {{
-            "question": "Variant 1",
-            "sql": "SQL Query"
-        }},
-        {{
-            "question": "Variant 2",
-            "sql": "SQL Query"
-        }},
-        ...
-        {{
-            "question": "Variant 7",
-            "sql": "SQL Query"
-        }}
-    ]
-    """
-    return diversity_prompt
+        4. SEMANTIC SUBSTITUTIONS
+        • Replace expressions with semantically equivalent alternatives.
+        • Example: "What are the locations that have gas stations owned by a company with a market value greater than 100?" → "Where are the gas stations owned by a company worth more than 100?"
+
+        5. COMPLETE REFORMULATION
+        • Express the same request in a totally different way.
+        • Example: "What is the number of routes operated by American Airlines whose destinations are in Italy?" → "How many routes does American Airlines have that fly to Italy?"
+
+        6. SIMPLIFICATION WITH MORE DIRECT LANGUAGE
+        • Use more direct and concise language.
+        • Example: "What are the names of body builders whose total score is higher than 300?" → "Who are the body builders with a score over 300?"
+
+        7. PARAPHRASE WITH CHANGE OF PERSPECTIVE
+        • Reformulate by changing the style or perspective of the question.
+        • Example: "Return the categories of music festivals that have the result 'Awarded'" → "List the categories of music festivals that have been recognized with awards"
+
+        For each original SQL question provided, please generate all 7 variants following these techniques without changing the sql request.
+        Make sure to keep the SQL query unchanged.
+
+        tools:
+        - Use 'get_synonym' tool to look online for synonyms if need.
+        - You must use the "retriever_tool" tool for each variation question to validate the generated question for you.
+
+        return a json array with the following format (no additional text):
+        [
+            {{
+                "question": "Variant 1",
+                "sql": "SQL Query"
+            }},
+            {{
+                "question": "Variant 2",
+                "sql": "SQL Query"
+            }},
+            ...
+            {{
+                "question": "Variant 7",
+                "sql": "SQL Query"
+            }}
+        ]
+        """
+        return diversity_prompt
 
 
 
