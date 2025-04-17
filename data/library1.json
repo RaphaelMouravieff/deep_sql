@@ -5989,5 +5989,813 @@
     "sql": "SELECT DISTINCT ta.c2_address FROM w AS w JOIN t_c2_address AS ta ON w.id = ta.m_id WHERE w.c3_number > 20000 AND w.c5_number >= 25",
     "result": "\nSELECT DISTINCT ta.c2_address \nFROM w AS w \nJOIN t_c2_address AS ta ON w.id = ta.m_id \nWHERE w.c3_number > 20000 AND w.c5_number >= 25;\n",
     "orginal": false
+  },
+  {
+    "vector_id": "6174fae8-ca43-4ef3-ad0f-ad49e4975464",
+    "tables_id": "nt-10291",
+    "question": "what are the dates and opponent names of games played at 'home' with an attendance greater than 20000?",
+    "sql": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w \nWHERE c3_home = 'home' AND c8_number > 20000;\n",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w \nWHERE c3_home = 'home' AND c8_number > 20000;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "1d372605-b91d-43fd-a877-9eb33568e3a8",
+    "tables_id": "nt-10291",
+    "question": "what are the dates and opponents of home games with attendance over 20000?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c3_home = 'home' AND c8_number > 20000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w \nWHERE c3_home = 'home' AND c8_number > 20000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "b16c4b41-f818-4002-9a3b-4158bdd99a75",
+    "tables_id": "nt-10291",
+    "question": "which home games had attendance over 20000 and what were their dates and opponents?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c3_home = 'home' AND c8_number > 20000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w \nWHERE c3_home = 'home' AND c8_number > 20000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "76151dab-a3ce-47a5-ba0f-c321e6729f97",
+    "tables_id": "nt-10291",
+    "question": "what are the times and rivals of home games with crowd over 20000?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c3_home = 'home' AND c8_number > 20000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w \nWHERE c3_home = 'home' AND c8_number > 20000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "7958a91b-0078-46d6-a8be-31292a85afcc",
+    "tables_id": "nt-10291",
+    "question": "on which occasions did home games exceed 20000 spectators and who were the opponents?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c3_home = 'home' AND c8_number > 20000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w \nWHERE c3_home = 'home' AND c8_number > 20000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "6853e677-b602-4220-af32-13ba8108e856",
+    "tables_id": "nt-10291",
+    "question": "can you list home games with more than 20000 people in attendance and their respective dates and rivals?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c3_home = 'home' AND c8_number > 20000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w \nWHERE c3_home = 'home' AND c8_number > 20000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "43620347-4371-4b05-bc18-cdc79f2af809",
+    "tables_id": "nt-10291",
+    "question": "list home games with attendance over 20000 and opponents",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c3_home = 'home' AND c8_number > 20000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w \nWHERE c3_home = 'home' AND c8_number > 20000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "16bdf3df-81c5-4515-a063-836f9efb95f9",
+    "tables_id": "nt-10291",
+    "question": "home games that drew over 20000 fans, what are their opponent names and match dates?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c3_home = 'home' AND c8_number > 20000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w \nWHERE c3_home = 'home' AND c8_number > 20000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "d44dbfd6-b1f8-4120-8557-cc913f9feed0",
+    "tables_id": "nt-10291",
+    "question": "list all game ids (#:) where the opponent is 'white sox' and the winning score difference is greater than 4.",
+    "sql": "\nSELECT id \nFROM w \nWHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;\n",
+    "result": "\nSELECT id \nFROM w \nWHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "eb0368b7-9631-44d5-a4c1-4d291e2df6ae",
+    "tables_id": "nt-10291",
+    "question": "list all game ids where white sox are opponents with a win by more than 4.",
+    "sql": "SELECT id FROM w WHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;",
+    "result": "\nSELECT id \nFROM w \nWHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "65ff6b06-73e2-417c-beb8-5158d7f6276f",
+    "tables_id": "nt-10291",
+    "question": "find all game ids where white sox are opponents with a win margin over 4.",
+    "sql": "SELECT id FROM w WHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;",
+    "result": "\nSELECT id \nFROM w \nWHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "6c59e0cc-4bad-46b1-8c3a-ce03b27c1e26",
+    "tables_id": "nt-10291",
+    "question": "list all game ids where white sox are opponents and the winning score gap is greater than 4.",
+    "sql": "SELECT id FROM w WHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;",
+    "result": "\nSELECT id \nFROM w \nWHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "f6326d48-4fc2-4ed9-ab20-22fd06af86e5",
+    "tables_id": "nt-10291",
+    "question": "identify all game ids where white sox are playing against and there's a victory margin exceeding 4.",
+    "sql": "SELECT id FROM w WHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;",
+    "result": "\nSELECT id \nFROM w \nWHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "3ab0c9ee-45cd-4d83-84e4-8428b885072c",
+    "tables_id": "nt-10291",
+    "question": "which game ids (#:) have white sox as opponents and a winning score that surpasses their opponent's by more than 4 points?",
+    "sql": "SELECT id FROM w WHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;",
+    "result": "\nSELECT id \nFROM w \nWHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "2f8863a8-d90d-47d7-a27f-e7ecaa249b8e",
+    "tables_id": "nt-10291",
+    "question": "list game ids (#:) where white sox are opponents with a win by over 4 points.",
+    "sql": "SELECT id FROM w WHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;",
+    "result": "\nSELECT id \nFROM w \nWHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "2bb2443c-f307-4833-82a2-c19667d6d36d",
+    "tables_id": "nt-10291",
+    "question": "provide game ids (#:) where white sox have played and there's a winning score difference of over 4.",
+    "sql": "SELECT id FROM w WHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;",
+    "result": "\nSELECT id \nFROM w \nWHERE c3 LIKE '%White Sox%' AND CAST(SUBSTR(c4, 1, INSTR(c4, ' ') - 1) AS INTEGER) > 4;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "9190ed9b-c70c-4441-8cb6-050c8a94f873",
+    "tables_id": "nt-10291",
+    "question": "what are the ids and dates of matches with an attendance greater than 18,000?",
+    "sql": "\nSELECT id, c2 \nFROM w \nWHERE c8_number > 18000;\n",
+    "result": "\nSELECT id, c2 \nFROM w \nWHERE c8_number > 18000;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "7653344f-1c17-48dd-84c7-45dffe2643ec",
+    "tables_id": "nt-10291",
+    "question": "ids and dates for matches over 18,000",
+    "sql": "SELECT id, c2 FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT id, c2 \nFROM w \nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "a30d2a5a-73b0-4f5e-94fc-a3fc58d105aa",
+    "tables_id": "nt-10291",
+    "question": "what are the dates and opponents of games with an attendance greater than 18,000?",
+    "sql": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w\nWHERE c8_number > 18000;\n",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w\nWHERE c8_number > 18000;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "a9cc9934-27c1-49e1-8f1f-8c83fc717935",
+    "tables_id": "nt-10291",
+    "question": "what are dates and opponents of games with attendance greater than 18,000?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w\nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "076cff83-ef5a-439c-b719-ecd204ea4584",
+    "tables_id": "nt-10291",
+    "question": "what are dates and opponents of games with attendance over 18,000?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w\nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "f8f5e138-b683-46b3-92db-422bdab1f7cd",
+    "tables_id": "nt-10291",
+    "question": "what are the dates and rivals of matches with more than 18,000 in attendance?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w\nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "46796f1e-fc25-4915-aa79-239e747cc4a4",
+    "tables_id": "nt-10291",
+    "question": "what are the dates and adversaries of matches with an audience surpassing 18,000?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w\nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "4e6c2fb7-3940-4b06-804f-ac9661ee56e7",
+    "tables_id": "nt-10291",
+    "question": "which match dates and teams did we play against when more than 18,000 people attended?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w\nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "331ea739-d935-40f3-9420-7174f27ab20d",
+    "tables_id": "nt-10291",
+    "question": "what dates and opponents had over 18,000 in attendance?",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w\nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "ae814fa1-3f77-4b6d-beb9-5644b3ec3074",
+    "tables_id": "nt-10291",
+    "question": "list dates and rivals when match had more than 18,000 attendees.",
+    "sql": "SELECT c2_parsed AS date, c3_raw AS opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS date, c3_raw AS opponent \nFROM w\nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "4b56e4c9-4cb2-4b6f-9333-e23ea21f0e54",
+    "tables_id": "nt-10291",
+    "question": "what are the dates and opponents of games with an attendance greater than 18,000?",
+    "sql": "\nSELECT c2_parsed AS Date, c3_raw AS Opponent \nFROM w \nWHERE c8_number > 18000;\n",
+    "result": "\nSELECT c2_parsed AS Date, c3_raw AS Opponent \nFROM w \nWHERE c8_number > 18000;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "5aa84daf-bb5a-4acc-b13f-57531c28218a",
+    "tables_id": "nt-10291",
+    "question": "games with attendance greater than 18,000?",
+    "sql": "SELECT c2_parsed AS Date, c3_raw AS Opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS Date, c3_raw AS Opponent \nFROM w \nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "59bbab41-a9aa-40fa-820b-83a58302603c",
+    "tables_id": "nt-10291",
+    "question": "list games where attendance exceeds 18,000.",
+    "sql": "SELECT c2_parsed AS Date, c3_raw AS Opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS Date, c3_raw AS Opponent \nFROM w \nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "9eef46ed-2561-490d-baf4-dada5f6f7498",
+    "tables_id": "nt-10291",
+    "question": "what are the dates and opponents of matches with attendance over 18,000?",
+    "sql": "SELECT c2_parsed AS Date, c3_raw AS Opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS Date, c3_raw AS Opponent \nFROM w \nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "5b5fc8af-c792-4537-aaaa-0906430c8713",
+    "tables_id": "nt-10291",
+    "question": "dates and opponents for games with more than 18,000 in attendance?",
+    "sql": "SELECT c2_parsed AS Date, c3_raw AS Opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS Date, c3_raw AS Opponent \nFROM w \nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "a25bbfc4-4c67-4c00-92cf-bbb28d6695ff",
+    "tables_id": "nt-10291",
+    "question": "identify dates and rivals where the number of spectators was above 18,000.",
+    "sql": "SELECT c2_parsed AS Date, c3_raw AS Opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS Date, c3_raw AS Opponent \nFROM w \nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "aae15aec-1b65-4b36-bd5e-e3cee9baf3e4",
+    "tables_id": "nt-10291",
+    "question": "which matches had an attendance that exceeded 18,000 and what were the respective opponents on those dates?",
+    "sql": "SELECT c2_parsed AS Date, c3_raw AS Opponent FROM w WHERE c8_number > 18000;",
+    "result": "\nSELECT c2_parsed AS Date, c3_raw AS Opponent \nFROM w \nWHERE c8_number > 18000;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "03f55f96-07d1-4bfa-9c42-b4f7b771e334",
+    "tables_id": "nt-10291",
+    "question": "list all entries from table w where c2_month is 7 (july) and c4_first_number1 is greater than 9.",
+    "sql": "\nSELECT *\nFROM w\nWHERE c2_month = 7 AND c4_first_number1 > 9;\n",
+    "result": "\nSELECT *\nFROM w\nWHERE c2_month = 7 AND c4_first_number1 > 9;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "87975aa9-d4ac-4fa1-a7da-74ba4101f4dd",
+    "tables_id": "nt-10291",
+    "question": "list entries from table w where month is july and number is greater than 9.",
+    "sql": "SELECT * FROM w WHERE c2_month = 7 AND c4_first_number1 > 9;",
+    "result": "\nSELECT *\nFROM w\nWHERE c2_month = 7 AND c4_first_number1 > 9;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "5fe09cc9-dec7-4b8f-a5f2-ca332386d7fa",
+    "tables_id": "nt-10291",
+    "question": "list entries from table w where month and number are as per conditions.",
+    "sql": "SELECT * FROM w WHERE c2_month = 7 AND c4_first_number1 > 9;",
+    "result": "\nSELECT *\nFROM w\nWHERE c2_month = 7 AND c4_first_number1 > 9;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "8538d7ab-922d-40be-b501-3264f6d0f76e",
+    "tables_id": "nt-10291",
+    "question": "list entries from table w where error: unable to connect to thesaurus.com (httpsconnectionpool(host='www.thesaurus.com', port=443): max retries exceeded with url: /browse/month (caused by newconnectionerror('<urllib3.connection.httpsconnection object at 0x14614f7dcda0>: failed to establish a new connection: [errno 101] network is unreachable'))). is july and number is greater than 9.",
+    "sql": "SELECT * FROM w WHERE c2_month = 7 AND c4_first_number1 > 9;",
+    "result": "\nSELECT *\nFROM w\nWHERE c2_month = 7 AND c4_first_number1 > 9;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "459906ba-fec4-4f68-8c0c-34b1fc91bc00",
+    "tables_id": "nt-10291",
+    "question": "list entries from table w where month entry corresponds to july and initial number value is over 9.",
+    "sql": "SELECT * FROM w WHERE c2_month = 7 AND c4_first_number1 > 9;",
+    "result": "\nSELECT *\nFROM w\nWHERE c2_month = 7 AND c4_first_number1 > 9;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "9265b28b-c20f-476e-b67e-45a81a8a32cf",
+    "tables_id": "nt-10291",
+    "question": "identify all records in table w that meet criteria for july and have number values higher than nine.",
+    "sql": "SELECT * FROM w WHERE c2_month = 7 AND c4_first_number1 > 9;",
+    "result": "\nSELECT *\nFROM w\nWHERE c2_month = 7 AND c4_first_number1 > 9;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "4b936538-6f00-4ac6-97b7-e844d22b921e",
+    "tables_id": "nt-10291",
+    "question": "find entries from table w where month is july and number exceeds 9.",
+    "sql": "SELECT * FROM w WHERE c2_month = 7 AND c4_first_number1 > 9;",
+    "result": "\nSELECT *\nFROM w\nWHERE c2_month = 7 AND c4_first_number1 > 9;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "6bb5419b-dc8d-4249-a553-2cc076dc7491",
+    "tables_id": "nt-10291",
+    "question": "show records from table w that have a match for july as month and number greater than nine.",
+    "sql": "SELECT * FROM w WHERE c2_month = 7 AND c4_first_number1 > 9;",
+    "result": "\nSELECT *\nFROM w\nWHERE c2_month = 7 AND c4_first_number1 > 9;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "ea2c4457-037d-4fd1-a81e-a16fa6b68048",
+    "tables_id": "nt-8291",
+    "question": "show records from table w where c1_number is greater than 1900.",
+    "sql": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "result": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "3976ecb5-3dc1-4524-85e2-cb61dc60a7fb",
+    "tables_id": "nt-8291",
+    "question": "show records with c1_number over 1900.",
+    "sql": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "result": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "9de6f986-b2e9-4255-8e2b-8b2c28129241",
+    "tables_id": "nt-8291",
+    "question": "display rows where c1_number exceeds 1900.",
+    "sql": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "result": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "1dd0ad8a-22f3-47a0-a300-a79f3b4c6e73",
+    "tables_id": "nt-8291",
+    "question": "display records from table w where c1_number is greater than 1900.",
+    "sql": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "result": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "b6ce6db4-ba97-42e0-b6ce-4698370df647",
+    "tables_id": "nt-8291",
+    "question": "retrieve entries in table w that have a c1_number value larger than 1900.",
+    "sql": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "result": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "71e5b535-ff0d-4f08-b2d6-6d7d5493ed9b",
+    "tables_id": "nt-8291",
+    "question": "which records are associated with a c1_number value above 1900?",
+    "sql": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "result": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "c1e828f0-a8ff-47d6-b988-1e9957c4505b",
+    "tables_id": "nt-8291",
+    "question": "select rows where c1_number is greater than 1900.",
+    "sql": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "result": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "fc629f41-8f9b-4f83-b1a8-0dec9a724917",
+    "tables_id": "nt-8291",
+    "question": "provide table w entries with c1_number value higher than 1900.",
+    "sql": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "result": "\nSELECT *\nFROM w\nWHERE c1_number > 1900;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "f15a8910-5b24-4dc9-af44-707a6c30a419",
+    "tables_id": "nt-4222",
+    "question": "what are the entries in table w where the length of column c4 (c4_length) is greater than 1?",
+    "sql": "\nSELECT * \nFROM w \nWHERE c4_length > 1;\n",
+    "result": "\nSELECT * \nFROM w \nWHERE c4_length > 1;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "91a408c9-94f9-4d99-87d5-6a96fe1436fa",
+    "tables_id": "nt-4222",
+    "question": "entries in table w with length of c4 greater than 1?",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1;",
+    "result": "\nSELECT * \nFROM w \nWHERE c4_length > 1;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "7d8afb73-3ae7-4be7-aa72-471a4920d68d",
+    "tables_id": "nt-4222",
+    "question": "entries in table w where c4's length exceeds 1?",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1;",
+    "result": "\nSELECT * \nFROM w \nWHERE c4_length > 1;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "298f23c1-dbd0-4ed8-af73-f62ab0e7f384",
+    "tables_id": "nt-4222",
+    "question": "entries in table w where c4 size is greater than 1?",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1;",
+    "result": "\nSELECT * \nFROM w \nWHERE c4_length > 1;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "c707659f-8fef-4b1f-bf7c-b6e241770a89",
+    "tables_id": "nt-4222",
+    "question": "entries in table w where c4 exceeds the value of 1?",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1;",
+    "result": "\nSELECT * \nFROM w \nWHERE c4_length > 1;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "02125c63-61f2-4f4c-bf11-ec30ecb77d02",
+    "tables_id": "nt-4222",
+    "question": "which entries in table w have c4 greater than one?",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1;",
+    "result": "\nSELECT * \nFROM w \nWHERE c4_length > 1;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "5bc949f4-6ac4-4642-9a15-d4baaa62243e",
+    "tables_id": "nt-4222",
+    "question": "table w entries with c4 over 1?",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1;",
+    "result": "\nSELECT * \nFROM w \nWHERE c4_length > 1;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "83978135-b797-4b04-be88-461da6857cca",
+    "tables_id": "nt-4222",
+    "question": "list table w entries where c4's value is more than one.",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1;",
+    "result": "\nSELECT * \nFROM w \nWHERE c4_length > 1;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "71ca9f9b-53b3-4d2b-8d61-0a629b7924d5",
+    "tables_id": "nt-11463",
+    "question": "which models were launched before march 1999?",
+    "sql": "\nSELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;\n",
+    "result": "\nSELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "dd753529-4487-4c7a-95a7-0bf0d20812b1",
+    "tables_id": "nt-11463",
+    "question": "which models launched before march 1999?",
+    "sql": "SELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;",
+    "result": "\nSELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "e0c0beec-5a71-4f82-ba0c-978204004712",
+    "tables_id": "nt-11463",
+    "question": "models released before march 1999?",
+    "sql": "SELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;",
+    "result": "\nSELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "e38bc1b5-bc34-4ea2-b9f4-ec68a2b2ad06",
+    "tables_id": "nt-11463",
+    "question": "which models were introduced before march 1999?",
+    "sql": "SELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;",
+    "result": "\nSELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "9845f34a-6486-4f33-a1ef-5d19a3ddb059",
+    "tables_id": "nt-11463",
+    "question": "what's the list of models released prior to march 1999?",
+    "sql": "SELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;",
+    "result": "\nSELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "8117e72c-8d4e-4867-8280-893795423309",
+    "tables_id": "nt-11463",
+    "question": "list models before march 1999.",
+    "sql": "SELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;",
+    "result": "\nSELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "6cd02589-9dba-45a8-b30e-b238dc418732",
+    "tables_id": "nt-11463",
+    "question": "what are the products that were released prior to march 1999?",
+    "sql": "SELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;",
+    "result": "\nSELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "9fce195a-b1f6-4f60-8a3a-afccb5da064c",
+    "tables_id": "nt-11463",
+    "question": "provide me with a list of models launched before march 1999.",
+    "sql": "SELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;",
+    "result": "\nSELECT id, c1 AS model FROM w WHERE c2_number < 1999.0;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "c331c1e0-af0e-4368-becc-7c9f392d3f3e",
+    "tables_id": "nt-6621",
+    "question": "what is the total attendance for all games played at subiaco oval?",
+    "sql": "\nSELECT SUM(c8_number) AS total_attendance\nFROM w \nWHERE c7 = 'subiaco oval';\n",
+    "result": "\nSELECT SUM(c8_number) AS total_attendance\nFROM w \nWHERE c7 = 'subiaco oval';\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "16d9c2ea-8e70-46cf-ab22-5c805690ae2a",
+    "tables_id": "nt-6621",
+    "question": "total attendance for subiaco oval",
+    "sql": "SELECT SUM(c8_number) AS total_attendance FROM w WHERE c7 = 'subiaco oval';",
+    "result": "\nSELECT SUM(c8_number) AS total_attendance\nFROM w \nWHERE c7 = 'subiaco oval';\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "27e2168c-b82c-47d5-b4ce-93c46d15efff",
+    "tables_id": "nt-12733",
+    "question": "what is the total difference between capacity and seated number for each stadium?",
+    "sql": "\nSELECT \n    c2 AS stadium_name,\n    SUM(c3_number - c4_number) AS capacity_seated_difference\nFROM \n    w\nGROUP BY \n    c2;\n",
+    "result": "\nSELECT \n    c2 AS stadium_name,\n    SUM(c3_number - c4_number) AS capacity_seated_difference\nFROM \n    w\nGROUP BY \n    c2;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "f7f0d065-9e5e-47cb-aa5a-98a3726297e4",
+    "tables_id": "nt-12733",
+    "question": "what is the difference between capacity and seats in stadiums?",
+    "sql": "SELECT c2 AS stadium_name, SUM(c3_number - c4_number) AS capacity_seated_difference FROM w GROUP BY c2;",
+    "result": "\nSELECT \n    c2 AS stadium_name,\n    SUM(c3_number - c4_number) AS capacity_seated_difference\nFROM \n    w\nGROUP BY \n    c2;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "fe256627-dfa6-410b-953e-0775ab51ed83",
+    "tables_id": "nt-10854",
+    "question": "how many different nationalities are there among judges who were not re-elected?",
+    "sql": "\nSELECT COUNT(DISTINCT c1)\nFROM w\nWHERE c4 = 'not re-elected';\n",
+    "result": "\nSELECT COUNT(DISTINCT c1)\nFROM w\nWHERE c4 = 'not re-elected';\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "38a67a5e-ab93-410a-b026-c694a04c256a",
+    "tables_id": "nt-10854",
+    "question": "how many nationalities among non-re-elected judges?",
+    "sql": "SELECT COUNT(DISTINCT c1) FROM w WHERE c4 = 'not re-elected';",
+    "result": "\nSELECT COUNT(DISTINCT c1)\nFROM w\nWHERE c4 = 'not re-elected';\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "13618961-e5d8-411d-8516-e34ed503bd45",
+    "tables_id": "nt-10854",
+    "question": "how many different nationalities among judges who weren't re-elected?",
+    "sql": "SELECT COUNT(DISTINCT c1) FROM w WHERE c4 = 'not re-elected';",
+    "result": "\nSELECT COUNT(DISTINCT c1)\nFROM w\nWHERE c4 = 'not re-elected';\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "82b42818-f9ba-4d82-aca7-a58b8334a27f",
+    "tables_id": "nt-10854",
+    "question": "how many ethnic backgrounds among judges who were not re-elected?",
+    "sql": "SELECT COUNT(DISTINCT c1) FROM w WHERE c4 = 'not re-elected';",
+    "result": "\nSELECT COUNT(DISTINCT c1)\nFROM w\nWHERE c4 = 'not re-elected';\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "25e1acd2-22d5-4052-b41f-b0f138670e91",
+    "tables_id": "nt-10854",
+    "question": "how many unique origins among judges who were not re-elected?",
+    "sql": "SELECT COUNT(DISTINCT c1) FROM w WHERE c4 = 'not re-elected';",
+    "result": "\nSELECT COUNT(DISTINCT c1)\nFROM w\nWHERE c4 = 'not re-elected';\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "440d143a-694c-4d4c-acec-c97156a215d5",
+    "tables_id": "nt-10854",
+    "question": "how many distinct country backgrounds among judges who were not re-elected?",
+    "sql": "SELECT COUNT(DISTINCT c1) FROM w WHERE c4 = 'not re-elected';",
+    "result": "\nSELECT COUNT(DISTINCT c1)\nFROM w\nWHERE c4 = 'not re-elected';\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "c9af47e9-5126-4461-8751-1c59529a1c55",
+    "tables_id": "nt-10854",
+    "question": "how many unique nationalities among non-re-elected judges?",
+    "sql": "SELECT COUNT(DISTINCT c1) FROM w WHERE c4 = 'not re-elected';",
+    "result": "\nSELECT COUNT(DISTINCT c1)\nFROM w\nWHERE c4 = 'not re-elected';\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "89e3d3f4-fe93-4b82-8bad-5bbaa0219f79",
+    "tables_id": "nt-10854",
+    "question": "count how many different home countries judges had that were not re-elected.",
+    "sql": "SELECT COUNT(DISTINCT c1) FROM w WHERE c4 = 'not re-elected';",
+    "result": "\nSELECT COUNT(DISTINCT c1)\nFROM w\nWHERE c4 = 'not re-elected';\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "35a1a650-6518-4af9-b8bb-7a6822146cba",
+    "tables_id": "nt-840",
+    "question": "how many unique venues are listed for matches played in 2011?",
+    "sql": "\nSELECT COUNT(DISTINCT c3) AS venue_count \nFROM w \nWHERE c2_year = 2011;\n",
+    "result": "\nSELECT COUNT(DISTINCT c3) AS venue_count \nFROM w \nWHERE c2_year = 2011;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "1c48852c-da8a-4f98-94b9-910460f8fc5a",
+    "tables_id": "nt-840",
+    "question": "how many unique venues for matches in 2011?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS venue_count FROM w WHERE c2_year = 2011;",
+    "result": "\nSELECT COUNT(DISTINCT c3) AS venue_count \nFROM w \nWHERE c2_year = 2011;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "b0176525-bc9e-4c04-912f-3a57cc83ca6d",
+    "tables_id": "nt-840",
+    "question": "count distinct venues for matches played in 2011",
+    "sql": "SELECT COUNT(DISTINCT c3) AS venue_count FROM w WHERE c2_year = 2011;",
+    "result": "\nSELECT COUNT(DISTINCT c3) AS venue_count \nFROM w \nWHERE c2_year = 2011;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "a5eeb721-b508-4034-b110-a65a41ad6b4b",
+    "tables_id": "nt-840",
+    "question": "how many different locations hosted games during 2011?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS venue_count FROM w WHERE c2_year = 2011;",
+    "result": "\nSELECT COUNT(DISTINCT c3) AS venue_count \nFROM w \nWHERE c2_year = 2011;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "b3cc4299-5cb6-445c-a545-e2ac42c5e99a",
+    "tables_id": "nt-840",
+    "question": "what is the number of unique places where matches took place in 2011?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS venue_count FROM w WHERE c2_year = 2011;",
+    "result": "\nSELECT COUNT(DISTINCT c3) AS venue_count \nFROM w \nWHERE c2_year = 2011;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "3f9f9037-8aee-4ae1-a5c9-db8e6fd8f3c1",
+    "tables_id": "nt-840",
+    "question": "how many different venues did 2011's match schedule include?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS venue_count FROM w WHERE c2_year = 2011;",
+    "result": "\nSELECT COUNT(DISTINCT c3) AS venue_count \nFROM w \nWHERE c2_year = 2011;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "932204bc-618b-4d4c-8bd9-345f3d5cb6ae",
+    "tables_id": "nt-840",
+    "question": "count unique game sites for 2011",
+    "sql": "SELECT COUNT(DISTINCT c3) AS venue_count FROM w WHERE c2_year = 2011;",
+    "result": "\nSELECT COUNT(DISTINCT c3) AS venue_count \nFROM w \nWHERE c2_year = 2011;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "d45cbf94-3a9a-4d27-a4e7-338760d12b8b",
+    "tables_id": "nt-840",
+    "question": "list distinct venues utilized in matches during 2011",
+    "sql": "SELECT COUNT(DISTINCT c3) AS venue_count FROM w WHERE c2_year = 2011;",
+    "result": "\nSELECT COUNT(DISTINCT c3) AS venue_count \nFROM w \nWHERE c2_year = 2011;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "5057b0af-9076-46d2-aba1-4d21ef6dc3bd",
+    "tables_id": "nt-5191",
+    "question": "how many different teams are listed in the table?",
+    "sql": "\nSELECT COUNT(DISTINCT c2) AS unique_teams_count \nFROM w;\n",
+    "result": "\nSELECT COUNT(DISTINCT c2) AS unique_teams_count \nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "f0dc8df5-20a8-432a-a07e-7f2bc60d3f97",
+    "tables_id": "nt-5191",
+    "question": "how many unique teams are listed?",
+    "sql": "SELECT COUNT(DISTINCT c2) AS unique_teams_count FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c2) AS unique_teams_count \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "ba531e1a-4782-48e7-ab02-746f815af545",
+    "tables_id": "nt-5191",
+    "question": "how many distinct team names appear in the table?",
+    "sql": "SELECT COUNT(DISTINCT c2) AS unique_teams_count FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c2) AS unique_teams_count \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "0d900002-1685-4711-acc6-4c6af9f3bf6a",
+    "tables_id": "nt-5191",
+    "question": "how many different clubs are listed?",
+    "sql": "SELECT COUNT(DISTINCT c2) AS unique_teams_count FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c2) AS unique_teams_count \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "9e11d576-754a-42ad-ae7f-e084b5510ad9",
+    "tables_id": "nt-5191",
+    "question": "what is the count of unique squad names in the table?",
+    "sql": "SELECT COUNT(DISTINCT c2) AS unique_teams_count FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c2) AS unique_teams_count \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "4360b8df-477b-4fa3-940b-9b6514dace74",
+    "tables_id": "nt-5191",
+    "question": "what's the tally of distinct football teams mentioned in this listing?",
+    "sql": "SELECT COUNT(DISTINCT c2) AS unique_teams_count FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c2) AS unique_teams_count \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "e7ecf6e7-41d5-4c50-88de-f7d038539fba",
+    "tables_id": "nt-5191",
+    "question": "count how many unique teams are there?",
+    "sql": "SELECT COUNT(DISTINCT c2) AS unique_teams_count FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c2) AS unique_teams_count \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "e04b716c-9338-4838-ba6e-b3e24601516e",
+    "tables_id": "nt-5191",
+    "question": "list out the number of distinct teams present here.",
+    "sql": "SELECT COUNT(DISTINCT c2) AS unique_teams_count FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c2) AS unique_teams_count \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "2ce58424-c520-45c1-9283-995b6e1f8eb6",
+    "tables_id": "nt-3170",
+    "question": "how many distinct political ideologies are mentioned in the c4 column of the 'w' table?",
+    "sql": "\nSELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies \nFROM w;\n",
+    "result": "\nSELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies \nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "vector_id": "220b79b7-4eb5-470d-acca-41f94479db1c",
+    "tables_id": "nt-3170",
+    "question": "how many distinct ideologies in c4 column of w table?",
+    "sql": "SELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "5a594432-bf1a-41d5-b9e0-2cce5cceefa8",
+    "tables_id": "nt-3170",
+    "question": "how many unique political ideologies in c4 column of w?",
+    "sql": "SELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "c79133db-7468-4ef3-8b9a-62672dc3192c",
+    "tables_id": "nt-3170",
+    "question": "how many distinct political concepts in column c4 of table w?",
+    "sql": "SELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "a354f3b4-62c3-4140-84f1-81bee6723cab",
+    "tables_id": "nt-3170",
+    "question": "what is the number of unique political beliefs listed in column c4 of table w?",
+    "sql": "SELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "5b4c2ed6-99bd-487d-ad6b-f8fa5d6ae46e",
+    "tables_id": "nt-3170",
+    "question": "count the various unique political philosophies in the specified column c4 of table w.",
+    "sql": "SELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "40768324-a9ee-4a3a-9527-9d4f5ef19f55",
+    "tables_id": "nt-3170",
+    "question": "how many distinct political ideas in w column c4?",
+    "sql": "SELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies \nFROM w;\n",
+    "orginal": false
+  },
+  {
+    "vector_id": "84fedc1d-d66a-41d3-acb2-021d29e93554",
+    "tables_id": "nt-3170",
+    "question": "list all unique political theories in w table c4 column.",
+    "sql": "SELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies FROM w;",
+    "result": "\nSELECT COUNT(DISTINCT c4) AS count_of_distinct_political_ideologies \nFROM w;\n",
+    "orginal": false
   }
 ]
