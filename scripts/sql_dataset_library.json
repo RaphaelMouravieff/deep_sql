@@ -6447,5 +6447,301 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "f6f43faa-89a0-4da6-a5dc-3a2b0dc0d205",
+    "tables_id": "nt-14084",
+    "question": "What is the total c6_number for each country?",
+    "sql": "\nSELECT \n    c2 AS Country,\n    SUM(c6_number) AS Total_c6_number\nFROM w\nGROUP BY c2;\n",
+    "result": [
+      [
+        "bolivia",
+        6.0
+      ],
+      [
+        "chile",
+        6.0
+      ],
+      [
+        "colombia",
+        3.0
+      ],
+      [
+        "ecuador",
+        3.0
+      ],
+      [
+        "peru",
+        7.0
+      ],
+      [
+        "total",
+        39.0
+      ],
+      [
+        "venezuela",
+        14.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "6bdbc128-980e-41e3-ac8b-a012c84bbca4",
+    "tables_id": "nt-14084",
+    "question": "Total c6_number by country?",
+    "sql": "\nSELECT \n    c2 AS Country,\n    SUM(c6_number) AS Total_c6_number\nFROM w\nGROUP BY c2;\n",
+    "result": [
+      [
+        "bolivia",
+        6.0
+      ],
+      [
+        "chile",
+        6.0
+      ],
+      [
+        "colombia",
+        3.0
+      ],
+      [
+        "ecuador",
+        3.0
+      ],
+      [
+        "peru",
+        7.0
+      ],
+      [
+        "total",
+        39.0
+      ],
+      [
+        "venezuela",
+        14.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e71eb43e-31e0-41f2-8781-e25064111493",
+    "tables_id": "nt-14084",
+    "question": "What is the total c6_number for each country?",
+    "sql": "\nSELECT \n    c2 AS Country,\n    SUM(c6_number) AS Total_c6_number\nFROM w\nGROUP BY c2;\n",
+    "result": [
+      [
+        "bolivia",
+        6.0
+      ],
+      [
+        "chile",
+        6.0
+      ],
+      [
+        "colombia",
+        3.0
+      ],
+      [
+        "ecuador",
+        3.0
+      ],
+      [
+        "peru",
+        7.0
+      ],
+      [
+        "total",
+        39.0
+      ],
+      [
+        "venezuela",
+        14.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "450f3013-bcf0-43c7-a166-09f439613073",
+    "tables_id": "nt-14084",
+    "question": "What is the total E for each country?",
+    "sql": "\nSELECT \n    c2 AS Country,\n    SUM(c6_number) AS Total_c6_number\nFROM w\nGROUP BY c2;\n",
+    "result": [
+      [
+        "bolivia",
+        6.0
+      ],
+      [
+        "chile",
+        6.0
+      ],
+      [
+        "colombia",
+        3.0
+      ],
+      [
+        "ecuador",
+        3.0
+      ],
+      [
+        "peru",
+        7.0
+      ],
+      [
+        "total",
+        39.0
+      ],
+      [
+        "venezuela",
+        14.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "99b3c598-c9f3-4a8f-b8cd-e1c216562f9d",
+    "tables_id": "nt-14084",
+    "question": "What's the aggregate c6_number per nation?",
+    "sql": "\nSELECT \n    c2 AS Country,\n    SUM(c6_number) AS Total_c6_number\nFROM w\nGROUP BY c2;\n",
+    "result": [
+      [
+        "bolivia",
+        6.0
+      ],
+      [
+        "chile",
+        6.0
+      ],
+      [
+        "colombia",
+        3.0
+      ],
+      [
+        "ecuador",
+        3.0
+      ],
+      [
+        "peru",
+        7.0
+      ],
+      [
+        "total",
+        39.0
+      ],
+      [
+        "venezuela",
+        14.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6ad287d7-cbfc-4d8a-9be4-65a7570606d2",
+    "tables_id": "nt-14084",
+    "question": "Find out the sum of c6_number per respective countries.",
+    "sql": "\nSELECT \n    c2 AS Country,\n    SUM(c6_number) AS Total_c6_number\nFROM w\nGROUP BY c2;\n",
+    "result": [
+      [
+        "bolivia",
+        6.0
+      ],
+      [
+        "chile",
+        6.0
+      ],
+      [
+        "colombia",
+        3.0
+      ],
+      [
+        "ecuador",
+        3.0
+      ],
+      [
+        "peru",
+        7.0
+      ],
+      [
+        "total",
+        39.0
+      ],
+      [
+        "venezuela",
+        14.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "81d3e7ae-9751-47f4-bcda-282263868700",
+    "tables_id": "nt-14084",
+    "question": "Total number for each country?",
+    "sql": "\nSELECT \n    c2 AS Country,\n    SUM(c6_number) AS Total_c6_number\nFROM w\nGROUP BY c2;\n",
+    "result": [
+      [
+        "bolivia",
+        6.0
+      ],
+      [
+        "chile",
+        6.0
+      ],
+      [
+        "colombia",
+        3.0
+      ],
+      [
+        "ecuador",
+        3.0
+      ],
+      [
+        "peru",
+        7.0
+      ],
+      [
+        "total",
+        39.0
+      ],
+      [
+        "venezuela",
+        14.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bf74647d-ccee-436b-aeb2-8984528047d1",
+    "tables_id": "nt-14084",
+    "question": "Summarize the E totals by countries.",
+    "sql": "\nSELECT \n    c2 AS Country,\n    SUM(c6_number) AS Total_c6_number\nFROM w\nGROUP BY c2;\n",
+    "result": [
+      [
+        "bolivia",
+        6.0
+      ],
+      [
+        "chile",
+        6.0
+      ],
+      [
+        "colombia",
+        3.0
+      ],
+      [
+        "ecuador",
+        3.0
+      ],
+      [
+        "peru",
+        7.0
+      ],
+      [
+        "total",
+        39.0
+      ],
+      [
+        "venezuela",
+        14.0
+      ]
+    ],
+    "orginal": false
   }
 ]

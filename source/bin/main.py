@@ -77,7 +77,7 @@ def main():
     parser = HfArgumentParser((ModelArguments, DataArguments, TrainingArguments))
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
 
-    squall_table_id_by_id, wtq_table_by_id, common_ids= get_table_dirty()
+    squall_table_id_by_id, wtq_table_by_id, common_ids= get_table_dirty(data_args)
     
     model = load_model(model_args)
 

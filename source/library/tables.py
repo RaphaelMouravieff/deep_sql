@@ -20,33 +20,19 @@ def connect_to_database(db_path: str) -> sqlite3.Connection:
     return conn
     
 
-def get_table_dirty(path:str=None):
-    # Load squall
-    if path is None:
-        file_path = "../data/squall.json"
-
+def get_table_dirty(data_args):
+   
+    file_path = data_args.squall_path
     with open(file_path, 'r') as json_file:
         squall = json.load(json_file)
 
-    # Extract unique squall IDs
     squall_ids = set(i["nt"] for i in squall)
-
-    # Load WTQ
-    wtq = load_dataset('wikitablequestions')
+    wtq = load_dataset(data_args.wikitablequestions_path)
     wtq_train = wtq["train"]
-
-    # Extract WTQ IDs
     wtq_ids = set(wtq_train["id"])
-
-    # Get intersection of IDs
     common_ids = list(squall_ids.intersection(wtq_ids))
-
-    # Mapping from ID to table for squall
     squall_table_id_by_id = {entry["nt"]: entry["tbl"] for entry in squall if entry["nt"] in common_ids}
-
-    # Mapping from ID to table for wtq
     wtq_table_by_id = {entry["id"]: entry["table"] for entry in wtq_train if entry["id"] in common_ids}
-
     return squall_table_id_by_id, wtq_table_by_id, common_ids
 
 

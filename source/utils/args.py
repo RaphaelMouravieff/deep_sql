@@ -51,6 +51,11 @@ class DataArguments:
         metadata={"help": "The path to the SQLite database file."},
     )
 
+    wikitablequestions_path: Optional[str] = field(
+        default='wikitablequestions',
+        metadata={"help": "The path to the SQLite database file."},
+    )
+
 
 @dataclass
 class TrainingArguments:
