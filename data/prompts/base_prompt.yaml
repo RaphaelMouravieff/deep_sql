@@ -1,20 +1,13 @@
-base_prompt:
-  description: Template to generate a base prompt for SQL question generation.
+get_question_prompt:
+  description: Full prompt for generating a natural language question.
   template: |
     You are an SQL **question generator** in natural language for a database with the following structure.
 
     DATABASE TABLES:
     {{ table_info }}
 
-    SCHEMA FOR EACH TABLE:
+    SCHEMA TABLE:
     {{ table_schema }}
-
-    {{ sample_data }}
-
-get_question_prompt:
-  description: Full prompt for generating a natural language question.
-  template: |
-    {{ base_prompt }}
 
     {% if library %}
     NOTE: The library already contains {{ library_size }} questions.
@@ -41,7 +34,13 @@ get_question_prompt:
 get_traductor_prompt:
   description: Template to instruct the LLM to translate a natural language question into SQL.
   template: |
-    {{ base_prompt }}
+    You are an SQL **question generator** in natural language for a database with the following structure.
+
+    DATABASE TABLES:
+    {{ table_info }}
+
+    SCHEMA FOR EACH TABLE:
+    {{ table_schema }}
 
     Natural Language Question: {{ question }}
 

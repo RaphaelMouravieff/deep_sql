@@ -3058,5 +3058,1291 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "8e2b50cb-515b-4a9a-a458-87f72a3c4714",
+    "tables_id": "nt-5535",
+    "question": "What is the average value of c3_number for all records?",
+    "sql": "\nSELECT AVG(c3_number) FROM w;\n",
+    "result": [
+      [
+        1053012.75
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "d35c2a0f-1515-43b8-b377-931687e3e48d",
+    "tables_id": "nt-5535",
+    "question": "Average c3_number",
+    "sql": "SELECT AVG(c3_number) FROM w;",
+    "result": [
+      [
+        1053012.75
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a5577ba5-d3fd-4223-b918-d7133a4c4937",
+    "tables_id": "nt-5535",
+    "question": "Mean value of c3 number from all records",
+    "sql": "SELECT AVG(c3_number) FROM w;",
+    "result": [
+      [
+        1053012.75
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "06a33584-e113-46cf-bb33-842f236a2bdb",
+    "tables_id": "nt-5535",
+    "question": "Mean value of c3 number from all records",
+    "sql": "SELECT AVG(c3_number) FROM w;",
+    "result": [
+      [
+        1053012.75
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a80187d7-df66-4533-a490-c817656b3a77",
+    "tables_id": "nt-5535",
+    "question": "Calculate the mean c3 number across all records",
+    "sql": "SELECT AVG(c3_number) FROM w;",
+    "result": [
+      [
+        1053012.75
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "49eefbfd-b5da-4b88-9ca3-0e18f5e9c07a",
+    "tables_id": "nt-5535",
+    "question": "Calculate mean c3 number",
+    "sql": "SELECT AVG(c3_number) FROM w;",
+    "result": [
+      [
+        1053012.75
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "203afc0b-41b0-4616-a0fd-d480d350a9bd",
+    "tables_id": "nt-5535",
+    "question": "Determine the average c3 number for records",
+    "sql": "SELECT AVG(c3_number) FROM w;",
+    "result": [
+      [
+        1053012.75
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c0c00c4e-606d-4348-a5f1-f86481730de0",
+    "tables_id": "nt-5535",
+    "question": "Find mean c3 number from records",
+    "sql": "SELECT AVG(c3_number) FROM w;",
+    "result": [
+      [
+        1053012.75
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bdf1b805-b6d4-4ec2-8be8-c5d0f80354b0",
+    "tables_id": "nt-5535",
+    "question": "What is the average value of c3_number for entries where c5_number is greater than 70?",
+    "sql": "\nSELECT AVG(c3_number) \nFROM w\nWHERE c5_number > 70;\n",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "023ba47e-22ab-4d8b-94a0-21481161b422",
+    "tables_id": "nt-5535",
+    "question": "What is average value of c3 for entries where c5 is over 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c58eba50-7c4c-407e-8735-11cc2396424a",
+    "tables_id": "nt-5535",
+    "question": "What average c3_number for entries where c5 > 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "8938930b-c91c-44bc-bd73-fa9906d0d71a",
+    "tables_id": "nt-5535",
+    "question": "What mean c3_number for entries where c5 > 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a4bfc8b0-2ab9-41bf-84d2-575ad979b6ff",
+    "tables_id": "nt-5535",
+    "question": "What mean c3_number for entries with c5 value over 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "4e28b9b6-1cf4-46ef-ad78-ddbe60a54301",
+    "tables_id": "nt-5535",
+    "question": "What is the mean of column three values for rows with condition five over 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3d6bf82e-d83f-4595-aaaa-8490910c459a",
+    "tables_id": "nt-5535",
+    "question": "Mean c3_number where c5 > 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9213911c-868a-4c19-8b02-cc2271335ad9",
+    "tables_id": "nt-5535",
+    "question": "Find the average of c3 where condition five is greater than seventy.",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "91fff0a6-5b38-4df1-a09d-547fd9cf9ef8",
+    "tables_id": "nt-5535",
+    "question": "What is the average value of c3_number for entries where c5_number is greater than 100?",
+    "sql": "\nSELECT AVG(c3_number) \nFROM w \nWHERE c5_number > 100;\n",
+    "result": [
+      [
+        1295539.5
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "69e806bd-fc3e-49c6-8e70-9daed201d9a0",
+    "tables_id": "nt-5535",
+    "question": "What is average c3_number for entries where c5_number > 100?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 100;",
+    "result": [
+      [
+        1295539.5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a77e76e5-1b71-47eb-a942-b9058477a5b6",
+    "tables_id": "nt-5535",
+    "question": "What is the mean value of c3_number for entries with a higher c5_number limit?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 100;",
+    "result": [
+      [
+        1295539.5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "02b908f2-a69d-4427-8ac9-7445b30fb143",
+    "tables_id": "nt-5535",
+    "question": "What is the average quantity of c3_number for entries where c5_number exceeds 100?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 100;",
+    "result": [
+      [
+        1295539.5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b494c964-beaf-40c5-8e41-57f24b6759bd",
+    "tables_id": "nt-5535",
+    "question": "What is the typical value of c3_number for entries where c5_number surpasses 100?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 100;",
+    "result": [
+      [
+        1295539.5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bc2903e1-e5b1-46e7-b9e9-a4bc77423db5",
+    "tables_id": "nt-5535",
+    "question": "Find out the typical c3_number value for entries with a c5_number above 100.",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 100;",
+    "result": [
+      [
+        1295539.5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d6624289-fe39-4460-86c9-e5905a78232b",
+    "tables_id": "nt-5535",
+    "question": "What's the average c3_number for entries with a c5_number over 100?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 100;",
+    "result": [
+      [
+        1295539.5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "df9c522d-3f74-477a-8f20-490a1e471c8c",
+    "tables_id": "nt-5535",
+    "question": "Calculate the median value of c3_number in entries where the c5_number is more than 100.",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 100;",
+    "result": [
+      [
+        1295539.5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d5a9db6c-0294-4eeb-bcac-7948b04395aa",
+    "tables_id": "nt-5535",
+    "question": "What is the population (c3_number) of the province with the highest number of municipalities (c5_number)?",
+    "sql": "\nSELECT w.c3_number \nFROM w\nWHERE w.c5_number = (SELECT MAX(w1.c5_number) FROM w AS w1)\n",
+    "result": [
+      [
+        924550.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "f9a90782-9fae-400b-b50f-ffd882cac6b9",
+    "tables_id": "nt-5535",
+    "question": "What is the population of the province with the highest number of municipalities?",
+    "sql": "SELECT w.c3_number FROM w WHERE w.c5_number = (SELECT MAX(w1.c5_number) FROM w AS w1)",
+    "result": [
+      [
+        924550.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f43a1f0a-0d97-4017-9fa4-a661d70b13b3",
+    "tables_id": "nt-5535",
+    "question": "Which area has the largest population among those with the most divisions?",
+    "sql": "SELECT w.c3_number FROM w WHERE w.c5_number = (SELECT MAX(w1.c5_number) FROM w AS w1)",
+    "result": [
+      [
+        924550.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ce20c55f-59de-46e9-ad44-db3da8158dbf",
+    "tables_id": "nt-5535",
+    "question": "What is the total number of inhabitants in a region that houses the greatest amount of local administrative units?",
+    "sql": "SELECT w.c3_number FROM w WHERE w.c5_number = (SELECT MAX(w1.c5_number) FROM w AS w1)",
+    "result": [
+      [
+        924550.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "28896818-2b7f-423e-ad82-848715e29c00",
+    "tables_id": "nt-5535",
+    "question": "For areas with the most administrative divisions, which has the largest population?",
+    "sql": "SELECT w.c3_number FROM w WHERE w.c5_number = (SELECT MAX(w1.c5_number) FROM w AS w1)",
+    "result": [
+      [
+        924550.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b405a8a9-eeac-4fb4-8f11-4a2084df9926",
+    "tables_id": "nt-5535",
+    "question": "Which province has the highest number of municipalities and what's its population?",
+    "sql": "SELECT w.c3_number FROM w WHERE w.c5_number = (SELECT MAX(w1.c5_number) FROM w AS w1)",
+    "result": [
+      [
+        924550.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "eaf1c28c-89cc-49ce-897e-985f9276f62f",
+    "tables_id": "nt-5535",
+    "question": "What is the number of inhabitants in a region with the maximum administrative divisions?",
+    "sql": "SELECT w.c3_number FROM w WHERE w.c5_number = (SELECT MAX(w1.c5_number) FROM w AS w1)",
+    "result": [
+      [
+        924550.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "63251597-f5d4-42f1-a45d-4383bcb9e2f1",
+    "tables_id": "nt-5535",
+    "question": "How large is the population of an area that has more local government units than any other?",
+    "sql": "SELECT w.c3_number FROM w WHERE w.c5_number = (SELECT MAX(w1.c5_number) FROM w AS w1)",
+    "result": [
+      [
+        924550.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d8ac0324-c3dc-464e-ae5d-25969f737b14",
+    "tables_id": "nt-5535",
+    "question": "What is the average value of c3_number for entries where c5_number is greater than 70?",
+    "sql": "\nSELECT AVG(c3_number) \nFROM w \nWHERE c5_number > 70;\n",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "5e2268ae-2157-4958-82d2-9c32541a4e29",
+    "tables_id": "nt-5535",
+    "question": "What is the average c3_number when c5_number is over 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "7f9e9da8-2987-4426-a773-e9b206f484a9",
+    "tables_id": "nt-5535",
+    "question": "What is the average value of c3 when c5 is more than 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2fa3c97e-aaaa-45af-8c91-d59bbc283e15",
+    "tables_id": "nt-5535",
+    "question": "What is the average value of c3_['figure', 'statistic', 'sum', 'total'] when c5_['figure', 'statistic', 'sum', 'total'] is over 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2cc20c19-8988-4f6e-afc1-66ca0811b858",
+    "tables_id": "nt-5535",
+    "question": "What is the average value of c3_figure when c5_figure is over 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1661768b-a71f-4733-a991-93976162d1c6",
+    "tables_id": "nt-5535",
+    "question": "What is the typical c3_value where c5 exceeds 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "014c53fc-1ae9-4b1a-aaa7-4af5a6555898",
+    "tables_id": "nt-5535",
+    "question": "What c3_statistic has entries with c5_number more than seventy?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ab4a63ac-ee8d-49d9-bcd8-2f6634ebaf49",
+    "tables_id": "nt-5535",
+    "question": "What is average c3 when c5 over 70?",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f1148fb5-381b-4e6b-b7d9-0782ece12947",
+    "tables_id": "nt-5535",
+    "question": "Find the mean for entries in column c3 where c5 exceeds seventy.",
+    "sql": "SELECT AVG(c3_number) FROM w WHERE c5_number > 70;",
+    "result": [
+      [
+        1025797.5714285715
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b8a51c7b-9d4f-4c20-a8d9-4a4120f892cc",
+    "tables_id": "nt-5535",
+    "question": "What is the average value of c3_number for each distinct value of c1?",
+    "sql": "\nSELECT c1, AVG(c3_number) AS avg_c3_number \nFROM w \nGROUP BY c1;\n",
+    "result": [
+      [
+        "almeria",
+        702819.0
+      ],
+      [
+        "cadiz",
+        1243519.0
+      ],
+      [
+        "cordoba",
+        805857.0
+      ],
+      [
+        "granada",
+        924550.0
+      ],
+      [
+        "huelva",
+        521968.0
+      ],
+      [
+        "jaen",
+        670600.0
+      ],
+      [
+        "malaga",
+        1625827.0
+      ],
+      [
+        "seville",
+        1928962.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "7440741a-58fa-400e-8ff2-0192bd1c1e36",
+    "tables_id": "nt-5535",
+    "question": "What is the average value of c3_number for distinct values of c1?",
+    "sql": "SELECT c1, AVG(c3_number) AS avg_c3_number FROM w GROUP BY c1;",
+    "result": [
+      [
+        "almeria",
+        702819.0
+      ],
+      [
+        "cadiz",
+        1243519.0
+      ],
+      [
+        "cordoba",
+        805857.0
+      ],
+      [
+        "granada",
+        924550.0
+      ],
+      [
+        "huelva",
+        521968.0
+      ],
+      [
+        "jaen",
+        670600.0
+      ],
+      [
+        "malaga",
+        1625827.0
+      ],
+      [
+        "seville",
+        1928962.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3bf4c674-cd55-4b34-a884-67a084844cff",
+    "tables_id": "nt-5253",
+    "question": "What is the total number of votes represented by c2_number for each distinct value of c1 where agg equals 0?",
+    "sql": "\nSELECT c1, SUM(c2_number) AS total_votes \nFROM w \nWHERE agg = 0 \nGROUP BY c1;\n",
+    "result": [
+      [
+        "australian labor party",
+        324135.0
+      ],
+      [
+        "independent",
+        27178.0
+      ],
+      [
+        "liberal and country league",
+        250312.0
+      ],
+      [
+        "nationals sa",
+        24810.0
+      ],
+      [
+        "other",
+        2708.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "009bbb05-6188-4d75-b10b-85df7660bddd",
+    "tables_id": "nt-5253",
+    "question": "What is the total number of votes for each distinct value of c1 where agg equals 0?",
+    "sql": "SELECT c1, SUM(c2_number) AS total_votes FROM w WHERE agg = 0 GROUP BY c1;",
+    "result": [
+      [
+        "australian labor party",
+        324135.0
+      ],
+      [
+        "independent",
+        27178.0
+      ],
+      [
+        "liberal and country league",
+        250312.0
+      ],
+      [
+        "nationals sa",
+        24810.0
+      ],
+      [
+        "other",
+        2708.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b6379141-daa0-4cd3-a28b-b2368362b91a",
+    "tables_id": "nt-5253",
+    "question": "Total votes for each c1 with agg as 0?",
+    "sql": "SELECT c1, SUM(c2_number) AS total_votes FROM w WHERE agg = 0 GROUP BY c1;",
+    "result": [
+      [
+        "australian labor party",
+        324135.0
+      ],
+      [
+        "independent",
+        27178.0
+      ],
+      [
+        "liberal and country league",
+        250312.0
+      ],
+      [
+        "nationals sa",
+        24810.0
+      ],
+      [
+        "other",
+        2708.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d784aa37-94c2-46e8-8168-d3c117e333cf",
+    "tables_id": "nt-5253",
+    "question": "Summarize total votes for distinct categories in column c1 when agg equals 0",
+    "sql": "SELECT c1, SUM(c2_number) AS total_votes FROM w WHERE agg = 0 GROUP BY c1;",
+    "result": [
+      [
+        "australian labor party",
+        324135.0
+      ],
+      [
+        "independent",
+        27178.0
+      ],
+      [
+        "liberal and country league",
+        250312.0
+      ],
+      [
+        "nationals sa",
+        24810.0
+      ],
+      [
+        "other",
+        2708.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "dbbda8f3-f17c-4d75-b993-9d062b21f093",
+    "tables_id": "nt-5253",
+    "question": "Find the tally of votes per unique category under condition agg is zero",
+    "sql": "SELECT c1, SUM(c2_number) AS total_votes FROM w WHERE agg = 0 GROUP BY c1;",
+    "result": [
+      [
+        "australian labor party",
+        324135.0
+      ],
+      [
+        "independent",
+        27178.0
+      ],
+      [
+        "liberal and country league",
+        250312.0
+      ],
+      [
+        "nationals sa",
+        24810.0
+      ],
+      [
+        "other",
+        2708.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e3d4dfad-8028-4091-8b21-0ebe56e38efe",
+    "tables_id": "nt-5253",
+    "question": "How many votes does each unique value in column c1 have when aggregated value equals 0?",
+    "sql": "SELECT c1, SUM(c2_number) AS total_votes FROM w WHERE agg = 0 GROUP BY c1;",
+    "result": [
+      [
+        "australian labor party",
+        324135.0
+      ],
+      [
+        "independent",
+        27178.0
+      ],
+      [
+        "liberal and country league",
+        250312.0
+      ],
+      [
+        "nationals sa",
+        24810.0
+      ],
+      [
+        "other",
+        2708.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b3aefee4-5178-44d8-8bcb-da580c55a114",
+    "tables_id": "nt-5253",
+    "question": "Total votes for unique c1 values where agg is zero",
+    "sql": "SELECT c1, SUM(c2_number) AS total_votes FROM w WHERE agg = 0 GROUP BY c1;",
+    "result": [
+      [
+        "australian labor party",
+        324135.0
+      ],
+      [
+        "independent",
+        27178.0
+      ],
+      [
+        "liberal and country league",
+        250312.0
+      ],
+      [
+        "nationals sa",
+        24810.0
+      ],
+      [
+        "other",
+        2708.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "734709b8-c09f-4d15-a50a-72727db0fac9",
+    "tables_id": "nt-5253",
+    "question": "Calculate the aggregated vote counts per distinct category in column c1 under condition agg equals 0",
+    "sql": "SELECT c1, SUM(c2_number) AS total_votes FROM w WHERE agg = 0 GROUP BY c1;",
+    "result": [
+      [
+        "australian labor party",
+        324135.0
+      ],
+      [
+        "independent",
+        27178.0
+      ],
+      [
+        "liberal and country league",
+        250312.0
+      ],
+      [
+        "nationals sa",
+        24810.0
+      ],
+      [
+        "other",
+        2708.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e325ffa4-4f4d-4cbe-969e-7a191ebc834c",
+    "tables_id": "nt-5253",
+    "question": "What is the total value of c2_number for entries where c4_number is less than 0 and agg is 0?",
+    "sql": "\nSELECT SUM(c2_number) \nFROM w \nWHERE c4_number < 0 AND agg = 0;\n",
+    "result": [
+      [
+        577155.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "990f6fcb-bfc8-466c-afe5-e599bee7e48e",
+    "tables_id": "nt-5253",
+    "question": "Total of c2_number for entries with negative c4 and agg 0",
+    "sql": "SELECT SUM(c2_number) FROM w WHERE c4_number < 0 AND agg = 0;",
+    "result": [
+      [
+        577155.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "323f7121-9caa-42de-ad80-a9e4f1cb67aa",
+    "tables_id": "nt-5253",
+    "question": "Total of c2_number for entries with agg 0 and negative c4",
+    "sql": "SELECT SUM(c2_number) FROM w WHERE c4_number < 0 AND agg = 0;",
+    "result": [
+      [
+        577155.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "16b5bad9-2c2d-4ba3-af80-41e55be4928d",
+    "tables_id": "nt-5253",
+    "question": "Total of value c2 for entries where negative quantity c4 and attribute agg 0",
+    "sql": "SELECT SUM(c2_number) FROM w WHERE c4_number < 0 AND agg = 0;",
+    "result": [
+      [
+        577155.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2326cd7b-a1a0-45ff-b4b9-45f8beb0c2c4",
+    "tables_id": "nt-5253",
+    "question": "Total sum of c2 number for entries having agg 0 and negative c4",
+    "sql": "SELECT SUM(c2_number) FROM w WHERE c4_number < 0 AND agg = 0;",
+    "result": [
+      [
+        577155.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0618076b-09a3-4146-a02b-cf76ecc3c535",
+    "tables_id": "nt-5253",
+    "question": "Calculate the cumulative value of c2_number for entries with agg 0 and negative c4",
+    "sql": "SELECT SUM(c2_number) FROM w WHERE c4_number < 0 AND agg = 0;",
+    "result": [
+      [
+        577155.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f7afefe5-a719-47b5-869f-d1860324acb0",
+    "tables_id": "nt-5253",
+    "question": "Total of c2_number for agg 0 entries with negative c4",
+    "sql": "SELECT SUM(c2_number) FROM w WHERE c4_number < 0 AND agg = 0;",
+    "result": [
+      [
+        577155.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e8724015-e0dc-4963-aa0b-83d87621a87d",
+    "tables_id": "nt-5253",
+    "question": "Aggregate c2_number for entries where agg 0 and c4 less than zero",
+    "sql": "SELECT SUM(c2_number) FROM w WHERE c4_number < 0 AND agg = 0;",
+    "result": [
+      [
+        577155.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "53a85da7-99a5-492a-b750-4b1dd5b1b16a",
+    "tables_id": "nt-8238",
+    "question": "Calculate the sum of c1_number for all entries in table w where c2_day is 17 and agg is 0.",
+    "sql": "\nSELECT SUM(c1_number) AS total_c1_number \nFROM w \nWHERE c2_day = 17 AND agg = 0;\n",
+    "result": [
+      [
+        7.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "8676e212-6678-4961-911d-9273d456e899",
+    "tables_id": "nt-8238",
+    "question": "Calculate total c1_number where day is 17 and agg is 0.",
+    "sql": "SELECT SUM(c1_number) AS total_c1_number FROM w WHERE c2_day = 17 AND agg = 0;",
+    "result": [
+      [
+        7.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "822fade9-1a0b-4f93-8080-5d8e92ed613b",
+    "tables_id": "nt-8238",
+    "question": "Total c1_number on day 17 and agg equals 0",
+    "sql": "SELECT SUM(c1_number) AS total_c1_number FROM w WHERE c2_day = 17 AND agg = 0;",
+    "result": [
+      [
+        7.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f6290390-5ac4-440a-ace1-20d3fdd5bd7f",
+    "tables_id": "nt-8238",
+    "question": "Calculate absolute of c1_number on day 17 where agg equals 0",
+    "sql": "SELECT SUM(c1_number) AS total_c1_number FROM w WHERE c2_day = 17 AND agg = 0;",
+    "result": [
+      [
+        7.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "29d7795d-12c8-4047-96b6-78d8d1e81fb3",
+    "tables_id": "nt-8238",
+    "question": "Sum of c1_number where date equals 17 and aggregation level is 0",
+    "sql": "SELECT SUM(c1_number) AS total_c1_number FROM w WHERE c2_day = 17 AND agg = 0;",
+    "result": [
+      [
+        7.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "cc735ff7-34cc-4d22-b197-bd2f75dd1038",
+    "tables_id": "nt-8238",
+    "question": "What's the sum of c1_number for entries in w table on day 17 and agg equals 0?",
+    "sql": "SELECT SUM(c1_number) AS total_c1_number FROM w WHERE c2_day = 17 AND agg = 0;",
+    "result": [
+      [
+        7.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6f1eb960-8fa4-47e3-a4f4-f2887b757e11",
+    "tables_id": "nt-8238",
+    "question": "Sum c1_number in w table for entries on day 17 and agg equals 0",
+    "sql": "SELECT SUM(c1_number) AS total_c1_number FROM w WHERE c2_day = 17 AND agg = 0;",
+    "result": [
+      [
+        7.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3d5983b0-6e1b-491d-a93c-72fcb8d81ea9",
+    "tables_id": "nt-8238",
+    "question": "Find sum of c1_number in table w for entries on day 17 where agg equals 0",
+    "sql": "SELECT SUM(c1_number) AS total_c1_number FROM w WHERE c2_day = 17 AND agg = 0;",
+    "result": [
+      [
+        7.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6ccfd57e-ed01-45f8-be15-5430377509d4",
+    "tables_id": "nt-12540",
+    "question": "What is the total number of people in attendance for all games played at Metropolitan Stadium?",
+    "sql": "\nSELECT SUM(c7_number) \nFROM w \nWHERE c6 = 'metropolitan stadium';\n",
+    "result": [
+      [
+        344720.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "501deb10-0ed3-4272-840b-674fdb489501",
+    "tables_id": "nt-12540",
+    "question": "How many people attended games at Metropolitan Stadium?",
+    "sql": "SELECT SUM(c7_number) FROM w WHERE c6 = 'metropolitan stadium';",
+    "result": [
+      [
+        344720.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3ffc057d-22ff-4b8e-94d8-04e4f4895cc7",
+    "tables_id": "nt-12540",
+    "question": "What is the total attendance for all Metropolitan Stadium games?",
+    "sql": "SELECT SUM(c7_number) FROM w WHERE c6 = 'metropolitan stadium';",
+    "result": [
+      [
+        344720.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b84142ba-5ec2-4fbd-8dcc-4800748229ca",
+    "tables_id": "nt-12540",
+    "question": "What is the sum of spectators for all games at Metropolitan Stadium?",
+    "sql": "SELECT SUM(c7_number) FROM w WHERE c6 = 'metropolitan stadium';",
+    "result": [
+      [
+        344720.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "7a746108-e53a-436e-b342-b36e0591f30e",
+    "tables_id": "nt-12540",
+    "question": "What's the total number of audience members across all Metropolitan Stadium games?",
+    "sql": "SELECT SUM(c7_number) FROM w WHERE c6 = 'metropolitan stadium';",
+    "result": [
+      [
+        344720.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2f50122c-9396-445f-8417-48c6fb22ae00",
+    "tables_id": "nt-12540",
+    "question": "How many people in total watched games at the Metropolitan Stadium?",
+    "sql": "SELECT SUM(c7_number) FROM w WHERE c6 = 'metropolitan stadium';",
+    "result": [
+      [
+        344720.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "278805b9-bb3d-4ad8-997a-661999f975d1",
+    "tables_id": "nt-12540",
+    "question": "Total attendance for all Metropolitan Stadium games?",
+    "sql": "SELECT SUM(c7_number) FROM w WHERE c6 = 'metropolitan stadium';",
+    "result": [
+      [
+        344720.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1f21f8e7-2968-4f07-a6fc-4242d032626e",
+    "tables_id": "nt-12540",
+    "question": "List total attendance figures for Metropolitan Stadium games.",
+    "sql": "SELECT SUM(c7_number) FROM w WHERE c6 = 'metropolitan stadium';",
+    "result": [
+      [
+        344720.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6ca0048f-5bc6-4168-a1b3-b36f91c3e633",
+    "tables_id": "nt-6879",
+    "question": "How many gold medals did American athletes win between 2006 and 2014?",
+    "sql": "\nSELECT SUM(c4_number) AS total_gold_medals \nFROM w \nWHERE c2 LIKE '%united states (usa)%' AND c3 BETWEEN '2006-2014' AND '2014';\n",
+    "result": [
+      [
+        3.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "712b3e0c-8e00-4850-8646-a26f9848e7d7",
+    "tables_id": "nt-6879",
+    "question": "How many gold medals did Americans win between 2006 and 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_gold_medals FROM w WHERE c2 LIKE '%united states (usa)%' AND c3 BETWEEN '2006-2014' AND '2014';",
+    "result": [
+      [
+        3.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bf5f6af7-037e-4d72-88d6-f5c436fe4bf4",
+    "tables_id": "nt-6879",
+    "question": "How many gold medals did American athletes win in the 2006-2014 period?",
+    "sql": "SELECT SUM(c4_number) AS total_gold_medals FROM w WHERE c2 LIKE '%united states (usa)%' AND c3 BETWEEN '2006-2014' AND '2014';",
+    "result": [
+      [
+        3.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1b99dcf2-70bf-4822-a098-fb26113039c4",
+    "tables_id": "nt-6879",
+    "question": "How many gold medals did American athletes win between 2006 and 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_gold_medals FROM w WHERE c2 LIKE '%united states (usa)%' AND c3 BETWEEN '2006-2014' AND '2014';",
+    "result": [
+      [
+        3.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "82ebecc5-bd91-4247-8131-b35c06e0296a",
+    "tables_id": "nt-6879",
+    "question": "How many of the top prizes did American athletes win between 2006 and 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_gold_medals FROM w WHERE c2 LIKE '%united states (usa)%' AND c3 BETWEEN '2006-2014' AND '2014';",
+    "result": [
+      [
+        3.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "16f25196-64fd-47ae-b950-26540b715c79",
+    "tables_id": "nt-6879",
+    "question": "What is the total count of gold medals won by American athletes from 2006 to 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_gold_medals FROM w WHERE c2 LIKE '%united states (usa)%' AND c3 BETWEEN '2006-2014' AND '2014';",
+    "result": [
+      [
+        3.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3c0abf7a-3311-4f51-969e-eea1afef1539",
+    "tables_id": "nt-6879",
+    "question": "How many gold medals did American athletes win from 2006 to 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_gold_medals FROM w WHERE c2 LIKE '%united states (usa)%' AND c3 BETWEEN '2006-2014' AND '2014';",
+    "result": [
+      [
+        3.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "84bee923-c19d-483e-9989-3416318f1056",
+    "tables_id": "nt-6879",
+    "question": "What's the tally of gold medals that American athletes secured during the period from 2006 through to 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_gold_medals FROM w WHERE c2 LIKE '%united states (usa)%' AND c3 BETWEEN '2006-2014' AND '2014';",
+    "result": [
+      [
+        3.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "29a91f32-b135-438e-aa3c-3ce82921f5b9",
+    "tables_id": "nt-6879",
+    "question": "How many total medals did American athletes win between 2006 and 2014?",
+    "sql": "\nSELECT SUM(c4_number) AS total_medals FROM w \nWHERE c2_second = 'usa'\nAND c3_minimum_number >= 2006 AND c3_maximum_number <= 2014;\n",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "0d873ac8-ada6-461e-974e-adb449250a93",
+    "tables_id": "nt-6879",
+    "question": "How many total medals did USA athletes win between 2006 and 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_medals FROM w WHERE c2_second = 'usa' AND c3_minimum_number >= 2006 AND c3_maximum_number <= 2014;",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0c4ce797-bcf3-4b3a-af29-6fbc54ee6f10",
+    "tables_id": "nt-6879",
+    "question": "How many medals did American athletes win between 2006 and 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_medals FROM w WHERE c2_second = 'usa' AND c3_minimum_number >= 2006 AND c3_maximum_number <= 2014;",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f764a8b8-cb30-429f-933c-afc1fae37c27",
+    "tables_id": "nt-6879",
+    "question": "How many prizes did American athletes win between 2006 and 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_medals FROM w WHERE c2_second = 'usa' AND c3_minimum_number >= 2006 AND c3_maximum_number <= 2014;",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "04533a27-fcf6-4807-a0e2-ce3c5c9143f8",
+    "tables_id": "nt-6879",
+    "question": "How many total awards did American athletes receive between 2006 and 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_medals FROM w WHERE c2_second = 'usa' AND c3_minimum_number >= 2006 AND c3_maximum_number <= 2014;",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "42b6b2b9-580d-4dc0-83a3-45ee74d812f7",
+    "tables_id": "nt-6879",
+    "question": "What is the count of medals American athletes have earned between 2006 and 2014?",
+    "sql": "SELECT SUM(c4_number) AS total_medals FROM w WHERE c2_second = 'usa' AND c3_minimum_number >= 2006 AND c3_maximum_number <= 2014;",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "7b3c70b8-5a01-4a26-b0ec-262b407a8cd0",
+    "tables_id": "nt-6879",
+    "question": "How many total medals for American athletes in the period 2006-2014?",
+    "sql": "SELECT SUM(c4_number) AS total_medals FROM w WHERE c2_second = 'usa' AND c3_minimum_number >= 2006 AND c3_maximum_number <= 2014;",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5d3519bc-9b1f-4d73-af30-928335db6b4a",
+    "tables_id": "nt-6879",
+    "question": "Report how many medals American athletes collected between the years 2006 and 2014.",
+    "sql": "SELECT SUM(c4_number) AS total_medals FROM w WHERE c2_second = 'usa' AND c3_minimum_number >= 2006 AND c3_maximum_number <= 2014;",
+    "result": [
+      [
+        5.0
+      ]
+    ],
+    "orginal": false
   }
 ]

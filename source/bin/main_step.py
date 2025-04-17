@@ -1,6 +1,4 @@
 from typing import Dict, Any, Optional
-
-
 from uuid import uuid4
 from langchain_core.documents import Document
 
@@ -33,15 +31,12 @@ def run_pipeline_step(prompt_manager,
             print(f"Error executing SQL: {str(e)} for the query: {sql_query}")
             continue
         
-        # 3. Validate the SQL query
-
         if "Error executing SQL" in str(validation_result) or len(str(validation_result))<3:
             print(f"Dose not work! Found {str(validation_result)[:100]} results.")
             continue
         
         print(f"SQL validation successful! Found {str(validation_result)[:100]} results.")
         
-        # 5. Generate question variations
         entry = []
         diversity_prompt = prompt_manager.get_extra_prompt_divers(question, sql_query)
         variations = agents["question_diversity"].run(diversity_prompt)
@@ -67,7 +62,7 @@ def run_pipeline_step(prompt_manager,
                     "tables_id": table_id,
                     "question": varaition["question"],
                     "sql": varaition["sql"],
-                    "result": validation_result, #validation_result["results"],
+                    "result": validation_result, 
                     "orginal":False
                 })
         except Exception as e:
@@ -78,7 +73,6 @@ def run_pipeline_step(prompt_manager,
 
         return entry
     
-    # If we've exhausted all attempts
     print("Failed to generate a valid entry after multiple attempts.")
     return None
 
