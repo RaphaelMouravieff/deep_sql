@@ -22,15 +22,8 @@ from source.utils.args import  ModelArguments, DataArguments, TrainingArguments
 
 
 # The main loop for dataset generation
-def generate_dataset(db_path: str, table_id:str,num_entries: int, model, library_path: str = "sql_dataset_library.json",vector_store_path='vector_store') -> None:
-    """
-    Generate a dataset with the specified number of entries
-    
-    Args:
-        db_path: Path to the SQLite database
-        num_entries: Number of entries to generate
-        library_path: Path to save the library JSON
-    """
+def generate_dataset(model, data_args, training_args, db_path: str, table_id:str, library_path: str = "sql_dataset_library.json",vector_store_path='vector_store') -> None:
+
     # Initialize or load existing library
     library,vector_store = init_library(library_path,vector_store_path)
     print(f"Starting with library containing {len(library)} entries")
@@ -47,7 +40,7 @@ def generate_dataset(db_path: str, table_id:str,num_entries: int, model, library
     question_generator, sql_translator, question_diversity = create_agents(model, retriever_tool,execute_sql)
     
     # Main generation loop
-    progress_bar = tqdm(range(num_entries), desc="Generating dataset entries")
+    progress_bar = tqdm(range(training_args.num_iterations), desc="Generating dataset entries")
     for i in progress_bar:
         progress_bar.set_description(f"Entry {len(library) + 1}")
         
@@ -82,13 +75,10 @@ def main():
     model = load_model(model_args)
 
     for table_id in common_ids:
-        #id0 = common_ids[0] # salle 
         file=squall_table_id_by_id[table_id] #propre
         db_path = f"../data/tables/db/{file}.db"  # Path to the database file
-        #db_path ="../data/tables/db/200_0.db"
-        num_entries = 10  # Number of entries to generate
         print(file)
-        generate_dataset(db_path,table_id, num_entries, model)
+        generate_dataset(model, data_args, training_args, db_path, table_id)
 
 
 # Example usage
