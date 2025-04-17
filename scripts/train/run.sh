@@ -22,5 +22,6 @@ python ../run.py \
   --ollama_model_name_or_path ollama_chat/qwen2.5:14b \
   --num_iterations 102 \
   --library_path ../data/library1.json \
+  --embedding_model_name "Alibaba-NLP/gte-large-en-v1.5"
 
-  
+

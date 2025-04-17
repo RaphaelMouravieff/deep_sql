@@ -25,14 +25,14 @@ from source.utils.args import  ModelArguments, DataArguments, TrainingArguments
 def generate_dataset(model, data_args, training_args, db_path: str, table_id:str) -> None:
 
     # Initialize or load existing library
-    library,vector_store = init_library(data_args)
+    library,vector_store = init_library(data_args, training_args)
     print(f"Starting with library containing {len(library)} entries")
     
     retriever_tool = SemanticRetrieverTool(vector_store)
 
 
     conn,tables_info,table_samples = get_table(db_path)
-    question_prompt,sql_prompt=get_prompt(tables_info,table_samples,library)
+    question_prompt, sql_prompt=get_prompt(tables_info, table_samples,library)
 
     execute_sql= SQLExecutorTool(conn)  
 

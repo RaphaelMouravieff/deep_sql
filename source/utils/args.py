@@ -82,6 +82,11 @@ class TrainingArguments:
         metadata={"help": "Use iterative prompting."},
     )
 
+    embedding_model_name: Optional[str] = field(
+        default="Alibaba-NLP/gte-large-en-v1.5",
+        metadata={"help": "The embedding model name."},
+    )
+
 def __post_init__(self):
 
     if self.dataset_name is None and self.train_file is None and self.validation_file is None:

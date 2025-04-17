@@ -262,5 +262,101 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "b14feb71-7a99-40d8-8ca3-d983c1134bcc",
+    "tables_id": "nt-2964",
+    "question": "List all IDs where c4 is a date in the month of February.",
+    "sql": "\nSELECT id \nFROM w \nWHERE c4_month = 2;\n",
+    "result": [
+      [
+        5
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "c1d4dfbd-b2ac-43eb-86bf-24347145e668",
+    "tables_id": "nt-2964",
+    "question": "List IDs with c4 dates in Feb.",
+    "sql": "SELECT id FROM w WHERE c4_month = 2;",
+    "result": [
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "cf667239-be22-4cce-8cf8-f53a250c44c4",
+    "tables_id": "nt-2964",
+    "question": "List all IDs with c4 dated in Feb.",
+    "sql": "SELECT id FROM w WHERE c4_month = 2;",
+    "result": [
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "400802e5-278b-4184-9010-fed15af60be8",
+    "tables_id": "nt-2964",
+    "question": "List all IDs where c4 is a date in Feb.",
+    "sql": "SELECT id FROM w WHERE c4_month = 2;",
+    "result": [
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "489a8d68-9c9c-4510-b1b7-5f204d791791",
+    "tables_id": "nt-2964",
+    "question": "List IDs when c4 period falls in Feb.",
+    "sql": "SELECT id FROM w WHERE c4_month = 2;",
+    "result": [
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1c51eb0a-7fca-4d18-872e-6ee1513cfc6f",
+    "tables_id": "nt-2964",
+    "question": "Identify all IDs where c4 is dated in February.",
+    "sql": "SELECT id FROM w WHERE c4_month = 2;",
+    "result": [
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "34637a16-5367-4ba8-ba49-21b6d62d0b04",
+    "tables_id": "nt-2964",
+    "question": "List IDs c4 in Feb.",
+    "sql": "SELECT id FROM w WHERE c4_month = 2;",
+    "result": [
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e601e66f-269b-4566-941f-d4081b34bb24",
+    "tables_id": "nt-2964",
+    "question": "Provide IDs where c4 falls in February.",
+    "sql": "SELECT id FROM w WHERE c4_month = 2;",
+    "result": [
+      [
+        5
+      ]
+    ],
+    "orginal": false
   }
 ]

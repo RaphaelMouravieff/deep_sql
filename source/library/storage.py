@@ -40,20 +40,19 @@ def load_sentence(name: str, hf_tokens:str ,device=None):
     return model
 
 
-def init_library(data_args, 
-                 model_name="Alibaba-NLP/gte-large-en-v1.5"):
+def init_library(data_args, training_args):
 
     if os.path.exists(data_args.library_path):
 
         with open(data_args.library_path, 'r') as f:
             library= json.load(f)
         vector_store = FAISS.load_local(data_args.vector_store_path,
-                                        embeddings=get_emebdding_model(model_name),
+                                        embeddings=get_emebdding_model(training_args.embedding_model_name),
                                         allow_dangerous_deserialization=True)
         
         return library,vector_store
    
-    return [], embeddings_vector_store(model_name)
+    return [], embeddings_vector_store(training_args.embedding_model_name)
 
 
 def save_library(data_args,

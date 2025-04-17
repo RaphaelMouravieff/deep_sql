@@ -6,10 +6,10 @@ from uuid import uuid4
 from langchain_core.documents import Document
 
 
-def run_pipeline_step(question_prompt:str,sql_prompt:str,tables_info:str, table_id:str,
+def run_pipeline_step(question_prompt:str, sql_prompt:str, tables_info:str, table_id:str,
                             question_generator, sql_translator, question_diversity,
-                            retriever_tool,execute_sql, max_attempts: int = 5,)-> Optional[Dict[str, Any]]:
-    """Run the full pipeline once to generate a dataset entry with validation"""
+                            retriever_tool, execute_sql, max_attempts: int = 5,)-> Optional[Dict[str, Any]]:
+
     for attempt in range(max_attempts):
         print(f"Attempt {attempt+1}/{max_attempts} to generate a valid entry...")
       
@@ -39,7 +39,7 @@ def run_pipeline_step(question_prompt:str,sql_prompt:str,tables_info:str, table_
         
         # 5. Generate question variations
         entry = []
-        diversity_prompt=get_extra_prompt_divers(question,sql_query,tables_info)
+        diversity_prompt=get_extra_prompt_divers(question, sql_query, tables_info)
         variations = question_diversity.run(diversity_prompt)
         print(f"Generated variations: {variations}")
         vector_id=str(uuid4())
