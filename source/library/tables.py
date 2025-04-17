@@ -24,8 +24,8 @@ class TableManager:
 
 
     def prepare_db_path(self):
-
         file = self.squall_table_id_by_id[self.current_table_id] #propre
+        print('squall_table_id_by_id',file)
         db_path = f"../data/tables/db/{file}.db"  # Path to the database file
         return db_path
 
@@ -99,19 +99,21 @@ class TableManager:
 
     def get_table(self):
 
+        
+        tables_info = self.get_tables_info(self.conn)
+        table_samples = self.get_random_table_samples(self.conn)
+
+        return tables_info, table_samples
+
+
+    def connect_to_database(self):
+
         db_path = self.prepare_db_path()
-        conn = self.connect_to_database(db_path)
-        tables_info = self.get_tables_info(conn)
-        table_samples = self.get_random_table_samples(conn)
-
-        return conn, tables_info, table_samples
-
-
-    def connect_to_database(self, db_path):
 
         conn = sqlite3.connect(db_path)
-
+        self.conn = conn
         return conn
     
+
 
 

@@ -5,7 +5,7 @@ class PromptManager:
     def __init__(self, table_manager, library):
 
         self.table_manager = table_manager
-        conn, tables_info, table_samples = table_manager.get_table()
+        tables_info, table_samples = table_manager.get_table()
 
         self.table_info_str = ', '.join(tables_info['tables'])
 

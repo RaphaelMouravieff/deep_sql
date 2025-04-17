@@ -1022,5 +1022,137 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "d71c0734-6f22-4383-81bc-ad33f16a3a14",
+    "tables_id": "nt-648",
+    "question": "What is the number of records where c3_length equals 2?",
+    "sql": "\nSELECT COUNT(*) AS record_count \nFROM w \nWHERE c3_length = 2;\n",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "07fb3aba-f540-4c0c-9f62-76f771c865c4",
+    "tables_id": "nt-648",
+    "question": "What is c3_length equal to 2?",
+    "sql": "SELECT COUNT(*) AS record_count FROM w WHERE c3_length = 2;",
+    "result": [
+      [
+        3
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "cb378fe5-8d25-46d9-bace-f35b86b08ad6",
+    "tables_id": "nt-6773",
+    "question": "What is the count of records where the value in column c2_first_number is larger than the value in column c4_number?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c2_first_number > c4_number;\n",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "37896c1e-ea1c-4926-a515-2d16ac162038",
+    "tables_id": "nt-6773",
+    "question": "What is the count where c2_first_number > c4_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_first_number > c4_number;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c06934c7-9bce-483d-857d-2180b406e6b1",
+    "tables_id": "nt-6773",
+    "question": "How many rows have c2_first_number greater than c4_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_first_number > c4_number;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f9fd4614-4f4e-45b0-af1c-cb962cb84a29",
+    "tables_id": "nt-6773",
+    "question": "What is the tally of entries where c2_first_number exceeds c4_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_first_number > c4_number;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c364719b-45b3-4164-a720-068665c35826",
+    "tables_id": "nt-6773",
+    "question": "What is the number of cases where c2_first_number surpasses c4_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_first_number > c4_number;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ee2a1ddc-b269-4e10-999c-a2ab8a9bd079",
+    "tables_id": "nt-6773",
+    "question": "How many times does the value in column c2_first_number exceed that of column c4_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_first_number > c4_number;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "dcc4bb93-c6d9-429c-b71b-284bc010a537",
+    "tables_id": "nt-6773",
+    "question": "How many records have c2_first_number > c4_number?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_first_number > c4_number;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "95b49ce6-59d1-49b4-8c24-ab475f891e80",
+    "tables_id": "nt-6773",
+    "question": "Count the records where column c2_first_number exceeds column c4_number.",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_first_number > c4_number;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "436469f6-913b-4a84-9ce1-60bae792f841",
+    "tables_id": "nt-6773",
+    "question": "Calculate the number of instances where c2_first_number is greater than c4_number.",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_first_number > c4_number;",
+    "result": [
+      [
+        9
+      ]
+    ],
+    "orginal": false
   }
 ]

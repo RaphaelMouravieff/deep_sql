@@ -5,8 +5,10 @@ from uuid import uuid4
 from langchain_core.documents import Document
 
 
-def run_pipeline_step(prompt_manager, agents,
-                            retriever_tool, execute_sql, max_attempts: int = 5,)-> Optional[Dict[str, Any]]:
+def run_pipeline_step(prompt_manager, 
+                      agents,
+                      tools,
+                      max_attempts: int = 5,)-> Optional[Dict[str, Any]]:
 
     table_id = prompt_manager.table_manager.current_table_id
 
@@ -24,7 +26,7 @@ def run_pipeline_step(prompt_manager, agents,
         print(f"Generated SQL: {sql_query}")
 
         try :
-            validation_result=execute_sql.execute_it(sql_query)
+            validation_result = tools["execute_sql"].execute_it(sql_query)
         except Exception as e:
             validation_result='Error executing SQL"'
             
@@ -47,7 +49,7 @@ def run_pipeline_step(prompt_manager, agents,
         print(f"Generated variations: {variations}")
 
         vector_id=str(uuid4())
-        retriever_tool.vectordb.add_documents(documents=[Document(question)], ids=[vector_id])
+        tools["retriever_tool"].vectordb.add_documents(documents=[Document(question)], ids=[vector_id])
         entry.append({
                 "vector_id":vector_id,
                 "tables_id": table_id,
@@ -59,7 +61,7 @@ def run_pipeline_step(prompt_manager, agents,
         try:
             for varaition in variations:
                 vector_id=str(uuid4())
-                retriever_tool.vectordb.add_documents(documents=[Document(str(varaition["question"]))], ids=[vector_id])
+                tools["retriever_tool"].vectordb.add_documents(documents=[Document(str(varaition["question"]))], ids=[vector_id])
                 entry.append({
                     "vector_id":vector_id,
                     "tables_id": table_id,
@@ -79,3 +81,5 @@ def run_pipeline_step(prompt_manager, agents,
     # If we've exhausted all attempts
     print("Failed to generate a valid entry after multiple attempts.")
     return None
+
+

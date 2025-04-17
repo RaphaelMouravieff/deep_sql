@@ -1,16 +1,16 @@
 
 from smolagents import CodeAgent
-from source.tools.synonym_tool import get_synonym
+
 
 
 # Create the agents with access to appropriate tools
-def create_agents(model, training_args, retriever_tool, execute_sql):
+def create_agents(model, training_args, tools_dic):
     """Create the pipeline agents with access to the library"""
     
     question_generator = CodeAgent(
         model=model,
         tools=[
-            retriever_tool
+            tools_dic["retriever_tool"]
         ],
         name="question_generator",
         description="Generates a new database question based on schema and sample data",
@@ -20,7 +20,7 @@ def create_agents(model, training_args, retriever_tool, execute_sql):
 
     sql_translator = CodeAgent(
         model=model,
-        tools=[execute_sql],
+        tools=[tools_dic["execute_sql"]],
         name="sql_translator", 
         description="Translates natural language questions into SQL queries",
         additional_authorized_imports=["pandas","numpy","time"], 
@@ -29,7 +29,7 @@ def create_agents(model, training_args, retriever_tool, execute_sql):
 
     question_diversity = CodeAgent(
         model=model,
-        tools=[get_synonym,retriever_tool],
+        tools=[tools_dic["get_synonym"], tools_dic["retriever_tool"]],
         name="question_diversity",
         description="Creates diverse variations of questions using different techniques",
         additional_authorized_imports=["pandas","numpy","time"], 

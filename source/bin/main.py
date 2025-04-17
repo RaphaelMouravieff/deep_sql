@@ -10,10 +10,7 @@ from source.library.tables import TableManager
 from source.library.storage import  init_library, save_library
 
 from source.agents.build_agents import create_agents
-
-from source.tools.sql_executor import SQLExecutorTool
-
-from source.tools.semantic_retriver import SemanticRetrieverTool
+from source.tools.build_tools import create_tools
 
 
 from source.models.model_setup import load_model
@@ -28,17 +25,12 @@ def generate_dataset(model, data_args, training_args, table_manager) -> None:
     library, vector_store = init_library(data_args, training_args)
     print(f"Starting with library containing {len(library)} entries")
     
-    retriever_tool = SemanticRetrieverTool(vector_store)
 
-
-    conn, tables_info, table_samples = table_manager.get_table()
-
+    conn = table_manager.connect_to_database()
     prompt_manager = PromptManager(table_manager, library)
 
-    execute_sql= SQLExecutorTool(conn)  
-
-    # Create agents
-    agents = create_agents(model, training_args, retriever_tool,execute_sql)
+    tools = create_tools(conn, vector_store)
+    agents = create_agents(model, training_args, tools)
     
     # Main generation loop
     progress_bar = tqdm(range(training_args.num_iterations), desc="Generating dataset entries")
@@ -48,8 +40,7 @@ def generate_dataset(model, data_args, training_args, table_manager) -> None:
         # Run one pipeline step
         entries = run_pipeline_step(prompt_manager, 
                                     agents,
-                                    retriever_tool, 
-                                    execute_sql)
+                                    tools)
         
         if entries:
             # Add to library
@@ -77,6 +68,7 @@ def main():
     model = load_model(model_args)
 
     for table_id in table_manager.common_ids:
+
         table_manager.current_table_id = table_id
         generate_dataset(model, data_args, training_args, table_manager)
 
