@@ -1,68 +1,45 @@
 from smolagents import Tool
 import sqlite3
 
-
 class SQLExecutorTool(Tool):
     name = "execute_sql"
     description = (
-        "Executes an SQL query (SQLite) to check if it's valid and returns results. "
-        "SQL query input must be a string. If everything is good the output is the sql query."
+        "Executes an SQLite SQL query to validate and retrieve results. "
+        "If the query runs and returns data, it's accepted and returned as-is. "
+        "If the query fails or returns nothing, an error is raised. Input must be a string."
     )
 
     inputs = {
         "sql_query": {
             "type": "string",
-            "description": ("The string SQL query code to execute.")
+            "description": "The SQL query to validate and execute."
         }
     }
-    output_type = "string"  # Could be "object" or "string" depending on your framework
+
+    output_type = "string"
 
     def __init__(self, conn: sqlite3.Connection, **kwargs):
-        """
-        Args:
-            conn: A live sqlite3.Connection to the target database.
-        """
-        super().__init__(**kwargs)  # Optional, for compatibility with base class
+        super().__init__(**kwargs)
         self.conn = conn
+        self.empty_result_count = 0      
+        self.execution_error_count = 0
 
-    def execute_it(self,sql_query:str)-> str:
-        """
-        Executes the provided SQL query and returns the results. 
-        test before we add it to lib
-        """
+    def forward(self, sql_query: str) -> str:
+        assert isinstance(sql_query, str), "The SQL query must be a string."
 
-        assert isinstance(sql_query, str), "Your SQL query must be a string."
         cursor = self.conn.cursor()
-        cursor.execute(sql_query)
-        return (cursor.fetchall())
 
-
-
-    def forward(
-            self, 
-            sql_query: str
-            ) -> str :
-        """
-        Executes the provided SQL query and returns the results.
-
-        Args:
-            sql_query (str): The SQL query to run.
-
-        Returns:
-            List[Tuple]: The raw results of the query. If an error occurs,
-                         returns a single-element list with an error message tuple.
-        """
-        assert isinstance(sql_query, str), "Your SQL query must be a string."
-        
-        cursor = self.conn.cursor()
-        
         try:
             cursor.execute(sql_query)
-            answ= cursor.fetchall()
-            
-            
-            if len(answ)==0:raise ValueError(f"Wrong, no results it returns an empty list")
-            print(f"Good job. The sql query is accepted and the results are "+str(answ))
+            results = cursor.fetchall()
+
+            if not results:
+                self.empty_result_count += 1
+                raise ValueError(f"Query returned no results: {sql_query}")
+
+            print(f"Query accepted. Results: {results}")
             return sql_query
+
         except Exception as e:
-            return f"Error executing SQL: {str(e)} for the query: {sql_query}"
+            self.execution_error_count += 1
+            return f"Error executing SQL: {str(e)} | Query: {sql_query}"

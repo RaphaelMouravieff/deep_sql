@@ -1,60 +1,49 @@
-
 from smolagents import Tool
 from langchain_core.vectorstores import VectorStore
-
-
-
 
 class SemanticRetrieverTool(Tool):
     name = "retriever_tool"
     description = (
-        "Checks semantic similarity of the input question/query against known queries in the knowledge base. "
-        "If any retrieved question/query is too similar to the new question/query (score > gamma_max) or too different "
-        "(score < gamma_min), it automatically checks and raises ValueError (already built in). Otherwise, it returns the question/query with an acceptance message." \
-        "This input must be a string (question/query)"
+        "Checks if the input question/query is too semantically similar to known queries in the database. "
+        "If any retrieved query has a similarity score greater than gamma_max, a ValueError is raised. "
+        "Otherwise, the input question/query is accepted. Input must be a string."
     )
 
     inputs = {
         "question": {
             "type": "string",
-            "description": (
-                "The question/query to check against the existing knowledge base."
-            ),
+            "description": "The question or query to check against the knowledge base."
         }
     }
+
     output_type = "string"
-    def __init__(self, vectordb: VectorStore, gamma_max: float = 0.95, gamma_min: float = 0.2, **kwargs):
+
+    def __init__(self, vectordb: VectorStore, gamma_max: float = 0.9, **kwargs):
         super().__init__(**kwargs)
         self.vectordb = vectordb
-        self.gamma_max= gamma_max
-        self.gamma_min= gamma_min
-        self.count = 0
+        self.gamma_max = gamma_max
+        self.too_similar_count = 0
 
-    def forward(
-        self,
-        question: str,
-    ) -> str:
+    def forward(self, question: str) -> str:
+        assert isinstance(question, str), "The input question must be a string."
 
-        assert isinstance(question, str), "Your search query must be a string."
-
-        if not len(self.vectordb.index_to_docstore_id):
+        # If no documents are in the vector store, accept immediately
+        if not self.vectordb.index_to_docstore_id:
             print(f'Question/Query: "{question}" is accepted (no existing records).')
             return question
 
-        docs = self.vectordb.similarity_search_with_score(
-            query=question,
-            k=5,
-        )
+        # Check for semantic similarity
+        docs = self.vectordb.similarity_search_with_score(query=question, k=5)
 
-        doc_min,doc_max=[],[]
-        for doc in docs :
-            if doc[1] > self.gamma_max:
-                doc_max.append(doc[0].page_content)
-        
-        if doc_max:
-            raise ValueError(f"Wrong for question: {question}, Retrieved queries are too similar to recent question/query (Retrieved questions/queries  : {doc_max}) rewrite the question/query.")
-    
-        print(f'Question/Query: "{question}" is accepted (no existing records).')
+        too_similar = [doc[0].page_content for doc in docs if doc[1] > self.gamma_max]
+
+        if too_similar:
+            self.too_similar_count += 1
+            raise ValueError(
+                f"Rejected question: '{question}' is too similar to existing queries: {too_similar}"
+            )
+
+        print(f'Question/Query: "{question}" is accepted.')
         return question
 
 

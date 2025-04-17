@@ -1,5 +1,7 @@
 from smolagents import OpenAIServerModel, LiteLLMModel
 import os
+import logging
+logging.getLogger("litellm").setLevel(logging.WARNING)
 
 def load_model(model_args):
     # Initialize model based on available API keys
@@ -7,7 +9,8 @@ def load_model(model_args):
         #model = HfApiModel()
         model = LiteLLMModel(
         model_id=model_args.ollama_model_name_or_path, 
-        num_ctx=model_args.max_source_length)  
+        num_ctx=model_args.max_source_length, 
+        stream=False)  
         
     else: 
         model = OpenAIServerModel("gpt-4o")

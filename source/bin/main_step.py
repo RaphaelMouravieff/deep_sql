@@ -24,7 +24,7 @@ def run_pipeline_step(prompt_manager,
         print(f"Generated SQL: {sql_query}")
 
         try :
-            validation_result = tools["execute_sql"].execute_it(sql_query)
+            validation_result = tools["execute_sql"].forward(sql_query)
         except Exception as e:
             validation_result='Error executing SQL"'
             
@@ -48,20 +48,20 @@ def run_pipeline_step(prompt_manager,
         entry.append({
                 "vector_id":vector_id,
                 "tables_id": table_id,
-                "question": question,
+                "question": question.lower(),
                 "sql": sql_query,
                 "result": validation_result,
                 "orginal":True
             })
         try:
-            for varaition in variations:
+            for variation in variations:
                 vector_id=str(uuid4())
-                tools["retriever_tool"].vectordb.add_documents(documents=[Document(str(varaition["question"]))], ids=[vector_id])
+                tools["retriever_tool"].vectordb.add_documents(documents=[Document(str(variation["question"]))], ids=[vector_id])
                 entry.append({
                     "vector_id":vector_id,
                     "tables_id": table_id,
-                    "question": varaition["question"],
-                    "sql": varaition["sql"],
+                    "question": variation["question"].lower(),
+                    "sql": variation["sql"],
                     "result": validation_result, 
                     "orginal":False
                 })

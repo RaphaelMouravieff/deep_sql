@@ -42,7 +42,13 @@ def generate_dataset(model, data_args, training_args, table_manager) -> None:
             for entry in entries:
                 library.append(entry)
 
-            print(f"Added entry #{len(library)} to library")
+            print(
+                f"Added entry #{len(library)} to library\n"
+                f" - Retriever too_similar_count: {tools['retriever_tool'].too_similar_count}\n"
+                f" - SQL empty_result_count: {tools['execute_sql'].empty_result_count}\n"
+                f" - SQL execution_error_count: {tools['execute_sql'].execution_error_count}"
+            )
+
             save_library(data_args, library, vector_store)
             progress_bar.set_postfix(library_size=len(library))
         else:

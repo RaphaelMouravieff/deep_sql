@@ -16,6 +16,9 @@ export OLLAMA_DEBUG=0
 export OLLAMA_LOG_LEVEL=ERROR
 export OLLAMA_VERBOSE=0
 
+export OLLAMA_LOG_LEVEL=error
+export GIN_MODE=release
+
 
 python ../run.py \
   --output_dir ../models/T2_M5_CPE_B1_E0/ALL \
