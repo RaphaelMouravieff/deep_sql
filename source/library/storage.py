@@ -3,9 +3,6 @@
 
 import os
 import json
-import random
-from typing import Dict, List, Any
-import numpy as np
 import torch
 
 from sentence_transformers import SentenceTransformer
@@ -43,28 +40,28 @@ def load_sentence(name: str, hf_tokens:str ,device=None):
     return model
 
 
-def init_library(library_path, 
-                 vector_store_path='vector_store', 
-                 model_name="Alibaba-NLP/gte-large-en-v1.5") -> List[Dict[str, Any]]:
-    """Initialize or load the existing library"""
+def init_library(data_args, 
+                 model_name="Alibaba-NLP/gte-large-en-v1.5"):
 
-    if os.path.exists(library_path):
-        with open(library_path, 'r') as f:
+    if os.path.exists(data_args.library_path):
+
+        with open(data_args.library_path, 'r') as f:
             library= json.load(f)
-        vector_store = FAISS.load_local(vector_store_path, embeddings=get_emebdding_model(model_name) , allow_dangerous_deserialization=True)
+        vector_store = FAISS.load_local(data_args.vector_store_path,
+                                        embeddings=get_emebdding_model(model_name),
+                                        allow_dangerous_deserialization=True)
+        
         return library,vector_store
    
     return [], embeddings_vector_store(model_name)
 
 
-def save_library(library: List[Dict[str, Any]], 
-                 vector_store, 
-                 library_path, 
-                 vector_store_path='vector_store',):
-    """Save the current library to disk"""
+def save_library(data_args,
+                 library, 
+                 vector_store):
 
-    with open(library_path, 'w') as f:
+    with open(data_args.library_path, 'w') as f:
         json.dump(library, f, indent=2)
-    vector_store.save_local(vector_store_path)
+    vector_store.save_local(data_args.vector_store_path)
 
 

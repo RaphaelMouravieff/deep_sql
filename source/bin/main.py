@@ -22,10 +22,10 @@ from source.utils.args import  ModelArguments, DataArguments, TrainingArguments
 
 
 # The main loop for dataset generation
-def generate_dataset(model, data_args, training_args, db_path: str, table_id:str, vector_store_path='vector_store') -> None:
+def generate_dataset(model, data_args, training_args, db_path: str, table_id:str) -> None:
 
     # Initialize or load existing library
-    library,vector_store = init_library(data_args.library_path, vector_store_path)
+    library,vector_store = init_library(data_args)
     print(f"Starting with library containing {len(library)} entries")
     
     retriever_tool = SemanticRetrieverTool(vector_store)
@@ -56,7 +56,7 @@ def generate_dataset(model, data_args, training_args, db_path: str, table_id:str
             print(f"Added entry #{len(library)} to library")
             
             # Save after each successful addition
-            save_library(library,vector_store, data_args.library_path,vector_store_path)
+            save_library(data_args, library, vector_store)
             
             progress_bar.set_postfix(library_size=len(library))
         else:

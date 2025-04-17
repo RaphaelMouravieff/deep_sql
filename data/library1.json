@@ -1,0 +1,266 @@
+[
+  {
+    "vector_id": "60fa168b-b4f1-4c86-aa50-826cab36b6db",
+    "tables_id": "nt-12348",
+    "question": "What is the ID of the entry where the value of c4 includes 'vic grassi'?",
+    "sql": "\nSELECT id \nFROM w \nWHERE c4 LIKE '%vic grassi%';\n",
+    "result": [
+      [
+        22
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "c8cc4c96-2ec9-46bc-a2b8-0ade37c78249",
+    "tables_id": "nt-12348",
+    "question": "ID for c4 including 'vic grassi'",
+    "sql": "SELECT id FROM w WHERE c4 LIKE '%vic grassi%';",
+    "result": [
+      [
+        22
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "22e80aab-b8f7-44a6-a9f2-3b5fa096b8cd",
+    "tables_id": "nt-12348",
+    "question": "Entry ID with 'vic grassi' in c4",
+    "sql": "SELECT id FROM w WHERE c4 LIKE '%vic grassi%';",
+    "result": [
+      [
+        22
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "42476c50-732c-49e3-9b89-d8cc0a74bec3",
+    "tables_id": "nt-12348",
+    "question": "ID of entry where c4 includes 'vic grassi'",
+    "sql": "SELECT id FROM w WHERE c4 LIKE '%vic grassi%';",
+    "result": [
+      [
+        22
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "132f333c-ec01-46a5-a5c7-3e4c763b81e8",
+    "tables_id": "nt-12348",
+    "question": "Entry ID with c4 having 'vic grassi'",
+    "sql": "SELECT id FROM w WHERE c4 LIKE '%vic grassi%';",
+    "result": [
+      [
+        22
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "06a46bfe-bae9-4f8a-ba98-6c94985aa6c1",
+    "tables_id": "nt-12348",
+    "question": "What is the identifier of an entry that holds 'vic grassi' within c4?",
+    "sql": "SELECT id FROM w WHERE c4 LIKE '%vic grassi%';",
+    "result": [
+      [
+        22
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a528eed7-b14e-4bee-9379-94ed864ee491",
+    "tables_id": "nt-12348",
+    "question": "ID where c4 contains 'vic grassi'",
+    "sql": "SELECT id FROM w WHERE c4 LIKE '%vic grassi%';",
+    "result": [
+      [
+        22
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "23a3efde-5c5c-4e8b-857c-ff83b095717c",
+    "tables_id": "nt-12348",
+    "question": "Entry ID having 'vic grassi' in its c4 field",
+    "sql": "SELECT id FROM w WHERE c4 LIKE '%vic grassi%';",
+    "result": [
+      [
+        22
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "90d6e1c7-22bf-45e9-afef-834824ee7f12",
+    "tables_id": "nt-12719",
+    "question": "What are the ids of all matches played in February?",
+    "sql": "SELECT id FROM w WHERE c1_month = 2",
+    "result": [
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "d8e6f73a-0daa-48cf-b0c2-1f9614fae37f",
+    "tables_id": "nt-12719",
+    "question": "Retrieve ids for matches in February.",
+    "sql": "SELECT id FROM w WHERE c1_month = 2",
+    "result": [
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "416c543d-2e31-4366-b5c3-fe7ae9b5bed7",
+    "tables_id": "nt-12719",
+    "question": "What are the ids of matches in February?",
+    "sql": "SELECT id FROM w WHERE c1_month = 2",
+    "result": [
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c8c52f88-20b3-4547-aee8-30b2daa118f7",
+    "tables_id": "nt-12719",
+    "question": "What are the ids of all bout played in February?",
+    "sql": "SELECT id FROM w WHERE c1_month = 2",
+    "result": [
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "687e9a94-ae97-4378-808e-6f337621db4f",
+    "tables_id": "nt-12719",
+    "question": "Find ids for games held in February.",
+    "sql": "SELECT id FROM w WHERE c1_month = 2",
+    "result": [
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "46ca29ef-ab8f-4b49-b54e-12df0481ced0",
+    "tables_id": "nt-12719",
+    "question": "List all game IDs that took place in the month of February.",
+    "sql": "SELECT id FROM w WHERE c1_month = 2",
+    "result": [
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6588d1cd-cb66-4faf-a45c-b3336a9e74e4",
+    "tables_id": "nt-12719",
+    "question": "Ids for games played in Feb?",
+    "sql": "SELECT id FROM w WHERE c1_month = 2",
+    "result": [
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "cbbf69f2-b0ad-45d3-8174-3e9126e770fa",
+    "tables_id": "nt-12719",
+    "question": "February game IDs please.",
+    "sql": "SELECT id FROM w WHERE c1_month = 2",
+    "result": [
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ]
+    ],
+    "orginal": false
+  }
+]

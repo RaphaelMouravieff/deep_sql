@@ -20,4 +20,7 @@ export OLLAMA_VERBOSE=0
 python ../run.py \
   --output_dir ../models/T2_M5_CPE_B1_E0/ALL \
   --ollama_model_name_or_path ollama_chat/qwen2.5:14b \
-  --num_iterations 102
+  --num_iterations 102 \
+  --library_path ../data/library1.json \
+
+  

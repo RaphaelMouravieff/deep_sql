@@ -61,6 +61,11 @@ class DataArguments:
         metadata={"help": "The path to the SQL dataset library."},
     )
 
+    vector_store_path: Optional[str] = field(
+        default="../data/vector_store",
+        metadata={"help": "The path to the vector store."},
+    )
+
 
 @dataclass
 class TrainingArguments:
