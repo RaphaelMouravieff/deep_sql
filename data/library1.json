@@ -4344,5 +4344,674 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "494be5be-8970-41f5-8cfa-c9ab44d6374c",
+    "tables_id": "nt-3287",
+    "question": "List all distinct Division I Undergraduate college names when the event's host location was Chicago, Illinois.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c2 = 'chicago, illinois';",
+    "result": [
+      [
+        "chicago, illinois"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "ae0d32e2-33e4-42f0-b8af-47188c92c0be",
+    "tables_id": "nt-3287",
+    "question": "List distinct Division I Undergraduate college names for events hosted in Chicago, Illinois.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c2 = 'chicago, illinois';",
+    "result": [
+      [
+        "chicago, illinois"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5a508dda-06aa-4098-93b2-28b6fdad0ef3",
+    "tables_id": "nt-3287",
+    "question": "Find the Division I Undergraduate colleges when the event was hosted in Chicago.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c2 = 'chicago, illinois';",
+    "result": [
+      [
+        "chicago, illinois"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "4613fad3-63f0-4aa3-83b2-fce93c2aec60",
+    "tables_id": "nt-3287",
+    "question": "Get unique Division I Undergraduate institutions where the host city is Chicago.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c2 = 'chicago, illinois';",
+    "result": [
+      [
+        "chicago, illinois"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "49508c5f-2a6f-4c55-8a93-e96c3e5a895e",
+    "tables_id": "nt-3287",
+    "question": "Identify all distinct undergraduate colleges from Division I that participated in events hosted by Chicago.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c2 = 'chicago, illinois';",
+    "result": [
+      [
+        "chicago, illinois"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a64496b3-8bb7-4f4b-ba9d-ea45ee138434",
+    "tables_id": "nt-3287",
+    "question": "Name the Division I Undergraduate schools when the event was held in Chicago.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c2 = 'chicago, illinois';",
+    "result": [
+      [
+        "chicago, illinois"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0a1b5c07-e765-46dd-a4f2-27ec092918a9",
+    "tables_id": "nt-3287",
+    "question": "Enumerate all distinct Division I Undergraduate institutions that took part in events hosted at Chicago.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c2 = 'chicago, illinois';",
+    "result": [
+      [
+        "chicago, illinois"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "83ac3388-6c03-4fa4-b75a-d32ad5a10864",
+    "tables_id": "nt-3287",
+    "question": "List all distinct Division I Undergraduate college names when the event's venue was Chicago, Illinois.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c2 = 'chicago, illinois';",
+    "result": [
+      [
+        "chicago, illinois"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "4efcb12f-c6da-4d56-8eda-b643c4139be8",
+    "tables_id": "nt-2393",
+    "question": "What are the names of the teams that have scored more than 15 goals and conceded less than 20 goals?",
+    "sql": "\nSELECT c2 FROM w \nWHERE c7_number > 15 AND c8_number < 20;\n",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "ea7f21f8-a1fa-464b-9418-8efce5a9944a",
+    "tables_id": "nt-2393",
+    "question": "What are the names of teams that scored more than 15 goals and conceded less than 20?",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15 AND c8_number < 20;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "455d4dc9-1b3d-4e8b-a3e4-d51915618e3b",
+    "tables_id": "nt-2393",
+    "question": "What are the names of teams with more than 15 goals scored and under 20 conceded?",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15 AND c8_number < 20;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "02c9408a-2733-4e66-a7d5-a5d953667cc2",
+    "tables_id": "nt-2393",
+    "question": "Can you provide a list of all football teams that have scored over 15 goals and conceded fewer than 20 goals?",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15 AND c8_number < 20;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "e59497d9-7202-4a30-9759-205f8b98aba1",
+    "tables_id": "nt-2393",
+    "question": "Identify the football clubs whose defensive record is good enough to allow them to concede less than 20 goals while their attacking prowess exceeds 15.",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15 AND c8_number < 20;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3a3d2928-bb5e-4c6b-9eff-b41804af643a",
+    "tables_id": "nt-2393",
+    "question": "What are the names of teams that have more wins than losses?",
+    "sql": "\nSELECT c2 \nFROM w \nWHERE c9_number > 0;\n",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "arabe unido"
+      ],
+      [
+        "plaza amador"
+      ],
+      [
+        "chorrillo f.c"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "ae6ca5d7-23ec-4ad2-8bcb-2bc72c0c30ce",
+    "tables_id": "nt-2393",
+    "question": "Names of teams with more victories over defeats.",
+    "sql": "SELECT c2 FROM w WHERE c9_number > 0;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "arabe unido"
+      ],
+      [
+        "plaza amador"
+      ],
+      [
+        "chorrillo f.c"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "839d5eff-9a89-4c27-b7b6-05335c32f848",
+    "tables_id": "nt-2393",
+    "question": "Teams that have won more times than they've lost.",
+    "sql": "SELECT c2 FROM w WHERE c9_number > 0;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "arabe unido"
+      ],
+      [
+        "plaza amador"
+      ],
+      [
+        "chorrillo f.c"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "5f842147-2d4f-4c06-b423-048bd68585f9",
+    "tables_id": "nt-2393",
+    "question": "Which teams have a greater number of victories compared to losses?",
+    "sql": "SELECT c2 FROM w WHERE c9_number > 0;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "arabe unido"
+      ],
+      [
+        "plaza amador"
+      ],
+      [
+        "chorrillo f.c"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ac0a8258-09c3-4cd9-b31b-ee1ff87b77d9",
+    "tables_id": "nt-2393",
+    "question": "Teams that have won more.",
+    "sql": "SELECT c2 FROM w WHERE c9_number > 0;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "arabe unido"
+      ],
+      [
+        "plaza amador"
+      ],
+      [
+        "chorrillo f.c"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d55dc5ac-fa60-4aeb-82fc-db0791bf9b0a",
+    "tables_id": "nt-2393",
+    "question": "List the teams having a higher win count than loss count.",
+    "sql": "SELECT c2 FROM w WHERE c9_number > 0;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "arabe unido"
+      ],
+      [
+        "plaza amador"
+      ],
+      [
+        "chorrillo f.c"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "fee0a965-3f7e-4f95-96ff-ebc98cb852e6",
+    "tables_id": "nt-2393",
+    "question": "What are the names of the teams that have scored more than 15 goals in their matches?",
+    "sql": "\nSELECT c2 \nFROM w \nWHERE c7_number > 15;\n",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "alianza"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "2bd36f95-d49d-4e51-9d11-fd1ff5c61a5b",
+    "tables_id": "nt-2393",
+    "question": "Which teams have scored over 15 goals?",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "alianza"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b843bacc-c7e9-4207-87fe-71826cc7d7c1",
+    "tables_id": "nt-2393",
+    "question": "What are the names of teams with more than 15 scored goals?",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "alianza"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "080eb378-7bb9-4035-8818-b751a04d9554",
+    "tables_id": "nt-2393",
+    "question": "Which teams have indented more than 15 goals? ",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "alianza"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a0625145-80fd-43cc-a668-1bfdea50cb26",
+    "tables_id": "nt-2393",
+    "question": "What are the names of teams that have outscored over 15 goals?",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "alianza"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2e94f64c-a758-4d91-8131-6d484840f959",
+    "tables_id": "nt-2393",
+    "question": "Teams with over 15 goals?",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "alianza"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "8d464c3d-50e7-40ae-97fa-ee224cba609e",
+    "tables_id": "nt-2393",
+    "question": "Identify teams that have more than fifteen scored points.",
+    "sql": "SELECT c2 FROM w WHERE c7_number > 15;",
+    "result": [
+      [
+        "tauro f.c"
+      ],
+      [
+        "san francisco f.c"
+      ],
+      [
+        "chepo f.c"
+      ],
+      [
+        "sporting san miguelito"
+      ],
+      [
+        "alianza"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c86802bc-07b0-4fb9-8f53-16d5a02bafc7",
+    "tables_id": "nt-9237",
+    "question": "List the names of all drivers who finished their race with a time under 4 hours and 1 minute.",
+    "sql": "\nSELECT c2 FROM w \nWHERE c5_hour < 4 OR (c5_hour = 4 AND c5_min < 1)\n",
+    "result": [
+      [
+        "sebastien loeb"
+      ],
+      [
+        "mikko hirvonen"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "5a0f6199-b8eb-4390-8f28-548a8e4303fc",
+    "tables_id": "nt-9237",
+    "question": "List the drivers who completed the race in less than 4 hours and 1 minute.",
+    "sql": "SELECT c2 FROM w WHERE c5_hour < 4 OR (c5_hour = 4 AND c5_min < 1)",
+    "result": [
+      [
+        "sebastien loeb"
+      ],
+      [
+        "mikko hirvonen"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "bb7af91e-c38a-452c-9e70-ddb085ffb484",
+    "tables_id": "nt-9237",
+    "question": "What are the names of racers who finished within under 4 hours and a minute?",
+    "sql": "SELECT c2 FROM w WHERE c5_hour < 4 OR (c5_hour = 4 AND c5_min < 1)",
+    "result": [
+      [
+        "sebastien loeb"
+      ],
+      [
+        "mikko hirvonen"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "47bda9a2-740d-4abe-b4b2-3fd5961fda6a",
+    "tables_id": "nt-9237",
+    "question": "List drivers that raced under four hours plus one minute.",
+    "sql": "SELECT c2 FROM w WHERE c5_hour < 4 OR (c5_hour = 4 AND c5_min < 1)",
+    "result": [
+      [
+        "sebastien loeb"
+      ],
+      [
+        "mikko hirvonen"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "83f3ecec-a9da-4932-988e-12ac6463f871",
+    "tables_id": "nt-9237",
+    "question": "Name the chauffeur who finished their race in less than 4 hours and a minute?",
+    "sql": "SELECT c2 FROM w WHERE c5_hour < 4 OR (c5_hour = 4 AND c5_min < 1)",
+    "result": [
+      [
+        "sebastien loeb"
+      ],
+      [
+        "mikko hirvonen"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f0cc927d-db83-4ac8-ada1-16bbabf1b05e",
+    "tables_id": "nt-9237",
+    "question": "Who are the racers that concluded their race within four hours and one minute?",
+    "sql": "SELECT c2 FROM w WHERE c5_hour < 4 OR (c5_hour = 4 AND c5_min < 1)",
+    "result": [
+      [
+        "sebastien loeb"
+      ],
+      [
+        "mikko hirvonen"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "8378c47a-b271-4f05-aa56-bb8fa7246361",
+    "tables_id": "nt-9237",
+    "question": "List drivers who finished below four hours and one minute.",
+    "sql": "SELECT c2 FROM w WHERE c5_hour < 4 OR (c5_hour = 4 AND c5_min < 1)",
+    "result": [
+      [
+        "sebastien loeb"
+      ],
+      [
+        "mikko hirvonen"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d43030bd-0d06-427d-8a3e-324860959f11",
+    "tables_id": "nt-9237",
+    "question": "Name the driver that had a fast time under 4 hours plus one minute?",
+    "sql": "SELECT c2 FROM w WHERE c5_hour < 4 OR (c5_hour = 4 AND c5_min < 1)",
+    "result": [
+      [
+        "sebastien loeb"
+      ],
+      [
+        "mikko hirvonen"
+      ]
+    ],
+    "orginal": false
   }
 ]

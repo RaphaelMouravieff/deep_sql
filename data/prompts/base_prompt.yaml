@@ -3,11 +3,17 @@ get_question_prompt:
   template: |
     You are an SQL **question generator** in natural language for a database with the following structure.
 
-    DATABASE TABLES:
+    DATABASE INFOS:
     {{ table_info }}
 
-    SCHEMA TABLE:
+    DATABSE SCHEMA:
     {{ table_schema }}
+
+    Dirty Table random samples:
+    {{ table_dirty }}
+    
+    Clean Table random samples:
+    {{ table_clean }}
 
     {% if library %}
     NOTE: The library already contains {{ library_size }} questions.
@@ -18,7 +24,7 @@ get_question_prompt:
     Try to query different tables or relationships to avoid exact overlap.
     {% endif %}
 
-    Using the database schema and sample data above (You Do NOT have access to the sample data provided in the task description), generate a clear and specific
+    Using the database schema and Dirty Table random samples (You Do NOT have access to the sample data provided in the task description), generate a clear and specific
     **natural language question**.
 
     IMPORTANT CRITERIA:
@@ -36,11 +42,17 @@ get_traductor_prompt:
   template: |
     You are an SQL **question generator** in natural language for a database with the following structure.
 
-    DATABASE TABLES:
+    DATABASE INFOS:
     {{ table_info }}
 
-    SCHEMA FOR EACH TABLE:
+    DATABSE SCHEMA:
     {{ table_schema }}
+
+    Dirty Table random samples:
+    {{ table_dirty }}
+    
+    Clean Table random samples:
+    {{ table_clean }}
 
     Natural Language Question: {{ question }}
 
@@ -61,8 +73,8 @@ get_extra_prompt_divers:
     Original question: {{ question }}
     Its Corresponding SQL query: {{ sql_question }}
 
-    DATABASE TABLES Columns:
-    {{ table_schema }}
+    Table:
+    {{ table_dirty }}
 
     Your task is to create 7 different variants of the original question using the following techniques:
 
@@ -102,7 +114,8 @@ get_extra_prompt_divers:
     - You must use the "retriever_tool" tool for each variation question to validate the generated question for you.
 
     Return a JSON array with the following format (no additional text):
-    [
+
+    Finally return the natural language question variations. "final_answer([
         {
             "question": "Variant 1",
             "sql": "SQL Query"
@@ -116,4 +129,4 @@ get_extra_prompt_divers:
             "question": "Variant 7",
             "sql": "SQL Query"
         }
-    ]
+    ])"

@@ -23,7 +23,7 @@ class SemanticRetrieverTool(Tool):
         }
     }
     output_type = "string"
-    def __init__(self, vectordb: VectorStore, gamma_max: float = 0.9, gamma_min: float = 0.2, **kwargs):
+    def __init__(self, vectordb: VectorStore, gamma_max: float = 0.95, gamma_min: float = 0.2, **kwargs):
         super().__init__(**kwargs)
         self.vectordb = vectordb
         self.gamma_max= gamma_max

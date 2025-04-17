@@ -26,14 +26,6 @@ def generate_dataset(model, data_args, training_args, table_manager) -> None:
     conn = table_manager.connect_to_database()
     prompt_manager = PromptManager(data_args, table_manager, library)
 
-
-    clean, durt = table_manager.get_random_sampled_tables()
-    print('ICIIIIIII')
-    print(clean)
-    print(durt)
-
-
-
     tools = create_tools(conn, vector_store)
     agents = create_agents(model, training_args, tools)
 

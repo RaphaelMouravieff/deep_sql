@@ -7,14 +7,20 @@ class PromptManager:
     def __init__(self, data_args, table_manager, library):
 
         self.table_manager = table_manager
-        tables_info, _ = table_manager.get_table()
-        self.table_info_str = ', '.join(tables_info['tables'])
+        tables_info, table_samples = table_manager.get_table()
 
-        self.table_clean , self.table_durty = table_manager.get_random_sampled_tables()
+        self.table_clean , self.table_dirty = table_manager.get_random_sampled_tables()
+
+
+
         self.library = library
-        self.get_examples_str = self.get_examples()         
+        self.table_info_str = ', '.join(tables_info['tables'])
+        self.table_schema_str = self.table_schema(tables_info)
+        self.sample_data_str = self.sample_data(table_samples)
+        self.get_examples_str = self.get_examples()
 
         self.prompt_templates = self.load_prompt_templates(data_args.base_prompt_path)
+
 
 
 
@@ -58,8 +64,10 @@ class PromptManager:
         template = Template(template_str)
 
         return template.render(
-            table_info=self.table_clean,
-            table_schema=self.table_durty,
+            table_info=self.table_info_str,
+            table_schema=self.table_schema_str,
+            table_dirty=self.table_dirty,
+            table_clean=self.table_clean,
             library=self.library,
             library_size=len(self.library),
             example_questions=self.get_examples_str
@@ -74,7 +82,9 @@ class PromptManager:
 
         return template.render(
             table_info=self.table_info_str,
-            table_schema=self.table_clean,
+            table_schema=self.table_schema_str,
+            table_dirty=self.table_dirty,
+            table_clean=self.table_clean,
             question=question
         ).strip()
 
@@ -87,6 +97,6 @@ class PromptManager:
         return template.render(
             question=question,
             sql_question=sql_question,
-            table_schema=self.table_durty
+            table_dirty=self.table_dirty
         ).strip()
     
