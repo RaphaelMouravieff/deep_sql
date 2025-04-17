@@ -358,5 +358,288 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "4e10c87a-020d-4f6d-a29f-eaa6a29d2d20",
+    "tables_id": "nt-5608",
+    "question": "List IDs of records where c10_number is greater than 25",
+    "sql": "\nSELECT id \nFROM w \nWHERE c10_number > 25;\n",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "b74ddc2e-0dc6-4e7b-9d4d-b81a90780356",
+    "tables_id": "nt-5608",
+    "question": "List IDs where c10_number > 25",
+    "sql": "SELECT id FROM w WHERE c10_number > 25",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a89a16a2-4737-467f-8deb-50a45e41f35e",
+    "tables_id": "nt-5608",
+    "question": "List IDs where c10_number > 25",
+    "sql": "SELECT id FROM w WHERE c10_number > 25",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "527a4559-5ae5-4c80-b387-cc35cb302010",
+    "tables_id": "nt-5608",
+    "question": "List IDs where value > 25",
+    "sql": "SELECT id FROM w WHERE c10_number > 25",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d8b20549-ac35-48a4-b47e-7d9312faf645",
+    "tables_id": "nt-5608",
+    "question": "Find the records' identifiers for values exceeding 25",
+    "sql": "SELECT id FROM w WHERE c10_number > 25",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "afd85ea7-69a6-4eb0-9ac5-42465ed405f0",
+    "tables_id": "nt-5608",
+    "question": "Find record IDs when value is greater than twenty-five",
+    "sql": "SELECT id FROM w WHERE c10_number > 25",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c367d172-77be-4de9-a0a5-034503a608cd",
+    "tables_id": "nt-5608",
+    "question": "List records with ID where value > 25",
+    "sql": "SELECT id FROM w WHERE c10_number > 25",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "23d9c49c-a6e0-421e-85a9-0ba714f4682f",
+    "tables_id": "nt-5608",
+    "question": "Show record IDs having value greater than twenty-five",
+    "sql": "SELECT id FROM w WHERE c10_number > 25",
+    "result": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9bd294fe-dc69-4777-aa21-83a22f5ea825",
+    "tables_id": "nt-9461",
+    "question": "What was the ranking position (c4) and time taken (c6) for the world championships held in Paris, France during 2003?",
+    "sql": "\nSELECT w.c4 AS ranking_position, w.c6 AS time_taken \nFROM w \nJOIN t_c3_address ON w.id = t_c3_address.m_id \nWHERE w.c2 = 'world championships' AND w.c1_number = 2003 AND t_c3_address.c3_address = 'paris';\n",
+    "result": [
+      [
+        "11th",
+        "1:20:34 pb"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "cb08cf09-a654-4dca-b1d9-0adefd45266e",
+    "tables_id": "nt-9461",
+    "question": "What was ranking position (c4) and time taken (c6) for 2003 world championships in Paris?",
+    "sql": "SELECT w.c4 AS ranking_position, w.c6 AS time_taken FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c2 = 'world championships' AND w.c1_number = 2003 AND t_c3_address.c3_address = 'paris';",
+    "result": [
+      [
+        "11th",
+        "1:20:34 pb"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0a7ad568-3fbb-4580-bc17-2181d6c0917e",
+    "tables_id": "nt-9461",
+    "question": "What was position (c4) and duration (c6) for 2003 world championships in Paris?",
+    "sql": "SELECT w.c4 AS ranking_position, w.c6 AS time_taken FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c2 = 'world championships' AND w.c1_number = 2003 AND t_c3_address.c3_address = 'paris';",
+    "result": [
+      [
+        "11th",
+        "1:20:34 pb"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "90cde6ec-ee26-4054-8582-77c41da7bde7",
+    "tables_id": "nt-9461",
+    "question": "What was placement (c4) and time span (c6) for the 2003 world championships in Paris?",
+    "sql": "SELECT w.c4 AS ranking_position, w.c6 AS time_taken FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c2 = 'world championships' AND w.c1_number = 2003 AND t_c3_address.c3_address = 'paris';",
+    "result": [
+      [
+        "11th",
+        "1:20:34 pb"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a52d228a-e38c-4efd-8d4e-ab7d384f8a1a",
+    "tables_id": "nt-9461",
+    "question": "What position (c4) and time taken (c6) for 2003 world championships in Paris?",
+    "sql": "SELECT w.c4 AS ranking_position, w.c6 AS time_taken FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c2 = 'world championships' AND w.c1_number = 2003 AND t_c3_address.c3_address = 'paris';",
+    "result": [
+      [
+        "11th",
+        "1:20:34 pb"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "837a325f-4718-4019-8019-c9051256fe99",
+    "tables_id": "nt-9461",
+    "question": "What were the c4 ranking and c6 time for 2003 world championships held in Paris?",
+    "sql": "SELECT w.c4 AS ranking_position, w.c6 AS time_taken FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c2 = 'world championships' AND w.c1_number = 2003 AND t_c3_address.c3_address = 'paris';",
+    "result": [
+      [
+        "11th",
+        "1:20:34 pb"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9ce44611-a02c-4d6d-93b1-0bc83e7a9995",
+    "tables_id": "nt-9461",
+    "question": "List c4 ranking and c6 time details for 2003 world championships in Paris.",
+    "sql": "SELECT w.c4 AS ranking_position, w.c6 AS time_taken FROM w JOIN t_c3_address ON w.id = t_c3_address.m_id WHERE w.c2 = 'world championships' AND w.c1_number = 2003 AND t_c3_address.c3_address = 'paris';",
+    "result": [
+      [
+        "11th",
+        "1:20:34 pb"
+      ]
+    ],
+    "orginal": false
   }
 ]

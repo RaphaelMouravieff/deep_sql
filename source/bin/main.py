@@ -6,7 +6,7 @@ from transformers import HfArgumentParser
 
 from source.bin.main_step import run_pipeline_step
 from source.prompts.prompt import get_prompt
-from source.library.tables import get_table_dirty, get_table
+from source.library.tables import TableManager
 from source.library.storage import  init_library, save_library
 
 from source.agents.build_agents import create_agents
@@ -22,17 +22,17 @@ from source.utils.args import  ModelArguments, DataArguments, TrainingArguments
 
 
 # The main loop for dataset generation
-def generate_dataset(model, data_args, training_args, db_path: str, table_id:str) -> None:
+def generate_dataset(model, data_args, training_args, table_manager) -> None:
 
-    # Initialize or load existing library
-    library,vector_store = init_library(data_args, training_args)
+    library, vector_store = init_library(data_args, training_args)
     print(f"Starting with library containing {len(library)} entries")
     
     retriever_tool = SemanticRetrieverTool(vector_store)
 
 
-    conn,tables_info,table_samples = get_table(db_path)
-    question_prompt, sql_prompt=get_prompt(tables_info, table_samples,library)
+    conn, tables_info, table_samples = table_manager.get_table()
+
+    question_prompt, sql_prompt = get_prompt(tables_info, table_samples, library)
 
     execute_sql= SQLExecutorTool(conn)  
 
@@ -45,7 +45,7 @@ def generate_dataset(model, data_args, training_args, db_path: str, table_id:str
         progress_bar.set_description(f"Entry {len(library) + 1}")
         
         # Run one pipeline step
-        entries = run_pipeline_step(question_prompt,sql_prompt,tables_info, table_id,
+        entries = run_pipeline_step(question_prompt,sql_prompt,tables_info, table_manager.current_table_id,
                                     question_generator, sql_translator, question_diversity,
                                     retriever_tool,execute_sql)
         
@@ -70,15 +70,13 @@ def main():
     parser = HfArgumentParser((ModelArguments, DataArguments, TrainingArguments))
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
 
-    squall_table_id_by_id, wtq_table_by_id, common_ids= get_table_dirty(data_args)
+    table_manager = TableManager(data_args)
     
     model = load_model(model_args)
 
-    for table_id in common_ids:
-        file=squall_table_id_by_id[table_id] #propre
-        db_path = f"../data/tables/db/{file}.db"  # Path to the database file
-        print(file)
-        generate_dataset(model, data_args, training_args, db_path, table_id)
+    for table_id in table_manager.common_ids:
+        table_manager.current_table_id = table_id
+        generate_dataset(model, data_args, training_args, table_manager)
 
 
 # Example usage

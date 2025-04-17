@@ -66,6 +66,11 @@ class DataArguments:
         metadata={"help": "The path to the vector store."},
     )
 
+    table_limit: Optional[int] = field(
+        default=10,
+        metadata={"help": "The maximum number of tables to sample from the database."},
+    )
+
 
 @dataclass
 class TrainingArguments:
