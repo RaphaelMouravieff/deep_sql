@@ -17,7 +17,7 @@ def run_pipeline_step(question_prompt:str, sql_prompt:str, tables_info:str, tabl
         question = question_generator.run(question_prompt)
         print(f"Generated question: {question}")
 
-        sql_prompt=get_extra_prompt_sql(sql_prompt,question)
+        sql_prompt = get_extra_prompt_sql(sql_prompt, question)
         
         
         sql_query = sql_translator.run(sql_prompt)
@@ -39,7 +39,7 @@ def run_pipeline_step(question_prompt:str, sql_prompt:str, tables_info:str, tabl
         
         # 5. Generate question variations
         entry = []
-        diversity_prompt=get_extra_prompt_divers(question, sql_query, tables_info)
+        diversity_prompt = get_extra_prompt_divers(question, sql_query, tables_info)
         variations = question_diversity.run(diversity_prompt)
         print(f"Generated variations: {variations}")
         vector_id=str(uuid4())

@@ -1,78 +1,106 @@
 
-def get_prompt(tables_info, table_samples, library):
+
+class PromptManager:
+
+    def __init__(self, table_manager, library):
+
+        self.table_manager = table_manager
+        conn, tables_info, table_samples = table_manager.get_table()
+
+        self.table_info_str = ', '.join(tables_info['tables'])
+
+        self.library = library
+
+        self.table_schema_str = self.table_schema(tables_info)
+        self.sample_data_str = self.sample_data(table_samples)
+
+    def table_schema(self, tables_info):
+
+        prompt = ""
+        for table, columns in tables_info['schemas'].items():
+            prompt += f"\nTable: {table}\n"
+            for column in columns:
+                prompt += f"  - {column}\n"
+
+        return prompt
+    
+
+    def sample_data(self, table_samples):
+        prompt = "\nSAMPLE DATA:\n"
+        for table, rows in table_samples.items():
+            prompt += f"\nTable: {table} (showing {len(rows)} rows)\n"
+            for i, row in enumerate(rows):
+                prompt += f"  Row {i+1}: {row}\n"
+        return prompt
+
+
+    def get_prompt(self):
+        """
+        1. Generates a question_prompt string for an LLM to produce an SQL-relevant
+        natural language question.
+        2. Returns a second string, sql_prompt, for the next step (SQL translation),
+        with all necessary context pre-populated.
+        """
+
+        # --- Start building the prompt for question generation ---
+        question_prompt = f"""
+    You are an SQL **question generator** in natural language for a database with the following structure.
+
+    DATABASE TABLES:
+    {self.table_info_str}
+
+    SCHEMA FOR EACH TABLE:
     """
-    1. Generates a question_prompt string for an LLM to produce an SQL-relevant
-       natural language question.
-    2. Returns a second string, sql_prompt, for the next step (SQL translation),
-       with all necessary context pre-populated.
+
+        sql_prompt = f"""
+    You are an SQL **expert** translating natural language question to SQL.
+
+    DATABASE TABLES:
+    {self.table_info_str}
+
+    SCHEMA FOR EACH TABLE:
     """
+        question_prompt+= self.table_schema_str
+        sql_prompt+= self.table_schema_str
 
-    # --- Start building the prompt for question generation ---
-    question_prompt = f"""
-You are an SQL **question generator** in natural language for a database with the following structure.
 
-DATABASE TABLES:
-{', '.join(tables_info['tables'])}
+                
+        # -- Add sample data to both prompts --
+        question_prompt += self.sample_data_str
+        sql_prompt += self.sample_data_str
 
-SCHEMA FOR EACH TABLE:
-"""
 
-    sql_prompt = f"""
-You are an SQL **expert** translating natural language question to SQL.
+        # -- Optional: Add library context to the question_prompt --
+        if self.library:
+            question_prompt += f"\nNOTE: The library already contains {len(self.library)} questions."
+            question_prompt += "\nRecent questions in the library (up to 3 most recent):"
+            for i in range(min(3, len(self.library))):
+                idx = len(self.library) - i - 1
+                question_prompt += f"\n- {self.library[idx]['question']}"
+            
+            if len(self.library) > 0:
+                question_prompt += "\n\nYour NEW question should be similar in complexity but *not* a duplicate. " \
+                                    "Try to query different tables or relationships to avoid exact overlap."
 
-DATABASE TABLES:
-{', '.join(tables_info['tables'])}
+        # -- Final instructions for the LLM to produce the question in natural language --
+        question_prompt += """
+                        Using the database schema and sample data above(You Do NOT have an access the sample data provided in the task description), generate a clear and specific
+                        **natural language question**.
 
-SCHEMA FOR EACH TABLE:
-"""
+                        IMPORTANT CRITERIA:
+                        1. The question should be specific enough to be translated into SQL.
+                        2. The question must have an answer in the database based on the provided sample above 
+                        3. Don't code the table.
+                        3. Write it in plain, clear natural language without referencing code.
+                        4. You must use the "retriever_tool" tool it validates the generated question for you. 
+                        5. Finally retrun the natural language question. "final_answer(retriever_tool(question))"
 
-    # -- Add table + column info to both prompts --
-    for table, columns in tables_info['schemas'].items():
-        question_prompt += f"\nTable: {table}\n"
-        sql_prompt += f"\nTable: {table}\n"
-        for column in columns:
-            question_prompt += f"  - {column}\n"
-            sql_prompt += f"  - {column}\n"
+                        Return **only the question** (no explanations or extra formatting).
+                        """
 
-    # -- Add sample data to both prompts --
-    question_prompt += "\nSAMPLE DATA:\n"
-    sql_prompt += "\nSAMPLE DATA:\n"
-    for table, rows in table_samples.items():
-        question_prompt += f"\nTable: {table} (showing {len(rows)} rows)\n"
-        sql_prompt += f"\nTable: {table} (first few rows):\n"
-        for i, row in enumerate(rows):
-            question_prompt += f"  Row {i+1}: {row}\n"
-            sql_prompt += f"  {row}\n"
+        return question_prompt, sql_prompt
 
-    # -- Optional: Add library context to the question_prompt --
-    if library:
-        question_prompt += f"\nNOTE: The library already contains {len(library)} questions."
-        question_prompt += "\nRecent questions in the library (up to 3 most recent):"
-        for i in range(min(3, len(library))):
-            idx = len(library) - i - 1
-            question_prompt += f"\n- {library[idx]['question']}"
-        
-        if len(library) > 0:
-            question_prompt += "\n\nYour NEW question should be similar in complexity but *not* a duplicate. " \
-                                "Try to query different tables or relationships to avoid exact overlap."
 
-    # -- Final instructions for the LLM to produce the question in natural language --
-    question_prompt += """
-                    Using the database schema and sample data above(You Do NOT have an access the sample data provided in the task description), generate a clear and specific
-                    **natural language question**.
-
-                    IMPORTANT CRITERIA:
-                    1. The question should be specific enough to be translated into SQL.
-                    2. The question must have an answer in the database based on the provided sample above 
-                    3. Don't code the table.
-                    3. Write it in plain, clear natural language without referencing code.
-                    4. You must use the "retriever_tool" tool it validates the generated question for you. 
-                    5. Finally retrun the natural language question. "final_answer(retriever_tool(question))"
-
-                    Return **only the question** (no explanations or extra formatting).
-                    """
-
-    return question_prompt, sql_prompt
 def get_extra_prompt_sql(sql_prompt, question):
     """
     2. Takes the partial 'sql_prompt' plus the new 'question' generated
@@ -91,6 +119,8 @@ def get_extra_prompt_sql(sql_prompt, question):
                 RETURN ONLY the SQL query without explanations, commentary, or markdown formatting.
                 """
     return sql_prompt
+
+
 
 def get_extra_prompt_divers(question, sql_question, tables_info):
     """

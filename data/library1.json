@@ -641,5 +641,194 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "fbdcf833-2102-437f-9a92-4a3b505f8f7d",
+    "tables_id": "nt-7765",
+    "question": "What are the c3 (player name) and c6 (team name) for players whose c4 positions match 'g' in t_c4_list?",
+    "sql": "\nSELECT w.c3 AS player_name, w.c6 AS team_name \nFROM w \nJOIN t_c4_list ON w.id = t_c4_list.m_id \nWHERE t_c4_list.c4_list = 'g';\n",
+    "result": [
+      [
+        "ron boone",
+        "kansas city kings"
+      ],
+      [
+        "bird averitt",
+        "buffalo braves (from milwaukee)"
+      ],
+      [
+        "ron thomas",
+        "houston rockets"
+      ],
+      [
+        "louie dampier",
+        "san antonio spurs"
+      ],
+      [
+        "jan van breda kolff",
+        "new york nets"
+      ],
+      [
+        "mike barr",
+        "kansas city kings"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "db2ef4d1-764d-4b6a-a471-64a4ef4755b4",
+    "tables_id": "nt-7765",
+    "question": "What are the identifiers of players and their corresponding teams if positions match 'g' in t_c4_list?",
+    "sql": "SELECT w.c3 AS player_name, w.c6 AS team_name FROM w JOIN t_c4_list ON w.id = t_c4_list.m_id WHERE t_c4_list.c4_list = 'g';",
+    "result": [
+      [
+        "ron boone",
+        "kansas city kings"
+      ],
+      [
+        "bird averitt",
+        "buffalo braves (from milwaukee)"
+      ],
+      [
+        "ron thomas",
+        "houston rockets"
+      ],
+      [
+        "louie dampier",
+        "san antonio spurs"
+      ],
+      [
+        "jan van breda kolff",
+        "new york nets"
+      ],
+      [
+        "mike barr",
+        "kansas city kings"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "215056b7-58a3-49d0-88fb-190e1a8c6e16",
+    "tables_id": "nt-7765",
+    "question": "Identify player names and associated team names where specific position is recorded as 'g'",
+    "sql": "SELECT w.c3 AS player_name, w.c6 AS team_name FROM w JOIN t_c4_list ON w.id = t_c4_list.m_id WHERE t_c4_list.c4_list = 'g';",
+    "result": [
+      [
+        "ron boone",
+        "kansas city kings"
+      ],
+      [
+        "bird averitt",
+        "buffalo braves (from milwaukee)"
+      ],
+      [
+        "ron thomas",
+        "houston rockets"
+      ],
+      [
+        "louie dampier",
+        "san antonio spurs"
+      ],
+      [
+        "jan van breda kolff",
+        "new york nets"
+      ],
+      [
+        "mike barr",
+        "kansas city kings"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "94f93a23-b071-45d4-98ea-437de5e10af3",
+    "tables_id": "nt-7765",
+    "question": "Player name and team name for those whose position equals 'g'",
+    "sql": "SELECT w.c3 AS player_name, w.c6 AS team_name FROM w JOIN t_c4_list ON w.id = t_c4_list.m_id WHERE t_c4_list.c4_list = 'g';",
+    "result": [
+      [
+        "ron boone",
+        "kansas city kings"
+      ],
+      [
+        "bird averitt",
+        "buffalo braves (from milwaukee)"
+      ],
+      [
+        "ron thomas",
+        "houston rockets"
+      ],
+      [
+        "louie dampier",
+        "san antonio spurs"
+      ],
+      [
+        "jan van breda kolff",
+        "new york nets"
+      ],
+      [
+        "mike barr",
+        "kansas city kings"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "14106183-3c37-47b6-a614-a6932c615d6a",
+    "tables_id": "nt-7765",
+    "question": "List player identities alongside their team affiliation under condition that positions are marked as 'g'",
+    "sql": "SELECT w.c3 AS player_name, w.c6 AS team_name FROM w JOIN t_c4_list ON w.id = t_c4_list.m_id WHERE t_c4_list.c4_list = 'g';",
+    "result": [
+      [
+        "ron boone",
+        "kansas city kings"
+      ],
+      [
+        "bird averitt",
+        "buffalo braves (from milwaukee)"
+      ],
+      [
+        "ron thomas",
+        "houston rockets"
+      ],
+      [
+        "louie dampier",
+        "san antonio spurs"
+      ],
+      [
+        "jan van breda kolff",
+        "new york nets"
+      ],
+      [
+        "mike barr",
+        "kansas city kings"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "2c4f75b9-2599-42db-8346-1ebeb2cbb04d",
+    "tables_id": "nt-4998",
+    "question": "How many entries are there in table w where c4 is also present as a value in column c4_address of table t_c4_address?",
+    "sql": "\nSELECT COUNT(*)\nFROM w \nJOIN t_c4_address ON w.c4 = t_c4_address.c4_address;\n",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "d6c1309f-7e85-4c6c-8e99-b2d58203fc7a",
+    "tables_id": "nt-4998",
+    "question": "How many entries are there in table w with matching values in table t_c4_address?",
+    "sql": "SELECT COUNT(*) FROM w JOIN t_c4_address ON w.c4 = t_c4_address.c4_address;",
+    "result": [
+      [
+        0
+      ]
+    ],
+    "orginal": false
   }
 ]

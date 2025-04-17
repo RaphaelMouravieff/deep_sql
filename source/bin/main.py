@@ -5,7 +5,7 @@ from transformers import HfArgumentParser
 
 
 from source.bin.main_step import run_pipeline_step
-from source.prompts.prompt import get_prompt
+from source.prompts.prompt import  PromptManager
 from source.library.tables import TableManager
 from source.library.storage import  init_library, save_library
 
@@ -21,6 +21,7 @@ from source.models.model_setup import load_model
 from source.utils.args import  ModelArguments, DataArguments, TrainingArguments
 
 
+
 # The main loop for dataset generation
 def generate_dataset(model, data_args, training_args, table_manager) -> None:
 
@@ -32,7 +33,9 @@ def generate_dataset(model, data_args, training_args, table_manager) -> None:
 
     conn, tables_info, table_samples = table_manager.get_table()
 
-    question_prompt, sql_prompt = get_prompt(tables_info, table_samples, library)
+    prompt_manager = PromptManager(table_manager, library)
+
+    question_prompt, sql_prompt = prompt_manager.get_prompt()
 
     execute_sql= SQLExecutorTool(conn)  
 
@@ -45,9 +48,9 @@ def generate_dataset(model, data_args, training_args, table_manager) -> None:
         progress_bar.set_description(f"Entry {len(library) + 1}")
         
         # Run one pipeline step
-        entries = run_pipeline_step(question_prompt,sql_prompt,tables_info, table_manager.current_table_id,
+        entries = run_pipeline_step(question_prompt, sql_prompt, tables_info, table_manager.current_table_id,
                                     question_generator, sql_translator, question_diversity,
-                                    retriever_tool,execute_sql)
+                                    retriever_tool, execute_sql)
         
         if entries:
             # Add to library
