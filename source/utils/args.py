@@ -56,6 +56,11 @@ class DataArguments:
         metadata={"help": "The path to the SQLite database file."},
     )
 
+    library_path: Optional[str] = field(
+        default="../data/sql_dataset_library.json",
+        metadata={"help": "The path to the SQL dataset library."},
+    )
+
 
 @dataclass
 class TrainingArguments:
