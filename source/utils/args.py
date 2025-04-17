@@ -14,14 +14,9 @@ class ModelArguments:
             metadata={"help": "The output directory where the model predictions and checkpoints will be written."},
         )
 
-    curriculum_model: Optional[str] = field(
+    ollama_model_name_or_path: Optional[str] = field(
         default="llama3.2",
         metadata={"help": "The model checkpoint for the curriculum learning agent."},
-    )
-
-    iterative_model: Optional[str] = field(
-        default="llama3.2",
-        metadata={"help": "The model checkpoint for the iterative prompting agent."},
     )
 
     sentence_model_name_or_path: Optional[str] = field(
@@ -29,9 +24,12 @@ class ModelArguments:
         metadata={"help": "The sentence transformer model name or path."},
     )
 
-    hf_tokens: Optional[str] = field(
-        default=None,
-        metadata={"help": "The Hugging Face model token."},
+    max_source_length: Optional[int] = field(
+        default=8192,
+        metadata={
+            "help": "The maximum total input sequence length after tokenization. Sequences longer "
+                    "than this will be truncated, sequences shorter will be padded."
+        },
     )
 
 @dataclass
@@ -39,24 +37,18 @@ class DataArguments:
     """
     Arguments pertaining to what data we are going to input our model for training and eval.
     """
-    library_path: Optional[str] = field(
-        default="skills.json",
-        metadata={"help": "The path to the SQL library file."},
-    )
-
     database_path: Optional[str] = field(
         default='../data/tables/db',
         metadata={"help": "The path to the SQLite database file."},
     )
 
-    save_skills_at_n: Optional[int] = field(
-        default=100,
-        metadata={"help": "After how how many loop we must save the skills"},
+    dataset_name: Optional[str] = field(
+        default=None, metadata={"help": "The name of the dataset to use (via the datasets library)."}
     )
 
-    curriculum_instruction: Optional[str] = field(
-        default="curriculum_instruction.txt",
-        metadata={"help": "The path to the curriculum instruction file."},
+    squall_path: Optional[str] = field(
+        default='../data/squall.json',
+        metadata={"help": "The path to the SQLite database file."},
     )
 
 

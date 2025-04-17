@@ -1,6 +1,7 @@
 
 from tqdm import tqdm
 
+from transformers import HfArgumentParser
 
 
 from source.bin.main_step import run_pipeline_step
@@ -16,6 +17,8 @@ from source.tools.semantic_retriver import SemanticRetrieverTool
 
 
 from source.models.model_setup import load_model
+
+from source.utils.args import  ModelArguments, DataArguments, TrainingArguments
 
 
 # The main loop for dataset generation
@@ -70,8 +73,13 @@ def generate_dataset(db_path: str, table_id:str,num_entries: int, model, library
 
 
 def main():
+
+    parser = HfArgumentParser((ModelArguments, DataArguments, TrainingArguments))
+    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+
     squall_table_id_by_id, wtq_table_by_id, common_ids= get_table_dirty()
-    model = load_model()
+    
+    model = load_model(model_args)
 
     for table_id in common_ids:
         #id0 = common_ids[0] # salle 

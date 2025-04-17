@@ -5712,5 +5712,740 @@
       ]
     ],
     "orginal": false
+  },
+  {
+    "vector_id": "3bd0ecd6-13b9-4611-968d-a8ad50ec92d9",
+    "tables_id": "nt-14023",
+    "question": "What is the value of column c6_number for the country represented by 'usa'?",
+    "sql": "\nSELECT c6_number \nFROM w \nWHERE c2_second = 'usa';\n",
+    "result": [
+      [
+        48.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "05e9c7f4-72db-495b-8cb7-9470a1608f8e",
+    "tables_id": "nt-14023",
+    "question": "What is c6_number for usa?",
+    "sql": "\nSELECT c6_number \nFROM w \nWHERE c2_second = 'usa';\n",
+    "result": [
+      [
+        48.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d1c1729f-c932-44a2-b15f-03e5e85930ad",
+    "tables_id": "nt-14023",
+    "question": "What's the value of column c6_number for USA?",
+    "sql": "\nSELECT c6_number \nFROM w \nWHERE c2_second = 'usa';\n",
+    "result": [
+      [
+        48.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "c4d354b9-5686-474b-abe4-c8aa9d5f6899",
+    "tables_id": "nt-14023",
+    "question": "What is the figure of column c6_number for the country represented by 'usa'?",
+    "sql": "\nSELECT c6_number \nFROM w \nWHERE c2_second = 'usa';\n",
+    "result": [
+      [
+        48.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "fce735b1-7062-45f6-af3f-ba92c5727d03",
+    "tables_id": "nt-14023",
+    "question": "What's the c6_number for USA?",
+    "sql": "\nSELECT c6_number \nFROM w \nWHERE c2_second = 'usa';\n",
+    "result": [
+      [
+        48.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "ce23c9f6-afcd-4ec9-8f67-0ab2b760b1d5",
+    "tables_id": "nt-14023",
+    "question": "What is the value of column c6_number where country is identified as 'usa'?",
+    "sql": "\nSELECT c6_number \nFROM w \nWHERE c2_second = 'usa';\n",
+    "result": [
+      [
+        48.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b5c82688-6dfe-4ec9-a30e-7954433bd56f",
+    "tables_id": "nt-14023",
+    "question": "What's c6_number for usa?",
+    "sql": "\nSELECT c6_number \nFROM w \nWHERE c2_second = 'usa';\n",
+    "result": [
+      [
+        48.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "6a130146-9e86-4d6c-969d-1b25c2bc0d12",
+    "tables_id": "nt-14023",
+    "question": "What is the value in column c6_number that corresponds to 'usa'?",
+    "sql": "\nSELECT c6_number \nFROM w \nWHERE c2_second = 'usa';\n",
+    "result": [
+      [
+        48.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0357a260-f289-44be-a231-c30ceec76eb4",
+    "tables_id": "nt-13109",
+    "question": "What is the value of column c5_number where c3 is 'coast'?",
+    "sql": "\nSELECT DISTINCT c5_number \nFROM w \nWHERE c3 = 'coast'\n",
+    "result": [
+      [
+        939370.0
+      ],
+      [
+        649931.0
+      ],
+      [
+        1109735.0
+      ],
+      [
+        240075.0
+      ],
+      [
+        101539.0
+      ],
+      [
+        284657.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "4a110e76-c7ac-49c0-bc03-ee524a85205f",
+    "tables_id": "nt-13109",
+    "question": "Value of c5_number when c3 is 'coast'",
+    "sql": "SELECT DISTINCT c5_number FROM w WHERE c3 = 'coast'",
+    "result": [
+      [
+        939370.0
+      ],
+      [
+        649931.0
+      ],
+      [
+        1109735.0
+      ],
+      [
+        240075.0
+      ],
+      [
+        101539.0
+      ],
+      [
+        284657.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "a425ac1c-334f-45c3-944f-6cdfdc39bd4d",
+    "tables_id": "nt-13109",
+    "question": "What are the values in column c5_number where c3 is 'coast'?",
+    "sql": "SELECT DISTINCT c5_number FROM w WHERE c3 = 'coast'",
+    "result": [
+      [
+        939370.0
+      ],
+      [
+        649931.0
+      ],
+      [
+        1109735.0
+      ],
+      [
+        240075.0
+      ],
+      [
+        101539.0
+      ],
+      [
+        284657.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "4cefd1ea-e70d-486e-9d07-ad5990c6746b",
+    "tables_id": "nt-13109",
+    "question": "Unexpected error: 'NoneType' object has no attribute 'find_all'. of column c5_number when c3 is 'coast'",
+    "sql": "SELECT DISTINCT c5_number FROM w WHERE c3 = 'coast'",
+    "result": [
+      [
+        939370.0
+      ],
+      [
+        649931.0
+      ],
+      [
+        1109735.0
+      ],
+      [
+        240075.0
+      ],
+      [
+        101539.0
+      ],
+      [
+        284657.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3d337905-122b-46a2-a89d-1453a7aa8759",
+    "tables_id": "nt-13109",
+    "question": "c5_number values where coast appears in c3",
+    "sql": "SELECT DISTINCT c5_number FROM w WHERE c3 = 'coast'",
+    "result": [
+      [
+        939370.0
+      ],
+      [
+        649931.0
+      ],
+      [
+        1109735.0
+      ],
+      [
+        240075.0
+      ],
+      [
+        101539.0
+      ],
+      [
+        284657.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "63bf3552-74cf-4ae6-9b23-57087f5b29b8",
+    "tables_id": "nt-13109",
+    "question": "What are the numbers in column c5 for entries with 'coast' in column c3?",
+    "sql": "SELECT DISTINCT c5_number FROM w WHERE c3 = 'coast'",
+    "result": [
+      [
+        939370.0
+      ],
+      [
+        649931.0
+      ],
+      [
+        1109735.0
+      ],
+      [
+        240075.0
+      ],
+      [
+        101539.0
+      ],
+      [
+        284657.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "566789ad-7d8d-4395-a731-1637989061d6",
+    "tables_id": "nt-13109",
+    "question": "c5_number where c3 is 'coast'",
+    "sql": "SELECT DISTINCT c5_number FROM w WHERE c3 = 'coast'",
+    "result": [
+      [
+        939370.0
+      ],
+      [
+        649931.0
+      ],
+      [
+        1109735.0
+      ],
+      [
+        240075.0
+      ],
+      [
+        101539.0
+      ],
+      [
+        284657.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0daad120-38dc-4008-ac83-a2db6acb0293",
+    "tables_id": "nt-13109",
+    "question": "List the distinct numbers in column c5 for entries that have 'coast' as their c3",
+    "sql": "SELECT DISTINCT c5_number FROM w WHERE c3 = 'coast'",
+    "result": [
+      [
+        939370.0
+      ],
+      [
+        649931.0
+      ],
+      [
+        1109735.0
+      ],
+      [
+        240075.0
+      ],
+      [
+        101539.0
+      ],
+      [
+        284657.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "1fe01172-d275-4a66-8a1e-5b8f073c8222",
+    "tables_id": "nt-3063",
+    "question": "What are the different values of column c10 for entries with a number in column c5 that is greater than 1000?",
+    "sql": "SELECT DISTINCT c10 FROM w WHERE c5_number > 1000",
+    "result": [
+      [
+        "poma"
+      ],
+      [
+        "doppelmayr"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "3963ebd6-3cde-46b2-9338-b19fc6076c46",
+    "tables_id": "nt-3063",
+    "question": "What values of column c10 where c5_number > 1000?",
+    "sql": "SELECT DISTINCT c10 FROM w WHERE c5_number > 1000",
+    "result": [
+      [
+        "poma"
+      ],
+      [
+        "doppelmayr"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "936348ec-d72f-4207-bd0d-8521249f13d7",
+    "tables_id": "nt-3063",
+    "question": "What are different c10 values for entries with number in c5 > 1000?",
+    "sql": "SELECT DISTINCT c10 FROM w WHERE c5_number > 1000",
+    "result": [
+      [
+        "poma"
+      ],
+      [
+        "doppelmayr"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "44997ddf-9ae6-4f87-b184-449fbdf3edad",
+    "tables_id": "nt-3063",
+    "question": "What are different c10 values for entries with number in c5 > 1000?",
+    "sql": "SELECT DISTINCT c10 FROM w WHERE c5_number > 1000",
+    "result": [
+      [
+        "poma"
+      ],
+      [
+        "doppelmayr"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "b11ee3be-2c6f-4a72-916f-df9aa5dc3a59",
+    "tables_id": "nt-3063",
+    "question": "What distinct c10 entries where column c5 number is greater than 1000?",
+    "sql": "SELECT DISTINCT c10 FROM w WHERE c5_number > 1000",
+    "result": [
+      [
+        "poma"
+      ],
+      [
+        "doppelmayr"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "dec7321c-3b84-4c45-aede-16c777e4fc18",
+    "tables_id": "nt-3063",
+    "question": "What are unique c10s where column c5 number exceeds 1000?",
+    "sql": "SELECT DISTINCT c10 FROM w WHERE c5_number > 1000",
+    "result": [
+      [
+        "poma"
+      ],
+      [
+        "doppelmayr"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "51e9e09c-d68b-47ed-b22c-85607cc34865",
+    "tables_id": "nt-3063",
+    "question": "What are unique c10 where c5 number > 1000?",
+    "sql": "SELECT DISTINCT c10 FROM w WHERE c5_number > 1000",
+    "result": [
+      [
+        "poma"
+      ],
+      [
+        "doppelmayr"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "03fb865e-bf7c-4f0a-beb3-3c23dd25ae59",
+    "tables_id": "nt-3063",
+    "question": "List unique c10 values for entries where column c5 number surpasses 1000?",
+    "sql": "SELECT DISTINCT c10 FROM w WHERE c5_number > 1000",
+    "result": [
+      [
+        "poma"
+      ],
+      [
+        "doppelmayr"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "689fcf6b-09f1-46c7-9d25-f060077ccfa7",
+    "tables_id": "nt-3063",
+    "question": "List unique c10 values for entries where column c5 number surpasses 1000?",
+    "sql": "SELECT DISTINCT c10 FROM w WHERE c5_number > 1000",
+    "result": [
+      [
+        "poma"
+      ],
+      [
+        "doppelmayr"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "9fb86fb5-0dce-40d1-a921-da90a289a932",
+    "tables_id": "nt-3063",
+    "question": "What are the values in column c4_number for entries with 'poma' in column c10?",
+    "sql": "\nSELECT c4_number \nFROM w \nWHERE c10 = 'poma';\n",
+    "result": [
+      [
+        5840.0
+      ],
+      [
+        5350.0
+      ],
+      [
+        5915.0
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "ac48c666-0645-421b-aad6-342818231176",
+    "tables_id": "nt-3063",
+    "question": "What values in column c4_number for entries with poma?",
+    "sql": "SELECT c4_number FROM w WHERE c10 = 'poma';",
+    "result": [
+      [
+        5840.0
+      ],
+      [
+        5350.0
+      ],
+      [
+        5915.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "3792b469-2eb1-4b6c-9ed6-0639b08a9604",
+    "tables_id": "nt-3063",
+    "question": "What c4_number values have poma?",
+    "sql": "SELECT c4_number FROM w WHERE c10 = 'poma';",
+    "result": [
+      [
+        5840.0
+      ],
+      [
+        5350.0
+      ],
+      [
+        5915.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "f747a5ef-88d1-4735-b2ac-d927b0637bda",
+    "tables_id": "nt-3063",
+    "question": "What numbers in column c4_number have 'poma'?",
+    "sql": "SELECT c4_number FROM w WHERE c10 = 'poma';",
+    "result": [
+      [
+        5840.0
+      ],
+      [
+        5350.0
+      ],
+      [
+        5915.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "23e49b04-34bf-4551-8126-8cd1ea13a447",
+    "tables_id": "nt-3063",
+    "question": "Which entries having poma in column c10 have corresponding numbers in column c4?",
+    "sql": "SELECT c4_number FROM w WHERE c10 = 'poma';",
+    "result": [
+      [
+        5840.0
+      ],
+      [
+        5350.0
+      ],
+      [
+        5915.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "232aeafd-582b-464d-ba51-12e8cca78dcc",
+    "tables_id": "nt-3063",
+    "question": "Which entries with poma have numbers?",
+    "sql": "SELECT c4_number FROM w WHERE c10 = 'poma';",
+    "result": [
+      [
+        5840.0
+      ],
+      [
+        5350.0
+      ],
+      [
+        5915.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "0230bf71-68c3-4a44-933f-946bf0ab6a3d",
+    "tables_id": "nt-3063",
+    "question": "What are the c4_number figures for rows that contain 'poma'?",
+    "sql": "SELECT c4_number FROM w WHERE c10 = 'poma';",
+    "result": [
+      [
+        5840.0
+      ],
+      [
+        5350.0
+      ],
+      [
+        5915.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "34ed1e9c-b44c-4613-bc76-c219351e4e6e",
+    "tables_id": "nt-3063",
+    "question": "What are the figures in column c4_number for entries where 'poma' is present?",
+    "sql": "SELECT c4_number FROM w WHERE c10 = 'poma';",
+    "result": [
+      [
+        5840.0
+      ],
+      [
+        5350.0
+      ],
+      [
+        5915.0
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "58f628c8-4a33-4f8b-8aa6-11ddf7150c58",
+    "tables_id": "nt-4035",
+    "question": "What are the distinct c3 venue locations where matches were played in spain?",
+    "sql": "\nSELECT DISTINCT T1.c3 AS venue_location FROM w AS T1 JOIN t_c3_address AS T2 ON T1.id = T2.m_id WHERE T1.c4 = 'spain' OR T1.c3 LIKE '%spain%' ;\n",
+    "result": [
+      [
+        "rico perez, alicante, spain"
+      ],
+      [
+        "vicente calderon, madrid, spain"
+      ],
+      [
+        "luis casanova, valencia, spain"
+      ]
+    ],
+    "orginal": true
+  },
+  {
+    "vector_id": "7b7a0786-bb71-47df-b842-8b66a8363f3d",
+    "tables_id": "nt-4035",
+    "question": "What distinct venue locations in Spain?",
+    "sql": "SELECT DISTINCT T1.c3 AS venue_location FROM w AS T1 JOIN t_c3_address AS T2 ON T1.id = T2.m_id WHERE T1.c4 = 'spain' OR T1.c3 LIKE '%spain%' ;",
+    "result": [
+      [
+        "rico perez, alicante, spain"
+      ],
+      [
+        "vicente calderon, madrid, spain"
+      ],
+      [
+        "luis casanova, valencia, spain"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "09e9b0c1-bc44-497b-ada5-554b050cf4a3",
+    "tables_id": "nt-4035",
+    "question": "What unique venues are in Spain?",
+    "sql": "SELECT DISTINCT T1.c3 AS venue_location FROM w AS T1 JOIN t_c3_address AS T2 ON T1.id = T2.m_id WHERE T1.c4 = 'spain' OR T1.c3 LIKE '%spain%' ;",
+    "result": [
+      [
+        "rico perez, alicante, spain"
+      ],
+      [
+        "vicente calderon, madrid, spain"
+      ],
+      [
+        "luis casanova, valencia, spain"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "12700921-20ae-4c0d-a900-80b82ff60b96",
+    "tables_id": "nt-4035",
+    "question": "What different venue locations are in Spain?",
+    "sql": "SELECT DISTINCT T1.c3 AS venue_location FROM w AS T1 JOIN t_c3_address AS T2 ON T1.id = T2.m_id WHERE T1.c4 = 'spain' OR T1.c3 LIKE '%spain%' ;",
+    "result": [
+      [
+        "rico perez, alicante, spain"
+      ],
+      [
+        "vicente calderon, madrid, spain"
+      ],
+      [
+        "luis casanova, valencia, spain"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "14fd9e1b-6c9c-4d6e-b33c-53864b976f1a",
+    "tables_id": "nt-4035",
+    "question": "What unique venues were held in Spain?",
+    "sql": "SELECT DISTINCT T1.c3 AS venue_location FROM w AS T1 JOIN t_c3_address AS T2 ON T1.id = T2.m_id WHERE T1.c4 = 'spain' OR T1.c3 LIKE '%spain%' ;",
+    "result": [
+      [
+        "rico perez, alicante, spain"
+      ],
+      [
+        "vicente calderon, madrid, spain"
+      ],
+      [
+        "luis casanova, valencia, spain"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "05605ca1-aceb-4135-ae05-c7af7beac182",
+    "tables_id": "nt-4035",
+    "question": "Which venue locations in Spain had matches played at them?",
+    "sql": "SELECT DISTINCT T1.c3 AS venue_location FROM w AS T1 JOIN t_c3_address AS T2 ON T1.id = T2.m_id WHERE T1.c4 = 'spain' OR T1.c3 LIKE '%spain%' ;",
+    "result": [
+      [
+        "rico perez, alicante, spain"
+      ],
+      [
+        "vicente calderon, madrid, spain"
+      ],
+      [
+        "luis casanova, valencia, spain"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "d358dfbc-6dca-4e97-a091-509cda263295",
+    "tables_id": "nt-4035",
+    "question": "What unique venue locations are in Spain?",
+    "sql": "SELECT DISTINCT T1.c3 AS venue_location FROM w AS T1 JOIN t_c3_address AS T2 ON T1.id = T2.m_id WHERE T1.c4 = 'spain' OR T1.c3 LIKE '%spain%' ;",
+    "result": [
+      [
+        "rico perez, alicante, spain"
+      ],
+      [
+        "vicente calderon, madrid, spain"
+      ],
+      [
+        "luis casanova, valencia, spain"
+      ]
+    ],
+    "orginal": false
+  },
+  {
+    "vector_id": "44db8127-5b0c-412d-9e78-d4465b6acf6b",
+    "tables_id": "nt-4035",
+    "question": "List unique venues that hosted matches in Spain.",
+    "sql": "SELECT DISTINCT T1.c3 AS venue_location FROM w AS T1 JOIN t_c3_address AS T2 ON T1.id = T2.m_id WHERE T1.c4 = 'spain' OR T1.c3 LIKE '%spain%' ;",
+    "result": [
+      [
+        "rico perez, alicante, spain"
+      ],
+      [
+        "vicente calderon, madrid, spain"
+      ],
+      [
+        "luis casanova, valencia, spain"
+      ]
+    ],
+    "orginal": false
   }
 ]
