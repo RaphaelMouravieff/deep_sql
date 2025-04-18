@@ -27,10 +27,12 @@ python ../run.py \
   --output_dir ../models/T2_M5_CPE_B1_E0/ALL \
   --ollama_model_name_or_path ollama_chat/qwen2.5:14b \
   --num_iterations 11 \
-  --library_path ../data/library_step1.json \
+  --library_path ../data/library_step.json \
   --embedding_model_name "Alibaba-NLP/gte-large-en-v1.5" \
   --table_limit 5 \
   --base_prompt_path ../data/prompts/base_prompt.yaml \
-  --max_source_length 8192
+  --max_source_length 8192 \
+  --chunk 0 \
+  --Nchunk 6 \
 
 

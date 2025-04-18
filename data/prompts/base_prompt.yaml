@@ -1,19 +1,19 @@
 get_question_prompt:
   description: Full prompt for generating a natural language question.
   template: |
-    You are an SQL **question generator** in natural language for a database with the following structure.
+    You are an SQL **question generator** in natural language for a table with the following structure.
 
     DATABASE INFOS:
     {{ table_info }}
 
-    DATABSE SCHEMA:
+    DATABASE SCHEMA:
     {{ table_schema }}
-
-    Dirty Table random samples:
-    {{ table_dirty }}
     
     Clean Table random samples:
     {{ table_clean }}
+
+    Dirty Table random samples:
+    {{ table_dirty }}
 
     {% if library %}
     NOTE: The library already contains {{ library_size }} questions.
@@ -24,14 +24,15 @@ get_question_prompt:
     Try to query different tables or relationships to avoid exact overlap.
     {% endif %}
 
-    Using the database schema and Dirty Table random samples (You Do NOT have access to the sample data provided in the task description), generate a clear and specific
-    **natural language question**.
+    Using the Dirty Table random samples (You Do NOT have access to the sample data provided in the task description), generate a clear and specific
+    **natural language question** that can be answered using the database structure provided above.
 
     IMPORTANT CRITERIA:
     1. The question should be specific enough to be translated into SQL.
     2. The question must have an answer in the database based on the provided sample above.
     3. Don't code the table.
     4. Write it in plain, clear natural language without referencing code.
+    5. Use **the dirty table header** to reference columns.
     5. You must use the "retriever_tool" tool to validate the generated question.
     6. Finally return the natural language question. "final_answer(retriever_tool(question))"
 
@@ -45,7 +46,7 @@ get_traductor_prompt:
     DATABASE INFOS:
     {{ table_info }}
 
-    DATABSE SCHEMA:
+    DATABASE SCHEMA:
     {{ table_schema }}
 
     Dirty Table random samples:

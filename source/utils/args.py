@@ -102,6 +102,18 @@ class TrainingArguments:
         metadata={"help": "The maximum number of steps for the agent."},
     )
 
+
+    chunk: Optional[int] = field(
+        default=None,
+        metadata={"help": "The chunk number for the dataset."},
+    )
+
+    Nchunks: Optional[int] = field(
+        default=None,
+        metadata={"help": "The number of chunks for the dataset."},
+    )
+ 
+
 def __post_init__(self):
 
     if self.dataset_name is None and self.train_file is None and self.validation_file is None:

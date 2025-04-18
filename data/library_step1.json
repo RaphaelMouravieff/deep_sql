@@ -2206,5 +2206,1037 @@
     "question": "what's the total prize money given to ronald l briones when he was the champion?",
     "sql": "SELECT c5 FROM w WHERE c2 = 'ronald l briones';",
     "orginal": false
+  },
+  {
+    "tables_id": "nt-259",
+    "question": "which artist has more than one unique writer listed in their records?",
+    "sql": "\nSELECT c3 AS artist, COUNT(DISTINCT REPLACE(REPLACE(CONCAT(c5, ',', c6), ' ', ''), ',', '')) AS writer_count \nFROM w \nGROUP BY c3 \nHAVING writer_count > 1;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-259",
+    "question": "which artist has multiple writers?",
+    "sql": "SELECT c3 AS artist, COUNT(DISTINCT REPLACE(REPLACE(CONCAT(c5, ',', c6), ' ', ''), ',', '')) AS writer_count FROM w GROUP BY c3 HAVING writer_count > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2606",
+    "question": "what is the city where the event took place in 2012?",
+    "sql": "\nSELECT c3 AS city \nFROM w \nWHERE c2_number = 2012;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-2606",
+    "question": "what city had the event in 2012?",
+    "sql": "SELECT c3 AS city FROM w WHERE c2_number = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2606",
+    "question": "which city hosted an event in 2012?",
+    "sql": "SELECT c3 AS city FROM w WHERE c2_number = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2606",
+    "question": "what city saw the event in 2012?",
+    "sql": "SELECT c3 AS city FROM w WHERE c2_number = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2606",
+    "question": "in which place did an event happen in 2012?",
+    "sql": "SELECT c3 AS city FROM w WHERE c2_number = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2606",
+    "question": "what location had its event year be 2012?",
+    "sql": "SELECT c3 AS city FROM w WHERE c2_number = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2606",
+    "question": "city of 2012 event?",
+    "sql": "SELECT c3 AS city FROM w WHERE c2_number = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2606",
+    "question": "identify the place that held an event in 2012.",
+    "sql": "SELECT c3 AS city FROM w WHERE c2_number = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-252",
+    "question": "what is the total amount of 1st prize money for tournaments that took place in september?",
+    "sql": "\nSELECT SUM(c6_number) AS total_prize_money FROM w WHERE c1_month = 9;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-252",
+    "question": "total prize for sept.",
+    "sql": "SELECT SUM(c6_number) AS total_prize_money FROM w WHERE c1_month = 9;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8507",
+    "question": "how many records have a value in the us billboard hot 100 chart?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c5_number IS NOT NULL;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-8507",
+    "question": "how many records have values on the us billboard hot 100 chart?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c5_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8507",
+    "question": "how many records appear on the us billboard hot 100 chart?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c5_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8507",
+    "question": "how many records contain a rating in the us billboard hot 100 chart?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c5_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8507",
+    "question": "what is the count of records that show up in the us billboard hot 100 rankings?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c5_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8507",
+    "question": "how many entries have a position listed on the us billboard hot 100?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c5_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8507",
+    "question": "count how many records list positions in the us billboard hot 100.",
+    "sql": "SELECT COUNT(*) FROM w WHERE c5_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8507",
+    "question": "calculate entries that feature on the us billboard hot 100.",
+    "sql": "SELECT COUNT(*) FROM w WHERE c5_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11867",
+    "question": "how many records feature players from the united states?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE LOWER(c3) = 'united states';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-11867",
+    "question": "records with us players?",
+    "sql": "SELECT COUNT(*) FROM w WHERE LOWER(c3) = 'united states';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11867",
+    "question": "how many records have us players?",
+    "sql": "SELECT COUNT(*) FROM w WHERE LOWER(c3) = 'united states';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11867",
+    "question": "how many records feature ['list', 'troupe'] from the united states?",
+    "sql": "SELECT COUNT(*) FROM w WHERE LOWER(c3) = 'united states';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11867",
+    "question": "how many entries mention players from the us?",
+    "sql": "SELECT COUNT(*) FROM w WHERE LOWER(c3) = 'united states';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11867",
+    "question": "what's the count of records featuring players who are from the usa?",
+    "sql": "SELECT COUNT(*) FROM w WHERE LOWER(c3) = 'united states';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11867",
+    "question": "how many have us players?",
+    "sql": "SELECT COUNT(*) FROM w WHERE LOWER(c3) = 'united states';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11867",
+    "question": "tell me, how many records include players hailing from america?",
+    "sql": "SELECT COUNT(*) FROM w WHERE LOWER(c3) = 'united states';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12094",
+    "question": "what is the total number of unique distributors mentioned in the database?",
+    "sql": "\nSELECT COUNT(DISTINCT c5) AS unique_distributors\nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12094",
+    "question": "how many distributors are unique?",
+    "sql": "SELECT COUNT(DISTINCT c5) AS unique_distributors FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12094",
+    "question": "count of distinct distributors.",
+    "sql": "SELECT COUNT(DISTINCT c5) AS unique_distributors FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12094",
+    "question": "what is the total number of unique distributors mentioned in the database?",
+    "sql": "SELECT COUNT(DISTINCT c5) AS unique_distributors FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12094",
+    "question": "how many different distributors are there?",
+    "sql": "SELECT COUNT(DISTINCT c5) AS unique_distributors FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12094",
+    "question": "what is unique distributor count in the database?",
+    "sql": "SELECT COUNT(DISTINCT c5) AS unique_distributors FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12094",
+    "question": "count of unique distributors.",
+    "sql": "SELECT COUNT(DISTINCT c5) AS unique_distributors FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12094",
+    "question": "identify all distinct entities referred to as distributors within the database.",
+    "sql": "SELECT COUNT(DISTINCT c5) AS unique_distributors FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9241",
+    "question": "how many players are from the philippines and joined the san miguel beermen pba team?",
+    "sql": "\nSELECT COUNT(*)\nFROM w\nWHERE c3 = 'philippines' AND c4 = 'san miguel beermen';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-9241",
+    "question": "how many players are from philippines and in san miguel beermen?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3 = 'philippines' AND c4 = 'san miguel beermen'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9241",
+    "question": "how many players are from philippines in san miguel beermen?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3 = 'philippines' AND c4 = 'san miguel beermen'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9241",
+    "question": "how many troupes are from philippines in san miguel beermen?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3 = 'philippines' AND c4 = 'san miguel beermen'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9241",
+    "question": "what is the count of players from philippines who are part of san miguel beermen?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3 = 'philippines' AND c4 = 'san miguel beermen'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9241",
+    "question": "count of filipino players in san miguel beermen?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3 = 'philippines' AND c4 = 'san miguel beermen'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9241",
+    "question": "how many members of san miguel beermen are filipino?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3 = 'philippines' AND c4 = 'san miguel beermen'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7998",
+    "question": "what is the total number of miles for all races where jimmie johnson was the driver?",
+    "sql": "\nSELECT SUM(c7_first_number) as total_miles FROM w WHERE c3 = 'jimmie johnson';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7998",
+    "question": "total race distance in miles for jimmie johnson.",
+    "sql": "SELECT SUM(c7_first_number) as total_miles FROM w WHERE c3 = 'jimmie johnson';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7998",
+    "question": "total race distance in miles for jimmie johnson's races.",
+    "sql": "SELECT SUM(c7_first_number) as total_miles FROM w WHERE c3 = 'jimmie johnson';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7998",
+    "question": "total driving distance in kilometer for jimmie johnson's races.",
+    "sql": "SELECT SUM(c7_first_number) as total_miles FROM w WHERE c3 = 'jimmie johnson';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7998",
+    "question": "overall racing length in miles for jimmie johnson's races.",
+    "sql": "SELECT SUM(c7_first_number) as total_miles FROM w WHERE c3 = 'jimmie johnson';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7998",
+    "question": "how many miles did jimmie johnson race in total?",
+    "sql": "SELECT SUM(c7_first_number) as total_miles FROM w WHERE c3 = 'jimmie johnson';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7998",
+    "question": "total miles for jimmie johnson.",
+    "sql": "SELECT SUM(c7_first_number) as total_miles FROM w WHERE c3 = 'jimmie johnson';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7998",
+    "question": "summarize jimmie johnson's total race distance.",
+    "sql": "SELECT SUM(c7_first_number) as total_miles FROM w WHERE c3 = 'jimmie johnson';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12677",
+    "question": "what is the total number of points for riders with aprilia as their manufacturer?",
+    "sql": "SELECT SUM(c5_number) AS total_points FROM w WHERE c3 = 'Aprilia';",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12677",
+    "question": "total points riders aprilia",
+    "sql": "SELECT SUM(c5_number) AS total_points FROM w WHERE c3 = 'Aprilia';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12677",
+    "question": "points for aprilia riders?",
+    "sql": "SELECT SUM(c5_number) AS total_points FROM w WHERE c3 = 'Aprilia';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12677",
+    "question": "sum of scores with ['builder', 'business', 'company', 'corporation', 'operator', 'producer'] as aprilia",
+    "sql": "SELECT SUM(c5_number) AS total_points FROM w WHERE c3 = 'Aprilia';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12677",
+    "question": "total score for riders from aprilia?",
+    "sql": "SELECT SUM(c5_number) AS total_points FROM w WHERE c3 = 'Aprilia';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12677",
+    "question": "what's the sum of points by riders using aprilia?",
+    "sql": "SELECT SUM(c5_number) AS total_points FROM w WHERE c3 = 'Aprilia';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12677",
+    "question": "points total aprilia",
+    "sql": "SELECT SUM(c5_number) AS total_points FROM w WHERE c3 = 'Aprilia';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12677",
+    "question": "aprilia riders' collective score",
+    "sql": "SELECT SUM(c5_number) AS total_points FROM w WHERE c3 = 'Aprilia';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9752",
+    "question": "how many unique songwriters are there based on the c3 field?",
+    "sql": "\nSELECT COUNT(DISTINCT c3) AS count_unique_songwriters \nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-9752",
+    "question": "how many unique songwriters are there ?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS count_unique_songwriters FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9752",
+    "question": "what is the count of songwriters are there ?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS count_unique_songwriters FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9752",
+    "question": "count of distinct composers are there based on the c3 field?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS count_unique_songwriters FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9752",
+    "question": "how can the total number of distinct individuals contributing as songwriters be determined based on the c3 field?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS count_unique_songwriters FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9752",
+    "question": "how many distinct songwriters are there based on c3?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS count_unique_songwriters FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9752",
+    "question": "what is the tally of unique songwriters in the database based on field c3?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS count_unique_songwriters FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2234",
+    "question": "how many unique universities (identified by c1) have their own specific physical addresses in t_c2_address table?",
+    "sql": "\nSELECT COUNT(DISTINCT w.c1) AS unique_universities \nFROM w \nINNER JOIN t_c2_address ON w.id = t_c2_address.m_id;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-2234",
+    "question": "basic simplification: how many universities have unique addresses?",
+    "sql": "SELECT COUNT(DISTINCT w.c1) AS unique_universities FROM w INNER JOIN t_c2_address ON w.id = t_c2_address.m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2234",
+    "question": "simplification by hiding details: how many universities in t_c2_address?",
+    "sql": "SELECT COUNT(DISTINCT w.c1) AS unique_universities FROM w INNER JOIN t_c2_address ON w.id = t_c2_address.m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2234",
+    "question": "using synonyms: how many colleges have unique addresses?",
+    "sql": "SELECT COUNT(DISTINCT w.c1) AS unique_universities FROM w INNER JOIN t_c2_address ON w.id = t_c2_address.m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2234",
+    "question": "semantic substitutions: how many institutions have distinct physical locations?",
+    "sql": "SELECT COUNT(DISTINCT w.c1) AS unique_universities FROM w INNER JOIN t_c2_address ON w.id = t_c2_address.m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2234",
+    "question": "complete reformulation: what is the count of unique institutions listed in t_c2_address?",
+    "sql": "SELECT COUNT(DISTINCT w.c1) AS unique_universities FROM w INNER JOIN t_c2_address ON w.id = t_c2_address.m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2234",
+    "question": "simplification with direct language: how many distinct universities?",
+    "sql": "SELECT COUNT(DISTINCT w.c1) AS unique_universities FROM w INNER JOIN t_c2_address ON w.id = t_c2_address.m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2234",
+    "question": "change of perspective: from t_c2_address table, list unique institutions.",
+    "sql": "SELECT COUNT(DISTINCT w.c1) AS unique_universities FROM w INNER JOIN t_c2_address ON w.id = t_c2_address.m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-942",
+    "question": "what is the maximum c5_list_number for each unique m_id in t_c5_list_maximum_number?",
+    "sql": "\nSELECT \n    m_id, \n    MAX(c5_list_maximum_number) AS max_c5_list_number\nFROM \n    t_c5_list_maximum_number\nGROUP BY \n    m_id;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-942",
+    "question": "what is the maximum c5_list_number for each m_id?",
+    "sql": "SELECT m_id, MAX(c5_list_maximum_number) AS max_c5_list_number FROM t_c5_list_maximum_number GROUP BY m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-942",
+    "question": "find max c5_list_number per m_id.",
+    "sql": "SELECT m_id, MAX(c5_list_maximum_number) AS max_c5_list_number FROM t_c5_list_maximum_number GROUP BY m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-942",
+    "question": "what is the maximal c5_list_number for each m_id? ",
+    "sql": "SELECT m_id, MAX(c5_list_maximum_number) AS max_c5_list_number FROM t_c5_list_maximum_number GROUP BY m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-942",
+    "question": "find highest c5_list_number among different m_ids.",
+    "sql": "SELECT m_id, MAX(c5_list_maximum_number) AS max_c5_list_number FROM t_c5_list_maximum_number GROUP BY m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-942",
+    "question": "how do you determine max c5_list_number for every unique m_id?",
+    "sql": "SELECT m_id, MAX(c5_list_maximum_number) AS max_c5_list_number FROM t_c5_list_maximum_number GROUP BY m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-942",
+    "question": "what's the highest c5_list_number per distinct m_id?",
+    "sql": "SELECT m_id, MAX(c5_list_maximum_number) AS max_c5_list_number FROM t_c5_list_maximum_number GROUP BY m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-942",
+    "question": "determine topmost c5_list_number for every single m_id.",
+    "sql": "SELECT m_id, MAX(c5_list_maximum_number) AS max_c5_list_number FROM t_c5_list_maximum_number GROUP BY m_id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6422",
+    "question": "what is the total number of votes each candidate received in an election?",
+    "sql": "\nSELECT \n    c3 AS Winner_Name,\n    SUM(c4_number) AS Total_Votes_Winner,\n    c6 AS Loser_Name,\n    SUM(c7_number) AS Total_Votes_Loser\nFROM w\nGROUP BY c3, c6;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-6422",
+    "question": "total votes for each candidate in an election?",
+    "sql": "\nSELECT \n    c3 AS Winner_Name,\n    SUM(c4_number) AS Total_Votes_Winner,\n    c6 AS Loser_Name,\n    SUM(c7_number) AS Total_Votes_Loser\nFROM w\nGROUP BY c3, c6;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6422",
+    "question": "how many votes did candidates get in the election?",
+    "sql": "\nSELECT \n    c3 AS Winner_Name,\n    SUM(c4_number) AS Total_Votes_Winner,\n    c6 AS Loser_Name,\n    SUM(c7_number) AS Total_Votes_Loser\nFROM w\nGROUP BY c3, c6;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6422",
+    "question": "what are the aggregate votes for each candidate in an election?",
+    "sql": "\nSELECT \n    c3 AS Winner_Name,\n    SUM(c4_number) AS Total_Votes_Winner,\n    c6 AS Loser_Name,\n    SUM(c7_number) AS Total_Votes_Loser\nFROM w\nGROUP BY c3, c6;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6422",
+    "question": "what's the tally of votes per candidate in an election?",
+    "sql": "\nSELECT \n    c3 AS Winner_Name,\n    SUM(c4_number) AS Total_Votes_Winner,\n    c6 AS Loser_Name,\n    SUM(c7_number) AS Total_Votes_Loser\nFROM w\nGROUP BY c3, c6;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6422",
+    "question": "how many votes did each candidate receive during an election?",
+    "sql": "\nSELECT \n    c3 AS Winner_Name,\n    SUM(c4_number) AS Total_Votes_Winner,\n    c6 AS Loser_Name,\n    SUM(c7_number) AS Total_Votes_Loser\nFROM w\nGROUP BY c3, c6;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6422",
+    "question": "votes for each candidate in the election?",
+    "sql": "\nSELECT \n    c3 AS Winner_Name,\n    SUM(c4_number) AS Total_Votes_Winner,\n    c6 AS Loser_Name,\n    SUM(c7_number) AS Total_Votes_Loser\nFROM w\nGROUP BY c3, c6;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6422",
+    "question": "list votes received by candidates during an election.",
+    "sql": "\nSELECT \n    c3 AS Winner_Name,\n    SUM(c4_number) AS Total_Votes_Winner,\n    c6 AS Loser_Name,\n    SUM(c7_number) AS Total_Votes_Loser\nFROM w\nGROUP BY c3, c6;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-861",
+    "question": "how many total months was each leader associated with their respective party?",
+    "sql": "\nSELECT c1 AS Party, c2 AS Leader,\n       (c4_number - c3_number) * 12 + (c4_month - c3_month) AS TotalMonths\nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-861",
+    "question": "how many total months did each leader serve their respective party?",
+    "sql": "SELECT c1 AS Party, c2 AS Leader,\n       (c4_number - c3_number) * 12 + (c4_month - c3_month) AS TotalMonths\nFROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-861",
+    "question": "what is the total time in months for each leader of a party?",
+    "sql": "SELECT c1 AS Party, c2 AS Leader,\n       (c4_number - c3_number) * 12 + (c4_month - c3_month) AS TotalMonths\nFROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-861",
+    "question": "how many total months was each leader associated with their respective organization?",
+    "sql": "SELECT c1 AS Party, c2 AS Leader,\n       (c4_number - c3_number) * 12 + (c4_month - c3_month) AS TotalMonths\nFROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-861",
+    "question": "what is the duration in months of leadership for each party member?",
+    "sql": "SELECT c1 AS Party, c2 AS Leader,\n       (c4_number - c3_number) * 12 + (c4_month - c3_month) AS TotalMonths\nFROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-861",
+    "question": "how long did every leader work with their corresponding political group in terms of total months?",
+    "sql": "SELECT c1 AS Party, c2 AS Leader,\n       (c4_number - c3_number) * 12 + (c4_month - c3_month) AS TotalMonths\nFROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-861",
+    "question": "total months served by each leader?",
+    "sql": "SELECT c1 AS Party, c2 AS Leader,\n       (c4_number - c3_number) * 12 + (c4_month - c3_month) AS TotalMonths\nFROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-861",
+    "question": "what are the total months of leadership for every individual within their political party?",
+    "sql": "SELECT c1 AS Party, c2 AS Leader,\n       (c4_number - c3_number) * 12 + (c4_month - c3_month) AS TotalMonths\nFROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5236",
+    "question": "what is the total score and average score of each player in the tournament?",
+    "sql": "\nSELECT \n    c2 AS Player, \n    SUM(c4_result) AS Total_Score,\n    AVG(COALESCE(c6_number, 0)) AS Average_Score\nFROM \n    w\nGROUP BY \n    c2;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-5236",
+    "question": "what is the total score  average score of each player in the tournament?",
+    "sql": "SELECT c2 AS Player, SUM(c4_result) AS Total_Score, AVG(COALESCE(c6_number, 0)) AS Average_Score FROM w GROUP BY c2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5236",
+    "question": "scores and average of each player in the tournament?",
+    "sql": "SELECT c2 AS Player, SUM(c4_result) AS Total_Score, AVG(COALESCE(c6_number, 0)) AS Average_Score FROM w GROUP BY c2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5236",
+    "question": "what are the total points and mean value of every player's performance in the tournament?",
+    "sql": "SELECT c2 AS Player, SUM(c4_result) AS Total_Score, AVG(COALESCE(c6_number, 0)) AS Average_Score FROM w GROUP BY c2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5236",
+    "question": "scores and arithmetic mean of each player in the tournament?",
+    "sql": "SELECT c2 AS Player, SUM(c4_result) AS Total_Score, AVG(COALESCE(c6_number, 0)) AS Average_Score FROM w GROUP BY c2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5236",
+    "question": "what are the total and average scores for every player in tournament?",
+    "sql": "SELECT c2 AS Player, SUM(c4_result) AS Total_Score, AVG(COALESCE(c6_number, 0)) AS Average_Score FROM w GROUP BY c2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5236",
+    "question": "total and average scores of each player?",
+    "sql": "SELECT c2 AS Player, SUM(c4_result) AS Total_Score, AVG(COALESCE(c6_number, 0)) AS Average_Score FROM w GROUP BY c2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5236",
+    "question": "what are the total and mean scores for each participant in tournament?",
+    "sql": "SELECT c2 AS Player, SUM(c4_result) AS Total_Score, AVG(COALESCE(c6_number, 0)) AS Average_Score FROM w GROUP BY c2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3033",
+    "question": "how many records exist for naacp image awards in column c2?",
+    "sql": "\nSELECT COUNT(*)\nFROM w\nWHERE c2 = 'naacp image awards';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-3033",
+    "question": "number of naacp image awards",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'naacp image awards';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3033",
+    "question": "naacp image awards count",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'naacp image awards';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3033",
+    "question": "number of journal for naacp image awards in column c2?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'naacp image awards';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3033",
+    "question": "count entries with naacp image awards",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'naacp image awards';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3033",
+    "question": "how many times has the naacp image awards been listed?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'naacp image awards';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3033",
+    "question": "naacp image awards count",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'naacp image awards';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3033",
+    "question": "listing naacp image awards entries",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'naacp image awards';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7244",
+    "question": "what are the week numbers, dates, opponents, and results of all home games that ended in a win?",
+    "sql": "\nSELECT c1, c2_parsed AS date, c3 AS opponent, c5 AS result \nFROM w \nWHERE c4='home' AND c5_result='w';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7244",
+    "question": "what are the week numbers, dates, opponents, and results of all home games that ended in a win?",
+    "sql": "SELECT c1, c2_parsed AS date, c3 AS opponent, c5 AS result FROM w WHERE c4='home' AND c5_result='w';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7244",
+    "question": "what are dates, opponents and results of home wins?",
+    "sql": "SELECT c1, c2_parsed AS date, c3 AS opponent, c5 AS result FROM w WHERE c4='home' AND c5_result='w';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7244",
+    "question": "what are dates, opponents and results for home wins?",
+    "sql": "SELECT c1, c2_parsed AS date, c3 AS opponent, c5 AS result FROM w WHERE c4='home' AND c5_result='w';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7244",
+    "question": "what are dates, adversaries and outcomes for home victories?",
+    "sql": "SELECT c1, c2_parsed AS date, c3 AS opponent, c5 AS result FROM w WHERE c4='home' AND c5_result='w';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7244",
+    "question": "what are the dates, rivals and outcomes for home games resulting in a win?",
+    "sql": "SELECT c1, c2_parsed AS date, c3 AS opponent, c5 AS result FROM w WHERE c4='home' AND c5_result='w';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7244",
+    "question": "how many home games were victorious and what are their dates, opponents, and results?",
+    "sql": "SELECT c1, c2_parsed AS date, c3 AS opponent, c5 AS result FROM w WHERE c4='home' AND c5_result='w';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7244",
+    "question": "what are dates, opponents and results of home wins?",
+    "sql": "SELECT c1, c2_parsed AS date, c3 AS opponent, c5 AS result FROM w WHERE c4='home' AND c5_result='w';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7244",
+    "question": "list dates, opponents and results for all home games that ended as wins.",
+    "sql": "SELECT c1, c2_parsed AS date, c3 AS opponent, c5 AS result FROM w WHERE c4='home' AND c5_result='w';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11536",
+    "question": "what are the dates, opponents, scores for all away games?",
+    "sql": "\nSELECT w.c2 AS date, w.c5 AS opponent_team, w.c6 AS score \nFROM w \nWHERE w.c4 = 'away';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-11536",
+    "question": "dates, opponents, and scores for away games?",
+    "sql": "SELECT w.c2 AS date, w.c5 AS opponent_team, w.c6 AS score FROM w WHERE w.c4 = 'away';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11536",
+    "question": "what are dates, opponents and score of matches that were played away?",
+    "sql": "SELECT w.c2 AS date, w.c5 AS opponent_team, w.c6 AS score FROM w WHERE w.c4 = 'away';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11536",
+    "question": "when did the teams visit other locations for games, who they faced and what scores?",
+    "sql": "SELECT w.c2 AS date, w.c5 AS opponent_team, w.c6 AS score FROM w WHERE w.c4 = 'away';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11536",
+    "question": "what were the dates, adversaries in games played outside their own stadium?",
+    "sql": "SELECT w.c2 AS date, w.c5 AS opponent_team, w.c6 AS score FROM w WHERE w.c4 = 'away';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11536",
+    "question": "list all matches that happened away and provide the dates, teams played against and their scores.",
+    "sql": "SELECT w.c2 AS date, w.c5 AS opponent_team, w.c6 AS score FROM w WHERE w.c4 = 'away';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11536",
+    "question": "dates, opponents and scores for all games played outside.",
+    "sql": "SELECT w.c2 AS date, w.c5 AS opponent_team, w.c6 AS score FROM w WHERE w.c4 = 'away';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11536",
+    "question": "provide information on dates, teams that were visited and scores for away games.",
+    "sql": "SELECT w.c2 AS date, w.c5 AS opponent_team, w.c6 AS score FROM w WHERE w.c4 = 'away';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10193",
+    "question": "what are the core clock frequencies (mhz) for models with more than 16 mib of memory?",
+    "sql": "\nSELECT w.c7_number AS core_clock_frequency \nFROM w \nWHERE CAST(SUBSTR(w.c6, 2) AS INTEGER) > 16;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-10193",
+    "question": "core clock frequencies for models above 16 mib?",
+    "sql": "SELECT w.c7_number AS core_clock_frequency FROM w WHERE CAST(SUBSTR(w.c6, 2) AS INTEGER) > 16;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10193",
+    "question": "core clock mhz for more than 16 mib?",
+    "sql": "SELECT w.c7_number AS core_clock_frequency FROM w WHERE CAST(SUBSTR(w.c6, 2) AS INTEGER) > 16;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10193",
+    "question": "what are the rate values (mhz) for models above 16 storage?",
+    "sql": "SELECT w.c7_number AS core_clock_frequency FROM w WHERE CAST(SUBSTR(w.c6, 2) AS INTEGER) > 16;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10193",
+    "question": "core clock speeds in mhz for models with more memory than 16 mib?",
+    "sql": "SELECT w.c7_number AS core_clock_frequency FROM w WHERE CAST(SUBSTR(w.c6, 2) AS INTEGER) > 16;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10193",
+    "question": "what core frequencies are listed for models having over 16 mib?",
+    "sql": "SELECT w.c7_number AS core_clock_frequency FROM w WHERE CAST(SUBSTR(w.c6, 2) AS INTEGER) > 16;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10193",
+    "question": "core mhz above 16mib?",
+    "sql": "SELECT w.c7_number AS core_clock_frequency FROM w WHERE CAST(SUBSTR(w.c6, 2) AS INTEGER) > 16;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10193",
+    "question": "list core clock frequencies (mhz) for models exceeding 16 mib?",
+    "sql": "SELECT w.c7_number AS core_clock_frequency FROM w WHERE CAST(SUBSTR(w.c6, 2) AS INTEGER) > 16;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6707",
+    "question": "what is the name of the goalkeeper and one defender from the year 1990?",
+    "sql": "\nSELECT w.c2 AS goalkeeper, t_c3_list.c3_list AS defender\nFROM w \nJOIN t_c3_list ON w.id = t_c3_list.m_id\nWHERE w.c1_number = 1990 AND w.c2_length = 2;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-6707",
+    "question": "what are the goalkeeper and defender names for 1990?",
+    "sql": "SELECT w.c2 AS goalkeeper, t_c3_list.c3_list AS defender FROM w JOIN t_c3_list ON w.id = t_c3_list.m_id WHERE w.c1_number = 1990 AND w.c2_length = 2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9811",
+    "question": "what is the capacity of the stadium for team dnepr located in mogilev?",
+    "sql": "\nSELECT c4_number \nFROM w \nWHERE LOWER(c1) = 'dnepr' AND LOWER(c2) = 'mogilev';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-9811",
+    "question": "capacity for team dnepr in mogilev?",
+    "sql": "SELECT c4_number FROM w WHERE LOWER(c1) = 'dnepr' AND LOWER(c2) = 'mogilev';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9811",
+    "question": "what is the capacity for team dnepr at their home location in mogilev?",
+    "sql": "SELECT c4_number FROM w WHERE LOWER(c1) = 'dnepr' AND LOWER(c2) = 'mogilev';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9811",
+    "question": "what is the size of the venue for team dnepr in mogilev?",
+    "sql": "SELECT c4_number FROM w WHERE LOWER(c1) = 'dnepr' AND LOWER(c2) = 'mogilev';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9811",
+    "question": "what is the seating number for team dnepr's home venue in mogilev?",
+    "sql": "SELECT c4_number FROM w WHERE LOWER(c1) = 'dnepr' AND LOWER(c2) = 'mogilev';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9811",
+    "question": "what is the seating capacity for the dnepr team's home venue located in mogilev?",
+    "sql": "SELECT c4_number FROM w WHERE LOWER(c1) = 'dnepr' AND LOWER(c2) = 'mogilev';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9811",
+    "question": "what is the seating for dnepr in mogilev?",
+    "sql": "SELECT c4_number FROM w WHERE LOWER(c1) = 'dnepr' AND LOWER(c2) = 'mogilev';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9811",
+    "question": "what is the seating capacity at dnepr's home venue in mogilev?",
+    "sql": "SELECT c4_number FROM w WHERE LOWER(c1) = 'dnepr' AND LOWER(c2) = 'mogilev';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9889",
+    "question": "what is the just ratio and its corresponding error for the interval name 'tridecimal neutral third'?",
+    "sql": "\nSELECT w.c5 AS just_ratio, w.c8 AS error \nFROM w \nWHERE w.c1 = 'tridecimal neutral third';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-9889",
+    "question": "what is the just ratio and its corresponding error for the  'tridecimal neutral third'?",
+    "sql": "SELECT w.c5 AS just_ratio, w.c8 AS error FROM w WHERE w.c1 = 'tridecimal neutral third';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9889",
+    "question": "what is the just ratio and its corresponding error  tridecimal neutral third?",
+    "sql": "SELECT w.c5 AS just_ratio, w.c8 AS error FROM w WHERE w.c1 = 'tridecimal neutral third';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9889",
+    "question": "what is the error: unable to fetch data (status code 404). and its corresponding error for the interval name 'tridecimal neutral third'?",
+    "sql": "SELECT w.c5 AS just_ratio, w.c8 AS error FROM w WHERE w.c1 = 'tridecimal neutral third';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9889",
+    "question": "what is the ratio and its corresponding error for the  'tridecimal neutral third'?",
+    "sql": "SELECT w.c5 AS just_ratio, w.c8 AS error FROM w WHERE w.c1 = 'tridecimal neutral third';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9889",
+    "question": "find and error for the interval name 'tridecimal neutral third'?",
+    "sql": "SELECT w.c5 AS just_ratio, w.c8 AS error FROM w WHERE w.c1 = 'tridecimal neutral third';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9889",
+    "question": "what are the ratio and corresponding error values for 'tridecimal neutral third' interval?",
+    "sql": "SELECT w.c5 AS just_ratio, w.c8 AS error FROM w WHERE w.c1 = 'tridecimal neutral third';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9889",
+    "question": "for 'tridecimal neutral third', determine what ratio and its corresponding error.",
+    "sql": "SELECT w.c5 AS just_ratio, w.c8 AS error FROM w WHERE w.c1 = 'tridecimal neutral third';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12953",
+    "question": "which seasons have a tier of 4?",
+    "sql": "\nSELECT DISTINCT c1 AS Season \nFROM w \nWHERE c2 = 4;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12953",
+    "question": "tier of 4?",
+    "sql": "SELECT DISTINCT c1 AS Season FROM w WHERE c2 = 4;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12953",
+    "question": "what are the seasons with tier of 4?",
+    "sql": "SELECT DISTINCT c1 AS Season FROM w WHERE c2 = 4;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12953",
+    "question": "which seasons have a category of 4?",
+    "sql": "SELECT DISTINCT c1 AS Season FROM w WHERE c2 = 4;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12953",
+    "question": "what are the seasons with what seasons have the classification of 4?",
+    "sql": "SELECT DISTINCT c1 AS Season FROM w WHERE c2 = 4;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12953",
+    "question": "the seasons classified as tier 4 are which ones?",
+    "sql": "SELECT DISTINCT c1 AS Season FROM w WHERE c2 = 4;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12953",
+    "question": "what are the seasons with tier of 4?",
+    "sql": "SELECT DISTINCT c1 AS Season FROM w WHERE c2 = 4;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12953",
+    "question": "identify the seasons having tier classification of 4",
+    "sql": "SELECT DISTINCT c1 AS Season FROM w WHERE c2 = 4;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9797",
+    "question": "what is the hometown of players who are halfbacks and have an age of 22?",
+    "sql": "\nSELECT w.c4 AS hometown \nFROM w \nJOIN t_c5_list ON w.id = t_c5_list.m_id \nWHERE w.c2 LIKE '%halfback%' AND w.c7 IS NOT NULL AND CAST(w.c7 AS REAL) = 22;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-9797",
+    "question": "hometown of players aged 22 and playing halfback.",
+    "sql": "SELECT w.c4 AS hometown FROM w JOIN t_c5_list ON w.id = t_c5_list.m_id WHERE w.c2 LIKE '%halfback%' AND w.c7 IS NOT NULL AND CAST(w.c7 AS REAL) = 22;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9797",
+    "question": "hometown for halfbacks who are age 22.",
+    "sql": "SELECT w.c4 AS hometown FROM w JOIN t_c5_list ON w.id = t_c5_list.m_id WHERE w.c2 LIKE '%halfback%' AND w.c7 IS NOT NULL AND CAST(w.c7 AS REAL) = 22;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9797",
+    "question": "what is the city of players who are halfbacks and have an age of 22?",
+    "sql": "SELECT w.c4 AS hometown FROM w JOIN t_c5_list ON w.id = t_c5_list.m_id WHERE w.c2 LIKE '%halfback%' AND w.c7 IS NOT NULL AND CAST(w.c7 AS REAL) = 22;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9797",
+    "question": "location of halfback players aged 22.",
+    "sql": "SELECT w.c4 AS hometown FROM w JOIN t_c5_list ON w.id = t_c5_list.m_id WHERE w.c2 LIKE '%halfback%' AND w.c7 IS NOT NULL AND CAST(w.c7 AS REAL) = 22;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9797",
+    "question": "where are players who play halfback and are age 22?",
+    "sql": "SELECT w.c4 AS hometown FROM w JOIN t_c5_list ON w.id = t_c5_list.m_id WHERE w.c2 LIKE '%halfback%' AND w.c7 IS NOT NULL AND CAST(w.c7 AS REAL) = 22;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9797",
+    "question": "list locations of players that are in halfback position at 22 years old.",
+    "sql": "SELECT w.c4 AS hometown FROM w JOIN t_c5_list ON w.id = t_c5_list.m_id WHERE w.c2 LIKE '%halfback%' AND w.c7 IS NOT NULL AND CAST(w.c7 AS REAL) = 22;",
+    "orginal": false
   }
 ]
