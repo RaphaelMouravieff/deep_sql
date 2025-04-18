@@ -1,18 +1,58 @@
-# .gitignore
-# Ignore data and models
+# ===============================
+# Python artifacts
+# ===============================
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+
+# ===============================
+# Jupyter notebooks
+# ===============================
+.ipynb_checkpoints/
+
+# ===============================
+# Environment files
+# ===============================
+.env
+*.env
+.venv/
+.ollama_env/
+ollama_env/
+
+# ===============================
+# VSCode / IDEs
+# ===============================
+.vscode/
+.idea/
+*.swp
+
+# ===============================
+# Data & Models
+# ===============================
 data/*
 models/*
-# Allow useful subfiles if needed
+
+# Exceptions (files you still want to track)
 !data/vector_store/index.pkl
 !data/vector_store/index.faiss
 
-# Ignore compiled Python files
-**/__pycache__/
-*.pyc
+# ===============================
+# Checkpoints / Logs / Outputs
+# ===============================
+logs/
+*.log
+*.out
+*.pth
+*.ckpt
 
-# Ignore notebooks' checkpoints
-.ipynb_checkpoints/
-
-# Ignore training outputs
+# ===============================
+# Training outputs & scripts
+# ===============================
 scripts/train/train_model/
 source/training/
+
+# ===============================
+# Misc
+# ===============================
+.DS_Store
