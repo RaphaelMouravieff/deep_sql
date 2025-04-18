@@ -1,14 +1,13 @@
 
 from tqdm import tqdm
-from transformers import HfArgumentParser
+from transformers import HfArgumentParser, Seq2SeqTrainingArguments
 import json
 import os
 
 from source.prompts.prompt import  PromptManager
 from source.library.tables import TableManager
 from source.utils.args import  (ModelArguments,
-                               DataArguments,
-                               TrainingArguments)
+                               DataArguments)
 
 from source.bin.main_step import run_pipeline_step
 from source.library.storage import  init_library, save_library
@@ -20,7 +19,7 @@ import gc
 import time
 
 
-def generate_dataset(model, data_args, training_args, table_manager, library, vector_store, metrics) -> None:
+def generate_dataset(model, data_args, table_manager, library, vector_store, metrics) -> None:
 
     
 
@@ -28,11 +27,11 @@ def generate_dataset(model, data_args, training_args, table_manager, library, ve
     prompt_manager = PromptManager(data_args, table_manager, library)
 
     tools = create_tools(conn, vector_store)
-    agents = create_agents(model, training_args, tools)
+    agents = create_agents(model, data_args, tools)
 
 
 
-    for i in range(training_args.num_iterations):
+    for i in range(data_args.num_iterations):
         entries = run_pipeline_step(prompt_manager, 
                                     agents,
                                     tools)
@@ -74,7 +73,7 @@ def generate_dataset(model, data_args, training_args, table_manager, library, ve
 
 def main():
 
-    parser = HfArgumentParser((ModelArguments, DataArguments, TrainingArguments))
+    parser = HfArgumentParser((ModelArguments, DataArguments, Seq2SeqTrainingArguments))
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
     table_manager = TableManager(data_args)
     model = load_model(model_args)
@@ -86,19 +85,19 @@ def main():
     }
 
         
-    print(f"chunk {training_args.chunk}/{training_args.Nchunks}")
+    print(f"chunk {data_args.chunk}/{data_args.Nchunks}")
 
 
-    if training_args.chunk is not None:
-        data_args.library_path = data_args.library_path.split('.json')[0]+f"_chunk{training_args.chunk}_{training_args.Nchunks}.json"
+    if data_args.chunk is not None:
+        data_args.library_path = data_args.library_path.split('.json')[0]+f"_chunk{data_args.chunk}_{data_args.Nchunks}.json"
         print(f'modification of the library path for chunks : {data_args.library_path}')
         print(f'previous common_ids length: {len(table_manager.common_ids)}')
 
-        chunk_size = len(table_manager.common_ids) // training_args.Nchunks
-        table_manager.common_ids = table_manager.common_ids[training_args.chunk*chunk_size:(training_args.chunk*chunk_size)+chunk_size]
+        chunk_size = len(table_manager.common_ids) // data_args.Nchunks
+        table_manager.common_ids = table_manager.common_ids[data_args.chunk*chunk_size:(data_args.chunk*chunk_size)+chunk_size]
 
-        print(f"new common_ids length for chunk {training_args.chunk}: {len(table_manager.common_ids)}")
-    library, vector_store = init_library(data_args, training_args)
+        print(f"new common_ids length for chunk {data_args.chunk}: {len(table_manager.common_ids)}")
+    library, vector_store = init_library(data_args)
 
 
     print(f"Starting with library containing {len(library)} entries")
@@ -111,7 +110,7 @@ def main():
         new_start_time = time.time()
 
         table_manager.current_table_id = table_id
-        generate_dataset(model, data_args, training_args, table_manager, library, vector_store, metrics)
+        generate_dataset(model, data_args, table_manager, library, vector_store, metrics)
 
         end_time = time.time()
         duration = end_time - new_start_time

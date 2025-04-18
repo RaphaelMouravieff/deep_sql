@@ -8,19 +8,19 @@ from source.library.retrieval import get_emebdding_model, embeddings_vector_stor
 
 
 
-def init_library(data_args, training_args):
+def init_library(data_args):
 
     if os.path.exists(data_args.library_path):
 
         with open(data_args.library_path, 'r') as f:
             library= json.load(f)
         vector_store = FAISS.load_local(data_args.vector_store_path,
-                                        embeddings=get_emebdding_model(training_args.embedding_model_name),
+                                        embeddings=get_emebdding_model(data_args.embedding_model_name),
                                         allow_dangerous_deserialization=True)
         
         return library, vector_store
    
-    return [], embeddings_vector_store(training_args.embedding_model_name)
+    return [], embeddings_vector_store(data_args.embedding_model_name)
 
 
 def save_library(data_args,

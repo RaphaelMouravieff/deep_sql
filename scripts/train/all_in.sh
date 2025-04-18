@@ -51,7 +51,7 @@ python ../run.py \\
   --embedding_model_name "Alibaba-NLP/gte-large-en-v1.5" \\
   --table_limit 5 \\
   --base_prompt_path ../data/prompts/base_prompt.yaml \\
-  --max_source_length 8192 \\
+  --max_source_length_llm 8192 \\
   --chunk $i \\
   --Nchunk $NCHUNKS
 EOF

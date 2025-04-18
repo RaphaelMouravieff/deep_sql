@@ -1,0 +1,18 @@
+# .gitignore
+# Ignore data and models
+data/*
+models/*
+# Allow useful subfiles if needed
+!data/vector_store/index.pkl
+!data/vector_store/index.faiss
+
+# Ignore compiled Python files
+**/__pycache__/
+*.pyc
+
+# Ignore notebooks' checkpoints
+.ipynb_checkpoints/
+
+# Ignore training outputs
+scripts/train/train_model/
+source/training/
