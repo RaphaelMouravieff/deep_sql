@@ -1,0 +1,1034 @@
+[
+  {
+    "tables_id": "nt-10583",
+    "question": "who was the winning driver of the canadian grand prix?",
+    "sql": "\nSELECT c7 FROM w \nWHERE c2='canadian grand prix'\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-10583",
+    "question": "unexpected error: 'nonetype' object has no attribute 'find_all'.",
+    "sql": "SELECT c7 FROM w WHERE c2=\"canadian grand prix\"",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10583",
+    "question": "identify the driver who won at canadian grand prix.",
+    "sql": "SELECT c7 FROM w WHERE c2=\"canadian grand prix\"",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10583",
+    "question": "who won canadian grand prix?",
+    "sql": "SELECT c7 FROM w WHERE c2=\"canadian grand prix\"",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10583",
+    "question": "driver who won at canadian grand prix?",
+    "sql": "SELECT c7 FROM w WHERE c2=\"canadian grand prix\"",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10583",
+    "question": "winning driver of the canadian grand prix?",
+    "sql": "SELECT c7 FROM w WHERE c2=\"canadian grand prix\"",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10583",
+    "question": "winner of the canadian grand prix?",
+    "sql": "SELECT c7 FROM w WHERE c2=\"canadian grand prix\"",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10583",
+    "question": "who emerged victorious in canadian grand prix?",
+    "sql": "SELECT c7 FROM w WHERE c2=\"canadian grand prix\"",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3226",
+    "question": "what are the names of all directors who directed episodes in 1967?",
+    "sql": "\nSELECT DISTINCT c4 \nFROM w \nWHERE c3_year = 1967;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-3226",
+    "question": "directors for 1967?",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c3_year = 1967;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3226",
+    "question": "who directed in 1967?",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c3_year = 1967;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3226",
+    "question": "what are the ['brand', 'flag', 'label', 'nickname', 'sign', 'signature', 'style', 'term'] of all ['administrator', 'chief', 'executive', 'head', 'leader', 'organizer', 'player', 'principal', 'producer', 'supervisor']s who directed episodes in 1967?",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c3_year = 1967;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3226",
+    "question": "who were the directors in charge of filming in 1967?",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c3_year = 1967;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3226",
+    "question": "could you tell me which individuals led the making of episodes during the year 1967?",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c3_year = 1967;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3226",
+    "question": "directors in 1967?",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c3_year = 1967;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3226",
+    "question": "list the directors who were responsible for directing episodes that year.",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c3_year = 1967;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11887",
+    "question": "what are all the distinct venues (locations) where events took place?",
+    "sql": "\nSELECT DISTINCT c3 FROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-11887",
+    "question": "distinct locations of events",
+    "sql": "SELECT DISTINCT c3 FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11887",
+    "question": "what are the distinct venues?",
+    "sql": "SELECT DISTINCT c3 FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11887",
+    "question": "what are all the distinct locations?",
+    "sql": "SELECT DISTINCT c3 FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11887",
+    "question": "list unique places where events occurred.",
+    "sql": "SELECT DISTINCT c3 FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11887",
+    "question": "can you list all the unique sites for event occurrences?",
+    "sql": "SELECT DISTINCT c3 FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11887",
+    "question": "unique event locations?",
+    "sql": "SELECT DISTINCT c3 FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11887",
+    "question": "which are all the distinct places where events have taken place?",
+    "sql": "SELECT DISTINCT c3 FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7843",
+    "question": "what are all distinct venue locations for the events listed?",
+    "sql": "SELECT DISTINCT c3 FROM w",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7843",
+    "question": "distinct venues for events?",
+    "sql": "SELECT DISTINCT c3 FROM w",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7843",
+    "question": "list unique venue locations from the table?",
+    "sql": "SELECT DISTINCT c3 FROM w",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7843",
+    "question": "what are all distinct places hosting events?",
+    "sql": "SELECT DISTINCT c3 FROM w",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7843",
+    "question": "list unique venues from the given table.",
+    "sql": "SELECT DISTINCT c3 FROM w",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7843",
+    "question": "how many different venue spots are there for events?",
+    "sql": "SELECT DISTINCT c3 FROM w",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7843",
+    "question": "list all unique venues.",
+    "sql": "SELECT DISTINCT c3 FROM w",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7843",
+    "question": "identify the different venue sites for events listed in table.",
+    "sql": "SELECT DISTINCT c3 FROM w",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8224",
+    "question": "how many different divisions are there?",
+    "sql": "\nSELECT COUNT(DISTINCT c3) AS division_count \nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-8224",
+    "question": "how many divisions?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS division_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8224",
+    "question": "what's the count of unique divisions?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS division_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8224",
+    "question": "what is the total number of distinct divisions?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS division_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8224",
+    "question": "provide me with a count of all distinct divisions.",
+    "sql": "SELECT COUNT(DISTINCT c3) AS division_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8224",
+    "question": "count unique divisions.",
+    "sql": "SELECT COUNT(DISTINCT c3) AS division_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8224",
+    "question": "what is the number of distinct divisions?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS division_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8224",
+    "question": "what is the unique division count?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS division_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7655",
+    "question": "what is the count of unique types (as built) in the w table?",
+    "sql": "\nSELECT COUNT(DISTINCT c3) \nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7655",
+    "question": "what is the count of unique types?",
+    "sql": "SELECT COUNT(DISTINCT c3) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7655",
+    "question": "how many distinct types are there in the table?",
+    "sql": "SELECT COUNT(DISTINCT c3) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7655",
+    "question": "what is the number of different kinds of items in the w table based on their type as built?",
+    "sql": "SELECT COUNT(DISTINCT c3) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7655",
+    "question": "how many unique types are present?",
+    "sql": "SELECT COUNT(DISTINCT c3) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7655",
+    "question": "what is the count of different kinds in the table based on type as built?",
+    "sql": "SELECT COUNT(DISTINCT c3) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7655",
+    "question": "what is the total number of unique item categories in the table according to their 'type as built'?",
+    "sql": "SELECT COUNT(DISTINCT c3) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7655",
+    "question": "how many distinct categories exist for type (as built) within the w table?",
+    "sql": "SELECT COUNT(DISTINCT c3) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12793",
+    "question": "how many distinct drivers are there in the w table?",
+    "sql": "\nSELECT COUNT(DISTINCT c3) AS driver_count \nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12793",
+    "question": "how many drivers are distinct in the w table?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS driver_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12793",
+    "question": "count distinct drivers in table w.",
+    "sql": "SELECT COUNT(DISTINCT c3) AS driver_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12793",
+    "question": "how many unique chauffeur are listed in table w?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS driver_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12793",
+    "question": "what is the total count of individual drivers appearing in the w database?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS driver_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12793",
+    "question": "how many distinct driver names are there?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS driver_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12793",
+    "question": "what is the unique count of drivers in table w?",
+    "sql": "SELECT COUNT(DISTINCT c3) AS driver_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12793",
+    "question": "list the number of distinct driver entries within the w table.",
+    "sql": "SELECT COUNT(DISTINCT c3) AS driver_count FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13396",
+    "question": "what is the total number of grand masters (gms) recorded in the table w?",
+    "sql": "\nSELECT SUM(c4_number) AS total_gms FROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-13396",
+    "question": "how many grand masters are there in table w?",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13396",
+    "question": "what's the count of grand masters recorded in table w?",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13396",
+    "question": "how many grand masters are there in database table w?",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13396",
+    "question": "what is the total tally of grand masters present in table w?",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13396",
+    "question": "how many chess grand masters are recorded in table w?",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13396",
+    "question": "what's the number of grand masters recorded?",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13396",
+    "question": "provide the total number of grand masters recorded.",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12072",
+    "question": "how many matches were held in july 1994?",
+    "sql": "\nSELECT COUNT(*) AS match_count \nFROM w \nWHERE c1_month = 7 AND c1_year = 1994;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12072",
+    "question": "how many matches were held in july?",
+    "sql": "SELECT COUNT(*) AS match_count FROM w WHERE c1_month = 7 AND c1_year = 1994;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7625",
+    "question": "how many entries are there with service 'luftwaffe' and date of award in june 1944?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c2 = 'Luftwaffe' AND c5_month = 6 AND c5_year = 1944;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7625",
+    "question": "how many entries are there for luftwaffe in june 1944?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'Luftwaffe' AND c5_month = 6 AND c5_year = 1944;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7625",
+    "question": "how many records match luftwaffe and june 1944?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'Luftwaffe' AND c5_month = 6 AND c5_year = 1944;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7625",
+    "question": "how many ['competition'] are there for luftwaffe in june 1944?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'Luftwaffe' AND c5_month = 6 AND c5_year = 1944;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7625",
+    "question": "how many instances match luftwaffe in june of 1944?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'Luftwaffe' AND c5_month = 6 AND c5_year = 1944;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7625",
+    "question": "what is the count of luftwaffe awards given in june 1944?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'Luftwaffe' AND c5_month = 6 AND c5_year = 1944;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7625",
+    "question": "how many luftwaffe entries are in june 1944?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'Luftwaffe' AND c5_month = 6 AND c5_year = 1944;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7625",
+    "question": "what's the count for luftwaffe entries from june 1944?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2 = 'Luftwaffe' AND c5_month = 6 AND c5_year = 1944;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10409",
+    "question": "what is the minimum value among c2_number, c3_number, c4_number, c5_number and c6_number for entries with agg being 0?",
+    "sql": "\nSELECT MIN(min_val) AS min_value FROM (\n    SELECT MIN(c2_number) AS min_val FROM w WHERE agg = 0 UNION ALL \n    SELECT MIN(c3_number) AS min_val FROM w WHERE agg = 0 UNION ALL \n    SELECT MIN(c4_number) AS min_val FROM w WHERE agg = 0 UNION ALL \n    SELECT MIN(c5_number) AS min_val FROM w WHERE agg = 0 UNION ALL \n    SELECT MIN(c6_number) AS min_val FROM w WHERE agg = 0\n)\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-10409",
+    "question": "what's the smallest figure amongst c2, c3, c4, c5, and c6 values where agg is 0?",
+    "sql": "SELECT MIN(min_val) AS min_value FROM ( SELECT MIN(c2_number) AS min_val FROM w WHERE agg = 0 UNION ALL SELECT MIN(c3_number) AS min_val FROM w WHERE agg = 0 UNION ALL SELECT MIN(c4_number) AS min_val FROM w WHERE agg = 0 UNION ALL SELECT MIN(c5_number) AS min_val FROM w WHERE agg = 0 UNION ALL SELECT MIN(c6_number) AS min_val FROM w WHERE agg = 0)",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-10409",
+    "question": "what's the least value among columns c2_number, c3_number, c4_number, c5_number, and c6_number where agg equals zero?",
+    "sql": "SELECT MIN(min_val) AS min_value FROM ( SELECT MIN(c2_number) AS min_val FROM w WHERE agg = 0 UNION ALL SELECT MIN(c3_number) AS min_val FROM w WHERE agg = 0 UNION ALL SELECT MIN(c4_number) AS min_val FROM w WHERE agg = 0 UNION ALL SELECT MIN(c5_number) AS min_val FROM w WHERE agg = 0 UNION ALL SELECT MIN(c6_number) AS min_val FROM w WHERE agg = 0)",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9840",
+    "question": "what is the maximum value of c4_number for entries where agg equals 0 and the year is before 1970?\n\nfinal_answer(retriever_tool(\"what is the maximum value of c4_number for entries where agg equals 0 and the year is before 1970?\"))",
+    "sql": "\nSELECT MAX(c4_number) as max_c4_number \nFROM w \nWHERE agg = 0 AND c1_year < 1970;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-9840",
+    "question": "what is the highest c4_number for entries with agg as 0 and years less than 1970?",
+    "sql": "SQL Query: SELECT MAX(c4_number) as max_c4_number FROM w WHERE agg = 0 AND c1_year < 1970;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9840",
+    "question": "what is the maximum value of c4_number for entries with agg = 0 and prior to 1970?",
+    "sql": "SQL Query: SELECT MAX(c4_number) as max_c4_number FROM w WHERE agg = 0 AND c1_year < 1970;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9840",
+    "question": "what is the peak c4_number among records where agg matches 0 and calendar year precedes 1970?",
+    "sql": "SQL Query: SELECT MAX(c4_number) as max_c4_number FROM w WHERE agg = 0 AND c1_year < 1970;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9840",
+    "question": "find the highest c4_number recorded for entries with agg set to zero and before 1970.",
+    "sql": "SQL Query: SELECT MAX(c4_number) as max_c4_number FROM w WHERE agg = 0 AND c1_year < 1970;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9840",
+    "question": "what is the top c4_number for entries where agg is 0 and year is pre-1970?",
+    "sql": "SQL Query: SELECT MAX(c4_number) as max_c4_number FROM w WHERE agg = 0 AND c1_year < 1970;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9840",
+    "question": "identify the greatest c4_number associated with records having agg as 0 and years predating 1970.",
+    "sql": "SQL Query: SELECT MAX(c4_number) as max_c4_number FROM w WHERE agg = 0 AND c1_year < 1970;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9840",
+    "question": "what is max c4_number for agg 0 before 1970?",
+    "sql": "SQL Query: SELECT MAX(c4_number) as max_c4_number FROM w WHERE agg = 0 AND c1_year < 1970;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2322",
+    "question": "what is the earliest date (c5) for records where agg equals 0 and c2 starts with 'f'?",
+    "sql": "\nSELECT min(c5) as earliest_date \nFROM w \nWHERE agg = 0 AND c2 LIKE 'F%';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-2322",
+    "question": "earliest date for records where agg equals 0 and c2 starts with 'f'.",
+    "sql": "SELECT min(c5) as earliest_date FROM w WHERE agg = 0 AND c2 LIKE 'F%'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2322",
+    "question": "earliest date where agg is 0 and c2 begins with f.",
+    "sql": "SELECT min(c5) as earliest_date FROM w WHERE agg = 0 AND c2 LIKE 'F%'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2322",
+    "question": "earliest date where sum equals 0 and col_2 starts with f.",
+    "sql": "SELECT min(c5) as earliest_date FROM w WHERE agg = 0 AND c2 LIKE 'F%'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2322",
+    "question": "first record date when total is 0 and second column starts with letter f.",
+    "sql": "SELECT min(c5) as earliest_date FROM w WHERE agg = 0 AND c2 LIKE 'F%'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2322",
+    "question": "find the earliest timestamp for records where sum of all equals zero and second identifier begins with 'f'.",
+    "sql": "SELECT min(c5) as earliest_date FROM w WHERE agg = 0 AND c2 LIKE 'F%'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2322",
+    "question": "earliest date when agg is 0 and c2 starts f.",
+    "sql": "SELECT min(c5) as earliest_date FROM w WHERE agg = 0 AND c2 LIKE 'F%'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2322",
+    "question": "identify earliest timestamp in records where total sum equates to zero and identifier begins with letter 'f'.",
+    "sql": "SELECT min(c5) as earliest_date FROM w WHERE agg = 0 AND c2 LIKE 'F%'",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7875",
+    "question": "what is the latest date when agg is 0 and c1 is 'marathon'?",
+    "sql": "\nSELECT MAX(c4_parsed) AS latest_date\nFROM w\nWHERE agg = 0 AND c1 = 'marathon';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7875",
+    "question": "latest date with agg=0 and c1='marathon'",
+    "sql": "SELECT MAX(c4_parsed) AS latest_date FROM w WHERE agg = 0 AND c1 = 'marathon';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7875",
+    "question": "what is the latest date when c4_parsed has agg as 0 for marathon events?",
+    "sql": "SELECT MAX(c4_parsed) AS latest_date FROM w WHERE agg = 0 AND c1 = 'marathon';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7875",
+    "question": "what is the time when agg is 0 and c1 is 'marathon'?",
+    "sql": "SELECT MAX(c4_parsed) AS latest_date FROM w WHERE agg = 0 AND c1 = 'marathon';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7875",
+    "question": "what is the latest record when agg equals 0 and event type is 'marathon'?",
+    "sql": "SELECT MAX(c4_parsed) AS latest_date FROM w WHERE agg = 0 AND c1 = 'marathon';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7875",
+    "question": "when was the most recent instance where agg equaled zero for marathon events?",
+    "sql": "SELECT MAX(c4_parsed) AS latest_date FROM w WHERE agg = 0 AND c1 = 'marathon';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7875",
+    "question": "find latest date when agg=0 and c1='marathon'",
+    "sql": "SELECT MAX(c4_parsed) AS latest_date FROM w WHERE agg = 0 AND c1 = 'marathon';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7875",
+    "question": "determine the most recent occurrence where the aggregation is 0 for marathon events.",
+    "sql": "SELECT MAX(c4_parsed) AS latest_date FROM w WHERE agg = 0 AND c1 = 'marathon';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3681",
+    "question": "what is the earliest date when toronto 228th battalion was the visitor and the score ended in a tie?",
+    "sql": "\nSELECT MIN(c2_parsed) as earliest_date\nFROM w \nWHERE c3 = 'Toronto 228th Battalion' AND c4_number1 = c4_number2;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-3681",
+    "question": "what is the earliest date when toronto 228th battalion was the visitor and the score ended in a tie?",
+    "sql": "SELECT MIN(c2_parsed) as earliest_date FROM w WHERE c3 = 'Toronto 228th Battalion' AND c4_number1 = c4_number2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3681",
+    "question": "when did toronto 228th battalion have a tie game?",
+    "sql": "SELECT MIN(c2_parsed) as earliest_date FROM w WHERE c3 = 'Toronto 228th Battalion' AND c4_number1 = c4_number2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3681",
+    "question": "what archetypal date did toronto 228th battalion have as guest with a tied game?",
+    "sql": "SELECT MIN(c2_parsed) as earliest_date FROM w WHERE c3 = 'Toronto 228th Battalion' AND c4_number1 = c4_number2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3681",
+    "question": "what is the earliest game date with toronto 228th battalion in a draw?",
+    "sql": "SELECT MIN(c2_parsed) as earliest_date FROM w WHERE c3 = 'Toronto 228th Battalion' AND c4_number1 = c4_number2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3681",
+    "question": "when did toronto 228th battalion have a tie game?",
+    "sql": "SELECT MIN(c2_parsed) as earliest_date FROM w WHERE c3 = 'Toronto 228th Battalion' AND c4_number1 = c4_number2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3681",
+    "question": "what is the earliest game date where a home team's score matched toronto 228th battalion?",
+    "sql": "SELECT MIN(c2_parsed) as earliest_date FROM w WHERE c3 = 'Toronto 228th Battalion' AND c4_number1 = c4_number2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-3681",
+    "question": "what is the first date toronto 228th battalion had an equal score game?",
+    "sql": "SELECT MIN(c2_parsed) as earliest_date FROM w WHERE c3 = 'Toronto 228th Battalion' AND c4_number1 = c4_number2;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1535",
+    "question": "what is the earliest date when the term of a deputy judge started, and what is their nationality?",
+    "sql": "\nSELECT \n    c1 AS nationality,\n    c3_minimum_parsed as start_date\nFROM \n    w\nORDER BY \n    c3_minimum_parsed ASC\nLIMIT 1;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-1535",
+    "question": "earliest starting date of deputy judge and nationality?",
+    "sql": "\nSELECT \n    c1 AS nationality,\n    c3_minimum_parsed as start_date\nFROM \n    w\nORDER BY \n    c3_minimum_parsed ASC\nLIMIT 1;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1535",
+    "question": "what is the earliest appointment date for a deputy judge and their national origin?",
+    "sql": "\nSELECT \n    c1 AS nationality,\n    c3_minimum_parsed as start_date\nFROM \n    w\nORDER BY \n    c3_minimum_parsed ASC\nLIMIT 1;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1535",
+    "question": "what is the earliest initiation date and origin of a deputy judge?",
+    "sql": "\nSELECT \n    c1 AS nationality,\n    c3_minimum_parsed as start_date\nFROM \n    w\nORDER BY \n    c3_minimum_parsed ASC\nLIMIT 1;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1535",
+    "question": "what is the initiation date and ethnic origin of the earliest appointed deputy judge?",
+    "sql": "\nSELECT \n    c1 AS nationality,\n    c3_minimum_parsed as start_date\nFROM \n    w\nORDER BY \n    c3_minimum_parsed ASC\nLIMIT 1;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5088",
+    "question": "what was the highest home team score in a stanley cup finals game after may 15th, 1975?",
+    "sql": "\nSELECT MAX(c7_number) AS max_home_score \nFROM w \nWHERE c1 = 'stanley cup finals' AND c3_day > 15 AND c3_month = 5;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-5088",
+    "question": "what is the highest home team score in stanley cup finals after may 15th, 1975?",
+    "sql": "\nSELECT MAX(c7_number) AS max_home_score \nFROM w \nWHERE c1 = 'stanley cup finals' AND c3_day > 15 AND c3_month = 5;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5088",
+    "question": "what was the highest home team score in stanley cup finals after this date?",
+    "sql": "\nSELECT MAX(c7_number) AS max_home_score \nFROM w \nWHERE c1 = 'stanley cup finals' AND c3_day > 15 AND c3_month = 5;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5088",
+    "question": "what was the maximal home team score in stanley cup finals after may 15th, 1975?",
+    "sql": "\nSELECT MAX(c7_number) AS max_home_score \nFROM w \nWHERE c1 = 'stanley cup finals' AND c3_day > 15 AND c3_month = 5;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5088",
+    "question": "what is the top score achieved by a home team in stanley cup finals after may 15th, 1975?",
+    "sql": "\nSELECT MAX(c7_number) AS max_home_score \nFROM w \nWHERE c1 = 'stanley cup finals' AND c3_day > 15 AND c3_month = 5;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5088",
+    "question": "what is the highest score recorded by a home team in stanley cup finals games after may 15th, 1975?",
+    "sql": "\nSELECT MAX(c7_number) AS max_home_score \nFROM w \nWHERE c1 = 'stanley cup finals' AND c3_day > 15 AND c3_month = 5;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5088",
+    "question": "what's the highest home team score in stanley cup finals after may 15th, 1975?",
+    "sql": "\nSELECT MAX(c7_number) AS max_home_score \nFROM w \nWHERE c1 = 'stanley cup finals' AND c3_day > 15 AND c3_month = 5;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5088",
+    "question": "determine the peak home team score in stanley cup finals matches that occurred after may 15th, 1975.",
+    "sql": "\nSELECT MAX(c7_number) AS max_home_score \nFROM w \nWHERE c1 = 'stanley cup finals' AND c3_day > 15 AND c3_month = 5;\n",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12534",
+    "question": "what is the average value of column c4_number where c6_number is greater than 0?",
+    "sql": "\nSELECT AVG(c4_number) \nFROM w \nWHERE c6_number > 0;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12534",
+    "question": "what is the average value of column c4_number where c6_number > 0?",
+    "sql": "SELECT AVG(c4_number) FROM w WHERE c6_number > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12534",
+    "question": "what is the average value of c4_number where c6_number > 0?",
+    "sql": "SELECT AVG(c4_number) FROM w WHERE c6_number > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12534",
+    "question": "what is the average value of file c4_column where c6_column > 0?",
+    "sql": "SELECT AVG(c4_number) FROM w WHERE c6_number > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12534",
+    "question": "what is the mean value of c4_number where there are more than 0 entries for c6_number?",
+    "sql": "SELECT AVG(c4_number) FROM w WHERE c6_number > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12534",
+    "question": "what is the average value of c4_number for entries with a positive count in column c6_number?",
+    "sql": "SELECT AVG(c4_number) FROM w WHERE c6_number > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12534",
+    "question": "what is the average of c4_number where c6_number > 0?",
+    "sql": "SELECT AVG(c4_number) FROM w WHERE c6_number > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12534",
+    "question": "find the mean value in c4_number entries corresponding to c6_number values greater than 0.",
+    "sql": "SELECT AVG(c4_number) FROM w WHERE c6_number > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13710",
+    "question": "what is the sum of c8_number entries where c6_hour > 0?",
+    "sql": "\nSELECT SUM(c8_number) \nFROM w \nWHERE c6_hour > 0;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-13710",
+    "question": "sum c8_number where c6_hour is positive.",
+    "sql": "SELECT SUM(c8_number) FROM w WHERE c6_hour > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13710",
+    "question": "sum entries in c8 where hours exceed zero.",
+    "sql": "SELECT SUM(c8_number) FROM w WHERE c6_hour > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13710",
+    "question": "total numbers in c8 for positive hours.",
+    "sql": "SELECT SUM(c8_number) FROM w WHERE c6_hour > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13710",
+    "question": "calculate total c8_number when hour value surpasses zero.",
+    "sql": "SELECT SUM(c8_number) FROM w WHERE c6_hour > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13710",
+    "question": "find the sum of all numbers in column c8 that correspond to a positive number in column c6.",
+    "sql": "SELECT SUM(c8_number) FROM w WHERE c6_hour > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13710",
+    "question": "sum c8 with positive hours.",
+    "sql": "SELECT SUM(c8_number) FROM w WHERE c6_hour > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13710",
+    "question": "what is total c8_number for rows that have a greater than zero value in c6_hour?",
+    "sql": "SELECT SUM(c8_number) FROM w WHERE c6_hour > 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8875",
+    "question": "what is the total number of years served (c4_number - c3_number) for representatives who were appointed by john tyler?",
+    "sql": "\nSELECT SUM(c4_number - c3_number) as total_years_served \nFROM w \nWHERE c5='john tyler' AND c4_number IS NOT NULL;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-8875",
+    "question": "how many total years served by representatives appointed by john tyler?",
+    "sql": "SELECT SUM(c4_number - c3_number) as total_years_served FROM w WHERE c5='john tyler' AND c4_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8875",
+    "question": "how long did representatives appointed by john tyler serve?",
+    "sql": "SELECT SUM(c4_number - c3_number) as total_years_served FROM w WHERE c5='john tyler' AND c4_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8875",
+    "question": "what is the total duration (c4_number - c3_number) for representatives who were nominated by john tyler?",
+    "sql": "SELECT SUM(c4_number - c3_number) as total_years_served FROM w WHERE c5='john tyler' AND c4_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8875",
+    "question": "calculate the cumulative years of service for representatives appointed by president tyler.",
+    "sql": "SELECT SUM(c4_number - c3_number) as total_years_served FROM w WHERE c5='john tyler' AND c4_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8875",
+    "question": "years served by john tyler's appointees?",
+    "sql": "SELECT SUM(c4_number - c3_number) as total_years_served FROM w WHERE c5='john tyler' AND c4_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8875",
+    "question": "summarize years of service for representatives john tyler chose.",
+    "sql": "SELECT SUM(c4_number - c3_number) as total_years_served FROM w WHERE c5='john tyler' AND c4_number IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13957",
+    "question": "what is the total number of independent councillors for each year?",
+    "sql": "\nSELECT c1, SUM(c4_number)\nFROM w\nGROUP BY c1;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-13957",
+    "question": "total number of independent councillors each year?",
+    "sql": "SELECT c1, SUM(c4_number) FROM w GROUP BY c1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9031",
+    "question": "how many different polling firms are listed in the database?",
+    "sql": "\nSELECT COUNT(DISTINCT c1) AS distinct_polling_firms\nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-9031",
+    "question": "how many polling firms are listed?",
+    "sql": "SELECT COUNT(DISTINCT c1) AS distinct_polling_firms FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12472",
+    "question": "what is the total prize money for tournaments held in colorado?",
+    "sql": "\nSELECT SUM(c6_number) as total_prize_money \nFROM w \nWHERE c3 = 'colorado';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12472",
+    "question": "total prize for colorado.",
+    "sql": "SELECT SUM(c6_number) as total_prize_money FROM w WHERE c3 = 'colorado';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12472",
+    "question": "what's total prize money in colorado?",
+    "sql": "SELECT SUM(c6_number) as total_prize_money FROM w WHERE c3 = 'colorado';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12472",
+    "question": "what's total award money in colorado?",
+    "sql": "SELECT SUM(c6_number) as total_prize_money FROM w WHERE c3 = 'colorado';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12472",
+    "question": "how much prize money has been allocated for tournaments in colorado?",
+    "sql": "SELECT SUM(c6_number) as total_prize_money FROM w WHERE c3 = 'colorado';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12472",
+    "question": "total prize money in colorado.",
+    "sql": "SELECT SUM(c6_number) as total_prize_money FROM w WHERE c3 = 'colorado';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12472",
+    "question": "prize pool total for colorado-based tournaments.",
+    "sql": "SELECT SUM(c6_number) as total_prize_money FROM w WHERE c3 = 'colorado';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13650",
+    "question": "how many matches were played in the year 2012?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c2_year = 2012;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-13650",
+    "question": "how many games were played in 2012?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_year = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13650",
+    "question": "how many matches were held in 2012?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_year = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13650",
+    "question": "using synonyms: how many bout were played in 2012?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_year = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13650",
+    "question": "in the year 2012, how many match occurrences were there?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_year = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13650",
+    "question": "how many games in 2012?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_year = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13650",
+    "question": "total number of matches played in 2012?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c2_year = 2012;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1171",
+    "question": "what is the total weekend gross (in millions) for all films released in 2008?",
+    "sql": "\nSELECT SUM(c4_number) \nFROM w \nWHERE c2_year = 2008;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-1171",
+    "question": "what is the total weekend gross for films in 2008?",
+    "sql": "SELECT SUM(c4_number) FROM w WHERE c2_year = 2008",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1171",
+    "question": "total weekend gross for films in 2008?",
+    "sql": "SELECT SUM(c4_number) FROM w WHERE c2_year = 2008",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1171",
+    "question": "what is the total weekend earnings from films released in 2008?",
+    "sql": "SELECT SUM(c4_number) FROM w WHERE c2_year = 2008",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1171",
+    "question": "how much money did all movies earn during weekends in the year of 2008?",
+    "sql": "SELECT SUM(c4_number) FROM w WHERE c2_year = 2008",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1171",
+    "question": "total weekend earnings for 2008 movies?",
+    "sql": "SELECT SUM(c4_number) FROM w WHERE c2_year = 2008",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1171",
+    "question": "what's the cumulative weekend profit generated by all films released in 2008?",
+    "sql": "SELECT SUM(c4_number) FROM w WHERE c2_year = 2008",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5191",
+    "question": "what is the total sum of c3_number values for records where agg equals 0?",
+    "sql": "\nSELECT SUM(c3_number) AS total_sum_c3_number \nFROM w \nWHERE agg = 0;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-5191",
+    "question": "sum of c3_number values for agg equals 0",
+    "sql": "SELECT SUM(c3_number) AS total_sum_c3_number FROM w WHERE agg = 0;",
+    "orginal": false
+  }
+]

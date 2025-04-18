@@ -16,12 +16,10 @@ from source.agents.build_agents import create_agents
 from source.tools.build_tools import create_tools
 from source.models.model_setup import load_model
 
+import gc
 
+def generate_dataset(model, data_args, training_args, table_manager, library, vector_store, metrics) -> None:
 
-def generate_dataset(model, data_args, training_args, table_manager, metrics) -> None:
-
-    library, vector_store = init_library(data_args, training_args)
-    print(f"Starting with library containing {len(library)} entries")
     
 
     conn = table_manager.connect_to_database()
@@ -67,7 +65,11 @@ def generate_dataset(model, data_args, training_args, table_manager, metrics) ->
             print("Failed to generate entry, continuing...")
     
     print(f"Dataset generation complete. Final library size: {len(library)}")
-
+    del tools
+    del agents
+    del prompt_manager
+    del conn
+    gc.collect()
 
 def main():
 
@@ -81,11 +83,18 @@ def main():
         "sql_empty_result_count": 0,
         "sql_execution_error_count": 0
     }
+    
+    library, vector_store = init_library(data_args, training_args)
+    print(f"Starting with library containing {len(library)} entries")
 
 
-    for table_id in table_manager.common_ids[:3]:
+    total = len(table_manager.common_ids)
+    for idx, table_id in enumerate(table_manager.common_ids):
+        print(f"step : {idx}/{total}")
+
+
         table_manager.current_table_id = table_id
-        generate_dataset(model, data_args, training_args, table_manager, metrics)
+        generate_dataset(model, data_args, training_args, table_manager, library, vector_store, metrics)
 
 
     os.makedirs("../data", exist_ok=True)

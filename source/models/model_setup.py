@@ -9,8 +9,7 @@ def load_model(model_args):
         #model = HfApiModel()
         model = LiteLLMModel(
         model_id=model_args.ollama_model_name_or_path, 
-        num_ctx=model_args.max_source_length, 
-        stream=False)  
+        num_ctx=model_args.max_source_length)  
         
     else: 
         model = OpenAIServerModel("gpt-4o")

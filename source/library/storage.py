@@ -18,7 +18,7 @@ def init_library(data_args, training_args):
                                         embeddings=get_emebdding_model(training_args.embedding_model_name),
                                         allow_dangerous_deserialization=True)
         
-        return library,vector_store
+        return library, vector_store
    
     return [], embeddings_vector_store(training_args.embedding_model_name)
 

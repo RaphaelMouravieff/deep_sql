@@ -29,7 +29,7 @@ def create_agents(model, training_args, tools_dic):
 
     question_diversity = CodeAgent(
         model=model,
-        tools=[tools_dic["get_synonym"], tools_dic["retriever_tool"]],
+        tools=[tools_dic["get_synonym"]],
         name="question_diversity",
         description="Creates diverse variations of questions using different techniques",
         additional_authorized_imports=["pandas","numpy","time"], 

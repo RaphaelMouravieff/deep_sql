@@ -37,11 +37,9 @@ def run_pipeline_step(prompt_manager,
             documents=[Document(question)], ids=[vector_id]
         )
         entry.append({
-            "vector_id": vector_id,
             "tables_id": table_id,
             "question": question.lower(),
             "sql": sql_query,
-            "result": validation_result,
             "orginal": True
         })
 
@@ -56,11 +54,11 @@ def run_pipeline_step(prompt_manager,
                 documents=[Document(str(variation["question"]))], ids=[vector_id]
             )
             entry.append({
-                "vector_id": vector_id,
+
                 "tables_id": table_id,
                 "question": variation["question"].lower(),
                 "sql": variation["sql"],
-                "result": validation_result,
+
                 "orginal": False
             })
 

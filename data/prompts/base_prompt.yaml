@@ -111,7 +111,6 @@ get_extra_prompt_divers:
 
     tools:
     - Use 'get_synonym' tool to look online for synonyms if needed.
-    - You must use the "retriever_tool" tool for each variation question to validate the generated question for you.
 
     Return a JSON array with the following format (no additional text):
 
