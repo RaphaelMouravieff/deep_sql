@@ -17,6 +17,8 @@ from source.tools.build_tools import create_tools
 from source.models.model_setup import load_model
 
 import gc
+import time
+
 
 def generate_dataset(model, data_args, training_args, table_manager, library, vector_store, metrics) -> None:
 
@@ -87,14 +89,21 @@ def main():
     library, vector_store = init_library(data_args, training_args)
     print(f"Starting with library containing {len(library)} entries")
 
+    start_time = time.time()
 
     total = len(table_manager.common_ids)
     for idx, table_id in enumerate(table_manager.common_ids):
-        print(f"step : {idx}/{total}")
-
+        
+        new_start_time = time.time()
 
         table_manager.current_table_id = table_id
         generate_dataset(model, data_args, training_args, table_manager, library, vector_store, metrics)
+
+        end_time = time.time()
+        duration = end_time - new_start_time
+        total_duration = end_time - start_time
+        print(f"step {idx}/{total} done in {duration:.2f} seconds, total {total_duration:.2f} seconds.\n")
+
 
 
     os.makedirs("../data", exist_ok=True)

@@ -1030,5 +1030,1181 @@
     "question": "sum of c3_number values for agg equals 0",
     "sql": "SELECT SUM(c3_number) AS total_sum_c3_number FROM w WHERE agg = 0;",
     "orginal": false
+  },
+  {
+    "tables_id": "nt-13167",
+    "question": "what is the total number of unique c4 addresses associated with records in table t_c4_address where m_id exists in the w table's id field?",
+    "sql": "\nSELECT COUNT(DISTINCT t1.c4_address) \nFROM t_c4_address AS t1 \nJOIN w AS t2 ON t1.m_id = t2.id;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-13167",
+    "question": "count unique c4 addresses where m_id is in w table.",
+    "sql": "SELECT COUNT(DISTINCT t1.c4_address) FROM t_c4_address AS t1 JOIN w AS t2 ON t1.m_id = t2.id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13167",
+    "question": "count distinct c4 addresses related to m_id in w.",
+    "sql": "SELECT COUNT(DISTINCT t1.c4_address) FROM t_c4_address AS t1 JOIN w AS t2 ON t1.m_id = t2.id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13167",
+    "question": "count : 'nonetype' object has no attribute 'find_all'. c4 addresses linked with m_id in w.",
+    "sql": "SELECT COUNT(DISTINCT t1.c4_address) FROM t_c4_address AS t1 JOIN w AS t2 ON t1.m_id = t2.id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13167",
+    "question": "how many different c4 addresses are linked with m_id in table w?",
+    "sql": "SELECT COUNT(DISTINCT t1.c4_address) FROM t_c4_address AS t1 JOIN w AS t2 ON t1.m_id = t2.id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13167",
+    "question": "calculate how many unique c4 entries are connected via m_id in w.",
+    "sql": "SELECT COUNT(DISTINCT t1.c4_address) FROM t_c4_address AS t1 JOIN w AS t2 ON t1.m_id = t2.id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13167",
+    "question": "how many unique c4 addresses match m_id in w?",
+    "sql": "SELECT COUNT(DISTINCT t1.c4_address) FROM t_c4_address AS t1 JOIN w AS t2 ON t1.m_id = t2.id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13167",
+    "question": "determine unique c4 addresses associated with m_id present in w.",
+    "sql": "SELECT COUNT(DISTINCT t1.c4_address) FROM t_c4_address AS t1 JOIN w AS t2 ON t1.m_id = t2.id;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2829",
+    "question": "what are the names of all clubs (c2) that have a goal difference (c10_number) greater than 5?",
+    "sql": "\nSELECT DISTINCT c2 \nFROM w \nWHERE c10_number > 5;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-2829",
+    "question": "names of clubs with goal difference greater than 5?",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c10_number > 5;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2829",
+    "question": "clubs having a higher goal difference than 5?",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c10_number > 5;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2829",
+    "question": "names of ['business', 'staff'] that have a higher error: unable to fetch data (status code 404). than 5?",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c10_number > 5;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2829",
+    "question": "which teams have a positive goal difference over 5?",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c10_number > 5;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2829",
+    "question": "identify clubs whose goal difference exceeds the threshold of 5",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c10_number > 5;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2829",
+    "question": "clubs with greater than 5 in goal difference?",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c10_number > 5;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-2829",
+    "question": "list the names of football clubs that surpass a goal difference of five.",
+    "sql": "SELECT DISTINCT c2 FROM w WHERE c10_number > 5;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1722",
+    "question": "what are the titles of entries where c5 is not null?",
+    "sql": "\nSELECT c2 \nFROM w \nWHERE c5 IS NOT NULL;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-1722",
+    "question": "titles with c5 not null",
+    "sql": "SELECT c2 FROM w WHERE c5 IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1722",
+    "question": "titles when c5 is not null",
+    "sql": "SELECT c2 FROM w WHERE c5 IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1722",
+    "question": "list titles where c5 is present",
+    "sql": "SELECT c2 FROM w WHERE c5 IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1722",
+    "question": "retrieve entry names where c5 exists",
+    "sql": "SELECT c2 FROM w WHERE c5 IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1722",
+    "question": "which entries include non-null c5 value?",
+    "sql": "SELECT c2 FROM w WHERE c5 IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1722",
+    "question": "titles for non-null c5",
+    "sql": "SELECT c2 FROM w WHERE c5 IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1722",
+    "question": "entry titles having non-null c5",
+    "sql": "SELECT c2 FROM w WHERE c5 IS NOT NULL;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1357",
+    "question": "find all teams where the outgoing manager left by contract termination in november 2007.",
+    "sql": "\nSELECT c1 AS Team \nFROM w \nWHERE c3_first = \"contract terminated\" AND c4_month = 11 AND c4_year = 2007;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-1357",
+    "question": "find teams where managers left by contract in november 2007.",
+    "sql": "SELECT c1 AS Team FROM w WHERE c3_first = \"contract terminated\" AND c4_month = 11 AND c4_year = 2007;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1357",
+    "question": "identify teams that experienced manager departures through contractual means in november 2007.",
+    "sql": "SELECT c1 AS Team FROM w WHERE c3_first = \"contract terminated\" AND c4_month = 11 AND c4_year = 2007;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1357",
+    "question": "list the teams with managers who departed due to contract termination in november 2007.",
+    "sql": "SELECT c1 AS Team FROM w WHERE c3_first = \"contract terminated\" AND c4_month = 11 AND c4_year = 2007;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1357",
+    "question": "find teams where managers left by agreement end in november 2007.",
+    "sql": "SELECT c1 AS Team FROM w WHERE c3_first = \"contract terminated\" AND c4_month = 11 AND c4_year = 2007;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1357",
+    "question": "retrieve teams that had managers depart because of contract expiration in november 2007.",
+    "sql": "SELECT c1 AS Team FROM w WHERE c3_first = \"contract terminated\" AND c4_month = 11 AND c4_year = 2007;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1357",
+    "question": "identify the team whose manager left due to a contractual arrangement ending in november 2007.",
+    "sql": "SELECT c1 AS Team FROM w WHERE c3_first = \"contract terminated\" AND c4_month = 11 AND c4_year = 2007;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1357",
+    "question": "find teams where managers left by contract termination in november 2007.",
+    "sql": "SELECT c1 AS Team FROM w WHERE c3_first = \"contract terminated\" AND c4_month = 11 AND c4_year = 2007;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11560",
+    "question": "what are the total gross earnings for each film released in february 2014?",
+    "sql": "\nSELECT w.c3 AS Film, SUM(w.c4_number) AS Total_Gross_Earnings \nFROM w \nWHERE c2_month = 2 AND c2_year = 2014\nGROUP BY w.c3;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-11560",
+    "question": "what are the total gross earnings for each film released in february 2014?",
+    "sql": "SELECT w.c3 AS Film, SUM(w.c4_number) AS Total_Gross_Earnings FROM w WHERE c2_month = 2 AND c2_year = 2014 GROUP BY w.c3;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11560",
+    "question": "gross earnings for films in february 2014?",
+    "sql": "SELECT w.c3 AS Film, SUM(w.c4_number) AS Total_Gross_Earnings FROM w WHERE c2_month = 2 AND c2_year = 2014 GROUP BY w.c3;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11560",
+    "question": "total gross for movies released in feb 2014?",
+    "sql": "SELECT w.c3 AS Film, SUM(w.c4_number) AS Total_Gross_Earnings FROM w WHERE c2_month = 2 AND c2_year = 2014 GROUP BY w.c3;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11560",
+    "question": "what are the aggregate box office revenues of all films in february 2014?",
+    "sql": "SELECT w.c3 AS Film, SUM(w.c4_number) AS Total_Gross_Earnings FROM w WHERE c2_month = 2 AND c2_year = 2014 GROUP BY w.c3;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11560",
+    "question": "what is the total revenue generated by movies released in february 2014?",
+    "sql": "SELECT w.c3 AS Film, SUM(w.c4_number) AS Total_Gross_Earnings FROM w WHERE c2_month = 2 AND c2_year = 2014 GROUP BY w.c3;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11560",
+    "question": "how much money did each film make that was released during february of 2014?",
+    "sql": "SELECT w.c3 AS Film, SUM(w.c4_number) AS Total_Gross_Earnings FROM w WHERE c2_month = 2 AND c2_year = 2014 GROUP BY w.c3;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11560",
+    "question": "total earnings for films in feb 2014?",
+    "sql": "SELECT w.c3 AS Film, SUM(w.c4_number) AS Total_Gross_Earnings FROM w WHERE c2_month = 2 AND c2_year = 2014 GROUP BY w.c3;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-11560",
+    "question": "for movies released in february 2014, what are their total earnings?",
+    "sql": "SELECT w.c3 AS Film, SUM(w.c4_number) AS Total_Gross_Earnings FROM w WHERE c2_month = 2 AND c2_year = 2014 GROUP BY w.c3;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7278",
+    "question": "what are the titles of movies where the role is a cameo appearance?",
+    "sql": "\nSELECT c2 \nFROM w\nWHERE c4 = 'cameo appearance';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7278",
+    "question": "what are the titles of movies where the role is cameo appearance?",
+    "sql": "SELECT c2 FROM w WHERE c4 = 'cameo appearance';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7278",
+    "question": "which movie title includes a cameo appearance?",
+    "sql": "SELECT c2 FROM w WHERE c4 = 'cameo appearance';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7278",
+    "question": "what are the titles of movies where the role is guest appearance?",
+    "sql": "SELECT c2 FROM w WHERE c4 = 'cameo appearance';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7278",
+    "question": "what are the titles of movies where the role is brief appearance?",
+    "sql": "SELECT c2 FROM w WHERE c4 = 'cameo appearance';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7278",
+    "question": "identify movie titles that feature actors for a short duration.",
+    "sql": "SELECT c2 FROM w WHERE c4 = 'cameo appearance';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7278",
+    "question": "what are movies with cameo roles?",
+    "sql": "SELECT c2 FROM w WHERE c4 = 'cameo appearance';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7278",
+    "question": "list movie titles featuring cameo appearances.",
+    "sql": "SELECT c2 FROM w WHERE c4 = 'cameo appearance';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9001",
+    "question": "what are the unique nationalities of athletes with notes indicating they qualified for the next round?",
+    "sql": "\nSELECT DISTINCT w.c4 AS nationality \nFROM w \nJOIN t_c6_list ON w.id = t_c6_list.m_id \nWHERE t_c6_list.c6_list LIKE '%Q%';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-9001",
+    "question": "what are the different nationalities of athletes who have notes showing qualification?",
+    "sql": "SELECT DISTINCT w.c4 AS nationality FROM w JOIN t_c6_list ON w.id = t_c6_list.m_id WHERE t_c6_list.c6_list LIKE '%Q%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9001",
+    "question": "what are the distinctive nationalities of athletes who have notes indicating qualification?",
+    "sql": "SELECT DISTINCT w.c4 AS nationality FROM w JOIN t_c6_list ON w.id = t_c6_list.m_id WHERE t_c6_list.c6_list LIKE '%Q%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9001",
+    "question": "which countries do qualified athletes come from?",
+    "sql": "SELECT DISTINCT w.c4 AS nationality FROM w JOIN t_c6_list ON w.id = t_c6_list.m_id WHERE t_c6_list.c6_list LIKE '%Q%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9001",
+    "question": "list unique country origins of all athletes noted as qualifiers.",
+    "sql": "SELECT DISTINCT w.c4 AS nationality FROM w JOIN t_c6_list ON w.id = t_c6_list.m_id WHERE t_c6_list.c6_list LIKE '%Q%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9001",
+    "question": "what nationalities do athletes have that qualified to proceed?",
+    "sql": "SELECT DISTINCT w.c4 AS nationality FROM w JOIN t_c6_list ON w.id = t_c6_list.m_id WHERE t_c6_list.c6_list LIKE '%Q%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9001",
+    "question": "list out all the different countries from which qualifying athletes hail.",
+    "sql": "SELECT DISTINCT w.c4 AS nationality FROM w JOIN t_c6_list ON w.id = t_c6_list.m_id WHERE t_c6_list.c6_list LIKE '%Q%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-9001",
+    "question": "which nationalities are represented among athletes that progressed to the next round?",
+    "sql": "SELECT DISTINCT w.c4 AS nationality FROM w JOIN t_c_c6_list ON w.id = t_c_c6_list.m_id WHERE t_c_c6_list.c6_list LIKE '%Q%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1819",
+    "question": "what are the unique circuit names and dates where milo\u0161 pavlovi\u0107 held either the pole position or won the race?",
+    "sql": "\nSELECT DISTINCT w.c2 AS circuit_name, w.c3 AS date \nFROM w \nWHERE w.c4 LIKE '%Milos Pavlovic%' OR w.c5 LIKE '%Milos Pavlovic%';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-1819",
+    "question": "what unique circuits and dates did milo\u0161 pavlovi\u0107 secure pole position or victory in?",
+    "sql": "SELECT DISTINCT w.c2 AS circuit_name, w.c3 AS date FROM w WHERE w.c4 LIKE '%Milos Pavlovic%' OR w.c5 LIKE '%Milos Pavlovic%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1819",
+    "question": "find the distinct race locations and dates for which milo\u0161 pavlovi\u0107 either won or secured pole position.",
+    "sql": "SELECT DISTINCT w.c2 AS circuit_name, w.c3 AS date FROM w WHERE w.c4 LIKE '%Milos Pavlovic%' OR w.c5 LIKE '%Milos Pavlovic%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1819",
+    "question": "identify circuit names and respective dates where milo\u0161 pavlovi\u0107 achieved pole position or was victorious.",
+    "sql": "SELECT DISTINCT w.c2 AS circuit_name, w.c3 AS date FROM w WHERE w.c4 LIKE '%Milos Pavlovic%' OR w.c5 LIKE '%Milos Pavlovic%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1819",
+    "question": "list unique circuits and corresponding dates where milo\u0161 pavlovi\u0107 had the distinction of pole sitter or race winner.",
+    "sql": "SELECT DISTINCT w.c2 AS circuit_name, w.c3 AS date FROM w WHERE w.c4 LIKE '%Milos Pavlovic%' OR w.c5 LIKE '%Milos Pavlovic%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1819",
+    "question": "how many times did milo\u0161 pavlovi\u0107 claim pole position or win a race at different tracks, along with respective dates?",
+    "sql": "SELECT DISTINCT w.c2 AS circuit_name, w.c3 AS date FROM w WHERE w.c4 LIKE '%Milos Pavlovic%' OR w.c5 LIKE '%Milos Pavlovic%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1819",
+    "question": "what are the circuit venues and their specific dates for which milo\u0161 pavlovi\u0107 held the lead at start of races or won them?",
+    "sql": "SELECT DISTINCT w.c2 AS circuit_name, w.c3 AS date FROM w WHERE w.c4 LIKE '%Milos Pavlovic%' OR w.c5 LIKE '%Milos Pavlovic%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-1819",
+    "question": "report unique circuits and times where milo\u0161 pavlovi\u0107 either achieved pole position or was race victor.",
+    "sql": "SELECT DISTINCT w.c2 AS circuit_name, w.c3 AS date FROM w WHERE w.c4 LIKE '%Milos Pavlovic%' OR w.c5 LIKE '%Milos Pavlovic%';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7725",
+    "question": "list all distinct values in column c4 where the length is greater than 1.",
+    "sql": "\nSELECT DISTINCT c4 \nFROM w \nWHERE c4_length > 1;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7725",
+    "question": "enumerate distinct c4 values with length surpassing one",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c4_length > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7725",
+    "question": "distinct values of c4 longer than one",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c4_length > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7725",
+    "question": "distinct values of c4 with length greater than one",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c4_length > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7725",
+    "question": "unique values of c4 longer than one",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c4_length > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7725",
+    "question": "list unique entries of c4 greater than one in size",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c4_length > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7725",
+    "question": "identify unique instances of c4 with length exceeding one",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c4_length > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7725",
+    "question": "c4 values over one length",
+    "sql": "SELECT DISTINCT c4 FROM w WHERE c4_length > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8620",
+    "question": "find all entries where the length of c4 is greater than one.",
+    "sql": "\nSELECT * \nFROM w\nWHERE LENGTH(c4) > 1;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-8620",
+    "question": "find entries where c4 length is greater than one.",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8620",
+    "question": "entries with more than one character in c4.",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8620",
+    "question": "find all entries where the breadth, diameter, dimension, duration, height, limit, magnitude, mileage, period, piece, portion, quantity, radius, range, section, segment, space, span, stretch, term, width of c4 exceeds one.",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8620",
+    "question": "find entries where c4 has a count more than one.",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8620",
+    "question": "identify all table records where column c4 contains more than one character.",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8620",
+    "question": "entries with c4 longer than 1.",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8620",
+    "question": "retrieve rows where c4 string length is greater than one.",
+    "sql": "SELECT * FROM w WHERE LENGTH(c4) > 1",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7285",
+    "question": "list all entries where c4_number is greater than 50.",
+    "sql": "\nSELECT * FROM w \nWHERE c4_number > 50;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7285",
+    "question": "list entries where c4_number > 50",
+    "sql": "SELECT * FROM w WHERE c4_number > 50",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7285",
+    "question": "entries with c4_number over 50",
+    "sql": "SELECT * FROM w WHERE c4_number > 50",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7285",
+    "question": "list all entries where c4_number is higher than 50.",
+    "sql": "SELECT * FROM w WHERE c4_number > 50",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7285",
+    "question": "which records in table 'w' contain values for c4_number more than fifty?",
+    "sql": "SELECT * FROM w WHERE c4_number > 50",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7285",
+    "question": "show entries with c4_number > 50",
+    "sql": "SELECT * FROM w WHERE c4_number > 50",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7285",
+    "question": "in table 'w', list items that have c4_number greater than fifty.",
+    "sql": "SELECT * FROM w WHERE c4_number > 50",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4610",
+    "question": "what is the c4 value for entries where c3 is 'united states' and c5 is 'q'?",
+    "sql": "\nSELECT c4 \nFROM w \nWHERE c3 = 'united states' AND c5 = 'q';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-4610",
+    "question": "what is c4 for entries with 'united states' in c3 and 'q' in c5?",
+    "sql": "SELECT c4 FROM w WHERE c3 = 'united states' AND c5 = 'q';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4610",
+    "question": "what is c4 for entries with united states?",
+    "sql": "SELECT c4 FROM w WHERE c3 = 'united states' AND c5 = 'q';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4610",
+    "question": "what is the c4 value for entries where c3 is 'america' and c5 is 'q'? ",
+    "sql": "SELECT c4 FROM w WHERE c3 = 'united states' AND c5 = 'q';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4610",
+    "question": "what are values of column c4 where country in table is 'united states' and category is 'q'?",
+    "sql": "SELECT c4 FROM w WHERE c3 = 'united states' AND c5 = 'q';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4610",
+    "question": "which entries have a value for column c4 where the country is 'united states' and category label is 'q'? ",
+    "sql": "SELECT c4 FROM w WHERE c3 = 'united states' AND c5 = 'q';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4610",
+    "question": "what are the c4 values for united states with q? ",
+    "sql": "SELECT c4 FROM w WHERE c3 = 'united states' AND c5 = 'q';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4610",
+    "question": "identify all entries in table w that have united states under c3 and q under c5",
+    "sql": "SELECT c4 FROM w WHERE c3 = 'united states' AND c5 = 'q';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12329",
+    "question": "what are the addresses of the locations in kootenai national forest based on the entries in table w?",
+    "sql": "\nSELECT DISTINCT ta.c4_address \nFROM w AS w \nJOIN t_c4_address AS ta ON w.id = ta.m_id \nWHERE w.c4 LIKE '%Kootenai National Forest%'\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12329",
+    "question": "addresses for kootenai national forest from table w",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12329",
+    "question": "what are the addresses for locations in kootenai national forest according to the records in table w?",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12329",
+    "question": "find out the whereabouts of spots within kootenai national forest based on data in table w",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12329",
+    "question": "what are addresses for kootenai nf locations from table w?",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12329",
+    "question": "retrieve the address information of places located in kootenai national forest as per records within table w",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12329",
+    "question": "list down addresses for sites inside kootenai nf referenced in table w",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12329",
+    "question": "what are the address details of places within kootenai national forest as mentioned in records of table w?",
+    "sql": "SQL Query",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4783",
+    "question": "list the c4 values along with their corresponding c4_lengths for entries where agg is 0 in table w.",
+    "sql": "\nSELECT c4, c4_length \nFROM w\nWHERE agg = 0;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-4783",
+    "question": "list c4 and c4_lengths for entries where agg is 0 in table w.",
+    "sql": "SELECT c4, c4_length FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4783",
+    "question": "list c4 values with their corresponding lengths for entries where agg is 0.",
+    "sql": "SELECT c4, c4_length FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4783",
+    "question": "list c4 and their corresponding lengths in entries where agg is zero.",
+    "sql": "SELECT c4, c4_length FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4783",
+    "question": "identify all c4 with their respective c4_lengths for table w entries where agg equals to 0.",
+    "sql": "SELECT c4, c4_length FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4783",
+    "question": "list c4 with corresponding lengths in entries where agg is 0.",
+    "sql": "SELECT c4, c4_length FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-4783",
+    "question": "retrieve c4 and their corresponding lengths for entries in table w where agg is not greater than 0.",
+    "sql": "SELECT c4, c4_length FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8558",
+    "question": "list all unique c1 values along with their length for entries where agg equals 0.",
+    "sql": "\nSELECT DISTINCT c1, LENGTH(c1) as len_c1 \nFROM w \nWHERE agg = 0;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-8558",
+    "question": "list unique c1 values and lengths where agg is 0.",
+    "sql": "SELECT DISTINCT c1, LENGTH(c1) as len_c1 FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8558",
+    "question": "list c1 values and their lengths where agg is 0.",
+    "sql": "SELECT DISTINCT c1, LENGTH(c1) as len_c1 FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8558",
+    "question": "list unique c1 values and length where aggregation is 0.",
+    "sql": "SELECT DISTINCT c1, LENGTH(c1) as len_c1 FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8558",
+    "question": "list unique error: unable to fetch data (status code 404). values along with their size where aggregate is 0.",
+    "sql": "SELECT DISTINCT c1, LENGTH(c1) as len_c1 FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8558",
+    "question": "show distinct c1 value and measure of string when agg has the default setting of 0.",
+    "sql": "SELECT DISTINCT c1, LENGTH(c1) as len_c1 FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8558",
+    "question": "identify distinct c1 values and their corresponding lengths where the aggregation is set to zero.",
+    "sql": "SELECT DISTINCT c1, LENGTH(c1) as len_c1 FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8558",
+    "question": "show distinct c1 and length where agg is zero.",
+    "sql": "SELECT DISTINCT c1, LENGTH(c1) as len_c1 FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8558",
+    "question": "what unique c1 values and their respective lengths can be observed when the aggregation metric is not set?",
+    "sql": "SELECT DISTINCT c1, LENGTH(c1) as len_c1 FROM w WHERE agg = 0;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12828",
+    "question": "what are the distinct values of c2 along with their lengths where agg is equal to 0?",
+    "sql": "\nSELECT DISTINCT c2 , LENGTH(c2) \nFROM w\nWHERE agg = 0;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12828",
+    "question": "what are unique values of c2 and their sizes when agg is 0?",
+    "sql": "SELECT DISTINCT c2 , LENGTH(c2) FROM w WHERE agg = 0",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13252",
+    "question": "how many unique c1_list entries are there for each m_id in t_c1_list where m_id appears more than once?",
+    "sql": "\nSELECT \n    m_id, \n    COUNT(DISTINCT c1_list) AS unique_entries\nFROM \n    t_c1_list\nGROUP BY \n    m_id\nHAVING \n    COUNT(m_id) > 1;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-13252",
+    "question": "how many distinct c1_list values for each m_id?",
+    "sql": "SELECT m_id, COUNT(DISTINCT c1_list) AS unique_entries FROM t_c1_list GROUP BY m_id HAVING COUNT(m_id) > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13252",
+    "question": "for each m_id where it appears more than once, how many unique c1_list entries?",
+    "sql": "SELECT m_id, COUNT(DISTINCT c1_list) AS unique_entries FROM t_c1_list GROUP BY m_id HAVING COUNT(m_id) > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13252",
+    "question": "how many different c1_list items are there for each m_id where m_id shows up multiple times?",
+    "sql": "SELECT m_id, COUNT(DISTINCT c1_list) AS unique_entries FROM t_c1_list GROUP BY m_id HAVING COUNT(m_id) > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13252",
+    "question": "how many unique c1_list appearances are there for each m_id that repeats?",
+    "sql": "SELECT m_id, COUNT(DISTINCT c1_list) AS unique_entries FROM t_c1_list GROUP BY m_id HAVING COUNT(m_id) > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13252",
+    "question": "what's the count of distinct c1_list entries for every m_id that appears more than once?",
+    "sql": "SELECT m_id, COUNT(DISTINCT c1_list) AS unique_entries FROM t_c1_list GROUP BY m_id HAVING COUNT(m_id) > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13252",
+    "question": "for each m_id that repeats, how many unique c1_list values?",
+    "sql": "SELECT m_id, COUNT(DISTINCT c1_list) AS unique_entries FROM t_c1_list GROUP BY m_id HAVING COUNT(m_id) > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-13252",
+    "question": "count distinct c1_list entries for m_ids that appear more than once.",
+    "sql": "SELECT m_id, COUNT(DISTINCT c1_list) AS unique_entries FROM t_c1_list GROUP BY m_id HAVING COUNT(m_id) > 1;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6452",
+    "question": "what are the total points (c8) for each distinct artist (c4) where the language (c3) is english, ordered by total points in descending order?",
+    "sql": "\nSELECT c4, SUM(c8) as total_points \nFROM w \nWHERE c3 = 'english' \nGROUP BY c4 \nORDER BY total_points DESC;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-6452",
+    "question": "what are the total points for each distinct artist where the language is english, ordered by total points in descending order?",
+    "sql": "SELECT c4, SUM(c8) as total_points FROM w WHERE c3 = 'english' GROUP BY c4 ORDER BY total_points DESC",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6452",
+    "question": "what are the total points for each artist where language is english, ordered by points in descending order?",
+    "sql": "SELECT c4, SUM(c8) as total_points FROM w WHERE c3 = 'english' GROUP BY c4 ORDER BY total_points DESC",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6452",
+    "question": "what are the total credibility for each artist where language is english, ordered by total points descending?",
+    "sql": "SELECT c4, SUM(c8) as total_points FROM w WHERE c3 = 'english' GROUP BY c4 ORDER BY total_points DESC",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6452",
+    "question": "how many total points do artists with english language have sorted by their points from highest to lowest?",
+    "sql": "SELECT c4, SUM(c8) as total_points FROM w WHERE c3 = 'english' GROUP BY c4 ORDER BY total_points DESC",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6452",
+    "question": "which artists earn the most points when they perform in english and what are those point totals?",
+    "sql": "SELECT c4, SUM(c8) as total_points FROM w WHERE c3 = 'english' GROUP BY c4 ORDER BY total_points DESC",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6452",
+    "question": "what is the total score for each artist with an english language entry, ranked by descending total points?",
+    "sql": "SELECT c4, SUM(c8) as total_points FROM w WHERE c3 = 'english' GROUP BY c4 ORDER BY total_points DESC",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6452",
+    "question": "list of artists who perform in english and their corresponding point totals sorted from highest score to lowest",
+    "sql": "SELECT c4, SUM(c8) as total_points FROM w WHERE c3 = 'english' GROUP BY c4 ORDER BY total_points DESC",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7968",
+    "question": "what is the total number of electorates for each district, sorted by the number of electorates in descending order?",
+    "sql": "\nSELECT c4 AS district, SUM(c5_number) as total_electorates \nFROM w \nGROUP BY c4 \nORDER BY total_electorates DESC;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7968",
+    "question": "total electorates per district, sorted.",
+    "sql": "SELECT c4 AS district, SUM(c5_number) as total_electorates FROM w GROUP BY c4 ORDER BY total_electorates DESC;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7968",
+    "question": "total electorates for each district, descending order.",
+    "sql": "SELECT c4 AS district, SUM(c5_number) as total_electorates FROM w GROUP BY c4 ORDER BY total_electorates DESC;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7968",
+    "question": "total voters per district, sorted by number in descending order.",
+    "sql": "SELECT c4 AS district, SUM(c5_number) as total_electorates FROM w GROUP BY c4 ORDER BY total_electorates DESC;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7968",
+    "question": "district-wise total votes count in descending order.",
+    "sql": "SELECT c4 AS district, SUM(c5_number) as total_electorates FROM w GROUP BY c4 ORDER BY total_electorates DESC;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7968",
+    "question": "total number of voting populace for each district, sorted by size.",
+    "sql": "SELECT c4 AS district, SUM(c5_number) as total_electorates FROM w GROUP BY c4 ORDER BY total_electorates DESC;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7968",
+    "question": "total electorates per district, descending.",
+    "sql": "SELECT c4 AS district, SUM(c5_number) as total_electorates FROM w GROUP BY c4 ORDER BY total_electorates DESC;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7968",
+    "question": "list districts by total number of electorates from largest to smallest.",
+    "sql": "SELECT c4 AS district, SUM(c5_number) as total_electorates FROM w GROUP BY c4 ORDER BY total_electorates DESC;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-6946",
+    "question": "how many episodes were directed by each director, sorted by the number of episodes in descending order?",
+    "sql": "\nSELECT c3 as Director, COUNT(*) AS NumEpisodes \nFROM w \nGROUP BY c3 \nORDER BY NumEpisodes DESC;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-6946",
+    "question": "how many episodes did each director direct, sorted by episode count descending?",
+    "sql": "SELECT c3 as Director, COUNT(*) AS NumEpisodes FROM w GROUP BY c3 ORDER BY NumEpisodes DESC;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8378",
+    "question": "what is the total number of distinct years represented in the table w?",
+    "sql": "\nSELECT COUNT(DISTINCT c1_year) \nFROM w;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-8378",
+    "question": "what are distinct years in table w?",
+    "sql": "SELECT COUNT(DISTINCT c1_year) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8378",
+    "question": "how many unique years does the data cover?",
+    "sql": "SELECT COUNT(DISTINCT c1_year) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8378",
+    "question": "agedness",
+    "sql": "SELECT COUNT(DISTINCT c1_year) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8378",
+    "question": "how many unique periods are included in table w?",
+    "sql": "SELECT COUNT(DISTINCT c1_year) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8378",
+    "question": "what's the count of different years present in table w?",
+    "sql": "SELECT COUNT(DISTINCT c1_year) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8378",
+    "question": "how many distinct year entries does table w have?",
+    "sql": "SELECT COUNT(DISTINCT c1_year) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8378",
+    "question": "in what different calendar years has data been recorded in table w?",
+    "sql": "SELECT COUNT(DISTINCT c1_year) FROM w;",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8697",
+    "question": "how many cities listed in table w have a population greater than 25000?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c3_number > 25000;\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-8697",
+    "question": "cities with pop over 25k?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number > 25000",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8697",
+    "question": "count cities in w with pop more than 25000",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number > 25000",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8697",
+    "question": "number of cities in table w having community over 25000",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number > 25000",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8697",
+    "question": "how many entries in the city list have a population larger than 25000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number > 25000",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8697",
+    "question": "what's the total count of cities from table w where their residents exceed 25000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number > 25000",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8697",
+    "question": "count cities over 25k pop",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number > 25000",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8697",
+    "question": "in how many instances in table w does a city's population exceed 25000?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c3_number > 25000",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5758",
+    "question": "how many unique values of c3 from table w also appear in the c3_list column of table t_c3_list?",
+    "sql": "\nSELECT COUNT(DISTINCT w.c3) \nFROM w \nJOIN t_c3_list ON w.c3 IN (t_c3_list.c3_list);\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-5758",
+    "question": "how many values of c3 from table w match with those in the c3_list column of table t_c3_list?",
+    "sql": "SELECT COUNT(DISTINCT w.c3) FROM w JOIN t_c3_list ON w.c3 IN (t_c3_list.c3_list);",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5758",
+    "question": "how many of c3 values in table w are also in t_c3_list.c3_list?",
+    "sql": "SELECT COUNT(DISTINCT w.c3) FROM w JOIN t_c3_list ON w.c3 IN (t_c3_list.c3_list);",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5758",
+    "question": "how many distinct values of c3 from table w are also in t_c3_list.c3_list?",
+    "sql": "SELECT COUNT(DISTINCT w.c3) FROM w JOIN t_c3_list ON w.c3 IN (t_c3_list.c3_list);",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5758",
+    "question": "how many of the c3 values in w overlap with those in t_c3_list.c3_list?",
+    "sql": "SELECT COUNT(DISTINCT w.c3) FROM w JOIN t_c3_list ON w.c3 IN (t_c3_list.c3_list);",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5758",
+    "question": "what is the number of matching c3 values between table w and t_c3_list.c3_list?",
+    "sql": "SELECT COUNT(DISTINCT w.c3) FROM w JOIN t_c3_list ON w.c3 IN (t_c3_list.c3_list);",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5758",
+    "question": "how many c3 values in w match with t_c3_list.c3_list?",
+    "sql": "SELECT COUNT(DISTINCT w.c3) FROM w JOIN t_c3_list ON w.c3 IN (t_c3_list.c3_list);",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-5758",
+    "question": "what is the count of c3 values in w that intersect with t_c3_list.c3_list?",
+    "sql": "SELECT COUNT(DISTINCT w.c3) FROM w JOIN t_c3_list ON w.c3 IN (t_c3_list.c3_list);",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12414",
+    "question": "what is the sum of c3_number for rows where c2 equals 'russia'?",
+    "sql": "\nSELECT SUM(c3_number) \nFROM w \nWHERE c2 = 'Russia';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-12414",
+    "question": "sum of c3_number for russia?",
+    "sql": "SELECT SUM(c3_number) FROM w WHERE c2 = \"Russia\";",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12414",
+    "question": "total sum of number for russia?",
+    "sql": "SELECT SUM(c3_number) FROM w WHERE c2 = \"Russia\";",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12414",
+    "question": "total of c3_number for russia?",
+    "sql": "SELECT amount(c3_number) FROM w WHERE c2 = \"Russia\";",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12414",
+    "question": "calculate total number for russia?",
+    "sql": "SELECT SUM(c3_number) FROM w WHERE c2 = \"Russia\";",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12414",
+    "question": "what is the sum of c3_number related to russia?",
+    "sql": "SELECT SUM(c3_number) FROM w WHERE c2 = \"Russia\";",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12414",
+    "question": "total number for rows where nation is russia",
+    "sql": "SELECT SUM(c3_number) FROM w WHERE c2 = \"Russia\";",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-12414",
+    "question": "find total c3_number for entries with russia",
+    "sql": "SELECT SUM(c3_number) FROM w WHERE c2 = \"Russia\";",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8670",
+    "question": "how many entries have c4 equal to 'icebreaker'?",
+    "sql": "\nSELECT COUNT(*) \nFROM w \nWHERE c4 = 'icebreaker';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-8670",
+    "question": "entries with c4 as icebreaker?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4 = 'icebreaker';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8670",
+    "question": "count entries where c4 is 'icebreaker'?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4 = 'icebreaker';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8670",
+    "question": "how many records have c4 equal to 'icebreaker'? ",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4 = 'icebreaker';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8670",
+    "question": "count how often c4 is 'icebreaker'?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4 = 'icebreaker';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8670",
+    "question": "what's the total count of entries where column c4 has value 'icebreaker'? ",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4 = 'icebreaker';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8670",
+    "question": "how many have c4 equal to 'icebreaker'?",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4 = 'icebreaker';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-8670",
+    "question": "in how many entries is the value of column c4 'icebreaker'? ",
+    "sql": "SELECT COUNT(*) FROM w WHERE c4 = 'icebreaker';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7087",
+    "question": "what is the total prize money when the champion's name is 'ronald l briones'?",
+    "sql": "\nSELECT c5 FROM w WHERE c2 = 'ronald l briones';\n",
+    "orginal": true
+  },
+  {
+    "tables_id": "nt-7087",
+    "question": "what is the total prize money for ronald l briones?",
+    "sql": "SELECT c5 FROM w WHERE c2 = 'ronald l briones';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7087",
+    "question": "total prize money when champion is 'ronald l briones'",
+    "sql": "SELECT c5 FROM w WHERE c2 = 'ronald l briones';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7087",
+    "question": "what is the total ['bill' when the champion's name is 'ronald l briones'?",
+    "sql": "SELECT c5 FROM w WHERE c2 = 'ronald l briones';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7087",
+    "question": "what prize total applies to ronald l briones as champion?",
+    "sql": "SELECT c5 FROM w WHERE c2 = 'ronald l briones';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7087",
+    "question": "how much was the overall prize when ronald l briones won the championship?",
+    "sql": "SELECT c5 FROM w WHERE c2 = 'ronald l briones';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7087",
+    "question": "total prize for champion 'ronald l briones'",
+    "sql": "SELECT c5 FROM w WHERE c2 = 'ronald l briones';",
+    "orginal": false
+  },
+  {
+    "tables_id": "nt-7087",
+    "question": "what's the total prize money given to ronald l briones when he was the champion?",
+    "sql": "SELECT c5 FROM w WHERE c2 = 'ronald l briones';",
+    "orginal": false
   }
 ]
