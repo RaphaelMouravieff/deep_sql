@@ -92,12 +92,12 @@ def main():
     if training_args.chunk is not None:
         data_args.library_path = data_args.library_path.split('.json')[0]+f"_chunk{training_args.chunk}_{training_args.Nchunks}.json"
         print(f'modification of the library path for chunks : {data_args.library_path}')
-        print(f'previous table_manager.common_ids : {len(table_manager.common_ids)}')
+        print(f'previous common_ids length: {len(table_manager.common_ids)}')
 
         chunk_size = len(table_manager.common_ids) // training_args.Nchunks
         table_manager.common_ids = table_manager.common_ids[training_args.chunk*chunk_size:(training_args.chunk*chunk_size)+chunk_size]
 
-        print(f"new table_manager.common_ids : {len(table_manager.common_ids)}")
+        print(f"new common_ids length for chunk {training_args.chunk}: {len(table_manager.common_ids)}")
     library, vector_store = init_library(data_args, training_args)
 
 
