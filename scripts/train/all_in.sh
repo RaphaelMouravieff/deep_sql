@@ -20,8 +20,8 @@ do
 #SBATCH --job-name=$JOB_NAME
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
-#SBATCH -A kns@v100
-#SBATCH -C v100-32g
+#SBATCH -A kns@a100
+#SBATCH -C a100
 #SBATCH --time=10:00:00
 #SBATCH --output=${OUTPUT_DIR}/$JOB_NAME.out
 
@@ -30,7 +30,9 @@ do
 export PATH=/lustre/fswork/projects/rech/kns/uxe25ug/ollama/bin:$PATH
 export OLLAMA_MODELS=/lustre/fswork/projects/rech/kns/uxe25ug/ollama/models
 
-ollama serve & 
+if ! pgrep -x "ollama" > /dev/null; then
+  ollama serve &
+fi
 
 export NO_PROXY="127.0.0.1,localhost"
 export no_proxy="127.0.0.1,localhost"

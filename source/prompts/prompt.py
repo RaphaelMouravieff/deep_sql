@@ -7,7 +7,7 @@ class PromptManager:
     def __init__(self, data_args, table_manager, library):
 
         self.table_manager = table_manager
-        tables_info, table_samples = table_manager.get_table()
+        tables_info = table_manager.get_tables_info(table_manager.conn)
 
         self.table_clean , self.table_dirty = table_manager.get_random_sampled_tables()
 
@@ -16,7 +16,6 @@ class PromptManager:
         self.library = library
         self.table_info_str = ', '.join(tables_info['tables'])
         self.table_schema_str = self.table_schema(tables_info)
-        self.sample_data_str = self.sample_data(table_samples)
         self.get_examples_str = self.get_examples()
 
         self.prompt_templates = self.load_prompt_templates(data_args.base_prompt_path)

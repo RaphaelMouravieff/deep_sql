@@ -101,8 +101,6 @@ def main():
     library, vector_store = init_library(data_args, training_args)
 
 
-   
-
     print(f"Starting with library containing {len(library)} entries")
 
     start_time = time.time()

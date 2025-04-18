@@ -88,24 +88,6 @@ class TableManager:
         self.common_ids = common_ids
 
 
-    def get_random_table_samples(self, conn):
-
-        cursor = conn.cursor()
-        cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-        tables = [table[0] for table in cursor.fetchall()]
-        samples = {}
-        for table in tables:
-            try:
-                cursor.execute(f"SELECT * FROM {table} ORDER BY RANDOM() LIMIT {self.table_limit};")
-                columns = [desc[0] for desc in cursor.description]
-                rows = cursor.fetchall()
-                samples[table] = [dict(zip(columns, row)) for row in rows]
-            except Exception as e:
-                samples[table] = {"error": str(e)}
-        
-        return samples
-
-
     def get_tables_info(self, conn) :
 
         cursor = conn.cursor()
@@ -134,14 +116,6 @@ class TableManager:
             schemas[table] = formatted_columns
         
         return {"tables": tables, "schemas": schemas}
-
-
-    def get_table(self):
-
-        tables_info = self.get_tables_info(self.conn)
-        table_samples = self.get_random_table_samples(self.conn)
-
-        return tables_info, table_samples
 
 
     def connect_to_database(self):
