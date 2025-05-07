@@ -50,24 +50,29 @@ def main():
         question = item["question"]
         sql_query = item["sql"]
 
-        print(question)
+        print(f"\n[Processing] {question}")
 
-        if table_id != table_manager.current_table_id:
-            table_manager.current_table_id = table_id
-            table_manager.connect_to_database()
+        try:
+            if table_id != table_manager.current_table_id:
+                table_manager.current_table_id = table_id
+                table_manager.connect_to_database()
 
-        entries = generate_sqlaware_permuted_examples(
-            table_id=table_manager.current_table_id,
-            sql_query=sql_query,
-            question=question,
-            original_conn=table_manager.conn,
-            dirty_table=table_manager.wtq_table_by_id[table_manager.current_table_id],
-            executor_class=SQLExecutor,
-            tokenizer=tokenizer,
-            data_args=data_args,
-            n=10
-        )
-        dataset_entries.extend(entries)
+            entries = generate_sqlaware_permuted_examples(
+                table_id=table_manager.current_table_id,
+                sql_query=sql_query,
+                question=question,
+                original_conn=table_manager.conn,
+                dirty_table=table_manager.wtq_table_by_id[table_manager.current_table_id],
+                executor_class=SQLExecutor,
+                tokenizer=tokenizer,
+                data_args=data_args,
+                n=10
+            )
+            dataset_entries.extend(entries)
+
+        except Exception as e:
+            print(f"[Error] Skipping table {table_id} due to: {repr(e)}")
+            continue
 
 
     train_dataset = Dataset.from_dict({

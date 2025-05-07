@@ -27,8 +27,7 @@ class TableManager:
 
         file = self.squall_table_id_by_id[self.current_table_id] #propre
         print('squall_table_id_by_id',file)
-        db_path = f"../data/tables/db/{file}.db"  # Path to the database file
-
+        db_path = f"../data/squall/tables/db/{file}.db"  # Path to the database file
         return db_path
 
     def get_durty_table(self):
@@ -121,6 +120,7 @@ class TableManager:
     def connect_to_database(self):
 
         db_path = self.prepare_db_path()
+        print("db_path",db_path)
         conn = sqlite3.connect(db_path)
         self.conn = conn
 

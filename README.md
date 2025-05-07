@@ -49,16 +49,31 @@ If you want to monitor execution in real-time, run:
 
 ```bash
 cd deep_sql/scripts
-bash train/run.sh
+bash Agents/run.sh
 ```
 
 ⸻
 
-☕ Running the Script in the Background (Job Submission)
+### Clean/Increase the dataset generated
 
-If you don’t need real-time output and prefer to let it run in the background, submit it as a batch job:
 ```bash
 cd deep_sql/scripts
-sbatch train/run.sh
+bash Datasets/prepare.sh
 ```
-🔹 This submits the script to Slurm and frees your terminal for other tasks.
+
+
+
+### Pre-train the clean dataset
+
+```bash
+cd deep_sql/scripts
+bash Train/ptrain.sh
+```
+
+
+### Fine-tuned the clean dataset
+
+```bash
+cd deep_sql/scripts
+bash Train/fine_tuned.sh
+```

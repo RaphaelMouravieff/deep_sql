@@ -78,12 +78,12 @@ class DataArguments:
     )
 
     database_path: Optional[str] = field(
-        default='../data/tables/db',
+        default='../data/squall/tables/db',
         metadata={"help": "The path to the SQLite database file."},
     )
 
     squall_path: Optional[str] = field(
-        default='../data/squall.json',
+        default='../data/squall/squall.json',
         metadata={"help": "The path to the SQLite database file."},
     )
 
@@ -93,7 +93,7 @@ class DataArguments:
     )
 
     library_path: Optional[str] = field(
-        default="../data/sql_dataset_library.json",
+        default="../data/library/sql_dataset_library.json",
         metadata={"help": "The path to the SQL dataset library."},
     )
 
