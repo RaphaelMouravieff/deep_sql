@@ -32,6 +32,6 @@ python ../agent.py \
   --table_limit 5 \
   --base_prompt_path ../data/prompts/base_prompt.yaml \
   --max_source_length_llm 8192 \
-  --model_name_or_path "not-used-but-must-be-set" \
+  --model_name_or_path "not-used-but-must-be-set" 
 
 
