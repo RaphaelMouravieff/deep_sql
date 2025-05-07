@@ -12,6 +12,15 @@ def filter_function(merged_library):
         "complete reformulation questio",
         "simplification with more",
         "paraphrase with change of perspective:"
+        "c1_number",
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5",
+        "c6",
+        "c7",
+        "c8",
     ]
 
     def is_bad_query(sql):

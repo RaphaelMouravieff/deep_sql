@@ -37,6 +37,15 @@ models/*
 !data/vector_store/index.pkl
 !data/vector_store/index.faiss
 
+# Explicitly ignore these specific subfolders in data/
+data/library/
+data/library2/
+data/tables/db_permuted/
+data/training_dataset/
+
+# Allow other files in data/ if needed
+!data/**/*.py
+
 # ===============================
 # Checkpoints / Logs / Outputs
 # ===============================

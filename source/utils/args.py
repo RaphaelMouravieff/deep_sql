@@ -30,14 +30,6 @@ class ModelArguments:
         },
     )
 
-    num_beams: Optional[int] = field(
-        default=None,
-        metadata={
-            "help": "Number of beams to use for evaluation. This argument will be passed to ``model.generate``, "
-                    "which is used during ``evaluate`` and ``predict``."
-        },
-    )
-
     config_name: Optional[str] = field(
         default=None, metadata={"help": "Pretrained config name or path if not the same as model_name"}
     )
@@ -60,6 +52,7 @@ class DataArguments:
     """
     Arguments pertaining to what data we are going to input our model for training and eval.
     """
+
 
     dataset_name: Optional[str] = field(
         default="wikitablequestions", metadata={"help": "The name of the dataset to use (via the datasets library)."}
@@ -206,6 +199,21 @@ class DataArguments:
         default=True,
         metadata={
             "help": "Whether to ignore the tokens corresponding to padded labels in the loss computation or not."
+        },
+    )
+
+    num_beams: Optional[int] = field(
+        default=None,
+        metadata={
+            "help": "Number of beams to use for evaluation. This argument will be passed to ``model.generate``, "
+                    "which is used during ``evaluate`` and ``predict``."
+        },
+    )
+
+    length_filter: Optional[int] = field(
+        default=1,
+        metadata={
+            "help": "The minimum length of the answer. If the answer is shorter than this, it will be ignored."
         },
     )
 

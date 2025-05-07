@@ -125,7 +125,4 @@ class TableManager:
         self.conn = conn
 
         return conn
-    
-
-
-
+        
