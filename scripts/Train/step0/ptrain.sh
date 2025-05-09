@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
 #SBATCH --time=20:00:00
-#SBATCH --output=Train/results/run.out
+#SBATCH --output=Train/step0/results/run.out
 
 python ../train.py \
   --do_train \

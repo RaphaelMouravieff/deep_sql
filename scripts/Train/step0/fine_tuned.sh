@@ -1,20 +1,19 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --job-name=v0
-#SBATCH --gres=gpu:1
-#SBATCH --ntasks-per-node=1
-#SBATCH -A kns@h100
-#SBATCH -C h100
+#SBATCH --job-name=step0
+#SBATCH --partition=hard
+#SBATCH --nodes=1
+#SBATCH --gpus-per-node=1
 #SBATCH --time=20:00:00
-#SBATCH --output=train/results/run.out
+#SBATCH --output=Train/step0/results/fine_tuned.out
 
 python ../train.py \
   --do_train \
   --do_eval \
   --do_predict \
-  --dataset_name ../data/training_dataset/stepX \
-  --output_dir ../models/bart_large_step1 \
-  --model_name_or_path ../models/bart-large \
+  --dataset_name wikitablequestions \
+  --output_dir ../models/bart_large_step0 \
+  --model_name_or_path ../models/bart_large_step0/checkpoint-1074 \
   --overwrite_output_dir \
   --per_device_train_batch_size 4 \
   --gradient_accumulation_steps 32 \
