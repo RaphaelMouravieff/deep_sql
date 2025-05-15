@@ -55,11 +55,6 @@ logs/
 *.pth
 *.ckpt
 
-# ===============================
-# Training outputs & scripts
-# ===============================
-scripts/train/train_model/
-source/training/
 
 # ===============================
 # Misc
