@@ -60,3 +60,6 @@ logs/
 # Misc
 # ===============================
 .DS_Store
+
+
+Notebooks/*.ipynbNotebooks/*.ipynb
