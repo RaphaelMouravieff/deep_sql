@@ -5,14 +5,14 @@
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
 #SBATCH --time=20:00:00
-#SBATCH --output=Train/step0/results/run.out
+#SBATCH --output=Train/step0_tapex/results/run.out
 
 python ../train.py \
   --do_train \
   --do_eval \
   --do_predict \
-  --dataset_name ../data/training_dataset/step0 \
-  --output_dir ../models/bart-large \
+  --dataset_name ../data/tapex_training_dataset/step0 \
+  --output_dir ../models/tapex_step0 \
   --model_name_or_path ../models/bart-large \
   --overwrite_output_dir \
   --per_device_train_batch_size 4 \

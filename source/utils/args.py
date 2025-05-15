@@ -53,6 +53,9 @@ class DataArguments:
     Arguments pertaining to what data we are going to input our model for training and eval.
     """
 
+    split_name: str = field(
+        metadata={"help": "The name of the split to use."},
+    )
 
     dataset_name: Optional[str] = field(
         default="wikitablequestions", metadata={"help": "The name of the dataset to use (via the datasets library)."}

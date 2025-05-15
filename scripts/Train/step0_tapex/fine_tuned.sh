@@ -1,21 +1,21 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --job-name=step0
+#SBATCH --job-name=FTTapex
 #SBATCH --partition=hard
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
-#SBATCH --time=48:00:00
+#SBATCH --time=20:00:00
 #SBATCH --constraint=A6000
-#SBATCH --output=Train/step0/results/fine_tuned.out
+#SBATCH --output=Train/step0_tapex/results/fine_tuned.out
 
 python ../train.py \
   --do_train \
   --do_eval \
   --do_predict \
   --dataset_name ../data/fine_tuning/wikitablequestions_small \
-  --output_dir ../models/bart_large_step0 \
-  --model_name_or_path ../models/bart_large_step0/checkpoint-1074 \
-  --resume_from_checkpoint ../models/bart_large_step0/checkpoint-10000 \
+  --output_dir ../models/tapex_step0 \
+  --model_name_or_path ../models/tapex_step0/checkpoint-1074 \
+  --resume_from_checkpoint ../models/tapex_step0/checkpoint-16000 \
   --overwrite_output_dir \
   --per_device_train_batch_size 4 \
   --gradient_accumulation_steps 32 \
