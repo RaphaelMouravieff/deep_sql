@@ -54,7 +54,7 @@ class DataArguments:
     """
 
     split_name: str = field(
-        metadata={"help": "The name of the split to use."},
+        default=None, metadata={"help": "The name of the split to use."},
     )
 
     dataset_name: Optional[str] = field(
