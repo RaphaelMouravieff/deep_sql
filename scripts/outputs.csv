@@ -1,0 +1,38 @@
+Target,Cleaned,Outputs,Average Log Likelihood,Likelihood Type,Number of Tokens
+"[(5,)]",5,2,-3.396,EXACT_LIKELIHOOD,2
+"[('california',), ('connecticut',), ('illinois',), ('indiana',), ('iowa',), ('kansas',), ('maryland',), ('new hampshire',), ('north dakota',), ('south dakota',), ('utah',), ('vermont',), ('wisconsin',)]","california, connecticut, illinois, indiana, iowa, kansas, maryland, new hampshire, north dakota, south dakota, utah, vermont, wisconsin","california, indiana, iowa, kansas, maryland, new hampshire, new york, ohio, oklahoma",-1.887,EXACT_LIKELIHOOD,47
+"[(856245.0,)]",856245,"1,336,801",-6.403,EXACT_LIKELIHOOD,4
+"[('dark tales\n聊齋', 35.0), ('dark tales\n聊齋', 35.0), ('dark tales\n聊齋', 35.0), ('dark tales\n聊齋', 35.0), (""money just can't buy\n天降財神"", 20.0), (""money just can't buy\n天降財神"", 20.0), (""money just can't buy\n天降財神"", 20.0), (""money just can't buy\n天降財神"", 20.0), ('state of divinity\n笑傲江湖', 40.0), ('state of divinity\n笑傲江湖', 40.0), ('state of divinity\n笑傲江湖', 40.0), ('state of divinity\n笑傲江湖', 40.0), ('state of divinity\n笑傲江湖', 40.0), ('night journey\n殭屍福星', 20.0), ('night journey\n殭屍福星', 20.0), ('night journey\n殭屍福星', 20.0), ('night journey\n殭屍福星', 20.0), ('night journey\n殭屍福星', 20.0), ('food of love\n闔府統請', 30.0), ('food of love\n闔府統請', 30.0), ('food of love\n闔府統請', 30.0), ('food of love\n闔府統請', 30.0), ('journey to the west\n西遊記', 30.0), ('journey to the west\n西遊記', 30.0), ('journey to the west\n西遊記', 30.0), ('journey to the west\n西遊記', 30.0), ('in the name of love\n有肥人終成眷屬', 20.0), ('in the name of love\n有肥人終成眷屬', 20.0), ('in the name of love\n有肥人終成眷屬', 20.0), ('in the name of love\n有肥人終成眷屬', 20.0)]","dark tales
+聊齋, 35.0, dark tales
+聊齋, 35.0, dark tales
+聊齋, 35.0, dark tales
+聊齋, 35.0, money just can't buy
+天降財神, 20.0, money just can't buy
+天降財神, 20.0, money just can't buy
+天降財神, 20.0, money just can't buy
+天降財神, 20.0, state of divinity
+笑傲江湖, 40.0, state of divinity
+笑傲江湖, 40.0, state of divinity
+笑傲江湖, 40.0, state of divinity
+笑傲江湖, 40.0, state of divinity
+笑傲江湖, 40.0, night journey
+殭屍福星, 20.0, night journey
+殭屍福星, 20.0, night journey
+殭屍福星, 20.0, night journey
+殭屍福星, 20.0, night journey
+殭屍福星, 20.0, food of love
+闔府統請, 30.0, food of love
+闔府統請, 30.0, food of love
+闔府統請, 30.0, food of love
+闔府統請, 30.0, journey to the west
+西遊記, 30.0, journey to the west
+西遊記, 30.0, journey to the west
+西遊記, 30.0, journey to the west
+西遊記, 30.0, in the name of love
+有肥人終成眷屬, 20.0, in the name of love
+有肥人終成眷屬, 20.0, in the name of love
+有肥人終成眷屬, 20.0, in the name of love
+有肥人終成眷屬, 20.0","dark tales, 35",-2.648,EXACT_LIKELIHOOD,127
+"[(4,)]",4,2,-4.892,EXACT_LIKELIHOOD,2
+"[(693.0,)]",693,141,-10.153,EXACT_LIKELIHOOD,3
+"[(0,)]",0,1,-5.973,EXACT_LIKELIHOOD,2

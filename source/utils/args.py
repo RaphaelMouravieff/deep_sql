@@ -8,20 +8,13 @@ class ModelArguments:
     Arguments pertaining to which model/config/tokenizer we are going to fine-tune from.
     """
     
-
-    output_dir: Optional[str] = field(
-            default=None,
-            metadata={"help": "The output directory where the model predictions and checkpoints will be written."},
-        )
-
-    curriculum_model: Optional[str] = field(
-        default="llama3.2",
-        metadata={"help": "The model checkpoint for the curriculum learning agent."},
+    model_name_or_path: str = field(
+        metadata={"help": "Path to pretrained model or model identifier from huggingface.co/models"},
     )
 
-    iterative_model: Optional[str] = field(
+    ollama_model_name_or_path: Optional[str] = field(
         default="llama3.2",
-        metadata={"help": "The model checkpoint for the iterative prompting agent."},
+        metadata={"help": "The model checkpoint for the curriculum learning agent."},
     )
 
     sentence_model_name_or_path: Optional[str] = field(
@@ -29,42 +22,114 @@ class ModelArguments:
         metadata={"help": "The sentence transformer model name or path."},
     )
 
-    hf_tokens: Optional[str] = field(
-        default=None,
-        metadata={"help": "The Hugging Face model token."},
+    max_source_length_llm: Optional[int] = field(
+        default=8192,
+        metadata={
+            "help": "The maximum total input sequence length after tokenization. Sequences longer "
+                    "than this will be truncated, sequences shorter will be padded."
+        },
     )
+
+    config_name: Optional[str] = field(
+        default=None, metadata={"help": "Pretrained config name or path if not the same as model_name"}
+    )
+
+    tokenizer_name: Optional[str] = field(
+        default=None,
+        metadata={
+            "help": "Pretrained tokenizer name or path if not the same as model_name. "
+                    "By default we use BART-large tokenizer for TAPEX-large."
+        },
+    )
+    use_fast_tokenizer: bool = field(
+        default=True,
+        metadata={"help": "Whether to use one of the fast tokenizer (backed by the tokenizers library) or not."},
+    )
+
+    fine_tuned_model_path: Optional[str] = field(
+        default=None,
+        metadata={"help": "Path to the fine-tuned model to use for verification"},
+    )
+
 
 @dataclass
 class DataArguments:
     """
     Arguments pertaining to what data we are going to input our model for training and eval.
     """
-    library_path: Optional[str] = field(
-        default="skills.json",
-        metadata={"help": "The path to the SQL library file."},
+
+    split_name: str = field(
+        default=None, metadata={"help": "The name of the split to use."},
+    )
+
+    dataset_name: Optional[str] = field(
+        default="wikitablequestions", metadata={"help": "The name of the dataset to use (via the datasets library)."}
+    )
+    dataset_config_name: Optional[str] = field(
+        default=None, metadata={"help": "The configuration name of the dataset to use (via the datasets library)."}
+    )
+    train_file: Optional[str] = field(
+        default=None, metadata={"help": "The input training data file (a jsonlines or csv file)."}
+    )
+    validation_file: Optional[str] = field(
+        default=None,
+        metadata={
+            "help": "An optional input evaluation data file to evaluate the metrics (rouge) on "
+                    "(a jsonlines or csv file)."
+        },
+    )
+    test_file: Optional[str] = field(
+        default=None,
+        metadata={
+            "help": "An optional input test data file to evaluate the metrics (rouge) on " "(a jsonlines or csv file)."
+        },
     )
 
     database_path: Optional[str] = field(
-        default='../data/tables/db',
+        default='../data/squall/tables/db',
         metadata={"help": "The path to the SQLite database file."},
     )
 
-    save_skills_at_n: Optional[int] = field(
-        default=100,
-        metadata={"help": "After how how many loop we must save the skills"},
+    squall_path: Optional[str] = field(
+        default='../data/squall/squall.json',
+        metadata={"help": "The path to the SQLite database file."},
     )
 
-    curriculum_instruction: Optional[str] = field(
-        default="curriculum_instruction.txt",
-        metadata={"help": "The path to the curriculum instruction file."},
+    wikitablequestions_path: Optional[str] = field(
+        default='wikitablequestions',
+        metadata={"help": "The path to the SQLite database file."},
     )
 
+    library_path: Optional[str] = field(
+        default="../data/library/sql_dataset_library.json",
+        metadata={"help": "The path to the SQL dataset library."},
+    )
 
-@dataclass
-class TrainingArguments:
-    """
-    Arguments pertaining to what data we are going to input our model for training and eval.
-    """
+    vector_store_path: Optional[str] = field(
+        default="../data/vector_store",
+        metadata={"help": "The path to the vector store."},
+    )
+
+    table_limit: Optional[int] = field(
+        default=10,
+        metadata={"help": "The maximum number of tables to sample from the database."},
+    )
+
+    base_prompt_path: Optional[str] = field(
+        default="../data/prompts/base_prompt.yaml",
+        metadata={"help": "The path to the base prompt YAML file."},
+    )
+
+    merged_library_folder: Optional[str] = field(
+        default=None,
+        metadata={"help": "The path to the merged library JSON file."},
+    )
+
+    save_dataset_path: Optional[str] = field(
+        default=None,
+        metadata={"help": "The path to save the processed dataset."},
+    )
+
     num_iterations: Optional[int] = field(
         default=1,
         metadata={"help": "The number of iterations for the exploration loop."},
@@ -75,16 +140,102 @@ class TrainingArguments:
         metadata={"help": "Use iterative prompting."},
     )
 
-def __post_init__(self):
+    embedding_model_name: Optional[str] = field(
+        default="Alibaba-NLP/gte-large-en-v1.5",
+        metadata={"help": "The embedding model name."},
+    )
 
-    if self.dataset_name is None and self.train_file is None and self.validation_file is None:
-        raise ValueError("Need either a dataset name or a training/validation file.")
-    else:
-        if self.train_file is not None:
-            extension = self.train_file.split(".")[-1]
-            assert extension in ["csv", "json"], "`train_file` should be a csv or a json file."
-        if self.validation_file is not None:
-            extension = self.validation_file.split(".")[-1]
-            assert extension in ["csv", "json"], "`validation_file` should be a csv or a json file."
-    if self.val_max_target_length is None:
-        self.val_max_target_length = self.max_target_length
+    max_agent_steps: Optional[int] = field(
+        default=11,
+        metadata={"help": "The maximum number of steps for the agent."},
+    )
+
+
+    chunk: Optional[int] = field(
+        default=None,
+        metadata={"help": "The chunk number for the dataset."},
+    )
+
+    Nchunks: Optional[int] = field(
+        default=None,
+        metadata={"help": "The number of chunks for the dataset."},
+    )
+ 
+
+    max_target_length: Optional[int] = field(
+        default=128,
+        metadata={
+            "help": "The maximum total sequence length for target text after tokenization. Sequences longer "
+                    "than this will be truncated, sequences shorter will be padded."
+        },
+    )
+
+    max_source_length: Optional[int] = field(
+        default=1024,
+        metadata={
+            "help": "The maximum total input sequence length after tokenization. Sequences longer "
+                    "than this will be truncated, sequences shorter will be padded."
+        },
+    )
+
+    pad_to_max_length: bool = field(
+        default=False,
+        metadata={
+            "help": "Whether to pad all samples to model maximum sentence length. "
+                    "If False, will pad the samples dynamically when batching to the maximum length in the batch. More "
+                    "efficient on GPU but very bad for TPU."
+        },
+    )
+
+    preprocessing_num_workers: Optional[int] = field(
+        default=None,
+        metadata={"help": "The number of processes to use for the preprocessing."},
+    )
+
+
+    val_max_target_length: Optional[int] = field(
+        default=None,
+        metadata={
+            "help": "The maximum total sequence length for validation target text after tokenization. Sequences longer "
+                    "than this will be truncated, sequences shorter will be padded. Will default to `max_target_length`."
+                    "This argument is also used to override the ``max_length`` param of ``model.generate``, which is used "
+                    "during ``evaluate`` and ``predict``."
+        },
+    )
+
+    ignore_pad_token_for_loss: bool = field(
+        default=True,
+        metadata={
+            "help": "Whether to ignore the tokens corresponding to padded labels in the loss computation or not."
+        },
+    )
+
+    num_beams: Optional[int] = field(
+        default=None,
+        metadata={
+            "help": "Number of beams to use for evaluation. This argument will be passed to ``model.generate``, "
+                    "which is used during ``evaluate`` and ``predict``."
+        },
+    )
+
+    length_filter: Optional[int] = field(
+        default=1,
+        metadata={
+            "help": "The minimum length of the answer. If the answer is shorter than this, it will be ignored."
+        },
+    )
+
+
+    def __post_init__(self):
+
+        if self.dataset_name is None and self.train_file is None and self.validation_file is None:
+            raise ValueError("Need either a dataset name or a training/validation file.")
+        else:
+            if self.train_file is not None:
+                extension = self.train_file.split(".")[-1]
+                assert extension in ["csv", "json"], "`train_file` should be a csv or a json file."
+            if self.validation_file is not None:
+                extension = self.validation_file.split(".")[-1]
+                assert extension in ["csv", "json"], "`validation_file` should be a csv or a json file."
+        if self.val_max_target_length is None:
+            self.val_max_target_length = self.max_target_length

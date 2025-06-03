@@ -1,0 +1,73 @@
+{
+    "os": "macOS-15.0-arm64-arm-64bit",
+    "python": "3.11.7",
+    "heartbeatAt": "2025-05-16T08:34:18.389226",
+    "startedAt": "2025-05-16T08:34:16.291213",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--do_train",
+        "--do_eval",
+        "--do_predict",
+        "--dataset_name",
+        "../data/training_dataset/step0",
+        "--output_dir",
+        "../models/bart_large_step0",
+        "--model_name_or_path",
+        "facebook/bart-large",
+        "--overwrite_output_dir",
+        "--per_device_train_batch_size",
+        "4",
+        "--gradient_accumulation_steps",
+        "64",
+        "--per_device_eval_batch_size",
+        "4",
+        "--learning_rate",
+        "3e-5",
+        "--logging_steps",
+        "1",
+        "--predict_with_generate",
+        "--num_beams",
+        "5",
+        "--weight_decay",
+        "1e-2",
+        "--label_smoothing_factor",
+        "0.1",
+        "--num_train_epochs",
+        "1",
+        "--logging_strategy",
+        "epoch",
+        "--eval_strategy",
+        "epoch",
+        "--save_strategy",
+        "epoch"
+    ],
+    "state": "running",
+    "program": "/Users/tanguyherserant/Desktop/The\u0300se/deep_sql/scripts/../train.py",
+    "codePathLocal": null,
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/RaphaelMouravieff/deep_sql.git",
+        "commit": "d4ae6088a704d66e03a18d169d260800e682cc7d"
+    },
+    "email": "tanguyherserant@gmail.com",
+    "root": "/Users/tanguyherserant/Desktop/The\u0300se/deep_sql",
+    "host": "MacBook-Pro-de-Tanguy-3.local",
+    "username": "tanguyherserant",
+    "executable": "/Users/tanguyherserant/anaconda3/envs/deep/bin/python",
+    "cpu_count": 11,
+    "cpu_count_logical": 11,
+    "disk": {
+        "/": {
+            "total": 460.4317207336426,
+            "used": 398.3935012817383
+        }
+    },
+    "gpuapple": {
+        "type": "Apple M3 Pro",
+        "vendor": "sppci_vendor_Apple"
+    },
+    "memory": {
+        "total": 18.0
+    }
+}

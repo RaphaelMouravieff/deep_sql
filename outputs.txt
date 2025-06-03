@@ -1,0 +1,612 @@
+Target: '[(0,)]' 
+Cleaned: '0' 
+Outputs: '4' 
+avg_log_likelihood: -6.702 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('giancarlo fisichella', 'force india-ferrari'), ('kazuki nakajima', 'williams-toyota'), ('fernando alonso', 'renault'), ('nelson piquet jr', 'renault'), ('kimi raikkonen', 'ferrari'), ('lewis hamilton', 'mclaren-mercedes'), ('adrian sutil', 'force india-ferrari')]' 
+Cleaned: 'giancarlo fisichella force india-ferrari, kazuki nakajima williams-toyota, fernando alonso renault, nelson piquet jr renault, kimi raikkonen ferrari, lewis hamilton mclaren-mercedes, adrian sutil force india-ferrari' 
+Outputs: 'bmw sauber, toyota, mclaren-mercedes, williams-toyota' 
+avg_log_likelihood: -1.577 (EXACT_LIKELIHOOD) 
+num_tokens: 82
+
+Target: '[(235.0,)]' 
+Cleaned: '235' 
+Outputs: '1144' 
+avg_log_likelihood: -8.462 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(95.0,)]' 
+Cleaned: '95' 
+Outputs: '551' 
+avg_log_likelihood: -5.104 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('30th', 'yemane tsegay', '2:9:11'), ('29th', 'dickson kiptolo chumba', '2:5:46'), ('28th', 'jafred chirchir kipchumba', '2:5:48'), ('27th', 'charles kamathi', '2:7:38'), ('26th', 'geoffrey mutai', '2:7:1'), ('25th', 'geoffrey mutai', '2:7:49'), ('24th', 'philip singoei', '2:7:57'), ('23rd', 'philip singoei', '2:8:18'), ('22nd', 'boniface usisivu', '2:8:45'), ('21st', 'willy cheruiyot', '2:9:20'), ('20th', 'willy cheruiyot', '2:9:5'), ('19th', 'willy cheruiyot', '2:10:12'), ('18th', 'samuel tangus', '2:12:47'), ('17th', 'willy cheruiyot', '2:9:55'), ('16th', 'david ngetich', '2:9:24'), ('15th', 'grzegorz gajdus', '2:10:51'), ('14th', 'john kiprono', '2:11:51'), ('13th', 'tumo turbo', '2:11:26'), ('12th', 'pyotro sarafinyuk', '2:16:40'), ('11th', 'aiduna aitnafa', '2:11:37'), ('10th', 'mohamed kamel selmi', '2:12:47'), ('9th', 'andy green', '2:15:9'), ('8th', 'vladimir kotov', '2:14:3'), ('7th', 'john vermeule', '2:15:3'), ('6th', 'jean-pierre paumen', '2:14:54'), ('5th', 'kim reynierse', '2:15:13'), ('4th', 'harrie driessen', '2:22:17'), ('3rd', 'lucien rottiers', '2:16:27'), (None, 'marathon race not held', None), ('2nd', 'frans kunen', '2:26:7'), ('1st', 'fritz schoning', '2:45:5')]' 
+Cleaned: '30th yemane tsegay 2:9:11, 29th dickson kiptolo chumba 2:5:46, 28th jafred chirchir kipchumba 2:5:48, 27th charles kamathi 2:7:38, 26th geoffrey mutai 2:7:1, 25th geoffrey mutai 2:7:49, 24th philip singoei 2:7:57, 23rd philip singoei 2:8:18, 22nd boniface usisivu 2:8:45, 21st willy cheruiyot 2:9:20, 20th willy cheruiyot 2:9:5, 19th willy cheruiyot 2:10:12, 18th samuel tangus 2:12:47, 17th willy cheruiyot 2:9:55, 16th david ngetich 2:9:24, 15th grzegorz gajdus 2:10:51, 14th john kiprono 2:11:51, 13th tumo turbo 2:11:26, 12th pyotro sarafinyuk 2:16:40, 11th aiduna aitnafa 2:11:37, 10th mohamed kamel selmi 2:12:47, 9th andy green 2:15:9, 8th vladimir kotov 2:14:3, 7th john vermeule 2:15:3, 6th jean-pierre paumen 2:14:54, 5th kim reynierse 2:15:13, 4th harrie driessen 2:22:17, 3rd lucien rottiers 2:16:27, none marathon race not held none, 2nd frans kunen 2:26:7, 1st fritz schoning 2:45:5' 
+Outputs: 'yemane tsegay (eth), ruth wanjiru (ken)' 
+avg_log_likelihood: -2.021 (EXACT_LIKELIHOOD) 
+num_tokens: 127
+
+Target: '[('20th',)]' 
+Cleaned: '20th' 
+Outputs: '20th' 
+avg_log_likelihood: -3.146 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[('2001/02', '2010/11')]' 
+Cleaned: '2001/02 2010/11' 
+Outputs: '2001/02, 2004/05' 
+avg_log_likelihood: -2.402 (EXACT_LIKELIHOOD) 
+num_tokens: 7
+
+Target: '[('"elle s\'ennuie"', None), ('"elle danse seule"', 'un homme sans racines')]' 
+Cleaned: '"elle s'ennuie" none, "elle danse seule" un homme sans racines' 
+Outputs: '"elle s'ennuie", un homme sans racines' 
+avg_log_likelihood: -2.187 (EXACT_LIKELIHOOD) 
+num_tokens: 24
+
+Target: '[('al-anbar', 0.0), ('al-muthanna', 5.0), ('al-qadisiyyah', 4.0), ('babil', 5.0), ('baghdad', 3.0), ('basra', 5.0), ('dhi qar', 5.0), ('diyala', 0.0), ('karbala', 4.0), ('maysan', 7.0), ('najaf', 7.0), ('ninawa', 0.0), ('salah ad-din', 1.0), ('total', 52.0), ('wassit', 6.0)]' 
+Cleaned: 'al-anbar 0.0, al-muthanna 5.0, al-qadisiyyah 4.0, babil 5.0, baghdad 3.0, basra 5.0, dhi qar 5.0, diyala 0.0, karbala 4.0, maysan 7.0, najaf 7.0, ninawa 0.0, salah ad-din 1.0, total 52.0, wassit 6.0' 
+Outputs: '440' 
+avg_log_likelihood: -2.573 (EXACT_LIKELIHOOD) 
+num_tokens: 109
+
+Target: '[('maysan', 27.0)]' 
+Cleaned: 'maysan 27.0' 
+Outputs: 'baghdad' 
+avg_log_likelihood: -6.755 (EXACT_LIKELIHOOD) 
+num_tokens: 7
+
+Target: '[('24734', 'belfast')]' 
+Cleaned: '24734 belfast' 
+Outputs: 'belfast, linfield, northern ireland national team' 
+avg_log_likelihood: -7.253 (EXACT_LIKELIHOOD) 
+num_tokens: 5
+
+Target: '[('linfield, northern ireland national team', 'belfast')]' 
+Cleaned: 'linfield, northern ireland national team belfast' 
+Outputs: 'linfield, northern ireland national team, belfast' 
+avg_log_likelihood: -2.087 (EXACT_LIKELIHOOD) 
+num_tokens: 11
+
+Target: '[(2, 0, '2nd', 'proctor knott', 's. barnes', None, 'scoggan & bryant', 'nose')]' 
+Cleaned: '2 0 2nd proctor knott s. barnes none scoggan & bryant nose' 
+Outputs: 'spokane' 
+avg_log_likelihood: -5.374 (EXACT_LIKELIHOOD) 
+num_tokens: 22
+
+Target: '[(11,)]' 
+Cleaned: '11' 
+Outputs: '4:01, 3:56, 4:01, 4:01' 
+avg_log_likelihood: -6.030 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('wenzhou stadium, wenzhou',)]' 
+Cleaned: 'wenzhou stadium, wenzhou' 
+Outputs: 'wenzhou stadium, wenzhou' 
+avg_log_likelihood: -1.021 (EXACT_LIKELIHOOD) 
+num_tokens: 9
+
+Target: '[('30 coaches', 121.0)]' 
+Cleaned: '30 coaches 121.0' 
+Outputs: 'tilden campbell' 
+avg_log_likelihood: -8.031 (EXACT_LIKELIHOOD) 
+num_tokens: 6
+
+Target: '[(7, 0, '1943', 1943, 'krishna prema', 'telugu', 'chandravali', None, 0, 'galipenchala narasimha rao', 1, 'famous films & star combines')]' 
+Cleaned: '7 0 1943 1943 krishna prema telugu chandravali none 0 galipenchala narasimha rao 1 famous films & star combines' 
+Outputs: 'bharani pictures' 
+avg_log_likelihood: -5.166 (EXACT_LIKELIHOOD) 
+num_tokens: 34
+
+Target: '[('1909-01-12',)]' 
+Cleaned: '1909-01-12' 
+Outputs: '9-1-1909' 
+avg_log_likelihood: -5.253 (EXACT_LIKELIHOOD) 
+num_tokens: 6
+
+Target: '[(8.2,)]' 
+Cleaned: '8.2' 
+Outputs: '8.2 million' 
+avg_log_likelihood: -2.341 (EXACT_LIKELIHOOD) 
+num_tokens: 4
+
+Target: '[('"when you\'re not a lady"', 16.0), ('"you got me running"', 28.0), ('"the man in the mirror"', 17.0), ('"if i could only dance with you"', 10.0), ('"you\'re gettin\' to me again"', 1.0), ('"let me down easy"', 16.0), ('"i\'ll be your fool tonight"', 54.0), ('"in another minute"', 27.0), ('"if i don\'t love you"', 53.0), ('"the lights of albuquerque"', 40.0)]' 
+Cleaned: '"when you're not a lady" 16.0, "you got me running" 28.0, "the man in the mirror" 17.0, "if i could only dance with you" 10.0, "you're gettin' to me again" 1.0, "let me down easy" 16.0, "i'll be your fool tonight" 54.0, "in another minute" 27.0, "if i don't love you" 53.0, "the lights of albuquerque" 40.0' 
+Outputs: '"you're gettin' to me again", 33, "i'll be your fool tonight", "in another minute", "if i don't love you"' 
+avg_log_likelihood: -1.755 (EXACT_LIKELIHOOD) 
+num_tokens: 114
+
+Target: '[('1968', 1), ('1969', 1), ('1973', 1), ('1974', 1), ('1975', 1), ('1976', 1), ('1977', 1), ('1983', 1), ('1984', 1), ('1985', 1), ('1986', 2)]' 
+Cleaned: '1968 1, 1969 1, 1973 1, 1974 1, 1975 1, 1976 1, 1977 1, 1983 1, 1984 1, 1985 1, 1986 2' 
+Outputs: '6' 
+avg_log_likelihood: -4.058 (EXACT_LIKELIHOOD) 
+num_tokens: 33
+
+Target: '[(64.0,)]' 
+Cleaned: '64' 
+Outputs: '32' 
+avg_log_likelihood: -2.952 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('united states',)]' 
+Cleaned: 'united states' 
+Outputs: 'united states' 
+avg_log_likelihood: -2.293 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[(580.0,)]' 
+Cleaned: '580' 
+Outputs: '580' 
+avg_log_likelihood: -2.420 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('28 october 1942',)]' 
+Cleaned: '28 october 1942' 
+Outputs: '10 october 1919' 
+avg_log_likelihood: -5.983 (EXACT_LIKELIHOOD) 
+num_tokens: 5
+
+Target: '[('karlskoga-gellerasen', '31 may'), ('anderstorp', '28 june'), ('falkenberg', '9 july'), ('ring knutstorp', '6 september'), ('mantorp park', '27 september')]' 
+Cleaned: 'karlskoga-gellerasen 31 may, anderstorp 28 june, falkenberg 9 july, ring knutstorp 6 september, mantorp park 27 september' 
+Outputs: 'karlskoga-gelleråsen, 31 may' 
+avg_log_likelihood: -1.858 (EXACT_LIKELIHOOD) 
+num_tokens: 45
+
+Target: '[('r3',)]' 
+Cleaned: 'r3' 
+Outputs: 'r3' 
+avg_log_likelihood: -3.369 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[(None,)]' 
+Cleaned: 'none' 
+Outputs: '2' 
+avg_log_likelihood: -9.136 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('hapoel jerusalem', 1), ('ironi ashkelon', 1), ('maccabi tel aviv', 1)]' 
+Cleaned: 'hapoel jerusalem 1, ironi ashkelon 1, maccabi tel aviv 1' 
+Outputs: '8' 
+avg_log_likelihood: -3.415 (EXACT_LIKELIHOOD) 
+num_tokens: 22
+
+Target: '[(115.0,)]' 
+Cleaned: '115' 
+Outputs: '30' 
+avg_log_likelihood: -7.137 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('canada',)]' 
+Cleaned: 'canada' 
+Outputs: 'canada' 
+avg_log_likelihood: -3.119 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[('preliminary round', 1), ('quarter-finals', 5), ('semi-finals', 6), ('stanley cup finals', 6)]' 
+Cleaned: 'preliminary round 1, quarter-finals 5, semi-finals 6, stanley cup finals 6' 
+Outputs: '8' 
+avg_log_likelihood: -3.169 (EXACT_LIKELIHOOD) 
+num_tokens: 21
+
+Target: '[(4.818181818181818,)]' 
+Cleaned: '4.818181818181818' 
+Outputs: '8' 
+avg_log_likelihood: -7.272 (EXACT_LIKELIHOOD) 
+num_tokens: 11
+
+Target: '[(10.0,)]' 
+Cleaned: '10' 
+Outputs: '10' 
+avg_log_likelihood: -0.469 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(None,)]' 
+Cleaned: 'none' 
+Outputs: '14' 
+avg_log_likelihood: -8.273 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(10,)]' 
+Cleaned: '10' 
+Outputs: '10' 
+avg_log_likelihood: -0.372 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(10.0,)]' 
+Cleaned: '10' 
+Outputs: '10' 
+avg_log_likelihood: -0.441 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(10.0,)]' 
+Cleaned: '10' 
+Outputs: '10' 
+avg_log_likelihood: -0.477 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(37.0,)]' 
+Cleaned: '37' 
+Outputs: '37' 
+avg_log_likelihood: -0.775 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(47.0,)]' 
+Cleaned: '47' 
+Outputs: '87' 
+avg_log_likelihood: -5.265 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('4',)]' 
+Cleaned: '4' 
+Outputs: '4' 
+avg_log_likelihood: -0.291 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(2005,)]' 
+Cleaned: '2005' 
+Outputs: '2005/06' 
+avg_log_likelihood: -0.961 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('1a reg', 6.0, 2002), ('3a', 4.0, 2006), ('reg. pref', 5.0, 2003), ('regional', 6.0, 1901)]' 
+Cleaned: '1a reg 6.0 2002, 3a 4.0 2006, reg. pref 5.0 2003, regional 6.0 1901' 
+Outputs: '5' 
+avg_log_likelihood: -6.721 (EXACT_LIKELIHOOD) 
+num_tokens: 29
+
+Target: '[('1981-06-23', 'azteca'), ('1981-06-23', 'azteca')]' 
+Cleaned: '1981-06-23 azteca, 1981-06-23 azteca' 
+Outputs: 'azteca, mexico city, mexico' 
+avg_log_likelihood: -5.344 (EXACT_LIKELIHOOD) 
+num_tokens: 18
+
+Target: '[(33002, 53), (33629, 54), (26796, 57), (30459, 57), (36190, 57)]' 
+Cleaned: '33002 53, 33629 54, 26796 57, 30459 57, 36190 57' 
+Outputs: '53-50, 54-50' 
+avg_log_likelihood: -8.589 (EXACT_LIKELIHOOD) 
+num_tokens: 20
+
+Target: '[('2008', 51200.0)]' 
+Cleaned: '2008 51200.0' 
+Outputs: '6,400' 
+avg_log_likelihood: -7.001 (EXACT_LIKELIHOOD) 
+num_tokens: 6
+
+Target: '[('alabama', 9.449), ('california', 9.486), ('illinois', 9.286), ('indiana', 9.37), ('iowa', 9.62), ('kansas', 9.6), ('maryland', 9.271), ('mississippi', 9.247), ('north carolina', 9.5), ('oklahoma', 9.487), ('rhode island', 9.341), ('virginia', 9.279)]' 
+Cleaned: 'alabama 9.449, california 9.486, illinois 9.286, indiana 9.37, iowa 9.62, kansas 9.6, maryland 9.271, mississippi 9.247, north carolina 9.5, oklahoma 9.487, rhode island 9.341, virginia 9.279' 
+Outputs: '9.476' 
+avg_log_likelihood: -3.603 (EXACT_LIKELIHOOD) 
+num_tokens: 77
+
+Target: '[('apoel', '2012-13', 1), ('az', '2011-12', 4), ('elfsborg', '2011-12', 9), ('ferencvaros', '2011-12', 7), ('motherwell', '2010-11', 2), ('neath', '2011-12', 10), ('tirana', '2012-13', 11)]' 
+Cleaned: 'apoel 2012-13 1, az 2011-12 4, elfsborg 2011-12 9, ferencvaros 2011-12 7, motherwell 2010-11 2, neath 2011-12 10, tirana 2012-13 11' 
+Outputs: '6' 
+avg_log_likelihood: -4.437 (EXACT_LIKELIHOOD) 
+num_tokens: 53
+
+Target: '[('lake van', '3755 km2', '451 m'), ('lake tuz', '1500 km2', '2 m'), ('lake beysehir', '656 km2', '10 m'), ('lake egirdir', '482 km2', None), ('lake iznik', '308 km2', None), ('lake burdur', '200 km2', None), ('lake manyas', '166 km2', None), ('lake acıgol', '153 km2', None), ('lake uluabat', '134 km2', '1-2 m'), ('lake cıldır', '115 km2', None), ('lake palas tuzla', '106 km2', '15 m'), ('lake aksehir', '105 km2', None), ('lake eber', '104 km2', None), ('lake ercek', '98 km2', None), ('lake hazar', '86 km2', None), ('lake bafa', '60 km2', None), ('lake koycegiz', '52 km2', None), ('lake isıklı', '49 km2', None), ('lake nazik', '48 km2', None), ('lake sapanca', '47 km2', None), ('lake salda', '45 km2', '184 m'), ('lake yay', '37 km2', None), ('lake akyatan', '35 km2', None), ('lake balık', '34 km2', None), ('lake marmara', '34 km2', None), ('lake col', '32 km2', None), ('lake durusu (lake terkos)', '25 km2', None), ('lake karine', '24 km2', None), ('lake tuzla', '23 km2', None), ('lake kucukcekmece', '16 km2', None), ('lake yaraslı', '16 km2', None), ('lake haclı', '16 km2', None), ('lake seyfe', '15 km2', None), ('lake akyayan', '15 km2', None), ('lake hozapin', '14 km2', None), ('lake arin', '13 km2', None), ('lake nemrut', '12 km2', None), ('lake balık', '12 km2', None), ('lake buyukcekmece', '11 km2', None), ('lake boluk', '11 km2', None), ('lake akdogan', '11 km2', None), ('lake cavuslu', '9 km2', None), ('lake duden', '8 km2', None), ('lake gala', '8 km2', None), ('lake karatas', '6 km2', None), ('lake mogan', '6 km2', None), ('paradeniz', '4 km2', None), ('lake eymir', '1.8 km2', None), ('lake abant', '1.28 km2', '18 m'), ('lake golcuk', '1 km2', None)]' 
+Cleaned: 'lake van 3755 km2 451 m, lake tuz 1500 km2 2 m, lake beysehir 656 km2 10 m, lake egirdir 482 km2 none, lake iznik 308 km2 none, lake burdur 200 km2 none, lake manyas 166 km2 none, lake acıgol 153 km2 none, lake uluabat 134 km2 1-2 m, lake cıldır 115 km2 none, lake palas tuzla 106 km2 15 m, lake aksehir 105 km2 none, lake eber 104 km2 none, lake ercek 98 km2 none, lake hazar 86 km2 none, lake bafa 60 km2 none, lake koycegiz 52 km2 none, lake isıklı 49 km2 none, lake nazik 48 km2 none, lake sapanca 47 km2 none, lake salda 45 km2 184 m, lake yay 37 km2 none, lake akyatan 35 km2 none, lake balık 34 km2 none, lake marmara 34 km2 none, lake col 32 km2 none, lake durusu (lake terkos) 25 km2 none, lake karine 24 km2 none, lake tuzla 23 km2 none, lake kucukcekmece 16 km2 none, lake yaraslı 16 km2 none, lake haclı 16 km2 none, lake seyfe 15 km2 none, lake akyayan 15 km2 none, lake hozapin 14 km2 none, lake arin 13 km2 none, lake nemrut 12 km2 none, lake balık 12 km2 none, lake buyukcekmece 11 km2 none, lake boluk 11 km2 none, lake akdogan 11 km2 none, lake cavuslu 9 km2 none, lake duden 8 km2 none, lake gala 8 km2 none, lake karatas 6 km2 none, lake mogan 6 km2 none, paradeniz 4 km2 none, lake eymir 1.8 km2 none, lake abant 1.28 km2 18 m, lake golcuk 1 km2 none' 
+Outputs: 'lake van, 451 m' 
+avg_log_likelihood: -2.891 (EXACT_LIKELIHOOD) 
+num_tokens: 127
+
+Target: '[('451 m',), ('2 m',), ('10 m',), ('15 m',), ('184 m',), ('18 m',)]' 
+Cleaned: '451 m, 2 m, 10 m, 15 m, 184 m, 18 m' 
+Outputs: '451 m' 
+avg_log_likelihood: -2.873 (EXACT_LIKELIHOOD) 
+num_tokens: 18
+
+Target: '[('lake van', 'van golu', '451 m'), ('lake tuz', 'tuz golu', '2 m'), ('lake beysehir', 'beysehir golu', '10 m'), ('lake uluabat', 'uluabat golu', '1-2 m'), ('lake palas tuzla', 'palas tuzla golu', '15 m'), ('lake salda', 'salda golu', '184 m'), ('lake abant', 'abant golu', '18 m')]' 
+Cleaned: 'lake van van golu 451 m, lake tuz tuz golu 2 m, lake beysehir beysehir golu 10 m, lake uluabat uluabat golu 1-2 m, lake palas tuzla palas tuzla golu 15 m, lake salda salda golu 184 m, lake abant abant golu 18 m' 
+Outputs: 'lake van, 451 m' 
+avg_log_likelihood: -3.783 (EXACT_LIKELIHOOD) 
+num_tokens: 88
+
+Target: '[(0,)]' 
+Cleaned: '0' 
+Outputs: '6' 
+avg_log_likelihood: -7.020 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(None,)]' 
+Cleaned: 'none' 
+Outputs: '27' 
+avg_log_likelihood: -9.049 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(0,)]' 
+Cleaned: '0' 
+Outputs: '8' 
+avg_log_likelihood: -7.590 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(319.0,)]' 
+Cleaned: '319' 
+Outputs: '25' 
+avg_log_likelihood: -7.513 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(7,)]' 
+Cleaned: '7' 
+Outputs: '6' 
+avg_log_likelihood: -2.652 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('1976 winter paralympics', 12.0), ('1984 winter paralympics', 9.0), ('1988 winter paralympics', 37.0), ('1992 winter paralympics', 15.0), ('1994 winter paralympics', 16.0), ('1998 winter paralympics', 23.0), ('2002 winter paralympics', 12.0), ('2006 winter paralympics', 2.0), ('2010 winter paralympics', 3.0)]' 
+Cleaned: '1976 winter paralympics 12.0, 1984 winter paralympics 9.0, 1988 winter paralympics 37.0, 1992 winter paralympics 15.0, 1994 winter paralympics 16.0, 1998 winter paralympics 23.0, 2002 winter paralympics 12.0, 2006 winter paralympics 2.0, 2010 winter paralympics 3.0' 
+Outputs: '485' 
+avg_log_likelihood: -2.506 (EXACT_LIKELIHOOD) 
+num_tokens: 81
+
+Target: '[('1976 winter paralympics', 10.0, 1.0, 1.0), ('1984 winter paralympics', 4.0, 2.0, 3.0), ('1988 winter paralympics', 5.0, 16.0, 16.0), ('1992 winter paralympics', 3.0, 8.0, 4.0), ('1994 winter paralympics', 2.0, 9.0, 5.0), ('1998 winter paralympics', 10.0, 5.0, 8.0), ('2002 winter paralympics', 6.0, 4.0, 2.0), ('2006 winter paralympics', 0.0, 1.0, 1.0), ('2010 winter paralympics', 1.0, 2.0, 0.0)]' 
+Cleaned: '1976 winter paralympics 10.0 1.0 1.0, 1984 winter paralympics 4.0 2.0 3.0, 1988 winter paralympics 5.0 16.0 16.0, 1992 winter paralympics 3.0 8.0 4.0, 1994 winter paralympics 2.0 9.0 5.0, 1998 winter paralympics 10.0 5.0 8.0, 2002 winter paralympics 6.0 4.0 2.0, 2006 winter paralympics 0.0 1.0 1.0, 2010 winter paralympics 1.0 2.0 0.0' 
+Outputs: '37' 
+avg_log_likelihood: -3.882 (EXACT_LIKELIHOOD) 
+num_tokens: 127
+
+Target: '[(23,)]' 
+Cleaned: '23' 
+Outputs: '21' 
+avg_log_likelihood: -3.936 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(4,)]' 
+Cleaned: '4' 
+Outputs: '10' 
+avg_log_likelihood: -4.102 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(5157975.0,)]' 
+Cleaned: '5157975' 
+Outputs: '2025' 
+avg_log_likelihood: -7.872 (EXACT_LIKELIHOOD) 
+num_tokens: 5
+
+Target: '[(80012.0,)]' 
+Cleaned: '80012' 
+Outputs: '551' 
+avg_log_likelihood: -6.212 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[('nejat konuk', 'national unity party')]' 
+Cleaned: 'nejat konuk national unity party' 
+Outputs: 'nejat konuk' 
+avg_log_likelihood: -2.180 (EXACT_LIKELIHOOD) 
+num_tokens: 10
+
+Target: '[(None,)]' 
+Cleaned: 'none' 
+Outputs: '11 months' 
+avg_log_likelihood: -7.745 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(2001.301282051282,)]' 
+Cleaned: '2001.301282051282' 
+Outputs: '2003' 
+avg_log_likelihood: -8.948 (EXACT_LIKELIHOOD) 
+num_tokens: 8
+
+Target: '[(2011.0,)]' 
+Cleaned: '2011' 
+Outputs: '2003' 
+avg_log_likelihood: -6.532 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(9,)]' 
+Cleaned: '9' 
+Outputs: '6' 
+avg_log_likelihood: -2.431 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(7.6185567010309265,)]' 
+Cleaned: '7.6185567010309265' 
+Outputs: '941' 
+avg_log_likelihood: -9.815 (EXACT_LIKELIHOOD) 
+num_tokens: 9
+
+Target: '[('-2.2',)]' 
+Cleaned: '-2.2' 
+Outputs: '921' 
+avg_log_likelihood: -4.616 (EXACT_LIKELIHOOD) 
+num_tokens: 5
+
+Target: '[(2003,), (2004,)]' 
+Cleaned: '2003, 2004' 
+Outputs: '2003, 2004' 
+avg_log_likelihood: -4.612 (EXACT_LIKELIHOOD) 
+num_tokens: 4
+
+Target: '[(1,)]' 
+Cleaned: '1' 
+Outputs: '2' 
+avg_log_likelihood: -4.127 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('manila, philippines', '6th'), ('manila, philippines', '6th')]' 
+Cleaned: 'manila, philippines 6th, manila, philippines 6th' 
+Outputs: 'manila, philippines, 6th' 
+avg_log_likelihood: -2.795 (EXACT_LIKELIHOOD) 
+num_tokens: 18
+
+Target: '[('"rhymes"',), ('"new groove"',)]' 
+Cleaned: '"rhymes", "new groove"' 
+Outputs: '"rhymes"' 
+avg_log_likelihood: -3.266 (EXACT_LIKELIHOOD) 
+num_tokens: 9
+
+Target: '[('december 26',), ('january 9',), ('january 23',), ('february 6',), ('february 20',)]' 
+Cleaned: 'december 26, january 9, january 23, february 6, february 20' 
+Outputs: 'december 31' 
+avg_log_likelihood: -2.386 (EXACT_LIKELIHOOD) 
+num_tokens: 22
+
+Target: '[('celebrity contestant',)]' 
+Cleaned: 'celebrity contestant' 
+Outputs: 'colors' 
+avg_log_likelihood: -7.885 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[(8079.0,)]' 
+Cleaned: '8079' 
+Outputs: '360' 
+avg_log_likelihood: -5.739 (EXACT_LIKELIHOOD) 
+num_tokens: 4
+
+Target: '[(23,)]' 
+Cleaned: '23' 
+Outputs: '11' 
+avg_log_likelihood: -4.164 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(3,)]' 
+Cleaned: '3' 
+Outputs: '2' 
+avg_log_likelihood: -2.257 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('tampere united',), ('tampere unitedin kannattajat',), ('tampereen palloilijat',), ('tampereen palloilijat / 2',), ('tampereen jalkapalloklubi / liepo',), ('tampereen kisatoverit',), ('tampereen kisatoverit / kootee',), ('toijalan pallo-49',), ('tampereen peli-toverit',), ('tampereen palloveikot',), ('tampereen pallo-veikot / 2',), ('oriveden tuisku / daltonit',)]' 
+Cleaned: 'tampere united, tampere unitedin kannattajat, tampereen palloilijat, tampereen palloilijat / 2, tampereen jalkapalloklubi / liepo, tampereen kisatoverit, tampereen kisatoverit / kootee, toijalan pallo-49, tampereen peli-toverit, tampereen palloveikot, tampereen pallo-veikot / 2, oriveden tuisku / daltonit' 
+Outputs: 'tampereen palloilijat / 2' 
+avg_log_likelihood: -3.190 (EXACT_LIKELIHOOD) 
+num_tokens: 122
+
+Target: '[('8 november 1986', 2892.0), ('24 april 1976', 6973.0), ('25 september 1953', 4919.0), ('25 september 1953', 7476.0)]' 
+Cleaned: '8 november 1986 2892.0, 24 april 1976 6973.0, 25 september 1953 4919.0, 25 september 1953 7476.0' 
+Outputs: '8 november 1986, santo domingo' 
+avg_log_likelihood: -3.705 (EXACT_LIKELIHOOD) 
+num_tokens: 39
+
+Target: '[('great britain',)]' 
+Cleaned: 'great britain' 
+Outputs: 'great britain' 
+avg_log_likelihood: -2.046 (EXACT_LIKELIHOOD) 
+num_tokens: 5
+
+Target: '[(None,)]' 
+Cleaned: 'none' 
+Outputs: '156' 
+avg_log_likelihood: -9.101 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[(4291.0,)]' 
+Cleaned: '4291' 
+Outputs: '152' 
+avg_log_likelihood: -10.499 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[('hendrick motorsports',)]' 
+Cleaned: 'hendrick motorsports' 
+Outputs: 'hendrick motorsports' 
+avg_log_likelihood: -1.811 (EXACT_LIKELIHOOD) 
+num_tokens: 6
+
+Target: '[('1993', 'xxxx-06-23')]' 
+Cleaned: '1993 xxxx-06-23' 
+Outputs: '1993, june 23' 
+avg_log_likelihood: -3.536 (EXACT_LIKELIHOOD) 
+num_tokens: 8
+
+Target: '[('kenya',)]' 
+Cleaned: 'kenya' 
+Outputs: 'kenya' 
+avg_log_likelihood: -1.422 (EXACT_LIKELIHOOD) 
+num_tokens: 4
+
+Target: '[('kelly clark', 1), ('shaun white', 1)]' 
+Cleaned: 'kelly clark 1, shaun white 1' 
+Outputs: 'kelly clark' 
+avg_log_likelihood: -4.204 (EXACT_LIKELIHOOD) 
+num_tokens: 11
+
+Target: '[(-1,)]' 
+Cleaned: '-1' 
+Outputs: '4' 
+avg_log_likelihood: -7.354 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[('nbc',), ('nbc',), ('nbc',), ('nbc',), ('nbc',), ('nbc',)]' 
+Cleaned: 'nbc, nbc, nbc, nbc, nbc, nbc' 
+Outputs: 'nbc' 
+avg_log_likelihood: -3.660 (EXACT_LIKELIHOOD) 
+num_tokens: 18
+
+Target: '[('epic',)]' 
+Cleaned: 'epic' 
+Outputs: '7", cd' 
+avg_log_likelihood: -3.242 (EXACT_LIKELIHOOD) 
+num_tokens: 2
+
+Target: '[('marquis',)]' 
+Cleaned: 'marquis' 
+Outputs: 'marquis' 
+avg_log_likelihood: -0.409 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[('qin', 55)]' 
+Cleaned: 'qin 55' 
+Outputs: 'lu' 
+avg_log_likelihood: -6.582 (EXACT_LIKELIHOOD) 
+num_tokens: 4
+
+Target: '[('law & order',)]' 
+Cleaned: 'law & order' 
+Outputs: 'law & order' 
+avg_log_likelihood: -1.448 (EXACT_LIKELIHOOD) 
+num_tokens: 4
+
+Target: '[('40 opponents', 322.0), ('albanet', 1.0), ('beselidhja lezhe', 6.0), ('dinamo shkoder', 1.0), ('dinamo tirane', 29.0), ('fk kukesi', 4.0), ('garnizoni durres', 1.0), ('kf cakrani', 2.0), ('kf erzeni shijak', 6.0), ('kf laci', 8.0), ('kf memaliaj', 2.0), ('kf naftetari kucove', 2.0), ('kf skrapari', 2.0), ('ks ada velipoje', 2.0), ('ks albpetrol', 6.0), ('ks apolonia', 11.0), ('ks besa', 24.0), ('ks burreli', 2.0), ('ks butrinti sarande', 2.0), ('ks bylis', 6.0), ('ks elbasani', 19.0), ('ks flamurtari', 17.0), ('ks iliria', 2.0), ('ks kamza', 4.0), ('ks kastrioti', 11.0), ('ks lushnja', 22.0), ('ks pogradeci', 3.0), ('ks shkendija', 4.0), ('ks shkumbini', 6.0), ('ks skenderbeu korce', 11.0), ('ks sopoti librazhd', 6.0), ('ks terbuni puke', 4.0), ('ks teuta', 21.0), ('ks tomori', 11.0), ('ks turbina cerrik', 4.0), ('ks vllaznia', 25.0), ('luftetari gjirokaster', 5.0), ('luzi 2008', 2.0), ('partizani tirane', 28.0), ('sk himare', 2.0)]' 
+Cleaned: '40 opponents 322.0, albanet 1.0, beselidhja lezhe 6.0, dinamo shkoder 1.0, dinamo tirane 29.0, fk kukesi 4.0, garnizoni durres 1.0, kf cakrani 2.0, kf erzeni shijak 6.0, kf laci 8.0, kf memaliaj 2.0, kf naftetari kucove 2.0, kf skrapari 2.0, ks ada velipoje 2.0, ks albpetrol 6.0, ks apolonia 11.0, ks besa 24.0, ks burreli 2.0, ks butrinti sarande 2.0, ks bylis 6.0, ks elbasani 19.0, ks flamurtari 17.0, ks iliria 2.0, ks kamza 4.0, ks kastrioti 11.0, ks lushnja 22.0, ks pogradeci 3.0, ks shkendija 4.0, ks shkumbini 6.0, ks skenderbeu korce 11.0, ks sopoti librazhd 6.0, ks terbuni puke 4.0, ks teuta 21.0, ks tomori 11.0, ks turbina cerrik 4.0, ks vllaznia 25.0, luftetari gjirokaster 5.0, luzi 2008 2.0, partizani tirane 28.0, sk himare 2.0' 
+Outputs: '195' 
+avg_log_likelihood: -5.260 (EXACT_LIKELIHOOD) 
+num_tokens: 127
+
+Target: '[('charles kennedy',)]' 
+Cleaned: 'charles kennedy' 
+Outputs: 'gordon wallace, robert cunning, iain nicolson, charles kennedy, brian wallace, ian young, joyce shannon, charles kennedy, andrew archibald' 
+avg_log_likelihood: -4.154 (EXACT_LIKELIHOOD) 
+num_tokens: 6
+
+Target: '[('dacono',), ('dailey',), ('dalerose',), ('de beque',), ('deckers',), ('deepcreek',), ('deer creek valley ranchos',), ('deer park',), ('deer trail',), ('delhi',), ('del norte',), ('delta',), ('denver',), ('denver international airport',), ('denver merchandise mart',), ('deora',), ('derby',), ('derby',), ('devine',), ('dillon',), ('dinosaur',), ('dinosaur national monument',), ('divide',), ('dolores',), ('dome rock',), ('dorey lakes',), ('dory hill',), ('dotsero',), ('dove creek',), ('downieville',), ('downtown',), ('doyleville',), ('drake',), ('dream house acres',), ('dry creek basin',), ('dumont',), ('dunton',), ('dupont',), ('durango',), ('durango-la plata county airport',)]' 
+Cleaned: 'dacono, dailey, dalerose, de beque, deckers, deepcreek, deer creek valley ranchos, deer park, deer trail, delhi, del norte, delta, denver, denver international airport, denver merchandise mart, deora, derby, derby, devine, dillon, dinosaur, dinosaur national monument, divide, dolores, dome rock, dorey lakes, dory hill, dotsero, dove creek, downieville, downtown, doyleville, drake, dream house acres, dry creek basin, dumont, dunton, dupont, durango, durango-la plata county airport' 
+Outputs: 'denver' 
+avg_log_likelihood: -3.257 (EXACT_LIKELIHOOD) 
+num_tokens: 127
+
+Target: '[('charlie mccarthy',), ('paddy fahy',), ('t. morrissey',), ('michael moroney',), ('declan lovett',), ('charlie mccarthy',), ('pat enright',), ('pat enright',), ('johnny walsh',), ('eddie keher',), ('michael keating',), ('seamus richmond',), ('declan lovett',), ('michael keating',), ('eddie keher',), ('mick dwan',), ('charlie mccarthy',), ('paddy fahy',), ('johnny walsh',), ('p flynn',), ('eddie keher',), ('johnny walsh',), ('francis loughnane',), ('richie bennis',), ('pat enright',), ('johnny walsh',)]' 
+Cleaned: 'charlie mccarthy, paddy fahy, t. morrissey, michael moroney, declan lovett, charlie mccarthy, pat enright, pat enright, johnny walsh, eddie keher, michael keating, seamus richmond, declan lovett, michael keating, eddie keher, mick dwan, charlie mccarthy, paddy fahy, johnny walsh, p flynn, eddie keher, johnny walsh, francis loughnane, richie bennis, pat enright, johnny walsh' 
+Outputs: 'richie bennis, michael moroney, declan lovett, pat enright, michael keating, mick dwan, charlie mccarthy, johnny walsh' 
+avg_log_likelihood: -1.539 (EXACT_LIKELIHOOD) 
+num_tokens: 127
+
+Target: '[(1, 0, '1', 1.0, 'eamonn flynn', 'dublin', '3-5', '14', 'wexford'), (5, 0, '5', 5.0, 'charlie mccarthy', 'cork', '3-3', '12', 'offaly'), (9, 0, '9', 9.0, 'ger cuddy', 'laois', '3-2', '11', 'wicklow'), (14, 0, '14', 14.0, 'brendan cummins', 'cork', '3-1', '10', 'wexford'), (15, 0, '14', 14.0, 'p. j. molloy', 'galway', '3-1', '10', 'kerry'), (16, 0, '14', 14.0, 'nick behan', 'kildare', '3-1', '10', 'kerry'), (17, 0, '14', 14.0, "seanie o'leary", 'cork', '3-1', '10', 'limerick'), (27, 0, '27', 27.0, 'p flynn', 'wexford', '3-0', '9', 'offaly'), (28, 0, '27', 27.0, 'n casey', 'clare', '3-0', '9', 'cork'), (29, 0, '27', 27.0, 'willie moore', 'limerick', '3-0', '9', 'cork'), (30, 0, '27', 27.0, 'ger cuddy', 'laois', '3-0', '9', 'westmeath'), (31, 0, '27', 27.0, 'tom ryan', 'galway', '3-0', '9', 'laois'), (32, 0, '27', 27.0, "seanie o'leary", 'cork', '3-0', '9', 'offaly')]' 
+Cleaned: '1 0 1 1.0 eamonn flynn dublin 3-5 14 wexford, 5 0 5 5.0 charlie mccarthy cork 3-3 12 offaly, 9 0 9 9.0 ger cuddy laois 3-2 11 wicklow, 14 0 14 14.0 brendan cummins cork 3-1 10 wexford, 15 0 14 14.0 p. j. molloy galway 3-1 10 kerry, 16 0 14 14.0 nick behan kildare 3-1 10 kerry, 17 0 14 14.0 seanie o'leary cork 3-1 10 limerick, 27 0 27 27.0 p flynn wexford 3-0 9 offaly, 28 0 27 27.0 n casey clare 3-0 9 cork, 29 0 27 27.0 willie moore limerick 3-0 9 cork, 30 0 27 27.0 ger cuddy laois 3-0 9 westmeath, 31 0 27 27.0 tom ryan galway 3-0 9 laois, 32 0 27 27.0 seanie o'leary cork 3-0 9 offaly' 
+Outputs: 'charlie mccarthy, seánie o'leary, p flynn, johnny walsh, tom ryan, n casey, willie moore' 
+avg_log_likelihood: -5.771 (EXACT_LIKELIHOOD) 
+num_tokens: 127
+
+Target: '[('champaign, il',)]' 
+Cleaned: 'champaign, il' 
+Outputs: 'champaign, il' 
+avg_log_likelihood: -2.021 (EXACT_LIKELIHOOD) 
+num_tokens: 5
+
+Target: '[(13626.0,)]' 
+Cleaned: '13626' 
+Outputs: '34,234' 
+avg_log_likelihood: -7.663 (EXACT_LIKELIHOOD) 
+num_tokens: 3
+
+Target: '[('lucas oil 200',)]' 
+Cleaned: 'lucas oil 200' 
+Outputs: 'lucas oil 200' 
+avg_log_likelihood: -1.256 (EXACT_LIKELIHOOD) 
+num_tokens: 5
+
+Target: '[(3, 'september 18', '12:00 pm', 'at georgia', 'sanford stadium • athens, ga', 'sanford stadium • athens', None, 'l 11-17', 74511.0), (3, 'september 18', '12:00 pm', 'at georgia', 'sanford stadium • athens, ga', 'ga', None, 'l 11-17', 74511.0)]' 
+Cleaned: '3 september 18 12:00 pm at georgia sanford stadium • athens, ga sanford stadium • athens none l 11-17 74511.0, 3 september 18 12:00 pm at georgia sanford stadium • athens, ga ga none l 11-17 74511.0' 
+Outputs: '74,511' 
+avg_log_likelihood: -5.245 (EXACT_LIKELIHOOD) 
+num_tokens: 71
+
