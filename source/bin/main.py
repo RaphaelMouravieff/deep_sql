@@ -10,7 +10,7 @@ from source.utils.args import  (ModelArguments,
                                DataArguments)
 
 from source.bin.main_step import run_pipeline_step
-from source.library.storage import  init_library, save_library
+from source.library.storage import  init_library, save_library, save_vector_store
 from source.agents.build_agents import create_agents
 from source.tools.build_tools import create_tools
 from source.models.model_setup import load_model
@@ -19,12 +19,12 @@ import gc
 import time
 
 
-def generate_dataset(model, data_args, table_manager, library, vector_store, metrics) -> None:
+def generate_dataset(model, data_args, table_manager, vector_store, metrics) -> None:
 
     
 
     conn = table_manager.connect_to_database()
-    prompt_manager = PromptManager(data_args, table_manager, library)
+    prompt_manager = PromptManager(data_args, table_manager, vector_store)
 
     tools = create_tools(conn, vector_store)
     agents = create_agents(model, data_args, tools)
@@ -37,34 +37,19 @@ def generate_dataset(model, data_args, table_manager, library, vector_store, met
                                     tools)
         
         if entries:
-            for entry in entries:
-                library.append(entry)
 
             metrics["retriever_too_similar_count"] += tools["retriever_tool"].too_similar_count
             metrics["sql_empty_result_count"] += tools["execute_sql"].empty_result_count
             metrics["sql_execution_error_count"] += tools["execute_sql"].execution_error_count
 
-            print(
-                f"Added entry #{len(library)} to library\n"
-                f" - Retriever too_similar_count: {tools['retriever_tool'].too_similar_count}\n"
-                f" - SQL empty_result_count: {tools['execute_sql'].empty_result_count}\n"
-                f" - SQL execution_error_count: {tools['execute_sql'].execution_error_count}"
-            )
-
-            print(
-                f"Added entry #{len(library)} to library\n"
-                f" - Retriever too_similar_count: {tools['retriever_tool'].too_similar_count}\n"
-                f" - SQL empty_result_count: {tools['execute_sql'].empty_result_count}\n"
-                f" - SQL execution_error_count: {tools['execute_sql'].execution_error_count}"
-            )
-
-            save_library(data_args, library, vector_store)
+            save_library(data_args, entries)
+            save_vector_store(data_args, entries)
             break
 
         else:
             print("Failed to generate entry, continuing...")
-    
-    print(f"Dataset generation complete. Final library size: {len(library)}")
+
+    print(f"Dataset generation complete.")
     del tools
     del agents
     del prompt_manager
@@ -88,29 +73,26 @@ def main():
     print(f"chunk {data_args.chunk}/{data_args.Nchunks}")
 
 
-    if data_args.chunk is not None:
-        data_args.library_path = data_args.library_path.split('.json')[0]+f"_chunk{data_args.chunk}_{data_args.Nchunks}.json"
-        print(f'modification of the library path for chunks : {data_args.library_path}')
-        print(f'previous common_ids length: {len(table_manager.common_ids)}')
-
+    if data_args.chunk is not None:        
         chunk_size = len(table_manager.common_ids) // data_args.Nchunks
         table_manager.common_ids = table_manager.common_ids[data_args.chunk*chunk_size:(data_args.chunk*chunk_size)+chunk_size]
 
         print(f"new common_ids length for chunk {data_args.chunk}: {len(table_manager.common_ids)}")
-    library, vector_store = init_library(data_args)
-
-
-    print(f"Starting with library containing {len(library)} entries")
 
     start_time = time.time()
 
     total = len(table_manager.common_ids)
+
     for idx, table_id in enumerate(table_manager.common_ids):
+        
+        vector_store = init_library(data_args)
+
+
         
         new_start_time = time.time()
 
         table_manager.current_table_id = table_id
-        generate_dataset(model, data_args, table_manager, library, vector_store, metrics)
+        generate_dataset(model, data_args, table_manager, vector_store, metrics)
 
         end_time = time.time()
         duration = end_time - new_start_time

@@ -32,7 +32,7 @@ def create_agents(model, data_args, tools_dic):
         tools=[tools_dic["get_synonym"]],
         name="question_diversity",
         description="Creates diverse variations of questions using different techniques",
-        additional_authorized_imports=["pandas","numpy","time"], 
+        additional_authorized_imports=["pandas","numpy","time", "random", "re"], 
         max_steps=data_args.max_agent_steps
     )
     

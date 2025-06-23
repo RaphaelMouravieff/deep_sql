@@ -1,0 +1,130 @@
+get_question_prompt:
+  description: Full prompt for generating a natural language question.
+  template: |
+    You are an SQL **question generator** in natural language for a table with the following structure.
+
+    DATABASE INFOS:
+    {{ table_info }}
+
+    DATABASE SCHEMA:
+    {{ table_schema }}
+    
+    Clean Table random samples:
+    {{ table_clean }}
+
+    Dirty Table random samples:
+    {{ table_dirty }}
+
+    {% if vector_store %}
+    NOTE: The library already contains {{ vector_store_size }} questions.
+    Recent questions in the library (up to 3 most recent):
+    {{ example_questions }}
+
+    Your NEW question should be similar in complexity but *not* a duplicate. 
+    Try to query different tables or relationships to avoid exact overlap.
+    {% endif %}
+
+    Using the Dirty Table random samples (You Do NOT have access to the sample data provided in the task description), generate a clear and specific
+    **natural language question** that can be answered using the database structure provided above.
+
+    IMPORTANT CRITERIA:
+    1. The question should be specific enough to be translated into SQL.
+    2. The question must have an answer in the database based on the provided sample above.
+    3. Don't code the table.
+    4. Write it in plain, clear natural language without referencing code.
+    5. Use **the dirty table header** to reference columns.
+    5. You must use the "retriever_tool" tool to validate the generated question.
+    6. Finally return the natural language question. "final_answer(retriever_tool(question))"
+    7. use ```py # Your python code here ```<end_code>
+
+    Return **only the question** (no explanations or extra formatting).
+
+get_traductor_prompt:
+  description: Template to instruct the LLM to translate a natural language question into SQL.
+  template: |
+    You are an SQL **question generator** in natural language for a database with the following structure.
+
+    DATABASE INFOS:
+    {{ table_info }}
+
+    DATABASE SCHEMA:
+    {{ table_schema }}
+
+    Dirty Table random samples:
+    {{ table_dirty }}
+    
+    Clean Table random samples:
+    {{ table_clean }}
+
+    Natural Language Question: {{ question }}
+
+    INSTRUCTION:
+    Write a one SINGLE valid SQL query that correctly answers the Natural Language Question using the
+    database structure provided above. JOIN tables if needed.
+    And you must use the "execute_sql" tool to check if the sql is valid.
+    Finally Return the valid SQL. "final_answer(execute_sql(sql_query))"
+
+    RETURN ONLY the SQL query without explanations, commentary, or markdown formatting.
+
+
+get_extra_prompt_divers:
+  description: Prompt for generating paraphrased variations of a natural language question that maps to a given SQL query.
+  template: |
+    You are a **question paraphrasing expert**.
+
+    Original question: {{ question }}
+    Its Corresponding SQL query: {{ sql_question }}
+
+    Table:
+    {{ table_dirty }}
+
+    Your task is to create 7 different variants of the original question using the following techniques:
+
+    1. BASIC SIMPLIFICATION
+    • Remove non-essential elements while preserving the main meaning.
+    • Example: "Which club has the most female students as their members?" → "Which club has the most female students?"
+
+    2. SIMPLIFICATION BY HIDING DETAILS
+    • Preserve the central objective but remove additional explanations.
+    • Example: "What is the title and credits of the course that is taught in the largest classroom?" → "What course is taught in the biggest classroom and what are its credits?"
+
+    3. USING SYNONYMS
+    • Replace certain terms with their synonyms while maintaining meaning.
+    • Example: "What is the average duration in milliseconds of tracks that belong to Latin or Pop genre?" → "What is the mean length in milliseconds of Latin or Pop songs?"
+
+    4. SEMANTIC SUBSTITUTIONS
+    • Replace expressions with semantically equivalent alternatives.
+    • Example: "What are the locations that have gas stations owned by a company with a market value greater than 100?" → "Where are the gas stations owned by a company worth more than 100?"
+
+    5. COMPLETE REFORMULATION
+    • Express the same request in a totally different way.
+    • Example: "What is the number of routes operated by American Airlines whose destinations are in Italy?" → "How many routes does American Airlines have that fly to Italy?"
+
+    6. SIMPLIFICATION WITH MORE DIRECT LANGUAGE
+    • Use more direct and concise language.
+    • Example: "What are the names of body builders whose total score is higher than 300?" → "Who are the body builders with a score over 300?"
+
+    7. PARAPHRASE WITH CHANGE OF PERSPECTIVE
+    • Reformulate by changing the style or perspective of the question.
+    • Example: "Return the categories of music festivals that have the result 'Awarded'" → "List the categories of music festivals that have been recognized with awards"
+
+    For each original SQL question provided, please generate all 7 variants following these techniques without changing the SQL request.
+    Make sure to keep the SQL query unchanged.
+
+    tools:
+    - Use 'get_synonym' tool to look online for synonyms if needed.
+
+    Return a JSON array with the following format (no additional text):
+
+    Finally return the natural language question variations. "final_answer([
+        {
+            "question": "Variant 1",
+        },
+        {
+            "question": "Variant 2",
+        },
+        ...
+        {
+            "question": "Variant 7",
+        }
+    ])"

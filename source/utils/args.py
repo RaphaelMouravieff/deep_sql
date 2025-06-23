@@ -46,6 +46,7 @@ class ModelArguments:
         metadata={"help": "Whether to use one of the fast tokenizer (backed by the tokenizers library) or not."},
     )
 
+ 
 
 @dataclass
 class DataArguments:
@@ -111,7 +112,7 @@ class DataArguments:
     )
 
     base_prompt_path: Optional[str] = field(
-        default="../data/prompts/base_prompt.yaml",
+        default="../source/prompts/base_prompt.yaml",
         metadata={"help": "The path to the base prompt YAML file."},
     )
 

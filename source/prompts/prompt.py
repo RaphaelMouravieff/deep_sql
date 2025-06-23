@@ -1,10 +1,11 @@
 
 import yaml
 from jinja2 import Template
+import random
 
 class PromptManager:
 
-    def __init__(self, data_args, table_manager, library):
+    def __init__(self, data_args, table_manager, vector_store):
 
         self.table_manager = table_manager
         tables_info = table_manager.get_tables_info(table_manager.conn)
@@ -12,8 +13,7 @@ class PromptManager:
         self.table_clean , self.table_dirty = table_manager.get_random_sampled_tables()
 
 
-
-        self.library = library
+        self.vector_store = vector_store
         self.table_info_str = ', '.join(tables_info['tables'])
         self.table_schema_str = self.table_schema(tables_info)
         self.get_examples_str = self.get_examples()
@@ -43,13 +43,25 @@ class PromptManager:
         return prompt
 
 
-    def get_examples(self):
-        prompt = ""
-        for i in range(min(3, len(self.library))):
-            idx = len(self.library) - i - 1
-            prompt += f"\n- {self.library[idx]['question']}"
 
-        return prompt
+    
+
+    
+
+    def get_examples(self, k=3):
+        try:
+            indices = sorted(self.vector_store.index_to_docstore_id.keys(), reverse=True)[:k]
+            
+            return "\n".join(
+                f"- {self.vector_store.docstore.search(self.vector_store.index_to_docstore_id[i]).page_content}"
+                for i in indices
+                if self.vector_store.docstore.search(self.vector_store.index_to_docstore_id[i])
+            )
+        except Exception as e:
+            print(f"⚠️ get_examples failed: {e}")
+            return ""
+        
+
 
     def load_prompt_templates(self, prompt_path):
         with open(prompt_path, "r") as file:
@@ -67,8 +79,8 @@ class PromptManager:
             table_schema=self.table_schema_str,
             table_dirty=self.table_dirty,
             table_clean=self.table_clean,
-            library=self.library,
-            library_size=len(self.library),
+            vector_store=self.vector_store,
+            vector_store_size=len(self.vector_store.index_to_docstore_id),
             example_questions=self.get_examples_str
         ).strip()
 

@@ -21,6 +21,7 @@ def run_pipeline_step(prompt_manager,
         sql_query = agents["sql_translator"].run(sql_prompt)
         print(f"Generated SQL: {sql_query}")
 
+
         # Validate SQL
         validation_result = tools["execute_sql"].forward(sql_query)
 
@@ -32,10 +33,7 @@ def run_pipeline_step(prompt_manager,
 
         # Generate entry and variations
         entry = []
-        vector_id = str(uuid4())
-        tools["retriever_tool"].vectordb.add_documents(
-            documents=[Document(question)], ids=[vector_id]
-        )
+
         entry.append({
             "tables_id": table_id,
             "question": question.lower(),
@@ -49,15 +47,12 @@ def run_pipeline_step(prompt_manager,
         print(f"Generated variations: {variations}")
 
         for variation in variations:
-            vector_id = str(uuid4())
-            tools["retriever_tool"].vectordb.add_documents(
-                documents=[Document(str(variation["question"]))], ids=[vector_id]
-            )
+
             entry.append({
 
                 "tables_id": table_id,
                 "question": variation["question"].lower(),
-                "sql": variation["sql"],
+                "sql": sql_query,
 
                 "orginal": False
             })

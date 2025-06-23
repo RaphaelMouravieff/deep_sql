@@ -3,6 +3,8 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from functools import partial
 from typing import List, Optional
+import numpy as np
+
 
 delimiter = ", "
 
@@ -73,23 +75,3 @@ def get_denotation_accuracy(predictions: List[str], references: List[str]):
     return correct_num / len(predictions)
 
     
-
-def compute_metrics(eval_preds):
-    preds, labels = eval_preds
-    if isinstance(preds, tuple):
-        preds = preds[0]
-    decoded_preds = tokenizer.batch_decode(preds, skip_special_tokens=True)
-    if data_args.ignore_pad_token_for_loss:
-        # Replace -100 in the labels as we can't decode them.
-        labels = np.where(labels != -100, labels, tokenizer.pad_token_id)
-    decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
-
-    # Some simple post-processing
-    decoded_preds, decoded_labels = postprocess_text(decoded_preds, decoded_labels)
-
-    delimiter = ", "
-
-    accuracy = get_denotation_accuracy(decoded_preds, decoded_labels)
-    result = {"denotation_accuracy": accuracy}
-
-    return result
