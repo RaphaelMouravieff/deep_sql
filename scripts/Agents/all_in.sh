@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Total number of chunks
-NCHUNKS=30
+NCHUNKS=2
 
 # Directory to save the generated scripts
 mkdir -p Agents/dataset
@@ -44,14 +44,15 @@ export OLLAMA_LOG_LEVEL=error
 export GIN_MODE=release
 
 python ../agent.py \\
-  --output_dir ../models/not-used \\
+  --output_dir .. \\
+  --model_name_or_path .. \\
   --ollama_model_name_or_path ollama_chat/qwen2.5:14b \\
   --num_iterations 11 \\
-  --library_path ../data/library/library_step.json \\
-  --vector_store_path
+  --library_path ../data/library/library_step1/library.json \\
+  --vector_store_path ../data/library/library_step1/vector_store \\
   --embedding_model_name "Alibaba-NLP/gte-large-en-v1.5" \\
   --table_limit 5 \\
-  --base_prompt_path ../data/prompts/base_prompt.yaml \\
+  --base_prompt_path ../source/prompts/base_prompt.yaml \\
   --max_source_length_llm 8192 \\
   --chunk $i \\
   --Nchunk $NCHUNKS

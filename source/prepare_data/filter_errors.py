@@ -2,7 +2,7 @@ import json
 import os
 
 
-def filter_function(merged_library):
+def filter_function(library_path):
     # List of substrings to flag as bad queries (case-insensitive)
     BAD_STRINGS = [
         "error:",
@@ -11,7 +11,12 @@ def filter_function(merged_library):
         "sematic substitution questio",
         "complete reformulation questio",
         "simplification with more",
-        "paraphrase with change of perspective:"
+        "using synonyms:",
+        "complete reformulation:",
+        "simplifying by hiding details:",
+        "semantic substitution:",
+        "paraphrase with change of perspective:",
+        "basic simplification:",
         "c1_number",
         "c1",
         "c2",
@@ -28,7 +33,7 @@ def filter_function(merged_library):
         return any(bad_str.lower() in sql_lower for bad_str in BAD_STRINGS)
 
     
-    with open(merged_library, "r", encoding="utf-8") as f:
+    with open(library_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     filtered_data = []
@@ -41,10 +46,10 @@ def filter_function(merged_library):
         else:
             filtered_data.append(item)
 
-    os.remove(merged_library)
+    os.remove(library_path)
 
 
-    with open(merged_library, "w", encoding="utf-8") as f:
+    with open(library_path, "w", encoding="utf-8") as f:
         json.dump(filtered_data, f, indent=2)
 
     # Print summary
@@ -53,4 +58,4 @@ def filter_function(merged_library):
     print(f"Saved entries: {len(filtered_data)}")
 
 
-    return merged_library
+    return library_path

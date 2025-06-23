@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import sqlite3
+import random
 import pandas as pd
 import logging
 from source.prepare_data.sql_executor import SQLExecutor
@@ -78,6 +79,12 @@ def bad_answer_checker(data_args, tokenizer, answers):
     return False, answers
 
 
+def permute_dirty_columns(dirty_df: pd.DataFrame, seed: int) -> pd.DataFrame:
+    np.random.seed(seed)
+    col_indices = np.random.permutation(len(dirty_df.columns))
+    permuted_columns = dirty_df.columns[col_indices]
+    return dirty_df[permuted_columns]
+
 def generate_sqlaware_permuted_examples(
     table_id: str,
     sql_query: str,
@@ -90,6 +97,7 @@ def generate_sqlaware_permuted_examples(
     output_dir: str = "../data/tables/db_permuted",
     n: int = 10,
     base_seed: int = 42,
+    counter:int = 0,
 ):
     """
     Generate SQL-aware column-wise row-permuted examples.
@@ -109,8 +117,9 @@ def generate_sqlaware_permuted_examples(
     cols = dirty_df.columns.tolist()
     col_map = mapping_cols(cols, header)
 
-    print(f"\n[Original Clean Table: {table_id}]\n{clean_df.head(5)}\n")
-    print(f"[Original Dirty Table]\n{dirty_df.head(5)}\n")
+    #if counter==0:
+    #    print(f"\n[Original Clean Table: {table_id}]\n{clean_df.head(5)}\n")
+    #    print(f"[Original Dirty Table]\n{dirty_df.head(5)}\n")
 
     for i in range(n):
         print(f"--- Permutation {i+1} ---")
@@ -121,9 +130,13 @@ def generate_sqlaware_permuted_examples(
         clean_df_copy, dirty_df_copy = permute_columns_by_sql(
             clean_df_copy, dirty_df_copy, col_map, N, base_seed + i * 100
         )
+        dirty_df_copy = permute_dirty_columns(dirty_df_copy, base_seed + i * 100)
+        if counter==0:
+            #print(f"[Permuted Clean Table #{i+1}]\n{clean_df_copy.head(5)}\n")
+            print(f"[Original Dirty Table]\n{dirty_df.head(5)}\n")
+            print(f"[Permuted Dirty Table #{i+1}]\n{dirty_df_copy.head(5)}\n")
 
-        print(f"[Permuted Clean Table #{i+1}]\n{clean_df_copy.head(5)}\n")
-        print(f"[Permuted Dirty Table #{i+1}]\n{dirty_df_copy.head(5)}\n")
+
 
         db_path = os.path.join(output_dir, f"{table_id}_perm_{i}.db")
         new_conn = sqlite3.connect(db_path)
@@ -140,7 +153,9 @@ def generate_sqlaware_permuted_examples(
                 print("[Filtered] Bad answer — skipping.\n")
                 continue
 
+            print(f"\n[Processing] {question}")
             print(f"[SQL Answer #{i+1}]: {answers}\n")
+            print('\n' * 3)
 
             results.append({
                 "table": {
@@ -154,6 +169,7 @@ def generate_sqlaware_permuted_examples(
         except Exception as e:
             print(f"[Error in permutation {i+1}]: {e}")
             new_conn.close()
+            os.remove(db_path)
             continue
 
     return results

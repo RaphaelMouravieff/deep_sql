@@ -6,9 +6,8 @@
 
 
 python ../dataset.py \
-    --merged_library_folder ../data/library/library_step0 \
-    --save_dataset_path ../data/training_dataset/step0 \
+    --library_path ../data/library/library_step0/library.json \
+    --save_dataset_path ../data/training_dataset/step_del \
     --length_filter 0 \
-    --model_name_or_path "" \
-    --output_dir ""
+   
 

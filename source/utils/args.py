@@ -116,11 +116,6 @@ class DataArguments:
         metadata={"help": "The path to the base prompt YAML file."},
     )
 
-    merged_library_folder: Optional[str] = field(
-        default=None,
-        metadata={"help": "The path to the merged library JSON file."},
-    )
-
     save_dataset_path: Optional[str] = field(
         default=None,
         metadata={"help": "The path to save the processed dataset."},
