@@ -25,7 +25,7 @@ python ../train.py \
   --eval_steps 2000 \
   --save_steps 2000 \
   --warmup_steps 1000 \
-  --evaluation_strategy steps \
+  --eval_strategy steps \
   --predict_with_generate \
   --num_beams 5 \
   --weight_decay 1e-2 \
