@@ -31,6 +31,9 @@ def run_pipeline_step(prompt_manager,
 
         print(f"SQL validation successful! Found {str(validation_result)[:100]} results.")
 
+        if "check_model_answer" in tools:
+            check_model_answer = tools["check_model_answer"]
+
         # Generate entry and variations
         entry = []
 

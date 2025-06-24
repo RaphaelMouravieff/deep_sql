@@ -4,7 +4,7 @@ import sqlite3
 import random
 import pandas as pd
 import logging
-from source.prepare_data.sql_executor import SQLExecutor
+from source.data_modules.sql_executor import SQLExecutor
 
 
 def mapping_cols(dirty_header, clean_header):

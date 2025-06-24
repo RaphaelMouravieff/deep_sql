@@ -7,10 +7,10 @@ from datasets import Dataset, load_dataset, DatasetDict
 from source.utils.args import ModelArguments, DataArguments
 from source.library.tables import TableManager
 
-from source.prepare_data.filter_errors import filter_function
-from source.prepare_data.sql_executor import SQLExecutor
+from source.data_modules.filter_errors import filter_function
+from source.data_modules.sql_executor import SQLExecutor
 
-from source.prepare_data.columnwise_row_permuter import generate_sqlaware_permuted_examples
+from source.data_modules.columnwise_row_permuter import generate_sqlaware_permuted_examples
 
 import os
 

@@ -80,6 +80,9 @@ class DataArguments:
             "help": "An optional input test data file to evaluate the metrics (rouge) on " "(a jsonlines or csv file)."
         },
     )
+    overwrite_cache: bool = field(
+        default=False, metadata={"help": "Overwrite the cached training and evaluation sets"}
+    )
 
     database_path: Optional[str] = field(
         default='../data/squall/tables/db',
