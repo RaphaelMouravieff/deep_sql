@@ -24,7 +24,6 @@ export GIN_MODE=release
 
 
 python ../agent.py \
-  --output_dir .. \
   --ollama_model_name_or_path ollama_chat/qwen2.5:14b \
   --num_iterations 11 \
   --library_path ../data/library/library_expl_del.json \
@@ -32,6 +31,6 @@ python ../agent.py \
   --table_limit 5 \
   --base_prompt_path ../source/prompts/base_prompt.yaml \
   --max_source_length_llm 8192 \
-  --model_name_or_path "not-used-but-must-be-set" 
+  --use_model_check 1
 
 

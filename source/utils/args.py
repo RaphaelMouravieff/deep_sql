@@ -7,8 +7,8 @@ class ModelArguments:
     """
     Arguments pertaining to which model/config/tokenizer we are going to fine-tune from.
     """
-    
     model_name_or_path: str = field(
+        default=None,
         metadata={"help": "Path to pretrained model or model identifier from huggingface.co/models"},
     )
 
@@ -46,6 +46,12 @@ class ModelArguments:
         metadata={"help": "Whether to use one of the fast tokenizer (backed by the tokenizers library) or not."},
     )
 
+    use_model_check: bool = field(
+        default=False,
+        metadata={
+            "help": "Whether to use the model check during agents pipeline."
+        }
+    )
  
 
 @dataclass
@@ -53,6 +59,14 @@ class DataArguments:
     """
     Arguments pertaining to what data we are going to input our model for training and eval.
     """
+
+    output_generation: bool = field(
+        default=True,
+        metadata={
+            "help": "Whether to output the generated answers during the answer_check. "
+                    "If False, only the loss will be returned."
+        },
+    )
 
     split_name: str = field(
         default=None, metadata={"help": "The name of the split to use."},

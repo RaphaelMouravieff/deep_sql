@@ -22,12 +22,9 @@ Adapted from script: https://github.com/huggingface/transformers/blob/master/exa
 import logging
 import os
 import sys
-from collections import defaultdict
-from functools import partial
-from typing import List
 
-import numpy as np
-import pandas as pd
+from functools import partial
+
 
 from transformers import (
     HfArgumentParser,

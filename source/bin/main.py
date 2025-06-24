@@ -1,6 +1,6 @@
 
 from tqdm import tqdm
-from transformers import HfArgumentParser, Seq2SeqTrainingArguments
+from transformers import HfArgumentParser
 import json
 import os
 
@@ -19,14 +19,14 @@ import gc
 import time
 
 
-def generate_dataset(model, data_args, table_manager, vector_store, metrics) -> None:
+def generate_dataset(model, data_args, model_args, table_manager, vector_store, metrics) -> None:
 
     
 
     conn = table_manager.connect_to_database()
     prompt_manager = PromptManager(data_args, table_manager, vector_store)
 
-    tools = create_tools(conn, vector_store)
+    tools = create_tools(conn, vector_store, model_args.use_model_check)
     agents = create_agents(model, data_args, tools)
 
 
@@ -58,8 +58,8 @@ def generate_dataset(model, data_args, table_manager, vector_store, metrics) -> 
 
 def main():
 
-    parser = HfArgumentParser((ModelArguments, DataArguments, Seq2SeqTrainingArguments))
-    model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+    parser = HfArgumentParser((ModelArguments, DataArguments))
+    model_args, data_args = parser.parse_args_into_dataclasses()
     table_manager = TableManager(data_args)
     model = load_model(model_args)
 
@@ -92,7 +92,7 @@ def main():
         new_start_time = time.time()
 
         table_manager.current_table_id = table_id
-        generate_dataset(model, data_args, table_manager, vector_store, metrics)
+        generate_dataset(model, data_args, model_args, table_manager, vector_store, metrics)
 
         end_time = time.time()
         duration = end_time - new_start_time
