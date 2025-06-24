@@ -61,7 +61,7 @@ class DataArguments:
     """
 
     output_generation: bool = field(
-        default=True,
+        default=False,
         metadata={
             "help": "Whether to output the generated answers during the answer_check. "
                     "If False, only the loss will be returned."

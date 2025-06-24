@@ -1,13 +1,14 @@
 from typing import Dict, Any, Optional
-from uuid import uuid4
-from langchain_core.documents import Document
+from source.data_modules.sql_executor import SQLExecutor
+
 
 def run_pipeline_step(prompt_manager, 
                       agents,
-                      tools) -> Optional[Dict[str, Any]]:
+                      tools,
+                      answer_checker) -> Optional[Dict[str, Any]]:
 
     table_id = prompt_manager.table_manager.current_table_id
-
+    inside = True
     print("Generating a new entry...")
 
     try:
@@ -19,20 +20,25 @@ def run_pipeline_step(prompt_manager,
         # Translate to SQL
         sql_prompt = prompt_manager.get_traductor_prompt(question)
         sql_query = agents["sql_translator"].run(sql_prompt)
-        print(f"Generated SQL: {sql_query}")
 
 
-        # Validate SQL
-        validation_result = tools["execute_sql"].forward(sql_query)
 
-        if "Error executing SQL" in str(validation_result) or len(str(validation_result)) < 3:
-            print(f"Query failed or returned empty: {validation_result}")
-            return None
+        executor = SQLExecutor(prompt_manager.table_manager.conn)
+        expected_answer = executor.forward(sql_query)
+        expected_answer = [str(cell) for row in expected_answer for cell in row if cell is not None]
 
-        print(f"SQL validation successful! Found {str(validation_result)[:100]} results.")
 
-        if "check_model_answer" in tools:
-            check_model_answer = tools["check_model_answer"]
+        if answer_checker is not None:
+            print('checking answer...')
+            table = prompt_manager.table_manager.get_durty_table()
+            model_answer, log_likelihood, inside = answer_checker.check_answer(table, question, expected_answer)
+            print('Model answer:', model_answer)
+            print('Expected answer:', expected_answer)  
+            print('Log likelihood:', log_likelihood)
+
+            if not inside:
+                return None, inside
+            
 
         # Generate entry and variations
         entry = []
@@ -60,8 +66,8 @@ def run_pipeline_step(prompt_manager,
                 "orginal": False
             })
 
-        return entry
+        return entry, inside
 
     except Exception as e:
         print(f"Pipeline step failed: {e}")
-        return None
+        return None, False

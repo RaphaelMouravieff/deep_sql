@@ -37,7 +37,7 @@ from transformers import (
 from source.utils.args import ModelArguments, DataArguments
 from source.data_modules.data_loader import load_datasets, load_data_collator
 from source.data_modules.preprocessing import preprocess_datasets
-from source.models.ft_model_setup import load_config, load_tokenizer, load_model
+from source.models.ft_model_setup import load_config, load_tokenizer, load_model_ft
 from source.utils.sanity_checks import check_parameters
 from source.utils.logger import setup_logger
 from source.utils.last_checkpoint import load_latest_checkpoint
@@ -78,7 +78,7 @@ def main():
 
     tokenizer = load_tokenizer(model_args, logger)
 
-    model = load_model(model_args, config, logger)
+    model = load_model_ft(model_args, config, logger)
 
     check_parameters(model_args, data_args, training_args, model, logger)
 

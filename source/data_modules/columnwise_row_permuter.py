@@ -4,7 +4,6 @@ import sqlite3
 import random
 import pandas as pd
 import logging
-from source.data_modules.sql_executor import SQLExecutor
 
 
 def mapping_cols(dirty_header, clean_header):
@@ -94,7 +93,7 @@ def generate_sqlaware_permuted_examples(
     executor_class,
     tokenizer,
     data_args,
-    output_dir: str = "../data/tables/db_permuted",
+    output_dir: str = "../data/squall/tables/db_permuted",
     n: int = 10,
     base_seed: int = 42,
     counter:int = 0,
@@ -165,11 +164,11 @@ def generate_sqlaware_permuted_examples(
                 "question": question,
                 "answers": answers
             })
+            os.remove(db_path)
 
         except Exception as e:
             print(f"[Error in permutation {i+1}]: {e}")
             new_conn.close()
-            os.remove(db_path)
             continue
 
     return results

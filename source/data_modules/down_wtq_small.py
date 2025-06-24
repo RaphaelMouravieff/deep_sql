@@ -5,8 +5,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Trim Hugging Face datasets and save to disk.")
     parser.add_argument("--save_path", type=str, required=True, help="Path to save the trimmed dataset")
     parser.add_argument("--train_size", type=int, default=-1, help="Number of train samples to keep (-1 for all)")
-    parser.add_argument("--val_size", type=int, default=100, help="Number of validation samples to keep")
-    parser.add_argument("--test_size", type=int, default=100, help="Number of test samples to keep")
+    parser.add_argument("--val_size", type=int, default=-1, help="Number of validation samples to keep")
+    parser.add_argument("--test_size", type=int, default=-1, help="Number of test samples to keep")
     return parser.parse_args()
 
 def main():
@@ -37,6 +37,7 @@ def main():
         trimmed_dataset["test"] = dataset["test"]
 
     # Save
+    print(trimmed_dataset)
     trimmed_dataset.save_to_disk(args.save_path)
     print(f"Trimmed dataset saved to: {args.save_path}")
 

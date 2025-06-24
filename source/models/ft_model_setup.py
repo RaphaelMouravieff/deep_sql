@@ -23,7 +23,7 @@ def load_tokenizer(model_args, logger):
     return tokenizer
 
 
-def load_model(model_args, config, logger):
+def load_model_ft(model_args, config, logger):
 
     model = BartForConditionalGeneration.from_pretrained(
         model_args.model_name_or_path,

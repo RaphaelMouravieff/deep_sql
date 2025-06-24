@@ -1,0 +1,109 @@
+get_question_prompt:
+  description: Full prompt for generating a natural language question.
+  template: |
+    Your task is to generate a **new, clear, and specific natural language question** based on the provided database structure and examples. This question should be suitable for translation into SQL.
+
+    DATABASE INFO:
+    {{ table_info }}
+
+    DATABASE SCHEMA:
+    {{ table_schema }}
+    
+    Clean Table random samples:
+    {{ table_clean }}
+
+    Dirty Table random samples:
+    {{ table_dirty }}
+
+    {% if vector_store %}
+    NOTE: The library already contains {{ vector_store_size }} questions.
+    Recent questions (up to 3):
+    {{ example_questions }}
+
+    Your new question should match the complexity of prior ones, but avoid duplicates. Prefer different tables, columns, or relationships.
+    {% endif %}
+
+    You may only use the **Dirty Table random samples** to inform your question. Do **not** rely on data not shown above.
+
+    **Requirements:**
+    1. The question must be answerable using the database schema and dirty table headers.
+    2. It must be specific enough for SQL translation.
+    3. Do not include or refer to SQL or code in the question.
+    4. Use only the **dirty table headers** to reference columns.
+    5. Use the `retriever_tool` to validate your question.
+    6. Format your response like this:
+
+    ```py
+    final_answer(retriever_tool("YOUR GENERATED QUESTION HERE"))
+    ```
+
+    Return only the code above—**no extra text or formatting**.
+
+get_traductor_prompt:
+  description: Template to instruct the LLM to translate a natural language question into SQL.
+  template: |
+    You are an SQL **question generator** in natural language for a database with the following structure.
+
+    DATABASE INFOS:
+    {{ table_info }}
+
+    DATABASE SCHEMA:
+    {{ table_schema }}
+
+    Dirty Table random samples:
+    {{ table_dirty }}
+    
+    Clean Table random samples:
+    {{ table_clean }}
+
+    Natural Language Question: {{ question }}
+
+    INSTRUCTION:
+    Write a one SINGLE valid SQL query that correctly answers the Natural Language Question using the
+    database structure provided above. JOIN tables if needed.
+    And you must use the "execute_sql" tool to check if the sql is valid.
+    Finally Return the valid SQL. "final_answer(execute_sql(sql_query))"
+
+    RETURN ONLY the SQL query without explanations, commentary, or markdown formatting.
+
+
+get_extra_prompt_divers:
+  description: Prompt for generating paraphrased variations of a natural language question that maps to a given SQL query.
+  template: |
+    You are a **question paraphrasing expert**.
+
+    Original question: {{ question }}
+    SQL query this question maps to: {{ sql_question }}
+
+    Table:
+    {{ table_dirty }}
+
+    Your task is to create **7 distinct paraphrased variants** of the original question, using the following techniques:
+
+    1. BASIC SIMPLIFICATION – e.g., "Which city has the most visitors during summer?" → "Which city gets the most summer visitors?"
+    2. SIMPLIFICATION BY HIDING DETAILS – e.g., "What is the title and credits of the course taught in the largest classroom?" → "What course is taught in the biggest room?"
+    3. USING SYNONYMS – e.g., "How many items are sold every year?" → "How many products are sold annually?"
+    4. SEMANTIC SUBSTITUTIONS – e.g., "List employees making more than 100K" → "Who earns over 100,000?"
+    5. COMPLETE REFORMULATION – e.g., "Which teams has the highest score?" → "Which team scored the most points?"
+    6. SIMPLIFICATION WITH MORE DIRECT LANGUAGE – e.g., "Show me the names of athletes with medals" → "Who won medals?"
+    7. PARAPHRASE WITH CHANGE OF PERSPECTIVE – e.g., "Which products were purchased the most?" → "What are the top-selling products?"
+
+    Guidelines:
+    - Do not change the meaning of the question.
+    - Do not alter the SQL query it maps to.
+    - Refer only to the dirty table headers if using column names.
+    - You may use the `get_synonym` tool for reference.
+
+    Return the result in the following **exact format** (no explanations, no markdown, no extra output):
+
+    ```py
+    final_answer([
+        { "technique": "BASIC SIMPLIFICATION", "question": "..." },
+        { "technique": "SIMPLIFICATION BY HIDING DETAILS", "question": "..." },
+        { "technique": "USING SYNONYMS", "question": "..." },
+        { "technique": "SEMANTIC SUBSTITUTIONS", "question": "..." },
+        { "technique": "COMPLETE REFORMULATION", "question": "..." },
+        { "technique": "SIMPLIFICATION WITH MORE DIRECT LANGUAGE", "question": "..." },
+        { "technique": "PARAPHRASE WITH CHANGE OF PERSPECTIVE", "question": "..." }
+    ])
+    ```

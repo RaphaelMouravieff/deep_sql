@@ -29,8 +29,14 @@ python ../agent.py \
   --library_path ../data/library/library_expl_del.json \
   --embedding_model_name "Alibaba-NLP/gte-large-en-v1.5" \
   --table_limit 5 \
-  --base_prompt_path ../source/prompts/base_prompt_v2.yaml \
+  --base_prompt_path ../source/prompts/base_prompt.yaml \
   --max_source_length_llm 8192 \
-  --use_model_check 0
+  --use_model_check 1 \
+  --output_generation 1 \
+  --max_source_length 1024 \
+  --max_target_length 128 \
+  --model_name_or_path ../models/bart_large_debug/checkpoint-1074 \
+  --num_beams 5 
+
 
 

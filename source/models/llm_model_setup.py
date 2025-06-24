@@ -6,7 +6,7 @@ import logging
 logging.getLogger("litellm").setLevel(logging.WARNING)
 
 
-def load_model(model_args):
+def load_model_llm(model_args):
 
     model = LiteLLMModel(
     model_id=model_args.ollama_model_name_or_path, 

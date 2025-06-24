@@ -5,7 +5,7 @@ import random
 
 class PromptManager:
 
-    def __init__(self, data_args, table_manager, vector_store):
+    def __init__(self, data_args, table_manager, vector_store, inside=False):
 
         self.table_manager = table_manager
         tables_info = table_manager.get_tables_info(table_manager.conn)
@@ -20,7 +20,7 @@ class PromptManager:
 
         self.prompt_templates = self.load_prompt_templates(data_args.base_prompt_path)
 
-
+        self.inside = inside
 
 
     def table_schema(self, tables_info):
@@ -43,11 +43,6 @@ class PromptManager:
         return prompt
 
 
-
-    
-
-    
-
     def get_examples(self, k=3):
         try:
             indices = sorted(self.vector_store.index_to_docstore_id.keys(), reverse=True)[:k]
@@ -61,7 +56,6 @@ class PromptManager:
             print(f"⚠️ get_examples failed: {e}")
             return ""
         
-
 
     def load_prompt_templates(self, prompt_path):
         with open(prompt_path, "r") as file:
