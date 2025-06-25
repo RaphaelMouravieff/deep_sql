@@ -1,5 +1,7 @@
 import argparse
 from datasets import load_dataset, DatasetDict
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Trim Hugging Face datasets and save to disk.")
@@ -37,9 +39,9 @@ def main():
         trimmed_dataset["test"] = dataset["test"]
 
     # Save
-    print(trimmed_dataset)
+    logger.info("Trimmed dataset: %s", trimmed_dataset)
     trimmed_dataset.save_to_disk(args.save_path)
-    print(f"Trimmed dataset saved to: {args.save_path}")
+    logger.info("Trimmed dataset saved to: %s", args.save_path)
 
 if __name__ == "__main__":
     main()

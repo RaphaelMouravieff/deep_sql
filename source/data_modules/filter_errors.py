@@ -1,6 +1,7 @@
 import json
 import os
-
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
 
 def filter_function(library_path):
     # List of substrings to flag as bad queries (case-insensitive)
@@ -41,7 +42,7 @@ def filter_function(library_path):
 
     for item in data:
         if is_bad_query(item["question"]):
-            print(f"Removed question: {item['question']}")
+            logger.warning("Removed question: %s", item['question'])
             removed_count += 1
         else:
             filtered_data.append(item)
@@ -53,9 +54,9 @@ def filter_function(library_path):
         json.dump(filtered_data, f, indent=2)
 
     # Print summary
-    print(f"Total entries: {len(data)}")
-    print(f"Removed entries: {removed_count}")
-    print(f"Saved entries: {len(filtered_data)}")
+    logger.info("Total entries: %d", len(data))
+    logger.info("Removed entries: %d", removed_count)
+    logger.info("Saved entries: %d", len(filtered_data))
 
 
     return library_path

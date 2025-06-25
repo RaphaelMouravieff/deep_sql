@@ -26,6 +26,11 @@ from source.models.ft_model_setup import load_model_ft, load_tokenizer, load_con
 from source.utils.logger import setup_logger
 from source.tools.answer_checker import AnswerChecker
 
+
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
+
+
 def generate_dataset(model, data_args, table_manager, vector_store, answer_checker) -> None:
 
 
@@ -37,8 +42,9 @@ def generate_dataset(model, data_args, table_manager, vector_store, answer_check
 
 
     infos = defaultdict(int)
-    print("Initializing infos...")
+    logger.info("Initializing infos...")
 
+    inside_error = 0
     for idx in range(data_args.num_iterations):
 
 
@@ -47,33 +53,32 @@ def generate_dataset(model, data_args, table_manager, vector_store, answer_check
                                             answer_checker)
         
 
-        infos["too similar"] += tools["retriever_tool"].too_similar_count
-        infos["empty sql"] += tools["execute_sql"].empty_result_count
-        infos["execution error"] += tools["execute_sql"].execution_error_count
-        infos["num iterations"] = idx + 1
-        infos["likelihood"] = inside[3]
-
-        print(infos)
 
         if not inside[0]:
-            infos["inside_error"] +=1
-            print('Changing prompt entry due to inside condition:', inside)
-            prompt_manager = PromptManager(data_args, table_manager, vector_store, inside)             
+            inside_error +=1
+            logger.info('Changing prompt entry due to inside condition: %s', inside)
+            prompt_manager = PromptManager(data_args, table_manager, vector_store, inside)
             continue
-        else:
-            infos["inside_error"] = 0
-            
+
+
         if entries is not None:
 
+            entries[-1]["too_similar"] = tools["retriever_tool"].too_similar_count
+            entries[-1]["empty_sql"] = tools["execute_sql"].empty_result_count
+            entries[-1]["execution_error"] = tools["execute_sql"].execution_error_count
+            entries[-1]["likelihood"] = inside[3]  # log-likelihood
+            entries[-1]["num_iterations"] = idx + 1
+            entries[-1]["inside_error"] = inside_error
             
+
             save_library(data_args, entries)
             save_vector_store(data_args, entries)
             break
 
         else:
-            print("Failed to generate entry, continuing... inside:", inside)
+            logger.info("Failed to generate entry, continuing... inside: %s", inside)
 
-    print(f"Dataset generation complete.")
+    logger.info("Dataset generation complete.")
     del tools
     del agents
     del prompt_manager
@@ -81,14 +86,14 @@ def generate_dataset(model, data_args, table_manager, vector_store, answer_check
     gc.collect()
 
 def main():
-
+    
     parser = HfArgumentParser((ModelArguments, DataArguments))
     model_args, data_args = parser.parse_args_into_dataclasses()
     table_manager = TableManager(data_args)
     model_llm = load_model_llm(model_args)
 
-        
-    print(f"chunk {data_args.chunk}/{data_args.Nchunks}")
+
+    logger.info("chunk %d/%d", data_args.chunk, data_args.Nchunks)
 
 
 
@@ -96,7 +101,7 @@ def main():
         chunk_size = len(table_manager.common_ids) // data_args.Nchunks
         table_manager.common_ids = table_manager.common_ids[data_args.chunk*chunk_size:(data_args.chunk*chunk_size)+chunk_size]
 
-        print(f"new common_ids length for chunk {data_args.chunk}: {len(table_manager.common_ids)}")
+        logger.info("new common_ids length for chunk %d: %d", data_args.chunk, len(table_manager.common_ids))
 
     
     answer_checker = None
@@ -107,10 +112,10 @@ def main():
             results = json.load(data)
         likelihood = [result["log_likelihood"] for result in results]
         accuracy = [result["accuracy"] for result in results]
-        lower_thresh = np.percentile(likelihood, 5)  
-        upper_thresh = np.percentile(likelihood, 80)  
-        print(f"Lower threshold: {lower_thresh}, Upper threshold: {upper_thresh}")
-        logger = setup_logger()
+        lower_thresh = np.percentile(likelihood, 5)
+        upper_thresh = np.percentile(likelihood, 80)
+        logger.info("Lower threshold: %s, Upper threshold: %s", lower_thresh, upper_thresh)
+        
         config = load_config(model_args, logger)
         tokenizer = load_tokenizer(model_args, logger)
         model_ft = load_model_ft(model_args, config, logger).to("cuda")
@@ -138,7 +143,7 @@ def main():
         end_time = time.time()
         duration = end_time - new_start_time
         total_duration = end_time - start_time
-        print(f"step {idx}/{total} done in {duration:.2f} seconds, total {total_duration:.2f} seconds.\n")
+        logger.info("step %d/%d done in %.2f seconds, total %.2f seconds.", idx, total, duration, total_duration)
 
 
 

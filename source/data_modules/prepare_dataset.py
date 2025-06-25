@@ -13,7 +13,8 @@ from source.data_modules.sql_executor import SQLExecutor
 from source.data_modules.columnwise_row_permuter import generate_sqlaware_permuted_examples
 
 import os
-
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
 
 
 def main():
@@ -66,7 +67,7 @@ def main():
             dataset_entries.extend(entries)
 
         except Exception as e:
-            print(f"[Error] Skipping table {table_id} due to: {repr(e)}")
+            logger.error("[Error] Skipping table %s due to: %s", table_id, repr(e))
             continue
 
 
@@ -90,11 +91,11 @@ def main():
     # Step 5: Save to disk
     full_dataset.save_to_disk(data_args.save_dataset_path)
 
-    print("\n--- Summary ---")
-    print(f"Total examples processed: {len(raw_data)}")
-    print(f"Examples with bad answers filtered: {bad_answer_count}")
-    print(f"Final dataset size: {len(dataset_entries)}")
-    
+    logger.info("\n--- Summary ---")
+    logger.info("Total examples processed: %d", len(raw_data))
+    logger.info("Examples with bad answers filtered: %d", bad_answer_count)
+    logger.info("Final dataset size: %d", len(dataset_entries))
+
 
 if __name__ == "__main__":
     main()

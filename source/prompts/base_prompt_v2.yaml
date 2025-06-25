@@ -133,9 +133,6 @@ get_extra_prompt_divers:
     For each original SQL question provided, please generate all 7 variants following these techniques without changing the SQL request.
     Make sure to keep the SQL query unchanged.
 
-    tools:
-    - Use 'get_synonym' tool to look online for synonyms if needed.
-
     Return a JSON array with the following format (no additional text):
 
     ```py

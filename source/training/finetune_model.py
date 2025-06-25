@@ -45,7 +45,7 @@ from source.utils.metrics import compute_metrics
 from source.training.hf_training import run_train, run_eval, run_predict
 
 
-logger = logging.getLogger(__name__)
+logger = setup_logger(__name__)
 
 
 def main():
@@ -80,7 +80,7 @@ def main():
 
     model = load_model_ft(model_args, config, logger)
 
-    check_parameters(model_args, data_args, training_args, model, logger)
+    check_parameters(model_args, data_args, training_args, model)
 
     train_dataset, eval_dataset, predict_dataset = preprocess_datasets(datasets, tokenizer, data_args, model_args, training_args, logger)
     

@@ -5,7 +5,8 @@ import json
 from typing import Dict, Any
 from datasets import load_dataset
 import pandas as pd
-
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
 
 class TableManager:
     """
@@ -26,7 +27,7 @@ class TableManager:
     def prepare_db_path(self):
 
         file = self.squall_table_id_by_id[self.current_table_id] #propre
-        print('squall_table_id_by_id',file)
+        logger.info('squall_table_id_by_id: %s', file)
         db_path = f"../data/squall/tables/db/{file}.db"  # Path to the database file
         return db_path
 
@@ -121,7 +122,7 @@ class TableManager:
     def connect_to_database(self):
 
         db_path = self.prepare_db_path()
-        print("db_path",db_path)
+        logger.info("db_path: %s", db_path)
         conn = sqlite3.connect(db_path)
         self.conn = conn
 

@@ -2,6 +2,8 @@
 import yaml
 from jinja2 import Template
 import random
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
 
 class PromptManager:
 
@@ -53,7 +55,7 @@ class PromptManager:
                 if self.vector_store.docstore.search(self.vector_store.index_to_docstore_id[i])
             )
         except Exception as e:
-            print(f"⚠️ get_examples failed: {e}")
+            logger.warning("⚠️ get_examples failed: %s", e)
             return ""
         
 

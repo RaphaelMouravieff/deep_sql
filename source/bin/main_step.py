@@ -1,5 +1,7 @@
 from typing import Dict, Any, Optional
 from source.data_modules.sql_executor import SQLExecutor
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
 
 
 def run_pipeline_step(prompt_manager, 
@@ -8,13 +10,13 @@ def run_pipeline_step(prompt_manager,
 
     table_id = prompt_manager.table_manager.current_table_id
     inside = (True, "question", "difficulty", 0)
-    print("Generating a new entry...")
+    logger.info("Generating a new entry...")
 
     try:
         # Generate a question
         question_prompt = prompt_manager.get_question_prompt()
         question = agents["question_generator"].run(question_prompt)
-        print(f"Generated question: {question}")
+        logger.info(f"Generated question: {question}")
 
         # Translate to SQL
         sql_prompt = prompt_manager.get_traductor_prompt(question)
@@ -34,21 +36,21 @@ def run_pipeline_step(prompt_manager,
 
 
         if answer_checker is not None:
-            print('checking answer...')
-            print('Table ID:', table_id)
-            print('Question:', question)
+            logger.info('checking answer...')
+            logger.info('Table ID: %s', table_id)
+            logger.info('Question: %s', question)
             table = prompt_manager.table_manager.get_durty_table()
-            print('Table:', table)
+            logger.info('Table: %s', table)
             model_answer, inside = answer_checker.check_answer(table, question, expected_answer)
-            print('Model answer:', model_answer)
-            print('Expected answer:', expected_answer)  
-            print('Log likelihood:', inside[3])
-            print('Inside:', inside[0])
-            print('Inside question:', inside[1])
-            print('Inside difficulty:', inside[2])
+            logger.info('Model answer: %s', model_answer)
+            logger.info('Expected answer: %s', expected_answer)
+            logger.info('Log likelihood: %s', inside[3])
+            logger.info('Inside: %s', inside[0])
+            logger.info('Inside question: %s', inside[1])
+            logger.info('Inside difficulty: %s', inside[2])
 
             if not inside[0]:
-                print('Answer is either too similar or not valid, skipping entry generation.')
+                logger.info('Answer is either too similar or not valid, skipping entry generation.')
                 return None, inside
             
 
@@ -65,7 +67,7 @@ def run_pipeline_step(prompt_manager,
         # Generate variations
         diversity_prompt = prompt_manager.get_extra_prompt_divers(question, sql_query)
         variations = agents["question_diversity"].run(diversity_prompt)
-        print(f"Generated variations: {variations}")
+        logger.info(f"Generated variations: {variations}")
 
         for variation in variations:
 
@@ -80,5 +82,5 @@ def run_pipeline_step(prompt_manager,
         return entry, inside
 
     except Exception as e:
-        print(f"Pipeline step failed: {e}")
+        logger.info(f"Pipeline step failed: {e}")
         return None, inside

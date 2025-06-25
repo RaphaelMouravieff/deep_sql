@@ -2,6 +2,9 @@ from collections import defaultdict
 from typing import List
 import numpy as np
 
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
+
 
 def postprocess_text(preds, labels):
     preds = [pred.strip() for pred in preds]
@@ -54,12 +57,12 @@ def compute_metrics(eval_preds, tokenizer, data_args):
 
     decoded_preds = tokenizer.batch_decode(preds, skip_special_tokens=True)
     decoded_labels = tokenizer.batch_decode(labels, skip_special_tokens=True)
-    print(f" decoded_labels : {decoded_labels}")
-    print(f" decoded_preds : {decoded_preds}")
+    logger.info(f" decoded_labels : {decoded_labels}")
+    logger.info(f" decoded_preds : {decoded_preds}")
     # Some simple post-processing
     decoded_preds, decoded_labels = postprocess_text(decoded_preds, decoded_labels)
 
     accuracy = get_denotation_accuracy(decoded_preds, decoded_labels)
     result = {"denotation_accuracy": accuracy}
-    print(f'result : {result}')
+    logger.info(f'result : {result}')
     return result

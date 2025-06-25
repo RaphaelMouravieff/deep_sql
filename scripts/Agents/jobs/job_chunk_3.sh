@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --job-name=v0
+#SBATCH --job-name=v3
 #SBATCH --partition=hard
 #SBATCH --nodes=1
 #SBATCH --gpus-per-node=1
 #SBATCH --time=48:00:00
-#SBATCH --output=Agents/jobs/results/v0.out
+#SBATCH --output=Agents/jobs/results/v3.out
 
 
 if ! pgrep -x "ollama" > /dev/null; then
@@ -35,5 +35,5 @@ python ../agent.py \
   --max_source_length 1024 \
   --max_target_length 128 \
   --num_beams 5 \
-  --chunk 0 \
+  --chunk 3 \
   --Nchunk 5

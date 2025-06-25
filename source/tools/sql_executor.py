@@ -1,5 +1,8 @@
 from smolagents import Tool
 import sqlite3
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
+
 
 class SQLExecutorTool(Tool):
     name = "execute_sql"
@@ -37,7 +40,7 @@ class SQLExecutorTool(Tool):
                 self.empty_result_count += 1
                 raise ValueError(f"Query returned no results: {sql_query}")
 
-            print(f"Query accepted. Results: {results}")
+            logger.info("Query accepted. Results: %s", results)
             return sql_query
 
         except Exception as e:

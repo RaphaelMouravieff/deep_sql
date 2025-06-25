@@ -9,21 +9,28 @@ from filelock import FileLock
 import time
 from langchain_core.documents import Document
 from uuid import uuid4
-
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
 
 def init_library(data_args):
     vec_exists = os.path.exists(data_args.vector_store_path)
 
     if  vec_exists:
-        vector_store = FAISS.load_local(data_args.vector_store_path,
+        vectorstore = FAISS.load_local(data_args.vector_store_path,
                                         embeddings=get_emebdding_model(data_args.embedding_model_name),
                                         allow_dangerous_deserialization=True)
-        print('🆕 Loaded existing library and vector store.')
-        return vector_store
+        logger.info('🆕 Loaded existing library and vector store.')
+
+        docstore = vectorstore.docstore
+        total_docs = len(docstore._dict)
+        logger.info("📦 Total documents: %d", total_docs)
+
+
+        return vectorstore
 
 
     else:
-        print("🆕 Creating new vector store and empty library.")
+        logger.info("🆕 Creating new vector store and empty library.")
         return embeddings_vector_store(data_args.embedding_model_name)
 
 
@@ -45,7 +52,7 @@ def save_library(data_args, entries):
                 with open(data_args.library_path, 'r') as f:
                     existing_library = json.load(f)
             except json.JSONDecodeError:
-                print("⚠️ Warning: JSON file is empty or corrupted. Starting fresh.")
+                logger.warning("⚠️ Warning: JSON file is empty or corrupted. Starting fresh.")
                 existing_library = []
         else:
             existing_library = []
@@ -59,8 +66,8 @@ def save_library(data_args, entries):
 
     end_time = time.time()
     duration = end_time - start_time
-    print(f"🕒 save_library completed in {duration:.3f} seconds.")
-    
+    logger.info("🕒 save_library completed in %.3f seconds.", duration)
+
 
 
 def save_vector_store(data_args, entries):
@@ -98,9 +105,9 @@ def save_vector_store(data_args, entries):
         if new_documents:
             vector_store.add_documents(documents=new_documents, ids=ids)
             vector_store.save_local(data_args.vector_store_path)
-            print(f"✅ Added {len(new_documents)} documents to vector store.")
+            logger.info("✅ Added %d documents to vector store.", len(new_documents))
         else:
-            print("⚠️ No valid questions found in entries.")
+            logger.warning("⚠️ No valid questions found in entries.")
 
     end_time = time.time()
-    print(f"🕒 save_vector_store completed in {end_time - start_time:.3f} seconds.")
+    logger.info("🕒 save_vector_store completed in %.3f seconds.", end_time - start_time)

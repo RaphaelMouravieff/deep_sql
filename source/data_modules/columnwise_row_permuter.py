@@ -4,7 +4,8 @@ import sqlite3
 import random
 import pandas as pd
 import logging
-
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
 
 def mapping_cols(dirty_header, clean_header):
     """
@@ -121,7 +122,7 @@ def generate_sqlaware_permuted_examples(
     #    print(f"[Original Dirty Table]\n{dirty_df.head(5)}\n")
 
     for i in range(n):
-        print(f"--- Permutation {i+1} ---")
+        logger.info("--- Permutation %d ---", i+1)
 
         clean_df_copy = clean_df.copy()
         dirty_df_copy = dirty_df.copy()
@@ -131,10 +132,9 @@ def generate_sqlaware_permuted_examples(
         )
         dirty_df_copy = permute_dirty_columns(dirty_df_copy, base_seed + i * 100)
         if counter==0:
-            #print(f"[Permuted Clean Table #{i+1}]\n{clean_df_copy.head(5)}\n")
-            print(f"[Original Dirty Table]\n{dirty_df.head(5)}\n")
-            print(f"[Permuted Dirty Table #{i+1}]\n{dirty_df_copy.head(5)}\n")
-
+            #logger.info("[Permuted Clean Table #%d]\n%s\n", i+1, clean_df_copy.head(5))
+            logger.info("[Original Dirty Table]\n%s\n", dirty_df.head(5))
+            logger.info("[Permuted Dirty Table #%d]\n%s\n", i+1, dirty_df_copy.head(5))
 
 
         db_path = os.path.join(output_dir, f"{table_id}_perm_{i}.db")
@@ -149,12 +149,12 @@ def generate_sqlaware_permuted_examples(
             new_conn.close()
 
             if is_bad:
-                print("[Filtered] Bad answer — skipping.\n")
+                logger.warning("[Filtered] Bad answer — skipping.")
                 continue
 
-            print(f"\n[Processing] {question}")
-            print(f"[SQL Answer #{i+1}]: {answers}\n")
-            print('\n' * 3)
+            logger.info("[Processing] %s", question)
+            logger.info("[SQL Answer #%d]: %s", i+1, answers)
+            logger.info("\n" * 3)
 
             results.append({
                 "table": {
@@ -167,7 +167,7 @@ def generate_sqlaware_permuted_examples(
             os.remove(db_path)
 
         except Exception as e:
-            print(f"[Error in permutation {i+1}]: {e}")
+            logger.error("[Error in permutation %d]: %s", i+1, e)
             new_conn.close()
             continue
 

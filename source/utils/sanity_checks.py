@@ -1,8 +1,12 @@
 
 
 
+from source.utils.logger import setup_logger
 
-def check_parameters(model_args, data_args, training_args, model, logger):
+logger = setup_logger(__name__)
+
+
+def check_parameters(model_args, data_args, training_args, model):
     if training_args.label_smoothing_factor > 0 and not hasattr(model, "prepare_decoder_input_ids_from_labels"):
         logger.warning(
             "Label smoothing is enabled, but the `prepare_decoder_input_ids_from_labels` method is not defined for "

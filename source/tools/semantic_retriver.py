@@ -1,6 +1,10 @@
 from smolagents import Tool
 from langchain_core.vectorstores import VectorStore
 
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
+
+
 class SemanticRetrieverTool(Tool):
     name = "retriever_tool"
     description = (
@@ -29,7 +33,7 @@ class SemanticRetrieverTool(Tool):
 
         # If no documents are in the vector store, accept immediately
         if not self.vectordb.index_to_docstore_id:
-            print(f'Question/Query: "{question}" is accepted (no existing records).')
+            logger.info('Question/Query: "%s" is accepted (no existing records).', question)
             return question
 
         # Check for semantic similarity
@@ -38,8 +42,7 @@ class SemanticRetrieverTool(Tool):
         too_similar = [doc[0].page_content for doc in docs if doc[1] > self.gamma_max]
 
         for doc, score in docs:
-            print(f"Score: {score:.3f}, Query: {doc.page_content}")
-
+            logger.info("Score: %.3f, Query: %s", score, doc.page_content)
 
         if too_similar:
             self.too_similar_count += 1
@@ -47,7 +50,7 @@ class SemanticRetrieverTool(Tool):
                 f"Rejected question: '{question}' is too similar to existing queries: {too_similar}"
             )
 
-        print(f'Question/Query: "{question}" is accepted.')
+        logger.info('Question/Query: "%s" is accepted.', question)
         return question
 
 

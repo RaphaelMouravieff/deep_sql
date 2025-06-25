@@ -1,6 +1,10 @@
 from transformers.trainer_utils import get_last_checkpoint
 import os
 
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
+
+
 def load_latest_checkpoint(training_args):
     last_checkpoint = None
     if os.path.isdir(training_args.output_dir) and training_args.do_train and not training_args.overwrite_output_dir:

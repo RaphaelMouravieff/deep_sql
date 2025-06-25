@@ -2,6 +2,9 @@ import torch
 import warnings
 
 
+from source.utils.logger import setup_logger
+logger = setup_logger(__name__)
+
 
 class AnswerChecker:
     def __init__(self, model, tokenizer, data_args, lower_thresh=None, upper_thresh=None, device='cuda'):
@@ -72,17 +75,17 @@ class AnswerChecker:
         log_likelihood = -loss.item()
 
         inside = (True, "question", "", 0)
-        print('Lower threshold:', self.lower_thresh)
-        print('Upper threshold:', self.upper_thresh)
+        logger.info('Lower threshold: %s', self.lower_thresh)
+        logger.info('Upper threshold: %s', self.upper_thresh)
         if self.lower_thresh is not None:
-            print('Log likelihood:', log_likelihood)
+            logger.info('Log likelihood: %s', log_likelihood)
 
             if log_likelihood < self.lower_thresh:
-                print('lower threshold exceeded')
+                logger.info('lower threshold exceeded')
                 inside = (False, question, "too complex – exceeds typical question depth", log_likelihood)
 
             elif log_likelihood > self.upper_thresh:
-                print('upper threshold exceeded')
+                logger.info('upper threshold exceeded')
                 inside = (False, question, "too simple – lacks challenge", log_likelihood)
 
             else:
