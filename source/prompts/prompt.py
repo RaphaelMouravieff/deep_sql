@@ -5,7 +5,7 @@ import random
 
 class PromptManager:
 
-    def __init__(self, data_args, table_manager, vector_store, inside=False):
+    def __init__(self, data_args, table_manager, vector_store, inside=(True, "question", "difficulty", 0)):
 
         self.table_manager = table_manager
         tables_info = table_manager.get_tables_info(table_manager.conn)
@@ -75,7 +75,11 @@ class PromptManager:
             table_clean=self.table_clean,
             vector_store=self.vector_store,
             vector_store_size=len(self.vector_store.index_to_docstore_id),
-            example_questions=self.get_examples_str
+            example_questions=self.get_examples_str,
+            is_inside=self.inside[0],
+            inside_question=self.inside[1],
+            inside_difficulty=self.inside[2]
+            
         ).strip()
 
 

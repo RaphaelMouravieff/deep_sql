@@ -37,6 +37,10 @@ class SemanticRetrieverTool(Tool):
 
         too_similar = [doc[0].page_content for doc in docs if doc[1] > self.gamma_max]
 
+        for doc, score in docs:
+            print(f"Score: {score:.3f}, Query: {doc.page_content}")
+
+
         if too_similar:
             self.too_similar_count += 1
             raise ValueError(

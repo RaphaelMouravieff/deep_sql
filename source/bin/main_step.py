@@ -4,11 +4,10 @@ from source.data_modules.sql_executor import SQLExecutor
 
 def run_pipeline_step(prompt_manager, 
                       agents,
-                      tools,
                       answer_checker) -> Optional[Dict[str, Any]]:
 
     table_id = prompt_manager.table_manager.current_table_id
-    inside = True
+    inside = (True, "question", "difficulty", 0)
     print("Generating a new entry...")
 
     try:
@@ -25,18 +24,31 @@ def run_pipeline_step(prompt_manager,
 
         executor = SQLExecutor(prompt_manager.table_manager.conn)
         expected_answer = executor.forward(sql_query)
+        
+        if isinstance(expected_answer, str) and expected_answer.startswith("Error executing SQL"):
+            return None, inside
+
+
         expected_answer = [str(cell) for row in expected_answer for cell in row if cell is not None]
+
 
 
         if answer_checker is not None:
             print('checking answer...')
+            print('Table ID:', table_id)
+            print('Question:', question)
             table = prompt_manager.table_manager.get_durty_table()
-            model_answer, log_likelihood, inside = answer_checker.check_answer(table, question, expected_answer)
+            print('Table:', table)
+            model_answer, inside = answer_checker.check_answer(table, question, expected_answer)
             print('Model answer:', model_answer)
             print('Expected answer:', expected_answer)  
-            print('Log likelihood:', log_likelihood)
+            print('Log likelihood:', inside[3])
+            print('Inside:', inside[0])
+            print('Inside question:', inside[1])
+            print('Inside difficulty:', inside[2])
 
-            if not inside:
+            if not inside[0]:
+                print('Answer is either too similar or not valid, skipping entry generation.')
                 return None, inside
             
 
@@ -62,7 +74,6 @@ def run_pipeline_step(prompt_manager,
                 "tables_id": table_id,
                 "question": variation["question"].lower(),
                 "sql": sql_query,
-
                 "orginal": False
             })
 
@@ -70,4 +81,4 @@ def run_pipeline_step(prompt_manager,
 
     except Exception as e:
         print(f"Pipeline step failed: {e}")
-        return None, False
+        return None, inside

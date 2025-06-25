@@ -45,19 +45,20 @@ class TableManager:
 
 
     def get_random_sampled_tables(self):
-        
         clean_df = self.get_clean_table()
         durty_df = self.get_durty_table()
 
+        min_rows = min(clean_df.shape[0], durty_df.shape[0])
+        if min_rows == 0:
+            raise ValueError("Cannot sample rows: one or both tables are empty.")
 
-        df_size = clean_df.shape[0]-1
-        random_ids = random.sample(range(df_size), min(self.table_limit, df_size))
+        n = min(self.table_limit, min_rows)
+        random_ids = random.sample(range(min_rows), n)
 
         table_clean = self.df_to_natural_language_context(clean_df.iloc[random_ids])
         table_durty = self.df_to_natural_language_context(durty_df.iloc[random_ids])
 
         return table_clean, table_durty
-
 
     def df_to_natural_language_context(self, df):
 

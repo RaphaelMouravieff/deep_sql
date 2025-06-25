@@ -39,9 +39,12 @@ class AnswerChecker:
                     return_tensors="pt"
                 )
 
+
         input_ids = model_inputs['input_ids'].to(self.device)
         attention_mask = model_inputs['attention_mask'].to(self.device)
-        labels = labels["input_ids"].to(self.device)
+        label_ids = labels["input_ids"].squeeze(0).to(self.device)  # shape: [seq_len]
+        label_ids[label_ids == self.tokenizer.pad_token_id] = -100
+        label_ids = label_ids.unsqueeze(0)
 
 
         model_answer = None
@@ -56,23 +59,33 @@ class AnswerChecker:
             model_answer = self.tokenizer.decode(output_ids[0], skip_special_tokens=True).strip()
 
 
-        
+
         with torch.no_grad():
             outputs = self.model(
                 input_ids=input_ids,
                 attention_mask=attention_mask,
-                labels=labels,
+                labels=label_ids,
                 return_dict=True
             )
 
         loss = outputs.loss  # This is already averaged over non-masked tokens
         log_likelihood = -loss.item()
 
+        inside = (True, "question", "", 0)
+        print('Lower threshold:', self.lower_thresh)
+        print('Upper threshold:', self.upper_thresh)
         if self.lower_thresh is not None:
-            inside = True
-            if log_likelihood < self.lower_thresh:
-                inside = False
-            elif log_likelihood > self.upper_thresh:
-                inside = False
+            print('Log likelihood:', log_likelihood)
 
-        return model_answer, log_likelihood, inside
+            if log_likelihood < self.lower_thresh:
+                print('lower threshold exceeded')
+                inside = (False, question, "too complex – exceeds typical question depth", log_likelihood)
+
+            elif log_likelihood > self.upper_thresh:
+                print('upper threshold exceeded')
+                inside = (False, question, "too simple – lacks challenge", log_likelihood)
+
+            else:
+                inside = (True, question, "Good Difficulty Range", log_likelihood)
+
+        return model_answer, inside

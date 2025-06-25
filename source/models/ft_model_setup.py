@@ -33,6 +33,6 @@ def load_model_ft(model_args, config, logger):
     if model.config.decoder_start_token_id is None:
         raise ValueError("Make sure that `config.decoder_start_token_id` is correctly defined")
 
-    logger.info(f"Using model: {model}")
+    logger.info(f"Using model {model_args.model_name_or_path}: {model}")
 
     return model
