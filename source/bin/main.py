@@ -134,17 +134,21 @@ def main():
 
     for idx, table_id in enumerate(table_manager.common_ids):
         
-        vector_store = init_library(data_args)
-        new_start_time = time.time()
-        table_manager.current_table_id = table_id
+        try:
+            vector_store = init_library(data_args)
+            new_start_time = time.time()
+            table_manager.current_table_id = table_id
 
-        generate_dataset(model_llm, data_args, table_manager, vector_store, answer_checker)
+            generate_dataset(model_llm, data_args, table_manager, vector_store, answer_checker)
 
-        end_time = time.time()
-        duration = end_time - new_start_time
-        total_duration = end_time - start_time
-        logger.info("step %d/%d done in %.2f seconds, total %.2f seconds.", idx, total, duration, total_duration)
+            end_time = time.time()
+            duration = end_time - new_start_time
+            total_duration = end_time - start_time
+            logger.info("step %d/%d done in %.2f seconds, total %.2f seconds.", idx, total, duration, total_duration)
 
+        except Exception as e:
+            logger.error("Failed to load vector store for table_id %s: %s", table_id, str(e))
+            continue  # skip to next table_id
 
 
 if __name__ == "__main__":

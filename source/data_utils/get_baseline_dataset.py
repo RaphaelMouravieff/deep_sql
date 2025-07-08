@@ -18,21 +18,33 @@ def reconstruct(flattened: str) -> tuple:
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset_stepx_path", type=str, required=True)
-    parser.add_argument("--save_baseline_dataset", type=str, required=True)
+    parser.add_argument("--actual_baseline_path", type=str, required=True)
+    parser.add_argument("--previous_baseline_path", type=str, required=True)
+    parser.add_argument("--full_pt_baseline_path",
+                        type=str,
+                        default="/home/raphael.gervillie/TabStruct/ptdata/train.json")
+    
     args = parser.parse_args()
 
     step_dataset = load_from_disk(args.dataset_stepx_path)
     N = len(step_dataset["train"])
     print(f"Extracting {N} rows from train.json")
 
+    previous_baseline_step_dataset = load_from_disk(args.previous_baseline_path)
+    N_previous = len(previous_baseline_step_dataset["train"])
+    print(f"Ignoring the {N_previous} rows from previous baseline dataset")
+
+
     processed = []
-    with open("/home/raphael.gervillie/TabStruct/ptdata/train.json") as f:
+    with open(args.full_pt_baseline_path) as f:
         for i, line in enumerate(f):
         
-            if i >= N:
+            if i < N_previous:
+                continue
+
+            if i >= N+N_previous:
                 break
             item = json.loads(line)
-            print(item)
             table_dict, recon_query = reconstruct(item["table"])
             processed.append({
                 "question": item["question"],
@@ -50,9 +62,9 @@ def main():
         "test": wtq["test"]
     })
 
-    final_dataset.save_to_disk(args.save_baseline_dataset)
-    print(f"Dataset saved to {args.save_baseline_dataset}")
-
+    final_dataset.save_to_disk(args.actual_baseline_path)
+    print(f"Dataset saved to {args.actual_baseline_path}")
+    print('Dataset structure:',final_dataset)
 
 if __name__ == "__main__":
     main()

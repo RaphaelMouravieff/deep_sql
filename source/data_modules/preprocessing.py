@@ -19,6 +19,7 @@ def preprocess_tableqa_function(examples, tokenizer, data_args, padding, is_trai
         answers = examples["answers"]
 
         if is_training:
+
             model_inputs = tokenizer(
                 table=tables,
                 query=questions,

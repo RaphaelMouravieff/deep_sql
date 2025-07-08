@@ -62,7 +62,7 @@ def main():
         model_args, data_args, training_args = parser.parse_args_into_dataclasses()
 
 
-    logger = setup_logger(training_args)
+    #logger = setup_logger(training_args)
     
     # Detecting last checkpoint.
     last_checkpoint = load_latest_checkpoint(training_args)

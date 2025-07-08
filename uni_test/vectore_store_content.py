@@ -7,7 +7,7 @@ from source.utils.args import DataArguments
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument("--vector_store_path", type=str,  default="data/library/vector_store_step_debug")
+    parser.add_argument("--vector_store_path", type=str,  default="data/library/vector_store_step")
     parser.add_argument("--embedding_model_name", type=str, default="Alibaba-NLP/gte-large-en-v1.5")
     args = parser.parse_args()
 

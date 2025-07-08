@@ -51,32 +51,49 @@ def permute_columns_by_sql(clean_df, dirty_df, col_map, n_rows, base_seed):
 
 
 def bad_answer_checker(data_args, tokenizer, answers):
-
     length = len(answers)
-    if length > data_args.max_target_length :
+    if length > data_args.max_target_length:
+        print("Error: Original answer length exceeds max_target_length")
         return True, answers
 
     answers = [str(cell) for row in answers for cell in row if cell is not None]
+    length = len(answers)
     if length > data_args.max_target_length:
+        print("Error: Flattened answer length exceeds max_target_length")
         return True, answers
 
     if length == 0:
+        print("Error: Answer list is empty after flattening")
         return True, answers
 
     if length == 1:
         if answers[0] == "None" or answers[0] == "null":
+            print(f"Error: Single answer is invalid ({answers[0]})")
             return True, answers
 
     joined = ", ".join(answers).strip().lower()
 
-    if "error" in joined or "execution failed" in joined or "syntax error" in joined or "e, r, r, o, r" in joined:
+    if "error" in joined:
+        print("Error: 'error' keyword found in joined answer")
+        return True, answers
+    if "execution failed" in joined:
+        print("Error: 'execution failed' found in joined answer")
+        return True, answers
+    if "syntax error" in joined:
+        print("Error: 'syntax error' found in joined answer")
+        return True, answers
+    if "e, r, r, o, r" in joined:
+        print("Error: 'e, r, r, o, r' pattern found in joined answer")
         return True, answers
 
     if data_args.length_filter:
         input_ids = tokenizer.encode(joined, truncation=False)
-        return len(input_ids) >= data_args.max_target_length, answers
+        if len(input_ids) >= data_args.max_target_length:
+            print("Error: Tokenized answer exceeds max_target_length")
+            return True, answers
 
     return False, answers
+
 
 
 def permute_dirty_columns(dirty_df: pd.DataFrame, seed: int) -> pd.DataFrame:

@@ -27,11 +27,17 @@ def filter_function(library_path):
         "c6",
         "c7",
         "c8",
+        "```py",
+        
     ]
 
-    def is_bad_query(sql):
-        sql_lower = sql.lower()
-        return any(bad_str.lower() in sql_lower for bad_str in BAD_STRINGS)
+    def is_bad_query(query):
+        query_lower = query.lower().strip()
+
+        if query_lower == "":
+            return True
+        
+        return any(bad_str.lower() in query_lower for bad_str in BAD_STRINGS)
 
     
     with open(library_path, "r", encoding="utf-8") as f:
@@ -41,6 +47,7 @@ def filter_function(library_path):
     removed_count = 0
 
     for item in data:
+        print(item["question"])
         if is_bad_query(item["question"]):
             logger.warning("Removed question: %s", item['question'])
             removed_count += 1
