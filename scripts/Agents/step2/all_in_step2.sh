@@ -1,16 +1,14 @@
 #!/bin/bash
 
 # Total number of chunks
-NCHUNKS=5
+NCHUNKS=10
 
-# Directory to save the generated scripts
-mkdir -p Agents/dataset
 
 for (( i=0; i<$NCHUNKS; i++ ))
 do
-  JOB_NAME="v$i"
-  OUTPUT_DIR="Agents/jobs/results"
-  SCRIPT_PATH="Agents/jobs/job_chunk_${i}.sh"
+  JOB_NAME="step2_$i"
+  OUTPUT_DIR="Agents/step2/results"
+  SCRIPT_PATH="Agents/step2/job_chunk_${i}.sh"
 
   mkdir -p "$OUTPUT_DIR"
 
@@ -18,10 +16,11 @@ do
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --job-name=$JOB_NAME
-#SBATCH --partition=hard
-#SBATCH --nodes=1
-#SBATCH --gpus-per-node=1
-#SBATCH --time=48:00:00
+#SBATCH --gres=gpu:1
+#SBATCH --ntasks-per-node=1
+#SBATCH -A kns@a100
+#SBATCH -C a100
+#SBATCH --time=20:00:00
 #SBATCH --output=${OUTPUT_DIR}/$JOB_NAME.out
 
 
@@ -38,11 +37,12 @@ export OLLAMA_LOG_LEVEL=error
 export GIN_MODE=release
 
 python ../agent.py \\
-  --model_name_or_path ../models/bart_large_step0/checkpoint-10000 \\
+  --model_name_or_path ../models/bart_large_step1/checkpoint-12000 \\
   --ollama_model_name_or_path ollama_chat/qwen2.5:14b \\
   --num_iterations 11 \\
-  --library_path ../data/library/library_step1/library.json \\
+  --library_path ../data/library/library_step2/library.json \\
   --vector_store_path ../data/library/vector_store_step \\
+  --likelihood_step ../logs/likelihood_step1.json \\
   --embedding_model_name "Alibaba-NLP/gte-large-en-v1.5" \\
   --table_limit 5 \\
   --base_prompt_path ../source/prompts/base_prompt_v2.yaml \\
@@ -59,11 +59,11 @@ EOF
   echo "Generated: $SCRIPT_PATH"
 done
 
-# Optionally submit all jobs
+# Optionally submit all step2
 if [ "$1" == "true" ]; then
   for (( i=0; i<$NCHUNKS; i++ ))
   do
-    sbatch Agents/jobs/job_chunk_${i}.sh
+    sbatch Agents/step2/job_chunk_${i}.sh
   done
 fi
 

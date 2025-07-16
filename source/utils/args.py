@@ -68,6 +68,10 @@ class DataArguments:
         },
     )
 
+    likelihood_step: str = field(
+        default=None, metadata={'help': "the likelihood distribution path of the t-1 model"}
+    )
+
     split_name: str = field(
         default=None, metadata={"help": "The name of the split to use."},
     )

@@ -4,6 +4,9 @@ from transformers import HfArgumentParser
 import json
 import os
 import numpy as np
+import torch
+import gc
+
 
 from source.prompts.prompt import  PromptManager
 from source.library.tables import TableManager
@@ -107,9 +110,13 @@ def main():
     answer_checker = None
     
     if model_args.use_model_check:
-
-        with open("../logs/likelihood.json") as data:
+        cwd = os.getcwd()
+        print("Current working directory:", cwd)    
+        with open(data_args.likelihood_step) as data:
+            logger.info(f'load likelihood distribution from {data_args.likelihood_step} path')
             results = json.load(data)
+
+
         likelihood = [result["log_likelihood"] for result in results]
         accuracy = [result["accuracy"] for result in results]
         lower_thresh = np.percentile(likelihood, 5)
@@ -126,14 +133,12 @@ def main():
                                         upper_thresh=upper_thresh )
 
 
-
-
-
     start_time = time.time()
     total = len(table_manager.common_ids)
 
     for idx, table_id in enumerate(table_manager.common_ids):
-        
+        torch.cuda.empty_cache()
+        gc.collect()
         try:
             vector_store = init_library(data_args)
             new_start_time = time.time()
