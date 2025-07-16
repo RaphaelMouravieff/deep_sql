@@ -15,6 +15,7 @@ python ../train.py \
   --dataset_name ../data/fine_tuning/wikitablequestions \
   --output_dir ../models/bart_large_step1 \
   --model_name_or_path ../models/bart_large_step1/checkpoint-1508 \
+  --resume_from_checkpoint ../models/bart_large_step1/checkpoint-10000 \
   --overwrite_output_dir \
   --per_device_train_batch_size 4 \
   --gradient_accumulation_steps 32 \

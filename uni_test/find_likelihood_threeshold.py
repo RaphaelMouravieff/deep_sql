@@ -28,12 +28,13 @@ class SimpleArgs:
     pad_to_max_length: bool = True
     num_beams: int = 5
     use_model_check: bool = True   
-    model_name_or_path: str = "models/bart_large_step0/checkpoint-10000"
+    model_name_or_path: str = "models/bart_large_step1/checkpoint-12000"
     tokenizer_name: str = None
     config_name = None
     use_fast_tokenizer = True
     output_generation: bool = True
     dataset_name = "data/fine_tuning/wikitablequestions"
+    output_json_path = "logs/likelihood_step1.json"
     
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -53,7 +54,12 @@ model = model.to("cuda")
 
 
 if __name__ == "__main__":
-    checker = AnswerChecker(model=model, tokenizer=tokenizer, data_args=SimpleArgs(), device=device)
+    checker = AnswerChecker(model=model, 
+                            tokenizer=tokenizer,
+                            data_args=SimpleArgs(), 
+                            lower_thresh=None, 
+                            upper_thresh=None, 
+                            device=device)
 
     results = []
 
@@ -71,6 +77,7 @@ if __name__ == "__main__":
 
         model_answer, log_likelihood = checker.check_answer(table, question, expected_answer)
         accuracy = evaluate_example(model_answer.lower(), ", ".join(expected_answer).lower())
+        log_likelihood = log_likelihood[3]
         print()
         print('Model answer:', model_answer)
         print('Expected answer:', expected_answer)  
@@ -102,7 +109,7 @@ if __name__ == "__main__":
     total_accuracy = sum(accuracy) / len(accuracy)
     print(f"Total Accuracy: {total_accuracy:.4f}")  
 
-    with open("logs/likelihood.json", "w") as f:
+    with open(SimpleArgs.output_json_path, "w") as f:
         json.dump(results, f, indent=4)
 
 

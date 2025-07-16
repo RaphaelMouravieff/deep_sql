@@ -74,9 +74,11 @@ class AnswerChecker:
         loss = outputs.loss  # This is already averaged over non-masked tokens
         log_likelihood = -loss.item()
 
-        inside = (True, "question", "", 0)
+        
         logger.info('Lower threshold: %s', self.lower_thresh)
         logger.info('Upper threshold: %s', self.upper_thresh)
+        inside = (True, "question", "", log_likelihood)
+        
         if self.lower_thresh is not None:
             logger.info('Log likelihood: %s', log_likelihood)
 

@@ -32,3 +32,21 @@ bash Train/ptrain.sh
 cd deep_sql/scripts 
 bash Train/fine_tuned.sh 
 ```
+
+**Uni-test Library**: Check if multi chunk work to save library, one common vector store and multiple .json. 
+```bash
+cd deep_sql
+python -m uni_test.library_multi_chunk
+```
+
+**Uni-test answer check**: Check vectore_store_content (step1= 96766)
+```bash
+cd deep_sql
+python -m uni_test.vectore_store_content --vector_store_path data/library/vector_store_step_copy
+```
+
+**Uni-test likelihood**: Create the likelihood threeshold
+```bash
+cd deep_sql
+python -m uni_test.find_likelihood_threeshold 
+```

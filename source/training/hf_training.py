@@ -4,8 +4,10 @@ def run_train(trainer, training_args, data_args, last_checkpoint, train_dataset)
     checkpoint = None
     if training_args.resume_from_checkpoint is not None:
         checkpoint = training_args.resume_from_checkpoint
+        print('Resuming from checkpoint,', checkpoint)
     elif last_checkpoint is not None:
         checkpoint = last_checkpoint
+        print('Resuming from checkpoint,', checkpoint)
 
     train_result = trainer.train(resume_from_checkpoint=checkpoint)
     trainer.save_model()  # Saves the tokenizer too
