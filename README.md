@@ -1,15 +1,15 @@
 ## 🔧 Installation
 
-> 📌 **Reproducing results?** Just copy-paste this to get started with TabStruct.
+> 📌 **Reproducing results?** Just copy-paste this to get started with deepsql.
 
 ```bash
 # Clone the repo
-git clone https://github.com/RaphaelMouravieff/TabStruct.git TabStruct
-cd TabStruct
+git clone https://github.com/RaphaelMouravieff/deep_sql.git deepsql
+cd deepsql
 
 # Set up the environment
-conda create -n tabstruct python=3.11.11 -y
-conda activate tabstruct
+conda create -n deepsql python=3.11.11 -y
+conda activate deepsql
 
 # Install dependencies
 pip install -r requirements.txt
