@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Total number of chunks
-NCHUNKS=10
+NCHUNKS=5
 
 
 for (( i=0; i<$NCHUNKS; i++ ))
@@ -35,6 +35,7 @@ export OLLAMA_LOG_LEVEL=ERROR
 export OLLAMA_VERBOSE=0
 export OLLAMA_LOG_LEVEL=error
 export GIN_MODE=release
+
 
 python ../agent.py \\
   --model_name_or_path ../models/bart_large_step1/checkpoint-12000 \\

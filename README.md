@@ -1,3 +1,22 @@
+
+## 🔧 Installation
+
+> 📌 **Reproducing results?** Just copy-paste this to get started with TabStruct.
+
+```bash
+# Clone the repo
+git clone https://github.com/RaphaelMouravieff/TabStruct.git TabStruct
+cd TabStruct
+
+# Set up the environment
+conda create -n tabstruct python=3.11.11 -y
+conda activate tabstruct
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+
 **Connect to the GPU Node**
 ```bash ssh gpu ``` 
 **Request a GPU with Slurm**

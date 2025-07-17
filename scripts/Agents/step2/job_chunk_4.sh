@@ -22,11 +22,11 @@ export OLLAMA_LOG_LEVEL=error
 export GIN_MODE=release
 
 python ../agent.py \
-  --model_name_or_path ../models/bart_large_step1/checkpoint-12000 \
+  --model_name_or_path /data/raphael.gervillie/models_tanguy/checkpoint-12000 \
   --ollama_model_name_or_path ollama_chat/qwen2.5:14b \
   --num_iterations 11 \
   --library_path ../data/library/library_step2/library.json \
-  --vector_store_path ../data/library/vector_store_step \
+  --vector_store_path /data/raphael.gervillie/models_tanguy/vector_store_step \
   --likelihood_step ../logs/likelihood_step1.json \
   --embedding_model_name "Alibaba-NLP/gte-large-en-v1.5" \
   --table_limit 5 \
@@ -38,4 +38,4 @@ python ../agent.py \
   --max_target_length 128 \
   --num_beams 5 \
   --chunk 4 \
-  --Nchunk 10
+  --Nchunk 5

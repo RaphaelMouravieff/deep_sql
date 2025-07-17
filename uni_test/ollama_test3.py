@@ -2,8 +2,7 @@ from smolagents import CodeAgent, LiteLLMModel
 
 # Tell LiteLLM to use the Ollama backend
 model = LiteLLMModel(
-    model_id='ollama_chat/llama3.2'  # the correct prefix for Ollama models
-    
+    model_id='ollama_chat/qwen2.5:14b'  # the correct prefix for Ollama models
 )
 
 agent = CodeAgent(

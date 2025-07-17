@@ -49,7 +49,7 @@ data/training_dataset/
 # ===============================
 # Checkpoints / Logs / Outputs
 # ===============================
-logs/
+
 *.log
 *.out
 *.pth
