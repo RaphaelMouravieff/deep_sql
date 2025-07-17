@@ -1,4 +1,3 @@
-
 ## 🔧 Installation
 
 > 📌 **Reproducing results?** Just copy-paste this to get started with TabStruct.
@@ -15,6 +14,18 @@ conda activate tabstruct
 # Install dependencies
 pip install -r requirements.txt
 ```
+
+
+## 🧪 Perturbations (ROBUT)
+
+ROBUT tests Table QA robustness with 10 human-crafted perturbations:
+
+- **Header**: synonym, abbreviation  
+- **Content**: row/col shuffle, extension, masking, adding  
+- **Question**: word/sentence paraphrase  
+- **Mixed**: combined perturbations
+
+
 
 
 **Connect to the GPU Node**
